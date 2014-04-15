@@ -1,56 +1,209 @@
-\documentclass{mythesis}
-\usepackage{mythesis}
+% ---------------------------------------------------------------------------------
+% Main tex file
 
-%% You can set the line spacing this way
-%\setallspacing{double}
-%% or a section at a time like this
-%\setfrontmatterspacing{double}
+\documentclass[
+twoside=true,
+headsepline,     % Line under page header
+headings=normal,
+open=right,
+numbers=noenddot, % Otherwise there will be a dot after the chapter numbering in case letters are used somewhere e.g. in the appendix
+a4paper
+]{scrreprt} %report scrreprt
+\addtolength{\topmargin}{-0.2cm}
+\setlength{\textwidth}{15cm}
+\setlength{\textheight}{22.4cm}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\evensidemargin}{0.85cm} 
 
-%% PDF metadata
-\makeatletter
-\@ifpackageloaded{hyperref}{%
-\hypersetup{%
-pdftitle = {Search for Supersymmetry with Jets and Missing Transverse Energy},
-pdfsubject = {Kristin Heine's PhD thesis},
-pdfkeywords = {CMS, supersymmetry, physics, LHC},
-pdfauthor = {\textcopyright\ Kristin Heine}
-}
-}{}
-\makeatother
+\usepackage[automark,headsepline]{scrpage2}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ihead{\headmark}
+\ohead{\pagemark}
+\cfoot{}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 
-%% Define the thesis title and author
-\title{Search for Supersymmetry with Jets and Missing Transverse Energy at CMS}
-\author{Kristin Heine}
+% Alter some LaTeX defaults for better treatment of figures,
+% from http://mintaka.sdsu.edu/GF/bibliog/latex/floats.html
+% See p.105 of "TeX Unbound" for suggested values.
+% See pp. 199-200 of Lamport's "LaTeX" book for details.
+% General parameters, for ALL pages:
+\renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+\renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+% Parameters for TEXT pages (not float pages):
+%\setcounter{topnumber}{2}
+%\setcounter{bottomnumber}{2}
+%\setcounter{totalnumber}{4}     % 2 may work better
+%\setcounter{dbltopnumber}{2}    % for 2-column pages
+\renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+\renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+% Parameters for FLOAT pages (not text pages):
+\renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+% N.B.: floatpagefraction MUST be less than topfraction !!
+\renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+% remember to use [htp] or [htpb] for placement
 
-%% Start the document
+\usepackage{amsfonts}
+\usepackage{amsmath}  % Correct size switching in mathmode when using \text{} instead of \textrm{}
+\usepackage{amssymb} 
+\usepackage{amstext} 
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{setspace}
+\usepackage{rotating}
+\usepackage{float}
+\usepackage{afterpage}
+
+%\usepackage{setspace}
+%\doublespacing
+
+\hyphenation{Super-sym-me-try}
+\hyphenation{maximum-like-li-hood}
+
+\input{definitions.tex}
+
+\author{Matthias Schr\"oder}
+
+% pdflatex packages
+\usepackage[pdftex]{hyperref}
+\hypersetup{bookmarks=true}
+\hypersetup{pdfmenubar=true}
+\hypersetup{pdffitwindow=true}
+\hypersetup{unicode=true}
+\hypersetup{colorlinks=true,%
+  citecolor=black,%
+  filecolor=black,%
+  linkcolor=black,%
+  urlcolor=black}
+\hypersetup{pdftitle={Quality of Jet Measurements and Impact on a Search for New Physics at CMS}}
+\hypersetup{pdfauthor={Matthias Schr\"oder}}
+
 \begin{document}
 
-%% Define the un-numbered front matter (cover pages, rubrik and table of contents)
-\begin{frontmatter}
-  \input{frontmatter}
-\end{frontmatter}
+\pagenumbering{roman}
+% ----- Title page ----------------------------------------------------- 
+\begin{titlepage}
+  \begin{center}
+    \thispagestyle{empty}
+    \vspace*{1cm}
+    \begin{doublespace} 
+      \textbf{\huge Search for New Physics}\\
+      \textbf{\huge in Events with Jets}\\
+      \textbf{\huge and Missing Transverse Momentum}\\
+      \textbf{\huge at the CMS experiment} \\
+      \vskip1.5cm
+      \begin{Large} 
+        \textbf{Dissertation\\
+          zur Erlangung des Doktorgrades\\
+          des Fachbereichs Physik\\
+          der Universit\"{a}t Hamburg\\}
+      \end{Large}
+      \vskip2cm
+      \begin{large}
+        vorgelegt von\\
+        {\bf Kristin Goebel geb. Heine}\\
+        aus Gifhorn
+        \vfill
+        \noindent{Hamburg\\2014}
+      \end{large}
+    \end{doublespace} 
+  \end{center}
+\end{titlepage}
 
-%% Start the content body of the thesis
-\begin{mainmatter}
-  %% Actually, more semantic chapter filenames are better, like "chap-bgtheory.tex"
-  \input{chap1}
-  \input{chap2}
-  \input{chap3}
-  %% To ignore a specific chapter while working on another,
-  %% making the build faster, comment it out like this:
-  %\input{chap4}
-\end{mainmatter}
 
-%% Produce the appendices
-\begin{appendices}
-  \input{appendices}
-\end{appendices}
+\newpage 
+\thispagestyle{empty}
+\quad 
+\newpage
+\thispagestyle{empty}
 
-%% Produce the un-numbered back matter (e.g. colophon,
-%% bibliography, tables of figures etc., index...)
-\begin{backmatter}
-  \input{backmatter}
-\end{backmatter}
+\quad
+\vfill
+\noindent{
+\begin{tabular}{ll}
+Gutachter der Dissertation:                & Prof.\ Dr.\ bla \\ 
+                                           & Prof. \ Dr.\ bla\\
+                                           & \\
+Gutachter der Disputation:                 & Prof.\ Dr.\ bla\\ 
+                                           & Prof.\ Dr.\ bla\\
+                                           & \\
+Datum der Disputation:                     & ??. ?? 2014\\
+                                           & \\
+Vorsitzender des Pr\"{u}fungsausschusses:  & Dr.\ bla\\
+                                           & \\
+Vorsitzender des Promotionsausschusses:    & Prof.\ Dr.\ bla\\ 
+                                           & \\
+Leiterin des Fachbereichs Physik:          & Prof.\ Dr.\ bla \\
+                                           & \\
+Dekan der Fakult\"{a}t f\"{u}r Mathematik, & \\
+\quad Informatik und Naturwissenschaften:  & Prof.\ Dr.\ bla \\
+\end{tabular}
+}
 
-%% Close
+
+\newpage 
+\thispagestyle{empty}
+\quad 
+\newpage
+%\input{Abstract.tex}
+
+
+\newpage 
+\thispagestyle{empty}
+\quad 
+
+\newpage
+\tableofcontents
+
+\cleardoublepage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{Introduction}
+\input{Introduction.tex}
+
+\chapter{The Standard Model and Possible Extensions} \label{sec:Theory}
+%\input{Theory.tex}
+
+\chapter{Experimental Setup} \label{sec:Detector}
+%\input{Detector.tex}
+
+\chapter{Reconstruction and Performance of Jets at CMS} \label{sec:Jets}
+%\input{Jets.tex}
+
+\chapter{Measurement of the Jet Transverse-Momentum Resolution} \label{sec:Resolution}
+%\input{Resolution.tex}
+
+\chapter[Search for New Physics with Jets and Missing Transverse Momentum]{Search for New Physics in the Multijet and Missing Transverse Momentum Final State} \label{sec:RA2}
+%\input{RA2.tex}
+
+\chapter[Prospects for a Search for Top Squarks]{Prospects for a Search for Top Squarks in Events with Jets and Missing Transverse Momentum} \label{sec:Stop}
+%\input{Stop.tex}
+
+
+\chapter{Conclusions} \label{sec:Conclusion}
+%\input{Conclusions.tex}
+
+
+\appendix
+%\input{Appendix.tex}
+
+\bibliographystyle{lucas_unsrt}
+\bibliography{Thesis}
+
+
+\cleardoublepage
+\thispagestyle{empty}
+\chapter*{~}
+%\input{Danksagung.tex}
+
+
 \end{document}
+
+% Improvements:
+% - cleardoublepage

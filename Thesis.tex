@@ -24,6 +24,8 @@ a4paper
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
+\usepackage{todonotes}
+
 % Alter some LaTeX defaults for better treatment of figures,
 % from http://mintaka.sdsu.edu/GF/bibliog/latex/floats.html
 % See p.105 of "TeX Unbound" for suggested values.
@@ -79,8 +81,8 @@ a4paper
   filecolor=black,%
   linkcolor=black,%
   urlcolor=black}
-\hypersetup{pdftitle={Quality of Jet Measurements and Impact on a Search for New Physics at CMS}}
-\hypersetup{pdfauthor={Matthias Schr\"oder}}
+\hypersetup{pdftitle={Search for New Physics in Events with Jets and Missing Transverse Momentum}}
+\hypersetup{pdfauthor={Kristin Goebel}}
 
 \begin{document}
 
@@ -94,7 +96,7 @@ a4paper
       \textbf{\huge Search for New Physics}\\
       \textbf{\huge in Events with Jets}\\
       \textbf{\huge and Missing Transverse Momentum}\\
-      \textbf{\huge at the CMS experiment} \\
+      \textbf{\huge at the CMS Experiment} \\
       \vskip1.5cm
       \begin{Large} 
         \textbf{Dissertation\\
@@ -148,9 +150,14 @@ Dekan der Fakult\"{a}t f\"{u}r Mathematik, & \\
 \newpage 
 \thispagestyle{empty}
 \quad 
-\newpage
-%\input{Abstract.tex}
 
+\newpage
+\thispagestyle{empty}
+\input{Abstract.tex}
+
+\newpage
+\thispagestyle{empty}
+\input{Kurzfassung.tex}
 
 \newpage 
 \thispagestyle{empty}
@@ -167,27 +174,26 @@ Dekan der Fakult\"{a}t f\"{u}r Mathematik, & \\
 \chapter{Introduction}
 \input{Introduction.tex}
 
-\chapter{The Standard Model and Possible Extensions} \label{sec:Theory}
-%\input{Theory.tex}
+\chapter{Theoretical Background} \label{chap:Theory}
+\input{Theory.tex}
 
-\chapter{Experimental Setup} \label{sec:Detector}
-%\input{Detector.tex}
+\chapter{Experimental Setup} \label{chap:Detector}
+\input{Detector.tex}
 
-\chapter{Reconstruction and Performance of Jets at CMS} \label{sec:Jets}
-%\input{Jets.tex}
+\chapter{Reconstruction Algorithms and Object Definition} \label{chap:Objects}
+\input{Objects.tex}
 
-\chapter{Measurement of the Jet Transverse-Momentum Resolution} \label{sec:Resolution}
-%\input{Resolution.tex}
+\chapter{Measurement of the Jet Transverse-Momentum Resolution} \label{chap:Resolution}
+\input{Resolution.tex}
 
-\chapter[Search for New Physics with Jets and Missing Transverse Momentum]{Search for New Physics in the Multijet and Missing Transverse Momentum Final State} \label{sec:RA2}
-%\input{RA2.tex}
+\chapter[Search for New Physics with Jets and Missing Transverse Momentum]{Search for New Physics in the Multijet and Missing Transverse Momentum Final State at $\sqrt{s}$ = 8 TeV} \label{chap:RA2}
+\input{RA2.tex}
 
-\chapter[Prospects for a Search for Top Squarks]{Prospects for a Search for Top Squarks in Events with Jets and Missing Transverse Momentum} \label{sec:Stop}
-%\input{Stop.tex}
+\chapter[Prospect Studies for a Search for Top Squarks]{Prospect Studies for a Search for Top Squarks in Events with Jets and Missing Transverse Momentum at $\sqrt{s}$ = 13 TeV} \label{chap:Stop}
+\input{Stop.tex}
 
-
-\chapter{Conclusions} \label{sec:Conclusion}
-%\input{Conclusions.tex}
+\chapter{Conclusions} \label{chap:Conclusion}
+\input{Conclusions.tex}
 
 
 \appendix

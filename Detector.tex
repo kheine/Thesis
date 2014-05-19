@@ -8,7 +8,7 @@ Before the protons are injected into the LHC they are already pre-accelerated in
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.8\textwidth]{figures/AcceleratorComplex.jpg}
+    \includegraphics[width=0.9\textwidth]{figures/AcceleratorComplex.jpg}
   \end{tabular}
   \caption{Illustration of the CERN accelerator complex. Numbers below the names of individual machines indicate the year of their first operation. For ring accelerators also the circumference is given. Taken from~\cite{Christiane:1260465}.}
   \label{fig:AccComplex}
@@ -30,11 +30,36 @@ The LHC beams cross at four locations along the ring. At these interaction point
 
 \section{The CMS Experiment}
 \label{sec:cms}
-The CMS detector is one of the two experiments at the LHC designed to address a multitude of physics questions. In addition to tests of the SM at the TeV scale, studies of the nature of elektroweak symmetry breaking which might show up in the presence of a Higgs boson and searches for so far unknown particles pointing to e.g. new symmetries in nature are the primary targets of these experiments. These ambitious physics goals can only be achieved by fully exploiting the by now unprecedented collision energy and luminosity. Since the total inelastic proton-proton cross-section at a center of mass energy of 14~TeV is expected to be around 100\,mb \todo{Bild + Ref}, the experiments have to deal with an event rate of approximately $10^9$ events per second. This is resulting in high experimental challenges. The CMS detector with its typical cylindrical design of different sub-detector components around the beam line is designed to perfectly meet these particular conditions. As a typical high-energy particle experiment the CMS detector makes mainly use of tracking detectors and calorimeters to measure particles' momenta, energy depositions and flight directions in order to identify the objects emerging from the particle collisions. Table ... \todo{Performance Table} gives an overview of the performance goals of the various sub-detectors. \\  
+The CMS detector is one of the two experiments at the LHC designed to address a multitude of physics questions. In addition to tests of the SM at the TeV scale, studies of the nature of elektroweak symmetry breaking which might show up in the presence of a Higgs boson and searches for so far unknown particles pointing to e.g. new symmetries in nature are the primary targets of these experiments. These ambitious physics goals can only be achieved by fully exploiting the by now unprecedented collision energy and luminosity. Since the total inelastic proton-proton cross-section at a center of mass energy of 14~TeV is expected to be around 100\,mb \todo{Bild + Ref}, the experiments have to deal with an event rate of approximately $10^9$ events per second. This is resulting in high experimental challenges. The CMS detector with its typical cylindrical design of different sub-detector components around the beam line is designed to perfectly meet these particular conditions. A sketch of the CMS detector and the different sub-detectors is shown in Fig.~\ref{fig:CMS}.
+\begin{figure}[!tp]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=0.9\textwidth]{figures/CMSDetector.pdf}
+  \end{tabular}
+  \caption{A perspective view of the CMS detector~\cite{Chatrchyan:2008zzk}.}
+  \label{fig:CMS}
+\end{figure}
+As a typical high-energy particle experiment the CMS detector makes mainly use of tracking detectors and calorimeters to measure particles' momenta, energy depositions and flight directions in order to identify the objects emerging from the particle collisions. Table ... \todo{Performance Table} gives an overview of the performance goals of the various sub-detectors. \\  
 The following sections comprise a description of the CMS detector and individual sub-detector components focusing on the detector parts most relevant for the analyses presented in this thesis. A detailed discussion of the detector design can be found in~\cite{Chatrchyan:2008zzk, bib:cmsptdr1}.
 
-\subsection{Coordinate System and Kinematic Variables}
+\subsection{Coordinate Conventions and Kinematic Variables}
 \label{subsec:cms_coordinates}
+In order to describe the particle collisions, the CMS experiment makes use of a right-handed coordinate system with its origin at the center of the detector at the nominal interaction point. While the z-axis is defined along the direction of the beam, the x-axis points to the center of the LHC ring and the y-axis vertically upwards. In this xy-plane the azimuthal angle $\phi$ is measured where $\phi = 0$ coincides with the x-axis. The polar angle $\theta$ however is defined with respect to the z-axis. A quantity closely related to the polar angle is the pseudorapidity $\eta$ defined as
+\begin{equation}
+\eta = \mathrm{-ln} \left[\mathrm{tan} \left(\frac{\theta}{2} \right)\right]
+\end{equation}
+which is widely used in experimental particle physics as rapidity differences are Lorentz invariant. A pseudorapidity $\eta = 0$ corresponds to the direction perpendicular to the beam while $|\eta| \rightarrow \infty$ points along the beam. Based on the pseudorapidity the Lorentz invariant distance between two objects $\Delta$R can be written as
+\begin{equation}
+\Delta \mathrm{R} = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2} \, .
+\end{equation}
+At the LHC the initial conditions of the primary collisions are not known as the specific energy fraction of the proton which each parton carries can not be identified. Thus conservation of the total momentum can not be utilized directly to describe the momentum balance in the final state. However, it is known that the initial particles have no significant momentum orthogonal to the beam axis which is referred to as transverse momentum 
+\begin{equation}
+\pt = p \cdot \mathrm{sin}\theta \, .
+\end{equation}
+Thus, momentum conservation in the transverse plane is widely used to describe the final state conditions. Any difference between the total sum of all transverse momenta and zero is considered as missing energy \met and often exploited to describe undetected particles.
+
+\subsection{Superconducting Magnet}
+\label{subsec:cms_magnet}
 
 \subsection{Inner Tracking System}
 \label{subsec:cms_tracker}

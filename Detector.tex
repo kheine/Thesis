@@ -22,10 +22,10 @@ The main goal of the LHC is to provide proton-proton collisions to the experimen
 \end{equation}
 The luminosity is a machine parameter and can be expressed for beams with Gaussian-shaped profiles as  
 \begin{equation}
-  \mathcal{L} = f \frac{n_{1}n_{2}}{4 \pi \sigma_{x} \sigma{y}}
+  \mathcal{L} = f \cdot \frac{n_{1}n_{2}}{4 \pi \sigma_{x} \sigma{y}} \cdot F
   \label{eq:lumi}
 \end{equation}
-with the revolution frequency $f$, the number of particles $n_1$ and $n_2$ contained in the two colliding bunches and the transverse beam sizes $\sigma_{x}$ ($\sigma_{y}$) in the horizontal (vertical) directions. The nominal peak luminosity of the LHC is $10^{34} \, \mathrm{cm}^{-2} \, \mathrm{s}^{-1}$.\\
+with the revolution frequency $f$, the number of particles $n_1$ and $n_2$ contained in the two colliding bunches and the transverse beam sizes $\sigma_{x}$ ($\sigma_{y}$) in the horizontal (vertical) directions. In order to take the inclination of the two beams into account, the geomatrical correction factor $F$ is introduced. The nominal peak luminosity of the LHC is $10^{34} \, \mathrm{cm}^{-2} \, \mathrm{s}^{-1}$.\\
 The LHC beams cross at four locations along the ring. At these interaction points the four main experiments of the LHC are located in order to measure the delivered particle collisions. The two high luminosity experiments ATLAS~\cite{det::ATLAS} and CMS~\cite{Chatrchyan:2008zzk, bib:cmsptdr1} are designed for multiple purposes like precision measurements of SM quantities, search for the standard model Higgs Boson or searches for signals indicating new physics processes. The LHCb detector~\cite{det::LHCb} however is a specialised experiment focusing on the measurement of CP violation in the interactions of hadrons containing b-quarks. The only experiment designed especially for the analysis of heavy ion collisions is the ALICE~\cite{det::ALICE} detector with the main emphasis on the physics of strongly interacting matter at extreme energy densities like for instance quark-gluon plasma.
 
 \section{The CMS Experiment}
@@ -39,7 +39,7 @@ The CMS detector is one of the two experiments at the LHC designed to address a 
   \caption{A perspective view of the CMS detector~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS}
 \end{figure}
-As a typical high-energy particle experiment the CMS detector makes mainly use of tracking detectors and calorimeters to measure particles' momenta, energy depositions and flight directions in order to identify the objects emerging from the particle collisions. Table ... \todo{Performance Table} gives an overview of the performance goals of the various sub-detectors. \\  
+As a typical high-energy particle experiment the CMS detector makes mainly use of tracking detectors and calorimeters to measure particles' momenta, energy depositions and flight directions in order to identify the objects emerging from the particle collisions. Table ... \todo{Performance Table} gives an overview of the performance goals of the various sub-detectors. The overall dimension of the CMS detector are a length of 21.6\,m and a diameter of 14.6\,m resulting in a total weight of 12500\,t. \\  
 The following sections comprise a description of the CMS detector and individual sub-detector components focusing on the detector parts most relevant for the analyses presented in this thesis. A detailed discussion of the detector design can be found in~\cite{Chatrchyan:2008zzk, bib:cmsptdr1}.
 
 \subsection{Coordinate Conventions and Kinematic Variables}
@@ -56,10 +56,12 @@ At the LHC the initial conditions of the primary collisions are not known as the
 \begin{equation}
 \pt = p \cdot \mathrm{sin}\theta \, .
 \end{equation}
-Thus, momentum conservation in the transverse plane is widely used to describe the final state conditions. Any difference between the total sum of all transverse momenta and zero is considered as missing energy \met and often exploited to describe undetected particles.
+Thus, momentum conservation in the transverse plane is used to describe the final state conditions. Any difference between the total sum of all transverse momenta and zero is considered as missing energy \met and often exploited to describe undetected particles.
 
 \subsection{Superconducting Magnet}
 \label{subsec:cms_magnet}
+The CMS experiment makes use of a large superconducting solenoid magnet which is a crucial component of the whole detector design and provides a magnetic field of up to 4\,T. It allows to precisely determine the momenta and charge of charged particles from the bended tracks that they follow in the magnetic field.\\
+With a length of 12.5\,m and a diameter of the free bore of 6.3\,m the total cold mass reaches 220\,t. It is made up of a niobium-titanium coil which is winded in 4-layers. This configuration allows a storage of 2.6\,GJ energy at full current. A 10000\,t heavy-weight iron yoke is responsible for the return of the magnetic flux.
 
 \subsection{Inner Tracking System}
 \label{subsec:cms_tracker}

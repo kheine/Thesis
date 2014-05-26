@@ -65,6 +65,21 @@ With a length of 12.5\,m and a diameter of the free bore of 6.3\,m the total col
 
 \subsection{Inner Tracking System}
 \label{subsec:cms_tracker}
+The tracking system of the CMS experiment is the innermost part of the detector and installed directly around the interaction point completely contained in the bore of the magnet system. Its' purpose is to precisely measure the trajectories of charged particles arising from the collisions as well as to reconstruct secondary vertices. Due to the location close to the interaction point the tracking system has to cope with a high particle flux crossing the tracker associated with each bunch crossing. Hence high requirements on response time and granularity are set in order to properly identify the particles' tracks. \\
+In order to fulfill these tasks the CMS experiment makes use of a tracker design based on silicon detectors. It consists of mainly two components: the innermost part is made of silicon pixel detectors while these are surrounded by silicon strip modules. In total they add up to an active area of 200\,$\mathrm{m}^2$ with a length of 5.8\,m and a diameter of 2.5\,m covering the detector up to $|\eta| = 2.5$. A schematic overview of the whole tracking system is shown in Fig.~\ref{fig:CMS_tracker}. 
+\begin{figure}[!tp]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=0.9\textwidth]{figures/fig_cmstracker.png}
+  \end{tabular}
+  \caption{Sketch of the CMS tracking system in a $rz$-view. Each tracker module is represented by one line. Taken from~\cite{Chatrchyan:2008zzk}.}
+  \label{fig:CMS_tracker}
+\end{figure}
+\begin{description}
+ \item \textbf{Pixel Detector:} The pixel detector consists of three barrel layers which extend from 4.4\,cm to 10.2\,cm and two endcap disks on each side. In total there are 1440 pixel modules installed. The size of one pixel cell is 100 x 150 $\mu m^2$ providing similar track resolution quality in $r-\phi$ and $z$ direction. This configuration provides for almost the whole range up to $|\eta| = 2.5$ three precise tracking hits. This is especially important for the reconstruction of secondary vertices.
+ \item \textbf{Silicon Strip Tracker:} The silicon strip detector which extends to a radius of 1.1\,m comprises the pixel tracker. The more than 15000 individual strip detector modules are arranged in an inner and an outer detector part. The inner part of the strip tracker is build by the four Tracker Inner Barrel (TIB) layers which are accompanied by the three Tracker Inner Disks (TID) at the end sides. This inner part provides up to four track measurements in the $r-\phi$ plane. The TIB/TID system lies within the Tracker Outer Barrel (TOB) consisting of another six barrel layers while it is complemented by the Tracker EndCaps (TEC) which add another nine disks at each side of the tracking system. This layout provides at least around nine hits within the silicon strip system. 
+\end{description}
+The tracking system with the desgin described above provides a very good impact parameter resolution and tracking efficiency~\cite{bib:cmstdr:tracker}. The impact parameter resolution is of the order of $<$ 35\,$\mu$m in the plane perpendicular to the beam (for particles with \pt $>$ 10\,GeV) and reaches 75\,$\mu$m in the longitudinal direction. Also the track reconstruction efficiency is expected to show a very good performance. The reconstruction efficiency of high energetic electrons is above 90\%, that of charged hadrons up to 95\% (for \pt $>$ 10\,GeV) and that for muons even better than 98\% in the whole covered region up to $|\eta| = 2.5$ already for muons with very low transverse momenta around 1\,GeV.  
 
 \subsection{Electromagnetic Calorimeter}
 \label{subsec:cms_ecal}

@@ -34,7 +34,7 @@ The CMS detector is one of the two experiments at the LHC designed to address a 
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/CMSDetector.pdf}
+    \includegraphics[width=1.0\textwidth]{figures/Figures_Experimental_Apparatus_CMS_perspective.png}
   \end{tabular}
   \caption{A perspective view of the CMS detector~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS}
@@ -70,7 +70,7 @@ In order to fulfill these tasks the CMS experiment makes use of a tracker design
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/fig_cmstracker.png}
+    \includegraphics[width=0.9\textwidth]{figures/Figures_Experimental_Apparatus_Tracker.png}
   \end{tabular}
   \caption{Sketch of the CMS tracking system in a $rz$-view. Each tracker module is represented by one line. Taken from~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS_tracker}
@@ -88,9 +88,9 @@ An overview of the ECAL layout is shown in Fig.~\ref{fig:CMS_ecal}. The individu
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/cms_ecal_layout.pdf}
+    \includegraphics[width=0.9\textwidth]{figures/Figures_Experimental_Apparatus_ECALRapidity.png}
   \end{tabular}
-  \caption{View of one quarter section of the CMS electromagnetic calorimeter in a transverse view. Taken from~\cite{bib:cmsptdr1}.}
+  \caption{View of one quarter section of the CMS electromagnetic calorimeter in a yz-view. Taken from~\cite{bib:cmsptdr1}.}
   \label{fig:CMS_ecal}
 \end{figure}
 \begin{description}
@@ -104,25 +104,35 @@ In order to achieve a stable and uniform energy measurement across the whole ECA
 \label{subsec:cms_hcal}
 In addition to the previously described electromagnetic calorimeter, the calorimetry of the CMS experiment is completed by the hadron calorimeter (HCAL). It is designed to provide an accurate energy measurement of hadron jets and indirectly also of invisible particles like e.g. neutrinos by the determination of missing transverse energy. In order to obtain a measure of the missing transverse energy it is important that the calorimeter is hermetic in the sense that it provides a large geometric coverage to potentially measure all particles emerging from an interaction. Thus the HCAL is build such that a pseudorapidity range up to $|\eta| = 5.2$ is comprised. \\ 
 The hadron calorimeter completely surrounds the inner tracking system and the electromagnetic barrel calorimeter while it is mainly contained within the magnet system. Hence its radial dimensions are limited on the one hand by the outer circumference of the barrel ECAL and on the other hand by the inner border of the magnet coil. To ensure that the complete hadronic showers are contained in the HCAL, an additional calorimeter component is installed outside the solenoid in the barrel part. \\
-An overview of the layout of the CMS hadron calorimeter is shown in Fig.~\ref{fig:CMS_hcal}. The individual sub-components are the following:
+An overview of the layout of the CMS hadron calorimeter is shown in Fig.~\ref{fig:CMS_hcal}. It is a typical sampling calorimeter with alternating layers of absorber material and active scintillator layers. The individual sub-components are the following:
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/fig_HCALdiagram.png}
+    \includegraphics[width=0.9\textwidth]{figures/Figures_Experimental_Apparatus_HCAL.png}
   \end{tabular}
-  \caption{Quarter sclice through the CMS hadronic calorimeter displaying the individual HCAL sub-detector parts with the nominal interaction point located in the bottom right. Taken from~\cite{Chatrchyan:2009ag}.}
+  \caption{Longitudinal view of one quarter of the CMS detector showing the location of the individual HCAL sub-detector parts. Taken from~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS_hcal}
 \end{figure}
 \begin{description}
- \item \textbf{Hadron barrel (HB):} The barrel part of the CMS hadron calorimeter is a typical sampling calorimeter with alternating layers of absorber material and active plastic scintillator tiles. It covers the range up to $|\eta| = 1.392$ and is composed of two half barrels each containing 36 identical azimuthal wegdes. These wedges hold the absorber plates which are flat brass plates arranged parallel to the axis of the beam. For reasons of stability the first and last layers are made of stainless steel. The total thickness of the absorber material ranges from 5.82 interactions lengths ($\lambda_I$) at $|\eta| = 0.0$ to 10.6\,$\lambda_I$ at $|\eta| = 1.3$. The 17 active scintillator layers alternate with the absorber plates and have a segmentation in $(\Delta \eta, \Delta \phi)$ of (0.087, 0.087).\\
+ \item \textbf{Hadron barrel (HB):} The barrel part of the CMS hadron calorimeter covers the pseudorapidity range up to $|\eta| = 1.3$ and is composed of two half barrels each containing 36 identical azimuthal wegdes. These wedges hold the absorber plates which are flat brass plates arranged parallel to the axis of the beam. For reasons of stability the first and last layers are made of stainless steel. The total thickness of the absorber material ranges from 5.82 interactions lengths ($\lambda_I$) at $|\eta| = 0.0$ to 10.6\,$\lambda_I$ at $|\eta| = 1.3$. The 17 active plastic scintillator layers alternate with the absorber plates and have a segmentation in $(\Delta \eta, \Delta \phi)$ of (0.087, 0.087).\\
 Each half barrel is divided into 16 $\eta$-regions for which the individual tiles are optically linked together using wavelength shiftig fibres and thus form so-called \textit{HCAL towers}. The read-out of each longitudinal tower is carried out using pixelated hybrid photodiodes.
- \item \textbf{Hadron outer (HO):}
- \item \textbf{Hadron endcap (HE):}
- \item \textbf{Hadron forward (HF):}
+ \item \textbf{Hadron outer (HO):} The calorimeters in the central pseudorapidity region do not provide a sufficient depth in order to fully contain all hadronic showers. Therefore the HB is complemented by the outer hadron barrel part which is placed outside the solenoid covering $|\eta| \le 1.26$. The HO makes use of the solenoid as additional absorber material and adds another one or even two layers in the most central part of scintillators to the barrel region. Thus the total depth is extended to 11.8\,$\lambda_I$.
+ \item \textbf{Hadron endcap (HE):} The hadron barrel calorimeter is supplemented by the hadron endcap. It is mounted on the endcap iron yoke and covers the pseudorapidity region of $1.3 \le |\eta| \le 3.0$ using 18 scintillator layers inserted into brass absorber plates. The granularity of the endcap calorimeter is the same as for the barrel up to $|\eta| = 1.6$ and gets coarser for larger pseudorapidities with $(\Delta \eta, \Delta \phi) \approx (0.17, 0.17)$.
+ \item \textbf{Hadron forward (HF):} The forward hadron calorimeter extends the pseudorapidity coverage from $|\eta| = 2.9$ (slightly overlapping with the HE) up to $|\eta| = 5.2$. It is located 11.2\,m from the nominal interaction point and has to be in particular radiation hard to cope with the vast particle flux. Thus the HF is made of steel absorber plates with radiation hard quartz fibres integrated as active material. These fibres are arranged parallel to the beam line and form towers with a size in $(\Delta \eta, \Delta \phi)$ of $\approx$ (0.175, 0.175). The signal is detected as Cerenkov light originating from the quartz fibres.
 \end{description}
+Similar to the ECAL also the performance of the HCAL has to be well calibrated and further monitored during operation. Thus an initial calibration using a radioactive source is combined with test beam data to derive the absolute energy scale. A continous update of this calibrations is performed using isolated energetic particles e.g. from decays of W or Z bosons. In order to perform a fast monitoring various techniques like for instance a UV-laser system are exploited.
 
 \subsection{Muon System}
 \label{subsec:cms_muon}
+
+\begin{figure}[!tp]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=0.9\textwidth]{figures/Figures_Experimental_Apparatus_MuonDetector.png}
+  \end{tabular}
+  \caption{Taken from~\cite{bib:cmsptdr1}.}
+  \label{fig:CMS_muon}
+\end{figure}
 
 \subsection{Trigger System}
 \label{subsec:cms_trigger}

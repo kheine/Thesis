@@ -124,8 +124,8 @@ Similar to the ECAL also the performance of the HCAL has to be well calibrated a
 
 \subsection{Muon System}
 \label{subsec:cms_muon}
-The outermost part of the CMS detector -- as seen from the interaction point -- is made up of the muon system. This important component of the detector is assembled in the return yoke of the CMS magnet and consists of a central barrel cylinder which is complemented by endcap disks in the forward region. The layout is illustrated in Fig.~\ref{fig:CMS_muon}.\\
-The muon system makes use of three different types of gaseous detectors in order to precisely identify muons and measure their momenta. The different types of tracking chambers employed in the muon system are described in the following:
+The outermost part of the CMS detector -- as seen from the interaction point -- is made up of the muon system. This important component of the detector is assembled in the return yoke of the CMS magnet and consists of a central barrel cylinder which is complemented by endcap disks in the forward region. This results in a coverage of the pseudorapidity range up to $|\eta| = 2.4$. In the barrel part four layers of detectors are installed alternating with the iron yoke while the detectors in the endcap are mounted on four discs perpendicular to the beam. In total about 25000\,$\mathrm{m}^2$ detection planes are employed. The layout of the muon system is illustrated in Fig.~\ref{fig:CMS_muon}. \\
+In order to feature a good muon momentum resolution given the different radiation conditions and variations in the homogenity of the magnetic field depending on the pseudorapidity region it is made use of three different types of gaseous detectors. These different types of tracking chambers are described in the following:
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
@@ -136,10 +136,11 @@ The muon system makes use of three different types of gaseous detectors in order
 \end{figure}
 
 \begin{description}
- \item \textbf{Drift tube (DT) system:}
- \item \textbf{Cathode strip chambers (CSC):}
- \item \textbf{Resistive plate chambers (RPC):}
+ \item \textbf{Drift tube (DT) chambers:} In the barrel region for $|\eta| < 1.2$ where the background due to neutrons is low and residual effects from the magnetic field likewise the muon system is equipped with drift tube chambers. While in all four stations in the barrel the muon coordinates in the $r\phi$-plane are measured, only the first three layers provide also a measurement of the $z$-direction. The maximum drift length was chosen to be 21\,mm resulting in a negligible occupancy while keeping the number of active channels at an acceptable level. Furthermore, a technology based on tubes was chosen avoiding the issue of possibly broken wires. The resolution in $r\phi$ is designed to reach a precision of 100\,$\mu$m.
+ \item \textbf{Cathode strip chambers (CSC):} The endcap regions are equipped with cathode strip chambers and cover the pseudorapidity range $0.9 < |\eta| < 2.4$. These are chosen as they provide a fast response time and fine segmentation while they are resistant against radiation. Thus they are well suited for the forward region where the muon and background rates are largely increased and the magnetic field is high and non-uniform. The CSCs which are multiwire proportional chambers where anode wires are interlaced with cathode panels perform a precise position measurement in the $r\phi$ bending plane with a spatial resolution of 75-150\,$\mu$m. 
+ \item \textbf{Resistive plate chambers (RPC):} Resistive plate chambers are used to complement the drift tube and cathode strip chambers in the range $|\eta| < 1.6$. These are gaseous parallel-plate detectors with a spacial resolution coarser than the DTs and CSCs but usable at high particle rates while providing a very fast response and good time resolution. Thus they are able to very efficiently detect the correct bunch-crossing a muon track is associated to. 
 \end{description}
+The global muon reconstruction efficiency is in general about $95-99\%$ and only drops for some $|\eta|$ regions like e.g. in the transition region between the barrel and endcap part around $|\eta|=1.2$. Since muons reaching the muon system are affected by multiple scattering the resolution for muons with low transverse momenta below $\approx$ 200\,GeV is in general better based on the inner tracking system than for the muon system alone. For highly energetic muons it is comparable. In general, the muon momentum resolution can be improved by combining the information from the inner tracker and the muon system due to an improved fault finding.
 
 \subsection{Trigger System}
 \label{subsec:cms_trigger}

@@ -62,35 +62,44 @@ Although the SM has been incredibly successful so far and lead to several discov
 \section{Supersymmetry}
 \label{sec:susy}
 In order to overcome the weaknesses of the SM and to provide explanations for so far unsolved problems of which some have been dicussed in~\ref{subsec:sm_shortcomings}, several theories have been developed which go beyond the SM. Among those, a favoured extension is \textit{supersymmetry} (SUSY) as it is able to provide several benefits at once. In this section a brief introduction to the general concept of supersymmetry is given with focus on the \textit{Minimal Supersymmetric Standard Model} (MSSM). For details see ... .\\ 
+\\
 %The basic idea behind supersymmetry is that each standard model particle gets a supersymmetric partner particle which possesses the same quantum numbers except for the spin which differs by $1/2$. 
-The basic idea behind supersymmetry is that a fermionic state is converted into a bosonic state and vice versa by the generator of a supersymmetry transformation $Q$ according to
+The basic idea of a supersymmetric theory is that a fermionic state is converted into a bosonic state and vice versa by the generator of a supersymmetry transformation $Q$ according to
 \begin{equation*}
 Q \ket{\mathrm{fermion}} \, = \, Q \ket{\mathrm{boson}}, \hspace{20mm} Q \ket{\mathrm{boson}} \, = \, Q \ket{\mathrm{fermion}}.
 \end{equation*}
-The supersymmetric fermionic and bosonic partner particles are called \textit{superpartner} and form together the irreducible representations of the supersymmetry algebra named \textit{supermultiplets}. It can be shown \todo{Quelle} that in case of unbroken supersymmetry partner particles within one supermultiplet have the same mass as well as the same quantum numbers like electric charge, weak isospin and color degrees of freedom, except for the spin.\\
+The supersymmetric fermionic and bosonic partner particles are called \textit{superpartner} and form together the irreducible representations of the supersymmetry algebra named \textit{supermultiplets} with the same number of fermionic and bosonic degrees of freedom. It can be shown \todo{Quelle} that in case of unbroken supersymmetry partner particles within one supermultiplet have the same mass as well as the same quantum numbers like electric charge, weak isospin and color degrees of freedom, except for the spin.\\
 \\
-Furthermore, in a general supersymmetric theory fulfilling the criteria of gauge invariance and renormalisability, processes are allowed violating either the lepton or baryon number conservation. However, such a process has not been observed experimentally so far and would imply for instance a rapid decay of protons. The current lower limit on the proton lifetime is ... \todo{Quelle} and clearly indicates that such processes must be suppressed. In order to achieve this, a new quantum number called \textit{R-parity} is introduced according to
+Furthermore, in a general supersymmetric theory fulfilling the criteria of gauge invariance and renormalisability, processes are allowed violating either the lepton or baryon number conservation. However, such a process has not been observed experimentally so far and would imply for instance a rapid decay of protons. The current lower limit on the proton lifetime is ... \todo{Quelle} and indicates that such processes must be suppressed. In order to achieve this, a new quantum number called \textit{R-parity} is introduced according to
 \begin{equation*}
-R = (-1)^{3(B-L) + 2s}
+R = (-1)^{3(B-L) + 2S}
 \end{equation*}
-with baryon number $B$, lepton number $L$ and spin $s$. It is a multiplicative quantum number and amounts to $+1$ for SM particles while it is $-1$ for supersymmetric particles. Assuming R-parity conservation no baryon or lepton number violation occurs \todo{Quelle RPV SUSY in Fussnote} ~\footnote{There exist also several R-parity violating SUSY models which are not in contradiction to the observed proton lifetime. However, these are not subject of this thesis and thus not discussed.}. In addition, the assumption of R-parity conservation leads to some more phenomenological implications:
+with baryon number $B$, lepton number $L$ and spin $S$. It is a multiplicative quantum number and amounts to $R= +1$ for SM particles while it is $R = -1$ for supersymmetric particles. Assuming R-parity conservation no baryon or lepton number violation processes occur \todo{Quelle RPV SUSY in Fussnote} ~\footnote{There exist also several R-parity violating SUSY models which are not in contradiction to the observed proton lifetime. However, these are not subject of this thesis and thus not discussed.}. In addition, the assumption of R-parity conservation leads to further phenomenological implications:
 \begin{itemize}
-\item Susy particles can only be produced in pairs at collider experiments as only an even number of supersymmetric particles can occur in an interaction vertex.
+\item SUSY particles can only be produced in pairs at collider experiments as only even numbers of supersymmetric particles can occur in an interaction vertex.
 \item The lightest supersymmetric particle (LSP) is stable and thus any decay chain of a supersymmetric particle finally ends in a state containing an odd number of LSPs.
 \end{itemize}
-bla bla bla...
-
-\begin{itemize}
-\item solution to SM problems
-\item susy must be broken
-\end{itemize}
+A R-parity conserving supersymmetric theory as described above provides some elegant solutions to open questions as raised in section~\ref{subsec:sm_shortcomings}. As discussed there, the Higgs mass suffers from quadratically divergent contributions arising from higher order corrections caused by SM particles. However, since in SUSY each SM particle gets a supersymmetric partner these higher order corrections cancel as all supersymmetric particles contribute in an unbroken theory with equal size but opposite sign as their corresponding SM partner. Thus SUSY is able to provide a solution to the hierarchy problem. But the observation of such kind of supersymmetric particles with the exact same masses as their SM correpondents would have happened already. Since this is not the case, one knows from all experimental results that supersymmetry in fact has to be a broken symmetry. In order to still be able to provide a solution to the hierarchy problem, supersymmetric particles are expected to be not heavier than $\mathcal{O}(\mathrm{1\tev})$. This is the main argument why one would expect supersymmetric particles to be in the \tev range, well within the reach of the LHC. Especially the superpartner of the top quark is expected to be not too heavy in order to be able to cancel the contributions from top loops. This is necessary as these give the largest contributions since the top quark is the heaviest particle in the SM. \\
+\begin{figure}[!tp]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=0.75\textwidth]{figures/Couplings.jpg}
+  \end{tabular}
+  \caption{Comparison of the renormalization group evolution of the couplings $\alpha_{a}^{-1}$ in the SM (dashed lines) and the MSSM (solid lines) including two-loop effects. The masses of the supersymmetric particles in the MSSM are considered as a common threshold changing between 500\gev and 1.5\tev while $\alpha_{3}(m_{Z})$ is varied between 0.117 and 0.121. Taken from~\cite{Martin:1997ns}.}
+  \label{fig:couplings}
+\end{figure}
+In addition to this naturalness aspects, the coupling constants of the forces which do not intersect within the SM actually meet in one point when extrapolating the couplings from the electroweak to the GUT scale considering the existence of supersymmetric particles. This effect is illustrated in Fig.~\ref{fig:couplings}. It is visible that the evolution of the couplings is modified with respect to the SM at that energy scale where the supersymmetric particles enter. In general, this hints to the possibility of a grand unification.\\
+Besides the two advantages discussed above, R-parity conserving SUSY models also provide a suitable dark matter candidate. As discussed previously, each decay of supersymmetric particles finally leads to the existence of an LSP which can not decay further. Thus, it is an adequate DM candidate when it is electrically uncharged and only weakly interacting \todo{Quelle}.
 
 \subsection{The MSSM}
 \label{subsec:mssm}
 
+\subsection{SUSY-Breaking}
+\label{subsec:susy_breaking}
 
 \subsection{Searches for Supersymmetry at Collider Experiments}
 \label{subsec:susy_status}
+SUSY is easy to search for at colliders. That is why we do it...bla bla bla bla bla
 
 \begin{itemize}
 \item how do we search at colliders?

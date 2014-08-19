@@ -163,8 +163,27 @@ In order to achieve the necessary rate reduction, the CMS experiment makes use o
 \item \textbf{High-Level Trigger (HLT):} Events that are accepted by the L1 are transferred to the High-Level trigger for further processing. The HLT is a software system running on several thousand commercial processors. It has access to the full information from all sub-detectors and performs an event reconstruction similar to the later offline reconstruction. Thus it allows a further rate reduction to the final output rate of a few hundred Hz of events that are finally stored for analyses. Since the HLT is software based, it allows to continously adjust the used algorithms in order to perfectly meet changing conditions during operation.
 \end{description}
 
-\section{LHC Data Taking}
+\section{LHC Operation and Data Taking}
 \label{sec:data}
+\begin{figure}[!tp]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=0.9\textwidth]{figures/peak_lumi_pp.pdf} \\
+    \includegraphics[width=0.9\textwidth]{figures/int_lumi_cumulative_pp_1.pdf}
+  \end{tabular}
+  \caption{Top: Peak luminosity versus day delivered to CMS during stable beams for pp collisions. Bottom: Cumulative integrated luminosity versus day delivered to CMS during stable beams for pp collisions. Different data-taking periods are indicated as follows: green for 2010, red for 2011 and blue for 2012. Taken from~\cite{bib:lhc:lumi12}.}
+  \label{fig:lhc_data}
+\end{figure}
+The LHC was put into operation the first time in September 2008. After a major cooling incident only a few days later requiring a longer technical stop, beams were circulated again in November 2009. The first collisions at a center of mass energy of 7\tev finally took place end of March 2010~\cite{bib:lhcmachineoutreach}. In the following running period in 2010, data corresponding to an integrated luminosity of 44.2\pbinv were delivered to the experiments with a maximum peak instantaneous luminosity of $2.05 \times 10^{32} \cm^{-2} \second^{-1}$. These data allowed intense studies of the detector performance and made first searches for new physics possible. The next data taking period performed during 2011 at the same center of mass energy even lead to much more pp collision data provided to the experiments with a total amount of 6.1\fbinv reaching a peak instantaneous luminosity of $3.5 \times 10^{33} \cm^{-2} \second^{-1}$. Following another technical shutdown during winter, the center of mass energy was finally increased to 8\tev for the running period during 2012 and the peak luminosity reached with values of up to $7.7 \times 10^{33} \cm^{-2} \second^{-1}$ already almost design conditions. In total, 23.3\fbinv of integrated luminosity pp collisions were produced by the LHC operating at stable beam conditions. The evolution of the peak luminosity as well as the integrated luminosity versus days is also illustrated in Fig.~\ref{fig:lhc_data}. \\
+\begin{figure}[!tp]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=0.6\textwidth]{figures/pileup_pp_2012.pdf} 
+  \end{tabular}
+  \caption{Mean number of interactions per bunch crossing in pp collisions at $\sqrt{s} = 8$\tev. Taken from~\cite{bib:lhc:lumi12}.}
+  \label{fig:lhc_pileup}
+\end{figure}
+During most of the operation in 2012, the LHC was circulating 1380 bunches per beam with a distance of 50\,ns. The average bunch intensity, \ie the number of protons per bunch, was approximately $1.6 - 1.7 \times 10^{11}$ extending already the design value~\cite{bib:lhc:lumi12, Lamont:2013cma}. This was on average resulting in 21 pp collisions per bunch crossing. This process of multiple interactions per bunch crossing is known as \textit{pileup}. An overview of the pileup profile observed in collision data taken in 2012 is given in Fig.~\ref{fig:lhc_pileup}. The maximum number of pileup events even reached a value of $\approx 40$. This effect caused by the required high luminosity generates challenging conditions for the experiments as many objects arising from such multiple interactions have to be asigned to the correct process and particular collision objects have to be filtered. Dedicated techniques in order to cope with this problem have been developed of which some are discussed in Chapter~\ref{chap:Objects}.
 
 \section{Event Simulation}
 \label{sec:simulation}

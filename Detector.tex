@@ -168,22 +168,43 @@ In order to achieve the necessary rate reduction, the CMS experiment makes use o
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/peak_lumi_pp.pdf} \\
-    \includegraphics[width=0.9\textwidth]{figures/int_lumi_cumulative_pp_1.pdf}
+    \includegraphics[width=0.7\textwidth]{figures/int_lumi_cumulative_pp_2.pdf}
   \end{tabular}
-  \caption{Top: Peak luminosity versus day delivered to CMS during stable beams for pp collisions. Bottom: Cumulative integrated luminosity versus day delivered to CMS during stable beams for pp collisions. Different data-taking periods are indicated as follows: green for 2010, red for 2011 and blue for 2012. Taken from~\cite{bib:lhc:lumi12}.}
+  \caption{Cumulative integrated luminosity versus day delivered to CMS during stable beams for pp collisions. Different data-taking periods are indicated as follows: green for 2010, red for 2011 and blue for 2012. Taken from~\cite{bib:lhc:lumi12}.}
   \label{fig:lhc_data}
 \end{figure}
-The LHC was put into operation the first time in September 2008. After a major cooling incident only a few days later requiring a longer technical stop, beams were circulated again in November 2009. The first collisions at a center of mass energy of 7\tev finally took place end of March 2010~\cite{bib:lhcmachineoutreach}. In the following running period in 2010, data corresponding to an integrated luminosity of 44.2\pbinv were delivered to the experiments with a maximum peak instantaneous luminosity of $2.05 \times 10^{32} \cm^{-2} \second^{-1}$. These data allowed intense studies of the detector performance and made first searches for new physics possible. The next data taking period performed during 2011 at the same center of mass energy even lead to much more pp collision data provided to the experiments with a total amount of 6.1\fbinv reaching a peak instantaneous luminosity of $3.5 \times 10^{33} \cm^{-2} \second^{-1}$. Following another technical shutdown during winter, the center of mass energy was finally increased to 8\tev for the running period during 2012 and the peak luminosity reached with values of up to $7.7 \times 10^{33} \cm^{-2} \second^{-1}$ already almost design conditions. In total, 23.3\fbinv of integrated luminosity pp collisions were produced by the LHC operating at stable beam conditions. The evolution of the peak luminosity as well as the integrated luminosity versus days is also illustrated in Fig.~\ref{fig:lhc_data}. \\
+The LHC was put into operation the first time in September 2008. After a major cooling incident only a few days later requiring a longer technical stop, beams were circulated again in November 2009. The first collisions at a center of mass energy of 7\tev finally took place end of March 2010~\cite{bib:lhcmachineoutreach}. In the following running period in 2010, data corresponding to an integrated luminosity of 44.2\pbinv were delivered to the experiments with a maximum peak instantaneous luminosity of $2.05 \times 10^{32} \cm^{-2} \second^{-1}$. These data allowed intense studies of the detector performance and made first searches for new physics possible. The next data taking period performed during 2011 at the same center of mass energy even lead to much more pp collision data provided to the experiments with a total amount of 6.1\fbinv reaching a peak instantaneous luminosity of $3.5 \times 10^{33} \cm^{-2} \second^{-1}$. Following another technical shutdown during winter, the center of mass energy was finally increased to 8\tev for the running period during 2012 and the peak luminosity reached with values of up to $7.7 \times 10^{33} \cm^{-2} \second^{-1}$ already almost design conditions. In total, 23.3\fbinv of integrated luminosity pp collisions were produced by the LHC operating at stable beam conditions. The evolution of the integrated luminosity versus days is also illustrated in Fig.~\ref{fig:lhc_data}. \\
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.6\textwidth]{figures/pileup_pp_2012.pdf} 
+    \includegraphics[width=0.7\textwidth]{figures/pileup_pp_2012.pdf} 
   \end{tabular}
   \caption{Mean number of interactions per bunch crossing in pp collisions at $\sqrt{s} = 8$\tev. Taken from~\cite{bib:lhc:lumi12}.}
   \label{fig:lhc_pileup}
 \end{figure}
-During most of the operation in 2012, the LHC was circulating 1380 bunches per beam with a distance of 50\,ns. The average bunch intensity, \ie the number of protons per bunch, was approximately $1.6 - 1.7 \times 10^{11}$ extending already the design value~\cite{bib:lhc:lumi12, Lamont:2013cma}. This was on average resulting in 21 pp collisions per bunch crossing. This process of multiple interactions per bunch crossing is known as \textit{pileup}. An overview of the pileup profile observed in collision data taken in 2012 is given in Fig.~\ref{fig:lhc_pileup}. The maximum number of pileup events even reached a value of $\approx 40$. This effect caused by the required high luminosity generates challenging conditions for the experiments as many objects arising from such multiple interactions have to be asigned to the correct process and particular collision objects have to be filtered. Dedicated techniques in order to cope with this problem have been developed of which some are discussed in Chapter~\ref{chap:Objects}.
+During most of the operation in 2012, the LHC was circulating 1380 bunches per beam with a distance of 50\,ns. The average bunch intensity, \ie the number of protons per bunch, was varying from $1.6$ to $1.7 \times 10^{11}$ extending already the design value~\cite{bib:lhc:lumi12, Lamont:2013cma}. This was on average resulting in 21 pp collisions per bunch crossing. This process of multiple interactions per bunch crossing is known as \textit{pileup}. An overview of the pileup profile observed in collision data taken in 2012 is given in Fig.~\ref{fig:lhc_pileup}. The maximum number of pileup events even reached a value of $\approx 40$. This effect caused by the required high luminosity generates challenging conditions for the experiments as many objects arising from such multiple interactions have to be asigned to the correct process and particular collision objects have to be filtered. Dedicated techniques in order to cope with this problem have been developed of which some are discussed in Chapter~\ref{chap:Objects}.
 
 \section{Event Simulation}
 \label{sec:simulation}
+An important tool in high energy physics is the use of simulation techniques in order to acquire a good understanding of the behaviour of particle collisions and related collision products observed in the detector. Thus, simulated events often serve as benchmark for the development of new detector concepts. Moreover, they are heavily exploited in the validation and interpretation of the results of actual collision experiments, likewise for the LHC. Hence, simulated events are used to derive expectations for certain physics properties or the detector performance. In particular they allow to estimate how signals of new physics events would look like in the experiment. \\
+This section provides a brief introduction to the principles of event simulation in hadron collisions and introduces some event generators including different approaches for the simulation of the detector. A broader overview of event simulation and respective generators for LHC physics can be e.g. found in~\cite{Seymour:2013ega, Buckley:2011ms}. \\
+\\
+The simulation of high energy collisions is a quite challenging task as each collision involves typically several hundreds of particles with momenta ranging over some orders of magnitude. Furthermore, the collision processes are in the context of QCD only calculable within some approximation schemes while also numerical methods do not provide solutions within a reasonable amount of time. Thus, event simulation is primarily utilizing \textit{Monte Carlo} (MC) techniques which rely on the repeated sampling of random numbers, \cf e.g.~\cite{bib:MCMethod}. Within this thesis, events obtained from simulation are often denoted by the label 'MC'. Typically, the generation of an event follows several subsequent steps which are illustrated in Fig. ... and described in the following: 
+\begin{description}
+ \item \textbf{Hard process:}
+ \item \textbf{Parton shower:}
+ \item \textbf{Hadronization:}
+ \item \textbf{Underlying event:}
+\end{description}
+These processes are the basis of various event generators which differ in some aspects concerning the treatment of individual sub-processes in the event simulation. Some of such generators, which are used in this thesis, are the following:  
+\begin{description}
+ \item \textbf{\pythia:}
+ \item \textbf{\madgraph:}
+ \item \textbf{\herwig:}
+\end{description}
+In order to evaluate the interaction of the generated particles with the detector material the passage of the particles through the detector is simulated with a model of the CMS apparatus. Depending on the details of the detector model this is referred to as \textit{full simulation} or \textit{fast simulation} \todo{Quellen}. Some of the differences are described in the following: 
+\begin{description}
+ \item \textbf{Full simulation:} 
+ \item \textbf{Fast simulation:} 
+\end{description}
+Finally, the same reconstruction techniques to derive physics objects from the obtained detector signals can be applied to both collision data as well as simulated events.

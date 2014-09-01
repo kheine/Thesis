@@ -189,7 +189,15 @@ During most of the operation in 2012, the LHC was circulating 1380 bunches per b
 An important tool in high energy physics is the use of simulation techniques in order to acquire a good understanding of the behaviour of particle collisions and related collision products observed in the detector. Thus, simulated events often serve as benchmark for the development of new detector concepts. Moreover, they are heavily exploited in the validation and interpretation of the results of actual collision experiments, likewise for the LHC. Hence, simulated events are used to derive expectations for certain physics properties or the detector performance. In particular they allow to estimate how signals of new physics events would look like in the experiment. \\
 This section provides a brief introduction to the principles of event simulation in hadron collisions and introduces some event generators including different approaches for the simulation of the detector. A broader overview of event simulation and respective generators for LHC physics can be e.g. found in~\cite{Seymour:2013ega, Buckley:2011ms}. \\
 \\
-The simulation of high energy collisions is a quite challenging task as each collision involves typically several hundreds of particles with momenta ranging over some orders of magnitude. Furthermore, the collision processes are in the context of QCD only calculable within some approximation schemes while also numerical methods do not provide solutions within a reasonable amount of time. Thus, event simulation is primarily utilizing \textit{Monte Carlo} (MC) techniques which rely on the repeated sampling of random numbers, \cf e.g.~\cite{bib:MCMethod}. Within this thesis, events obtained from simulation are often denoted by the label 'MC'. Typically, the generation of an event follows several subsequent steps which are illustrated in Fig. ... and described in the following: 
+The simulation of high energy collisions is a quite challenging task as each collision involves typically several hundreds of particles with momenta ranging over some orders of magnitude. Furthermore, the collision processes are in the context of QCD only calculable within some approximation schemes while also numerical methods do not provide solutions within a reasonable amount of time. Thus, event simulation is primarily utilizing \textit{Monte Carlo} (MC) techniques which rely on the repeated sampling of random numbers, \cf e.g.~\cite{bib:MCMethod}. Within this thesis, events obtained from simulation are often denoted by the label 'MC'. Typically, the generation of an event follows several subsequent steps which are illustrated in Fig.~\ref{fig:mc_gen} and described in the following: 
+\begin{figure}[!tp]
+  \centering
+  \begin{tabular}{c}
+    \includegraphics[width=0.9\textwidth]{figures/MCGeneration.pdf} 
+  \end{tabular}
+  \caption{Sketch of individual steps in the generation process of simulated events.}
+  \label{fig:mc_gen}
+\end{figure}
 \begin{description}
  \item \textbf{Hard process:}
  \item \textbf{Parton shower:}
@@ -208,3 +216,5 @@ In order to evaluate the interaction of the generated particles with the detecto
  \item \textbf{Fast simulation:} 
 \end{description}
 Finally, the same reconstruction techniques to derive physics objects from the obtained detector signals can be applied to both collision data as well as simulated events.
+
+

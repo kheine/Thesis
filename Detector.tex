@@ -186,10 +186,11 @@ During most of the operation in 2012, the LHC was circulating 1380 bunches per b
 
 \section{Event Simulation}
 \label{sec:simulation}
-An important tool in high energy physics is the use of simulation techniques in order to acquire a good understanding of the behaviour of particle collisions and related collision products observed in the detector. Thus, simulated events often serve as benchmark for the development of new detector concepts. Moreover, they are heavily exploited in the validation and interpretation of the results of actual collision experiments, likewise for the LHC. Hence, simulated events are used to derive expectations for certain physics properties or the detector performance. In particular they allow to estimate how signals of new physics events would look like in the experiment. \\
+An important tool in high energy physics is the use of simulation in order to acquire a good understanding of the behaviour of particle collisions and related collision products observed in the detector. Thus, simulated events often serve as benchmark for the development of new detector concepts. Moreover, they are heavily exploited in the validation and interpretation of the results of actual collision experiments, likewise for the LHC. For instance simulated events are used to derive expectations for certain physics properties or the detector performance. In particular they allow to estimate how signals of new physics events would look like in the experiment. \\
 This section provides a brief introduction to the principles of event simulation in hadron collisions and introduces some event generators including different approaches for the simulation of the detector. A broader overview of event simulation and respective generators for LHC physics can be e.g. found in~\cite{Seymour:2013ega, Buckley:2011ms}. \\
 \\
-The simulation of high energy collisions is a quite challenging task as each collision involves typically several hundreds of particles with momenta ranging over some orders of magnitude. Furthermore, the collision processes are in the context of QCD only calculable within some approximation schemes while also numerical methods do not provide solutions within a reasonable amount of time. Thus, event simulation is primarily utilizing \textit{Monte Carlo} (MC) techniques which rely on the repeated sampling of random numbers, \cf e.g.~\cite{bib:MCMethod}. Within this thesis, events obtained from simulation are often denoted by the label 'MC'. Typically, the generation of an event follows several subsequent steps which are illustrated in Fig.~\ref{fig:mc_gen} and described in the following: 
+The simulation of high energy collisions is a quite challenging task as each collision involves typically several hundreds of particles with momenta ranging over some orders of magnitude. Furthermore, the collisions being subject to quantum chromodynamics are only calculable within approximation schemes where also numerical methods do not provide solutions within a reasonable amount of time. Thus, event simulation is primarily utilizing \textit{Monte Carlo} (MC) techniques which rely on the repeated sampling of random numbers, \cf e.g.~\cite{bib:MCMethod}. For convenience events obtained from simulation are often denoted by the label 'MC' in this thesis. \\
+Typically, the generation of an event follows several subsequent steps which are illustrated in Fig.~\ref{fig:mc_gen} and described in the following: 
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
@@ -198,10 +199,15 @@ The simulation of high energy collisions is a quite challenging task as each col
   \caption{Sketch of individual steps in the generation process of simulated events.}
   \label{fig:mc_gen}
 \end{figure}
-\begin{description}
- \item \textbf{Hard process:}
- \item \textbf{Parton shower:}
- \item \textbf{Hadronization:}
+\begin{description} 
+ \item \textbf{Hard process:} The first step in the simulation of collision events is the description of the nominal proton-proton interaction which is typically referred to as \textit{hard process}. The proton itself is not a fundamental particle but exhibits an internal structure \todo{Quelle: Proton Struktur}. The constituents of which a proton is made off are known as \textit{partons}. Thus two protons interact when there is a momentum transfer \textit{Q} taking place between two individual partons. The probability for individual partons to take part in the hard interaction is parametrized by the \textit{parton-distribution functions} (PDFs) which have been determined experimentally \todo{Quelle:PDFs}. The value of $x$ denotes the fraction of the longitudinal momentum carried by an individual parton. Consequently, the initial state of a proton-proton collision is not exactly known. Nevertheless, the cross section of a specific process can be calculated following the \textit{factorization theorem}~\cite{Collins:1987pm, Collins:1989gx}. Here, the hard interaction is described via perturbation theory and low-energy processes are considered in the phenomenological models of the respective PDFs. Thus the cross section for a process $ab \rightarrow n$ is given according to
+\begin{equation}
+ \sigma = \sum_{a,b} \int_{0}^{1} dx_{a} \, dx_{b} \int f_{a}(x_{a}, \mu_{F}) f_{b}(x_{b}, \mu_{F}) \, d\hat{\sigma}_{ab \rightarrow n} (\mu_{F}, \mu_{R}). 
+\end{equation}
+Here, $f(x, \mu_{F})$ are the PDFs of the interacting protons which depend on the factorization scale $\mu_{F}$ whereas $\sigma_{ab \rightarrow n}$ indicates the parton-level cross section for the production of a final state $n$ from partons $a$ and $b$. This parton-level cross section depends on the final-state phase space, the factorization scale and the renormalisation scale $\mu_{R}$ as well as the corresponding matrix element. The factorization and renormalization scale are unphysical and have to be chosen for the generation process. Often the process possesses a typical hard scale $Q^{2}$ so that the choice $\mu_{F} = \mu_{R} = Q^{2}$ is made. However, this choice is not fixed by first principles.
+\item \textbf{Parton shower:} After the production in the hard interaction the outgoing partons start to form a shower, \ie cascades of further partons emerge. Typically, this happens with descending amounts of momentum transfer from the high scales down to low scales around 1\gev. This evolution is typically described by a probabilistic shower algorithm. In addition to a parton shower related to the outgoing partons which is referred to as \textit{final-state radiation} (FSR), partons can already radiate off other partons before the actual hard process takes place. This effect is known as \textit{initial-state radiation} and can be described by similar principles as FSR. However, in the case of ISR it is inevitable to consider that not all partons from the ISR shower necessarily take part in any hard process and thus have to be related to the proton remnant.  
+ \item \textbf{Hadronization:} \textit{fragmentation functions}
+ \item \textbf{Decay:}
  \item \textbf{Underlying event:}
 \end{description}
 These processes are the basis of various event generators which differ in some aspects concerning the treatment of individual sub-processes in the event simulation. Some of such generators, which are used in this thesis, are the following:  
@@ -215,6 +221,6 @@ In order to evaluate the interaction of the generated particles with the detecto
  \item \textbf{Full simulation:} 
  \item \textbf{Fast simulation:} 
 \end{description}
-Finally, the same reconstruction techniques to derive physics objects from the obtained detector signals can be applied to both collision data as well as simulated events.
+Finally, recorded collision data as well as simulated events are present in the same data format. This allows to use the same reconstruction techniques in order to build the event and derive physics objects from the obtained detector signals.
 
 

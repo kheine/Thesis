@@ -20,6 +20,9 @@ The complete set of particles can then be used to derive further objects and qua
 \subsection{Jet Energy Calibration}
 \label{subsec:jets_calib}
 
+%\subsection{Jet Grooming}
+%\label{subsec:jets_grooming}
+
 \section{Identification of b-Quark Jets}
 \label{sec:btagging}
 Jets arising from the hadronization of bottom quarks are usually referred to as \textit{b-jets}. As these are existent in many physics processes as e.g. the decay of top quarks, it is of essential importance to be able to identify b jets and distinguish them from jets initiated by gluons or light-flavour quarks. Typically, the identification of b-jets is denoted \textit{b-tagging} and the distinct properties of b quarks are exploited for the identification of the respective jets. In general, hadronic jets arising from the fragmentation of b quarks possess quite large masses, long lifetimes and daughter particles featuring hard momentum spectra. The CMS experiment with the ability to perform a precise charged-particle tracking and lepton identification exploits the specific b jet properties in dedicated b-tagging algorithms for an efficient b-jet identification~\cite{Chatrchyan:2012jua}:
@@ -42,14 +45,24 @@ Each algorithm determines a discriminator value per jet indicating how b-jet-lik
 In order to determine the quality of a particular b-tagging algorithm, typically the misidentification probability as function of the b-tag efficiency is compared for various taggers. Such a performance comparison is illustrated in Fig~\ref{fig:btagging} for the tagging algorithms described above. The misidentification probability is derived separately for light-flavour and gluon initiated jets as well as c-jets. The curves are derived from simulated multijet events using jets with $\pt > 60$\,\gev. For loose working points the b-tag efficiency is around $\approx 80-85\%$ and the JBP algorithm shows the best performance. In case of medium and tight selections, the b-tag efficiency drops to $\approx 45-55\%$ and the CSV algorithm performs best. \\
 B-tagging algorithms used for analyses of data obtained at $\sqrt{s} = 8$\tev in 2012 where the TCHP, JP and CSV algorithm~\cite{CMS-PAS-BTV-13-001}. In order to compare the b-tagging performance in data and simulation two different event samples have been selected. On the one hand, an inclusive multijet sample is selected requiring at least one jet with $\pt = 60 - 500$\gev which is dominated by jets from light-flavour quarks and gluons. On the other hand, a sample dominated by top-pair production is selected requiring an electron, a muon and at least two jets with $\pt>30$\gev such that this sample is enriched in b-jets. These samples allow to compare quantities relevant for b-tagging in data and simulation like e.g. the number of secondary vertices or b-tag discriminator values. In general, quantities relevant for b-tagging show a good agreement between data and simulation with deviations within 20\%. Typically, efficiencies and misidentification probabilities are measured as function of jet transverse momentum and pseudorapidity. A potential disagreement between data and simulation can be expressed in terms of \textit{scale factors} and corrected for in analyses such that b-tagging efficiency and misidentification probability in data and simulation match. 
 
-\section{Identification of Boosted Top Quark Decays}
+\section{Identification of Boosted t-Quark Jets }
 \label{sec:boosted_tops}
+Supersymmetric models or other scenarios describing physics beyond the Standard Model predict the extistence of new massive particles. Often, the coupling of these particles especially to quarks belonging to the third generation is sizeable like e.g. in decays of top squarks which predominantly are expected to decay into top quarks. Consequently, such processes lead to highly-energetic top-quarks in the final state which can be identified exploiting the specific properties of the top-quark. \\
+The top-quark is the heaviest quark with a mass of $173.34 \pm 0.76$\gev~\cite{ATLAS:2014wva} resulting in a rapid decay. This decay happens even faster than the hadronisation timescale is such that the top-quark behaves in the detector as a bare quark without forming color-neutral hadrons. The decay takes place via the weak interaction and as denoted in Sec.~\ref{sec:sm}, the quark mixing is parametrized by the CKM-matrix. Since the corresponding matrix element $V_{\mathrm{tb}} \approx 1$, the top quark decays thus almost exclusively into a W boson and a b-quark. Therefore, the decay of the top-quark is strongly characterized by the decay of the W boson. In general, the W boson can decay into a charged lepton and its corresponding neutrino or a pair of light quarks which are up, down, charm and strange. Taking into account the three possible colour states for eack quark pair this results in nine different W decay modes. Consequently, two thirds of top quark decays result exclusively in hadrons which is typically referred to as \textit{hadronic top}. If top quarks are produced with low energy ($< 2 m_{t}$), the decay will predominantly occur at rest and the top decay products show up as three distinct signatures in the detector. In the case of hadronic tops these are three well separated jets. However, if the top transverse momentum is high, the decay products are \textit{boosted} and thus collimated in the forward direction. Consequently, they might overlap and merge into a single large jet (\textit{fat jet}). The opening angle of the decay products $\Delta R$ is expected to scale as
+\begin{equation}
+ \Delta R \approx 2\,m /p_{T}
+\end{equation}  
+where m and \pt are the mass and the transverse momentum of the decaying particle, respectively. Schematic diagrams of resolved and boosted top quark decays are also illustrated in Fig. ... \todo{Boosted decay - Bild}. The identification of boosted top-quark decays -- here restricted to hadronic tops -- is typically known as \textit{top tagging} and aims at the determination of the decay
+\begin{equation}
+ t \rightarrow W + b \rightarrow q\bar{q} + b 
+\end{equation} 
+by analysing the substructure of fat jets. \\ 
+Within the CMS experiment several top tagging algorithms (or short \textit{taggers}) are commissioned~\cite{CMS:2014fya} \todo{Ref DP note}. Two of them are described in some detail in the following:
+\begin{description}
+ \item \textbf{CMS Top Tagger}
+ \item \textbf{HEP Top Tagger}
+\end{description}
 
-\subsection{The CMS Top Tagger}
-\label{sec:boosted_tops_cms_tagger}
-
-\subsection{The HEP Top Tagger}
-\label{sec:boosted_tops_hep_top_tagger}
 
 %\subsection{Subjet B-Tagging}
 %\label{sec:boosted_tops_subjet_b}

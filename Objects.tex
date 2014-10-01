@@ -48,21 +48,70 @@ B-tagging algorithms used for analyses of data obtained at $\sqrt{s} = 8$\tev in
 \section{Identification of Boosted t-Quark Jets }
 \label{sec:boosted_tops}
 Supersymmetric models or other scenarios describing physics beyond the Standard Model predict the extistence of new massive particles. Often, the coupling of these particles especially to quarks belonging to the third generation is sizeable like e.g. in decays of top squarks which predominantly are expected to decay into top quarks. Consequently, such processes lead to highly-energetic top-quarks in the final state which can be identified exploiting the specific properties of the top-quark. \\
+\begin{figure}[!tp]
+  \centering 
+  \begin{tabular}{c}
+    \includegraphics[width=1.0\textwidth]{figures/BoostedTops.jpg} 
+  \end{tabular}
+  \caption{Schematic diagrams of the decay of a top-quark in the resolved case (\textit{left}) and the boosted scenario (\textit{right}).}
+  \label{fig:boosted_top}
+\end{figure}
 The top-quark is the heaviest quark with a mass of $173.34 \pm 0.76$\gev~\cite{ATLAS:2014wva} resulting in a rapid decay. This decay happens even faster than the hadronisation timescale is such that the top-quark behaves in the detector as a bare quark without forming color-neutral hadrons. The decay takes place via the weak interaction and as denoted in Sec.~\ref{sec:sm}, the quark mixing is parametrized by the CKM-matrix. Since the corresponding matrix element $V_{\mathrm{tb}} \approx 1$, the top quark decays thus almost exclusively into a W boson and a b-quark. Therefore, the decay of the top-quark is strongly characterized by the decay of the W boson. In general, the W boson can decay into a charged lepton and its corresponding neutrino or a pair of light quarks which are up, down, charm and strange. Taking into account the three possible colour states for eack quark pair this results in nine different W decay modes. Consequently, two thirds of top quark decays result exclusively in hadrons which is typically referred to as \textit{hadronic top}. If top quarks are produced with low energy ($< 2 m_{t}$), the decay will predominantly occur at rest and the top decay products show up as three distinct signatures in the detector. In the case of hadronic tops these are three well separated jets. However, if the top transverse momentum is high, the decay products are \textit{boosted} and thus collimated in the forward direction. Consequently, they might overlap and merge into a single large jet (\textit{fat jet}). The opening angle of the decay products $\Delta R$ is expected to scale as
 \begin{equation}
  \Delta R \approx 2\,m /p_{T}
 \end{equation}  
-where m and \pt are the mass and the transverse momentum of the decaying particle, respectively. Schematic diagrams of resolved and boosted top quark decays are also illustrated in Fig. ... \todo{Boosted decay - Bild}. The identification of boosted top-quark decays -- here restricted to hadronic tops -- is typically known as \textit{top tagging} and aims at the determination of the decay
+where m and \pt are the mass and the transverse momentum of the decaying particle, respectively. Schematic diagrams of resolved and boosted top quark decays are illustrated in Fig.~\ref{fig:boosted_top}. The identification of boosted top-quark decays -- here restricted to hadronic tops -- is typically known as \textit{top tagging} and aims at the determination of the decay
 \begin{equation}
- t \rightarrow W + b \rightarrow q\bar{q} + b 
+ t \rightarrow W + b \rightarrow qq' + b 
 \end{equation} 
-by analysing the substructure of fat jets. \\ 
+by analysing the substructure of fat jets and applying kinematic selections\todo{jet grooming}. \\ 
 Within the CMS experiment several top tagging algorithms (or short \textit{taggers}) are commissioned~\cite{CMS:2014fya} \todo{Ref DP note}. Two of them are described in some detail in the following:
 \begin{description}
- \item \textbf{CMS Top Tagger}
- \item \textbf{HEP Top Tagger}
+\begin{figure}[!tp]
+  \centering 
+  \begin{tabular}{cc}
+    \includegraphics[width=0.49\textwidth]{figures/Draw2HistogramsFrom1File_QQ_MASS_CUT_PT_TT_MASS_CUT_PT_JetPt500.pdf} & 
+    \includegraphics[width=0.49\textwidth]{figures/Draw2HistogramsFrom1File_QQ_MINM_CUT_PT_MASS_NSUB_TT_MINM_CUT_PT_MASS_NSUB_JetPt500.pdf}
+  \end{tabular}
+  \caption{Jet mass (\textit{left}) and minimum pairwise subjet mass (\textit{right}) for CA8 jets with $\pt > 500$\gev from a simulated $t\bar{t}$ POWHEG sample (red) and from a simulated QCD PYTHIA sample (black). Taken from~\cite{CMS:2014fya}.}
+  \label{fig:boosted_top_cms_variables}
+\end{figure}
+ \item \textbf{CMS Top Tagger:} The CMS Top Tagger~\cite{CMS-PAS-JME-09-001} is based on the Top Tagger developed by Kaplan et al.~\cite{Kaplan:2008ie} and acts on jets clustered by the Cambrigde-Aachen algorithm with distance parameter $\mathrm{R} = 0.8$ (CA8 jet). These jets used as input for the algorithm are denoted as \textit{hard jets}. Since the decay products of the hadronic top are not expected to be all collimated in one jet with $\mathrm{R} = 0.8$ for low transverse momenta, only jets with $\pt^{jet} > 350$\gev are considered. In order to identify subjets within the hard jets, a two stage decomposition procedure is applied. First, the algorithm aims at splitting the hard jet into two subclusters (\textit{primary decomposition}) and second, it is attempted to further split the clusters emerging from the first step (\textit{secondary decomposition}). Hence, the pairwise clustering sequence used to form the hard jet is performed in reverse order to identify subclusters. Typically, subjets are found when they are spatially well separated and carry a significant fraction of the momentum of the hard jet. Details on the actual splitting criteria can be found in~\cite{CMS:2014fya}. With this approach up to four individual subjets are identified within the hard jet. After a successful decomposition procedure kinematic criteria can be applied to the identified subjets in order to tag top jets. In the CMS top-tagging algorithm -- as employed in this thesis -- the following selections are used:
+\begin{description}
+ \item -- Number of subjets $\ge$ 3
+ \item -- The jet mass $m_{\mathrm{jet}}$, i.e. the mass of the four-vector sum of the constituents of the hard jet, has to be close to the top-mass: $m_{\mathrm{jet}} = 140-250$\gev.
+ \item -- The invariant mass of each pair of the three subjets highest in \pt is calculated. The minimum of the pairwise masses $m_{\mathrm{min}}$ has to be close to the W mass: $m_{\mathrm{min}} > 50$\gev.
 \end{description}
-
+In Fig.~\ref{fig:boosted_top_cms_variables}, the distributions for jet mass and minimum pairwise mass are illustrated for a simulated $t\bar{t}$ (red) and QCD multijet (black) sample at $\sqrt{s} = 8$\tev. 
+ \item \textbf{HEP Top Tagger:} The HEP Top Tagger~\cite{Plehn:2010st} uses jets with an even larger distance parameter than the CMS Top Tagger of $R = 1.5$ (CA15 jets). This makes the HEP top-tagging algorithm especially suitable for tops with moderate boost. Fat jets with a transverse momentum greater than 200\gev are used as input for the algorithm. Since a larger jet size is in principle more prone to disturbing effects from the underlying event or pile-up, a sophisticated decomposition procedure is applied to distinuigh hard subjets from soft components. Similar to the decomposition done for the CMS tagger, the identification of subjets is based on going through the cluster history of a jet in reversed order. First, the jet is decomposed into subclusters applying a \textit{mass drop condition} discarding too soft components. Afterwards, all combinations of three clusters resulting from the mass drop decomposition are reclustered into subjets. For each combination the subjets are filterd by keeping only the five subjets highest in \pt. Finally, the combination with the mass determined from the filtered subjets closest to the top mass is kept and reclustered to force three subjets. Details on the mass drop decomposition and reclustering criteria can be found in~\cite{CMS:2014fya}. Kinematic selections are applied to these three final subjets in order to identify the top jets. The following quantities are used based on the invariant mass of combinations of subjets:
+\begin{figure}[!tp]
+  \centering 
+  \begin{tabular}{cc}
+    \includegraphics[width=0.49\textwidth]{figures/Pheno2DPlot_HTT2D_NOheptoptag_NOmasscut_hists_Signal_Add.pdf} & 
+    \includegraphics[width=0.49\textwidth]{figures/Pheno2DPlot_HTT2D_NOheptoptag_NOmasscut_hists_Background_Add.pdf}
+  \end{tabular}
+  \caption{Two-dimensional distributons of $m_{\mathrm{23}}/m_{\mathrm{123}}$ versus $\mathrm{atan}(m_{\mathrm{13}}/m_{\mathrm{12}})$ for HEP Top Tagger subjets from CA15 jets with $\pt > 200$\gev for a simulated $t\bar{t}$ MADGRAPH sample (\textit{left}) and for a simulated background sample composed of cross-section weighted boson + jets, diboson, single-top, $t\bar{t}$ all-hadronic and $t\bar{t}$ leptonic events (\textit{right}). The A-shaped region indicates the selected region by the HEP Top Tagger. Taken from~\cite{CMS:2014fya}.}
+  \label{fig:boosted_top_hep_variables}
+\end{figure}
+\begin{description}
+ \item -- The invariant mass of the sum of the four-vectors of the three subjets is required to be in the top mass window: $m_{\mathrm{123}} = 140 - 250$\gev.
+ \item -- In order to select the W mass the jet has to satisfy at least one of the following conditions based on the subjet pairwise masses
+\begin{description}
+ \item \begin{equation*}
+0.2 < \mathrm{atan} \frac{m_{\mathrm{13}}}{m_{\mathrm{12}}} < 1.3 \; \; \mathrm{and} \; \; R_{\mathrm{min}} < \frac{m_{\mathrm{23}}}{m_{\mathrm{123}}} < R_{\mathrm{max}}
+\end{equation*}
+ \item \begin{equation*}
+R^2_{\mathrm{min}}(1+(\frac{m_{\mathrm{13}}}{m_{\mathrm{12}}})^2) < 1 - (\frac{m_{\mathrm{23}}}{m_{\mathrm{123}}})^2) < R^2_{\mathrm{max}}(1+(\frac{m_{\mathrm{13}}}{m_{\mathrm{12}}})^2) \; \; \mathrm{and} \; \; \frac{m_{\mathrm{23}}}{m_{\mathrm{123}}} > 0.35
+\end{equation*}
+ \item \begin{equation*}
+R^2_{\mathrm{min}}(1+(\frac{m_{\mathrm{12}}}{m_{\mathrm{13}}})^2) < 1 - (\frac{m_{\mathrm{23}}}{m_{\mathrm{123}}})^2) < R^2_{\mathrm{max}}(1+(\frac{m_{\mathrm{12}}}{m_{\mathrm{13}}})^2) \; \; \mathrm{and} \; \; \frac{m_{\mathrm{23}}}{m_{\mathrm{123}}} > 0.35
+\end{equation*}
+\end{description}
+where the indices of $m$ indicate the rank of the considered subjets with respect to the transverse momentum, $R_{\mathrm{min}} = (1 - f_{W}) \times m_W/m_t$ and $R_{\mathrm{max}} = (1 + f_{W}) \times m_W/m_t$ for the W mass width chosen to be $f_W = 0.495$.  
+\end{description}
+The criteria related to the selection of the W mass are illustrated in Fig.~\ref{fig:boosted_top_hep_variables} for signal events as well as background events and indicated by the black solid lines resulting in an A-shaped region.
+\end{description}
+In analogy to the b-tagging algorithms, different working points for each top tagger can be defined characterized by a specific top-tag efficiency and misidentification rate. Typically, the working points are chosen such that they have a minimum mistag rate for a given signal efficiency. Commonly, the top-tag efficiency for simulated events is defined as the number of jets passing the top-tagging selection divided by the number of jets spatially matched to a simulated hadronic top or anti-top passing a certain \pt selection. Similarly, the mistag rate is defined as the number of jets passing the top-tagging selection divided by the number of jets spatially matched to a simulated quark or gluon from the hard process passing the \pt selection. The top-tag efficiency determined from simulated $t\bar{t}$ POWHEG events for the selection criteria described above amounts to 35.3\% for a matched parton-\pt of $> 200$\gev for the HEP Top Tagger and 38.3\% for a matched parton-\pt of $> 400$\gev for the CMS Top Tagger while the mistag rates as determined from simulated PYTHIA QCD multijet events are 2.6\% and 2.5\%, respectively. However, these efficiencies and mistag rates show a moderate dependence on pile-up such that in high pile-up environments a performance degradation is expected. For instance, in the case of the CMS Top Tagger the efficiency decreases as function of the number of primary vertices with a slope of $0.031\% \pm 0.034\%$ while the mistag rate increases with a slope of $0.095\% \pm 0.006\%$.      
 
 %\subsection{Subjet B-Tagging}
 %\label{sec:boosted_tops_subjet_b}

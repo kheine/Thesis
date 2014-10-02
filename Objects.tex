@@ -10,18 +10,50 @@ The complete set of particles can then be used to derive further objects and qua
 
 \section{Reconstruction of Jets}
 \label{sec:jets_reco}
-
+As stated already earlier jets are the experimental signatures of quarks and gluons and constitute of a collimated spray of hadrons. However, in order to identify a particular jet and relate its properties to the original parton a proper jet definition is needed. Typically, a \textit{jet algorithm} determines how to cluster particles into a jet. Furthermore, it has to be defined how to assign a momentum to the jet. At CMS, the standard procedure is to assign the four-momentum sum of all jet constituents to the jet. \\
+Different jet algorithms are introduced in Section~\ref{subsec:jets_algos} followed by a discussion of different jet types used at CMS in Section~\ref{subsec:jets_types}. Furthermore, the jet transverse-momentum response is defined in Section~\ref{subsec:jets_response} and the calibration of jet energies is reviewed in Section~\ref{subsec:jets_calib}.
 \subsection{Jet Algorithms}
 \label{subsec:jets_algos}
+\begin{figure}[!tp]
+  \centering 
+  \begin{tabular}{cc}
+    \includegraphics[width=0.49\textwidth]{figures/herwig-parton-level-ev-kt.png} &
+    \includegraphics[width=0.49\textwidth]{figures/herwig-parton-level-ev-cam.png} \\
+    \includegraphics[width=0.49\textwidth]{figures/herwig-parton-level-ev-antikt.png} &
+    \includegraphics[width=0.49\textwidth]{figures/herwig-parton-level-ev-siscone.png}   
+  \end{tabular}
+  \caption{Sample parton-level event generated with \herwig, adding many random soft particles, that is clustered with the $\mathrm{k_T}$ -algorithm (\textit{top left}), the C/A-algorithm (\textit{top right}), the SISCone-algorithm (\textit{bottom left}) and the $anti-\mathrm{k_{T}}$-algorithm (\textit{bottom right}). Colours illustrate the active areas of the resulting hard jets. Taken from~\cite{Salam:2009jx}.}
+  \label{fig:jet_algos}
+\end{figure}
+A jet algorithm usually provides a prescription how to combine individual particles into a single jet based on some distance criterium. Good jet algorithms though should be able to identify jets that are neither sensitive to the emission of soft particles (\textit{infrared safety}) nor to the collinear splitting of particles (\textit{collinear safety}). These features named \textit{IRC safety} are desirable as otherwise e.g. cross sections would be dependent on particular effects of hadronisation involving random collinear splittings and soft emissions making it difficult to compare the results from experiments to theroretical predictions. This effect is even enforced because detectors intrinsically provide regularisation of IRC effects to some extent due to a finite resolution. Furthermore, calculations in QCD perturbation theory rely on the cancellation of divergences related to IRC processes. Thus, if jets are sensitive to such effects cancellations are not ensured and can lead to inifinite cross sections. \\
+An introduction to the most commonly used jet algorithms known as \textit{cone algorithms} and \textit{sequential recombination algorithms} is given in the following. A comprehensive overview of jet algorithms and properties can be found in~\cite{Salam:2009jx}.
+\begin{description}
+ \item \textbf{Cone Algorithms:} Cone algorithms were the first developed jet algorithms. They are based on the general idea that the main kinematics in an event are not changed by specific effects from hadronisation and thus a jet is defined by a set of particles within a stable cone around their centre of mass. Typically, separate angular or energy parameters are used to perform the jet finding. A very common approach is implemented in \textit{iterative cone} (IC) algorithms. Here, a seed constituent $i$ which is for instance the constituent with the highest transverse momentum defines the initial direction and momenta of all constituents $j$ within a cone defined by
+\begin{equation}
+ \Delta R_{i,j}^2 = (\eta_i - \eta_j)^2 + (\phi_i - \phi_j)^2 < R^2
+\end{equation}
+are added to the momentum of the seed. The resulting direction is used as new seed direction and the whole procedure is repeated until a stable cone is achieved. The dimensionless parameter $R$ hence defines the jet radius. After the finding of such a jet, all constituents are removed from the input list and further jets are clustered from the remaining objects. This progressive removal approach avoids to form jets with overlapping cones. However, such a procedure is not IRC safe as collinear splittings can lead to different final ensembles of jets. \\
+The issue with IRC safety in cone algorithms can be avoided by instead of iteratively forming stable cones one after the other identifying all stable cone solutions at once. This procedure is denoted \textit{seedless cone} (SC) algorithm. The usage of such algorithms though is typically impractical as the computation time increases exponentially with the number of particles to be considered so that even for 100 particles it is not solveable at any reasonable timescale. A feasible implementation of a seedless cone algorithm featuring only a logarithmic time-dependence is given by the SISCone algorithm~\cite{Salam:2007xv}. As it is usually nonetheless still more time consuming than sequential algorithms as described in the next part, the SISCone algorithm is not used by CMS.
+ \item \textbf{Sequential Recombination Algorithms:} The basic concept of sequential clustering algorithms is to group in an iterative procedure pairs of particles together based on some distance measure and thus reconstructs to some extent the evolution of a parton shower. A suitable metric to be used at hadron colliders where the total energy of a collision is unknown based on variables invariant under longitudinal boosts is 
+\begin{equation*}
+d_{ij} = \mathrm{min}(k_{T,i}^{2p}, k_{T,j}^{2p}) \frac{\Delta R_{ij}^2}{R^2}
+\end{equation*}
+\begin{equation*}
+d_{iB} = k_{T,i}^{2p}
+\end{equation*}
+with the distance $d_{ij}$ between final state objects $i$ and $j$ carrying transverse momentum $k_T$ and the distance of the object to the beam $d_{iB}$. While $\Delta R_{ij}$ denotes the spatial separation in the $(\eta, \phi)$-plane, $R$ and $p$ are free parameters of the algorithm. The recombination is done by first calculating $d_{ij}$ and $d_{iB}$ for all objects in the final state by identifying the minimum value. If the minimum is $d_{ij}$, the two objects $i$ and $j$ are combined and all distances are computed again. However, if the minimum is $d_{iB}$, object $i$ is declared a jet and removed from the input list. This procedure is repeated until all objects are assigned. In this context the parameter $R$ acts as an angular cut-off and thus has a similar role as the jet radius in cone algorithms. Depending on the choice of the parameter $p$ different types of algorithms are distinguished which are all IRC safe.  \\
+\todo{kT algorithm} \todo{anti-kT algorithm} \todo{C/A algorithm}
+An illustration of an arbitrary example event where jets are clustered with the different jet algorithms is shown in Fig~\ref{fig:jet_algos}.
+\end{description}
 
 \subsection{Jet Types at CMS}
 \label{subsec:jets_types}
 
+\subsection{Jet Transverse-Momentum Response}
+\label{subsec:jets_response}
+
 \subsection{Jet Energy Calibration}
 \label{subsec:jets_calib}
-
-%\subsection{Jet Grooming}
-%\label{subsec:jets_grooming}
 
 \section{Identification of b-Quark Jets}
 \label{sec:btagging}

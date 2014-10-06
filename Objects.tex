@@ -45,13 +45,21 @@ with the distance $d_{ij}$ between final state objects $i$ and $j$ carrying tran
 \end{description}
 
 \subsection{Jet Types at CMS}
+\begin{figure}[!tp]
+  \centering 
+  \begin{tabular}{c}
+    \includegraphics[width=0.6\textwidth]{figures/calcFrac_Frac0_MC-1.pdf} 
+  \end{tabular}
+  \caption{Composition of the PF jet energy versus jet \pt in the barrel detector region $|\eta| < 1.3$ in simulated events (coloured histograms) and data (solid markers). Taken from~\cite{CMS-DP-2012-012}.}
+  \label{fig:btagging}
+\end{figure}
 \label{subsec:jets_types}
 The default jets to be used at the CMS experiment are jets clustered by the anti-$\mathrm{k_T}$ algorithm using a distance parameter of R = 0.5. This can be applied to reconstructed detector signals resulting in \textit{detector-level} jets or to final-state particles after hadronisation, as this is possible in simulated events, giving rise to \textit{particle-level} jets. Implementations of various jet algorithms are provided by the \textit{FastJet} package~\cite{Cacciari:2011ma, Cacciari:2005hq}. \\
-Based on the information used from the various CMS subdetectors for the jet clustering different types of detector-level jets are distinguished. Some of them are the following:
+Based on the information used from the various CMS subdetectors for the jet clustering different types of detector-level jets are distinguished. Some of them are the following~\cite{1748-0221-6-11-P11002}:
 \begin{description}
- \item \textbf{Calorimeter (Calo) jets:}
- \item \textbf{Jet-Plus-Track (JPT) jets:}
- \item \textbf{Particle-Flow (PF) jets:}
+ \item \textbf{Calorimeter (Calo) jets:} Calo jets are clustered from energy deposits in the calorimeters. For this purpose, calormeter towers are defined which consist of at least one HCAL cell and the geometrically associated ECAL cells. In case of the barrel detector region a calorimeter tower consists for instance of one HCAL cell and $\mathrm{5 \times 5}$ ECAL cells. The four-momentum of each tower is defined by the tower position as seen from the interaction point and the energy deposit in the tower above a certain threshold assuming a mass of zero. 
+ \item \textbf{Jet-Plus-Track (JPT) jets:} JPT jets are reconstructed from calorimeter jets complemented by tracking information~\cite{CMS-PAS-JME-09-002}. Tracks of charged particles can be associated to calo jets based on the separation of the jet axis and the momentum vector of the track in the $(\eta,\phi)$-plane. Associated tracks are projected to the jet cone and are exploited to correct the jet energy and direction resulting in an improved jet response.
+ \item \textbf{Particle-Flow (PF) jets:} PF jets are clustered from the four-momentum vectors of particle-flow candidates as identified by the PF algorithm described in Section~\ref{sec:pf_algo}. Typically, these types of jets show the best performance as the excellent resolution of the tracking system and the ECAL are utilized. Only neutral hadrons which consitute around 15\% of the jet energy (cf. Fig. ...) rely on the energy measurement of the HCAL with its relatively poor resolution. Thus, PF jets are the default jets to be used at the CMS experiment, as it is done within this thesis. 
 \end{description}
 
 \subsection{Jet Transverse-Momentum Response}

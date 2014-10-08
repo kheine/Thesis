@@ -1,14 +1,14 @@
 Many measurements of standard model properties or searches for new physics beyond the standard model performed within the CMS experiment rely on events with jets in the final state. Hence a good understanding of jet properties, like for instance the resolution of the jet transverse momentum is of major importance and a crucial ingredient for such kind of analyses. For example, many new physics searches are carried out based on jet final states. Here, QCD multijet events can fake the signature of possible new physics events and constitue a background process, since a mismeasurement of the jet momenta due to the limited detector resolution or the decay of heavy flavour quarks leads to a momentum imbalance in the event and consequently to measurable missing energy. The knowledge of the jet resolution is a hence keypoint in the prediction of such background contributions, as discussed in Chapter~\ref{chap:RA2}. \\
-In this chapter, an analysis is presented where the jet-\pt resolution in data and in simulated events is derived. The method is based on momentum conservation in the transverse plane of dijet events and offers the possibility to cover a large phase space in \pt and $\eta$ with a sufficient statistical precision. A similar approach was already used in previous studies at $\sqrt{s}=7$\tev~\cite{1748-0221-6-11-P11002, thesis:Schroeder} while a complementary approach utilizes $\gamma +\rm{jet}$ events~\cite{CMS-AN-2010-141, CMS-AN-2011-004, CMS-AN-2013-179}. The measurement shown here is based on collision data corresponding to an integrated luminosity of $19.7$~\fbinv recorded at $\sqrt{s}=8$\tev in 2012.
-\section{Basic Concept of the Dijet Asymmetry Method}
-\label{sec:jer_method}
-The measured jet transverse momentum is not necessarily equal to the energy of the original particle due to e.g. a limited detector resolution. This effect is quantified by the jet transverse momentum response R which is defined as 
+In this chapter, an analysis is presented where the jet-\pt resolution in data and in simulated events is derived. The method is based on momentum conservation in the transverse plane of dijet events and offers the possibility to cover a large phase space in \pt and $\eta$. A similar approach was already used in previous studies at $\sqrt{s}=7$\tev~\cite{1748-0221-6-11-P11002, thesis:Schroeder} while a complementary approach utilizes $\gamma +\rm{jet}$ events~\cite{CMS-AN-2010-141, CMS-AN-2011-004, CMS-AN-2013-179}. The measurement shown here is based on collision data corresponding to an integrated luminosity of $19.7$~\fbinv recorded at $\sqrt{s}=8$\tev in 2012.
+\section{Components of the Jet Response}
+\label{sec:jer_response}
+As introduced in Section~\ref{subsec:jets_response} the transverse momentum of a jet at detector level does not equal the momentum of the corresponding particle-level jet which is typically expressed in the jet response. In simulated events the transverse momentum of the particle-level jet is given by the \pt of the generated jet which is clustered from all stable particles after hadronisation including neutrinos. Thus, the \textit{MC-truth response} can be determined as
 \begin{equation}
-  \mathrm{R} = \frac{\pt}{\pt^{\mathrm{particle}}} 
-  \label{eq:response}
- \end{equation}
-where \pt denotes the transverse momentum of the jet measured at detector level and $\pt^{\rm{particle}}$ is the transverse momentum of the original particle-level jet. The average response $\langle R \rangle$ is referred to as jet energy scale and calibrated such that $\langle R \rangle = 1$ for fixed $\pt^{\mathrm{particle}}$. The response usually depends on the jet momenta as well as on the pseudorapidity. This is expected since the quality of the jet measurement is directly related to the detector sub-components and the energy of the particles originating e.g. from the track-reconstruction efficiency or the individual amount of detector material. \\
-\begin{figure}[!htp]
+\mathrm{R} = \frac{\pt}{\pt^{\mathrm{gen}}} \; .
+\end{equation}
+ In Fig.~\ref{fig:response} an example for a jet response distribution derived from simulation is shown. It is obtained from a QCD multijet sample generated with \pythia 6 tune Z2~\cite{Chatrchyan:2011id} using the CTEQ6L1 PDF set~\cite{Pumplin:2002vw} and processed with the full detector simulation. Since the cross-section of the process has been scaled by $\hat{\pt}^{4.5}$ with the scale parameter $\hat{\pt}$ describing the momentum transfer in the hard process, the sample is reweighted with the inverse in order to regain the physical spectrum. For the calculation of the truth response, the two generated jets in the event with highest transverse momentum are selected. The event is rejected, if one of these two generator jets does not have a corresponding reconstructed jet within a distance of $\Delta R < 0.25$. Otherwise the response is calculated in intervals of $\pt^{gen}$ and $|\eta^{gen}|$  since a dependence on the momentum and the respective detector region is expected, as discussed in Section~\ref{subsec:jets_response}. This is done after applying the jet energy corrections discussed in Section~\ref{subsec:jets_calib} to the detector-level jet momenta. \\
+Apparently the jet response consists generally of two components -- the Gaussian-shaped core around the mean referred to as jet resolution and non-Gaussian components referred to as \textit{tails}. The core of the response is mainly caused by the intrinsic resolution of the various sub-detector components and the precision of the PF and jet clustering algorithms. The response tails however are predominantly caused by severe jet-momentum mismeasurements. These can be due to detector effects like shower leakage and detector noise or also to real physics processes. For instance the lower response tails get populated by semi-leptonic decays of heavy-flavour quarks. These contain neutrinos that carry a certain amount of the momentum and leave the detector unnoticed \todo{more info on intrinsic resolution}. 
+\begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
                 \includegraphics[width=0.49\textwidth]{figures/TruthResponse_example_final_nominal_v4.pdf}
@@ -16,128 +16,81 @@ where \pt denotes the transverse momentum of the jet measured at detector level 
   \caption{Jet response function for one example $|\eta_\mathrm{gen}|$ and $p_\mathrm{T, gen}$ interval derived from simulation.}
   \label{fig:response}
 \end{figure}
-In Fig.~\ref{fig:response} an example for a jet response distribution derived from simulation is shown where the transverse momentum of the particle-level jet is given by the \pt of the generated jet. Apparently the jet response consists generally of two components -- the gaussian-shaped core representing fluctuations around the mean and non-gaussian components refered to as tails. The core of the response is caused by the intrinsic resolution of the various sub-detector components and the precision of the jet clustering algorithms. The response tails are mainly caused by severe jet-mismeasurements. These can be e.g. detector effects like shower leakage or detector noise. On the other hand also physics processes contribute to the population of the response tails as e.g. semi-leptonic decays of heavy-flavour quarks contain neutrinos which obtain a certain amount of the momentum and leave the detector unnoticeable. \\
-Finally, the relative jet transverse momentum resolution is defined as the width of the response distribution corresponding to the gaussian part and hence is a function of \pt and $\eta$ as well as the total response.\\
-\\
+\section{Basic Concept of the Dijet Asymmetry Method}
+\label{sec:jer_method}
+As introduced in Section~\ref{subsec:jets_response} and~\ref{sec:jer_response} the jet transverse momentum resolution corresponds to the Gaussian-shaped core part of the jet response. In simulated events the particle-level jet momenta are given by the generator-level jet momenta. In data events however,  no such equivalent is present so that the jet resolution is not accessible directly. \\
 One possibility to measure the resolution of the jet transverse momenta in data as well as in simulated events is to utilize the dijet asymmetry A. For events with at least two jets it is defined as
 \begin{equation}
 \label{eq:asymmdef}
-  \mathrm{A} = \frac{p_{T,1} - p_{T,2}}{p_{T,1} + pt_{T,2}} \, .
+  \mathrm{A} = \frac{p_{T,1} - p_{T,2}}{p_{T,1} + p_{T,2}} \, .
  \end{equation}
  In this equation $p_{T,1}$ and $p_{T,2}$ correspond to the randomly ordered transverse momenta of the two leading jets. \\
- For a sufficient number of events the asymmetry is approximately normally distributed and its' standard deviation is given as
+ For a sufficient number of events the asymmetry is approximately normally distributed and the standard deviation is given as
  \begin{equation}
  \label{eq:asymm_first}
   {\sigma_{\mathrm{A}}} = \left\lvert \frac{\partial A}{\partial p_{T,1}} \right\rvert \cdot \sigma(p_{T,1}) \oplus  \left\lvert \frac{\partial A}{\partial p_{T,2}} \right\rvert \cdot \sigma(p_{T,2})
  \end{equation}
- In an ideal dijet topology the two jets are exactly balanced at particle level. If they are in the same $\eta$ region, then $\langle p_{T,1} \rangle = \langle p_{T,2} \rangle = \langle \pt \rangle$ and $\sigma (p_{T,1}) = \sigma (p_{T,2}) = \sigma (\pt)$. This allows the simplification of Eq.~\ref{eq:asymm_first} and provides the following important relation between the width of the asymmetry $\sigma_{A}$ and the jet-\pt resolution $\sigma (p_{T})$
+ In an ideal dijet topology the two jets are exactly balanced at particle level. If they belong in addition to the same $\eta$ region, then $\langle p_{T,1} \rangle = \langle p_{T,2} \rangle = \langle \pt \rangle$ and $\sigma (p_{T,1}) = \sigma (p_{T,2}) = \sigma (\pt)$. This allows the simplification of Eq.~\ref{eq:asymm_first} and provides the following important relation between the width of the asymmetry $\sigma_{A}$ and the jet-\pt resolution $\sigma (\pt)$
  \begin{equation}
  \label{eq:asymm}
   \frac{\sigma (p_{T})}{\langle p_{T} \rangle} = \sqrt{2} \cdot \sigma_{A}
  \end{equation}
 Already at the Tevatron experiments~\cite{oai:arXiv.org:hep-ex/0012046, JetsD0}, the ATLAS experiment~\cite{Aad:2012ag} or in previous CMS analyses as stated above this relationship was utilized to measure the jet resolution from dijet events.  
 
-\section{Apllication to Realistic Collision Events}
+\section{Application to Realistic Collision Events}
 \label{sec:jer_application}
-The measurement of the jet transverse momentum resolution in collision events is based on Eq.~\ref{eq:asymm}. As discussed in Section~\ref{sec:jer_method} the resolution is a function of \pt and $\eta$ so that the asymmetry distribution also has to be derived for different \pt and $\eta$ intervals. Since the relation between resolution and width of the asymmetry distribution is based on the assumption that the asymmetry is normally distributed only asymmetry distributions with at least 100 events are considered for the analysis. \\
-\\
-Beyond that the ideal dijet topology with exactly two jets being perfectly balanced is interfered with additional effects in realistic collision events. Very often further jet activity is occuring as momentum of the hard scattering process is transferred to soft-particles or jets arising from initial or final state radiation leading to momentum imbalance in the event. This additional jet activity can in good approximation be described by the variable $\alpha$ which is defined as
+The measurement of the jet transverse momentum resolution in collision events is based on Eq.~\ref{eq:asymm}. As discussed in Section~\ref{subsec:jets_response} the resolution is a function of \pt and $\eta$. Consequently, the asymmetry distribution is a function of \pt and $\eta$ as well. Typically, the jet-\pt spectrum is affected by migration effects. Due to the limited resolution a particular interval of reconstructed jet momenta is populated not only by jets whose true momentum belongs to that bin, but also from jets outside. In case of a steeply falling spectrum, as this is the case for the jet momenta, more jets are supposed to migrate into a specific interval than out. Consequently, the measured response is systematically higher and the measured relative response gets biased in favor of the object with the worse resolution. In order to reduce this resolution bias in the analysis, the measurement is performed in intervals of the average momentum of the two leading jets in the event
+\begin{equation}
+\ptave = \frac{1}{2}(p_{T.1} + p_{T,2}) \; .
+\end{equation}
+Beyond that the ideal dijet topology with exactly two jets being perfectly balanced is interferred with additional effects in realistic collision events. Very often further jet activity is occuring as momentum of the hard scattering process is transferred to soft-particles or jets arising from initial or final state radiation leading to momentum imbalance in the event. This additional jet activity can in good approximation be described by the variable $\alpha$ which is defined as the ratio of the transverse momentum of the third jet to the average momentum according to
  \begin{equation}
 \label{eq:alpha}
 \alpha = \frac{p_{T,3}}{\pt^{ave}} \, .
 \end{equation}
-The presence of additional jets and the thereby introduced imbalance leads to a broadening of the observed asymmetry distribution. In order to determine the intrinsic resolution from such events the measured resolution has to be corrected for this bias. \\
-Another reason for momentum differences between the particle-level and the detector-level jet leading to an overall momentum imbalance in an event is e.g. arising from out-of-cone showering effects in the jet-clustering procedure. This is an effect which requires a correction in the resolution measurement as well.\\
-The application of corrections to the dijet asymmetry in practice is discussed in Section~\ref{sec:jer_corrections}.\\
-\\
-As the measurement of the resolution in collision data is based on the width of the dijet asymmetry distribution, a proper definition of the asymmetry width is of major importance.\\
-From the tails of the detector response events with large asymmetries can emerge leading to non-gaussian tails in the asymmetry distributions. These shall not be considered in the calculation of the asymmetry width in order to not bias the determination of the asymmetry width one is interested in for the measurement of the resolution. Hence the asymmetry width has to be defined such that the central part of the distribution is approximated reasonably well by a gaussian distribution. 
-\begin{figure}[!tp]   
-  \centering
-  \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosDataWithRatio_Eta0_pt5_alpha2_final_nominal_NoTruncation_v4.pdf} &
-                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosSimWithRatio_Eta0_pt5_alpha2_final_nominal_NoTruncation_v4.pdf} \\ 
-                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosDataWithRatio_Eta0_pt5_alpha2_final_nominal_v4.pdf} &
-                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosSimWithRatio_Eta0_pt5_alpha2_final_nominal_v4.pdf} \\
-                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosDataWithRatio_Eta0_pt5_alpha2_final_nominal_95Truncation_v4.pdf} &
-                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosSimWithRatio_Eta0_pt5_alpha2_final_nominal_95Truncation_v4.pdf} \\
-  \end{tabular}
-  \caption{Asymmetry distributions for data (left) and simulation (right) compared to gaussian distributions obtained with standard deviations corresponding to 0\% truncation (top), 1.5\% truncation (middle) and 5\% truncation (bottom) of the tail regions.}
-  \label{fig:asymm_width}
-\end{figure}
-In Fig.~\ref{fig:asymm_width} the asymmetry distribution in data and in simulation for a certain $|\eta|$, $\pt^{ave}$ and $\alpha$ interval is compared to gaussian distributions where the standard deviation of the gaussian function is chosen such that it corresponds to different asymmetry widths. The width of the asymmetry is determined by taking the whole distribution into account or by truncating a certain percentage in the tail regions. It is visible that the core part of the asymmetry distribution can in good approximation be described by a gaussian function if the tails are neglected in the calculation of the asymmetry width as long as the truncation is not rejecting parts of the gaussian core.\\
-Thus the asymmetry width is in this analysis calculated as $98.5\%$-truncated root-mean-square
-\begin{equation}
- \sigma_A = \mathrm{RMS}_{98.5\%} = \sqrt{\frac{1}{\sum_{i} y_i} \sum_{i} y_i \cdot A_i^2}  
-\end{equation} 
-where $y_i$ denotes the frequency of the asymmetry value $A_i$ and the sum over i includes all values such that $98.5\%$ of the total asymmetry distribution are covered. The statistical uncertainty is given by
-\begin{equation}
-\Delta \sigma_A = \Delta \mathrm{RMS}_{98.5\%} = \frac{\mathrm{RMS}_{98.5\%}}{\sqrt{\, 2 \cdot \mathrm{n_\mathrm{eff}}}} \,
-\end{equation} 
-with the number of effective entries $n_\mathrm{eff}$ in the specified interval for which the asymmetry distribution has been derived. 
+The presence of further jets is neglected in the parametrization of the additional activity in the event, as these have consecutively less and less high momentum due to the strongly decreasing jet production cross section versus jet-\pt~\cite{CMS-PAS-QCD-11-004}. The presence of additional jets and the thereby introduced imbalance leads to a broadening of the observed asymmetry distribution. This effect is also illustrated later in Section~\ref{subsec:jer_sel_cuts}. In order to determine the intrinsic resolution from such events the measured resolution has to be corrected for this bias. \\
+A further source of momentum differences between the particle-level and the detector-level jet leading to an overall momentum imbalance in an event is arising from out-of-cone showering effects in the jet-clustering procedure. Typically, some particles might be too soft to be included in the clustered jet. Furthermore, additional contributions from pile-up or the underlying event might be wrongly asscociated to a jet. Such effects require a correction to the resolution measurement as well. The actual procedure how to determine and apply the required corrections is discussed in Section~\ref{sec:jer_corrections}.
 
 \section{Samples and Event Selection}
 \label{sec:jer_selection}
-In this section the data samples used for the analysis are specified (Section~\ref{subsec:jer_samples_and_trigger}). Furthermore, selection criteria applied on data and simulated events in order to select events with a dijet-like topology are discussed (Section~\ref{subsec:jer_sel_cuts}). 
+%In this section the data samples used for the analysis are specified (Section~\ref{subsec:jer_samples_and_trigger}). Furthermore, selection criteria applied on data and simulated events in order to select events with a dijet-like topology are discussed (Section~\ref{subsec:jer_sel_cuts}). 
 
 \subsection{Datasets and Triggers}
 \label{subsec:jer_samples_and_trigger}
-In this analysis, multijet events from pp collisions are considered which have been recorded in 2012 with the CMS detector at $\sqrt{s}=8$\tev. The following collision data samples are used \\
-\\
-$\verb+/Jet/Run2012A-22Jan2013-v1/AOD+$ \\ 
-$\verb+/JetHT/Run2012B-22Jan2013-v1/AOD+$ \\
-$\verb+/JetMon/Run2012B-22Jan2013-v1/AOD+$ \\
-$\verb+/JetHT/Run2012C-22Jan2013-v1/AOD+$ \\
-$\verb+/JetMon/Run2012C-22Jan2013-v1/AOD+$ \\
-$\verb+/JetHT/Run2012D-22Jan2013-v1/AOD+$ \\
-$\verb+/JetMon/Run2012D-22Jan2013-v1/AOD+$. \\
-\\
-From these samples only luminosity sections fulfilling certain data quality criteria are considered in the analysis \footnote{Luminosity sections which are taken into account for the analysis are listed in the Golden JSON file $Cert\_190456-208686\_8TeV\_22Jan2013ReReco\_Collisions12\_JSON.txt$ }. The collected data sample corresponds to an integrated luminosity of $19.7$~\fbinv. \\
-\\
-Multijet events are pre-selected by a set of triggers based on the average transverse momentum $\pt^{ave}$ of the two leading jets in the event:  
-\begin{equation}
- p_{T}^{ave} = \frac{1}{2} (p_{T,1} + p_{T,2}).
-\end{equation} 
-Different trigger paths are combined which feature a good coverage of the $\pt^{ave}$ spectrum since they have different minimum $\pt^{ave}$ thresholds. In Tab.~\ref{tab:trigger} the different trigger paths used for this analysis are summarized together with the $\pt^{ave}$ value for which the respective trigger reaches the $99\%$ efficiency plateau (taken from~\cite{website:HamburgCalib}).
-
 \begin{table}[!tp]
 \centering
-\caption{Trigger paths with $\pt^{ave}$ thresholds at which the trigger efficiency reaches the $99\%$ efficiency plateau. The thresholds are given for PFCHS jets.}
+\caption{Trigger paths with offline \ptave thresholds at which the trigger efficiency reaches the $99\%$ efficiency plateau. Thresholds are given for PFCHS jets.}
 \label{tab:trigger}
-% \makebox[\linewidth]{
-\begin{tabular}{clccc}
-%\multicolumn{6}{c}{} \\
-%\hline
- & & & & \\
- & Trigger & & $\pt^{ave}$ threshold [GeV] & \\
- & & & & \\
-\hline
- & & & & \\
- & $\mathrm{HltDiPFJetAve40}$ & & 62 & \\
- & & & & \\
- & $\mathrm{HltDiPFJetAve80}$ & & 107 & \\
- & & & & \\
- & $\mathrm{HltDiPFJetAve140}$ & & 175 & \\
- & & & & \\
- & $\mathrm{HltDiPFJetAve200}$ & & 242 & \\
- & & & & \\
- & $\mathrm{HltDiPFJetAve260}$ & & 310 & \\
- & & & & \\
- & $\mathrm{HltDiPFJetAve320}$ & & 379 & \\
- & & & & \\
- & $\mathrm{HltDiPFJetAve400}$ & & 467 & \\
- & & & & \\
-\hline
-\end{tabular}%}
-\end{table} 
-Simulated events are from the sample $/QCD_Pt-15to3000_TuneZ2_Flat_8TeV_pythia6$ created in the series $/Summer12_DR53X-PU_S10_START53_V7A-v1/AODSIM$. They are generated with the \pythia event generator and the full detector simulation. The simulated events are weighted depending on their $\hat{\pt}$ in order to regain a physical multijet spectrum.  
+ \makebox[\linewidth]{
+\begin{tabular}{lccc}
+\multicolumn{4}{c}{} \\
+\toprule
+ Trigger & & \ptave threshold [GeV] \\
+\midrule
+ HltDiPFJetAve40 & & 62 \\
+ & & & \\
+ HltDiPFJetAve80 & & 107 \\
+ & & & \\
+ HltDiPFJetAve140 & & 175 \\
+ & & & \\
+ HltDiPFJetAve200 & & 242 \\
+ & & & \\
+ HltDiPFJetAve260 & & 310 \\
+ & & & \\
+ HltDiPFJetAve320 & & 379 \\
+ & & & \\
+ HltDiPFJetAve400 & & 467 \\
+\bottomrule
+\end{tabular}}
+\end{table}  
+In this analysis, multijet events from pp collisions are considered which have been recorded in 2012 with the CMS detector at $\sqrt{s}=8$\tev. From these data only those are considered where all subdetectors have been reliably operating. The collected data sample used in this analysis corresponds to an integrated luminosity of $19.7$~\fbinv with an uncertainty of $2.5\%$ (syst.) + $0.5\%$ (stat.)~\cite{CMS-PAS-LUM-13-001}. \\
+Multijet events are pre-selected by a set of triggers based on the average transverse momentum of the two leading jets in the event. In order to obtain a good coverage of the \ptave spectrum, different trigger paths are combined. Since they have different minimum $\pt^{ave}$ thresholds, a broad range in \ptave is considered. In Tab.~\ref{tab:trigger} the different trigger paths used for this analysis are listed and the particular offline $\pt^{ave}$ value for which the respective trigger reaches $99\%$ of the efficiency plateau is given (taken from~\cite{website:HamburgCalib}). \\
+The simulated event sample is generated with \pythia, as discussed in Section~\ref{sec:jer_response} \todo{details trigger selection + eff}.  
 
 \subsection{Selection Criteria}
 \label{subsec:jer_sel_cuts}
 The physics objects used in the analysis are reconstructed with the particle-flow algorithm~\cite{CMS-PAS-PFT-09-001}. In order to reduce a possible impact from pileup, charged hadrons associated with a pileup vertex are removed from the event. This is referred to as charged-hadron subtraction (CHS). All jets -- in data as well as in simulation -- are clustered with the anti-$k_T$ algorithm using a distance parameter of $R=0.5$. In addition, jets are calibrated by applying jet energy corrections containing residual corrections for data. The event reconstruction is done using the CMSSW framework series $\rm{CMSSW\_5\_3\_X}$ with the global tag $\rm{FT\_53\_V21\_AN6}$ for data and $\rm{START53\_V27}$ for simulation. \\
-\\
 The two leading jets in each event have to fulfill loose jet identification criteria \todo{Jet ID}. If there is a third jet in the event, it has to fulfill this requirement as well. In the analysis a minimum \pt threshold of 10\gev is introduced for the first three leading jets. If an event has no third jet with \pt above 10\gev, the event is rejected in order to mitigate effects from pile-up. \\
-\\
 In order to enrich the sample with events close to the ideal dijet topology with two jets pointing into opposite directions in the transverse plane and to reject events with very large asymmetries the two leading jets have to fulfill 
 \begin{equation}
 |\Delta \phi| > 2.7 \; \mathrm{with} \; \Delta \phi = \Delta \phi(\vec{p_{T,1}}, \vec{p_{T,2}}) \, .
@@ -148,24 +101,19 @@ The $|\eta|$ intervals are chosen such that they correspond to different sub-det
 \centering
 \caption{Overview of the $|\eta|$ and $\pt^{ave}$ interval boundaries used for the resolution measurement.}
 \label{tab:binning}
-% \makebox[\linewidth]{
+\makebox[\linewidth]{
 \begin{tabular}{ccc}
 %\multicolumn{5}{c}{} \\
-\hline
- & &  \\
+\toprule
  $|\eta|$ & & $\pt^{ave}$ [GeV] \\
- & &  \\
-\hline
- & &  \\
+\midrule
  0.0, 0.5, 1.1, 1.7, 2.3, 2.8, 3.2, 5.0 & & 62, 107, 175, 205, 242, 270, 310, 335, 379, 410, 467, 600, 1000, $\infty$ \\
- & &  \\
-\hline
-\end{tabular}%}
+\bottomrule
+\end{tabular}}
 \end{table} 
 \\
 As discussed in Section~\ref{sec:jer_application} events with a topology of exactly two high-\pt jets and no further jet activity are almost not existent in realistic collisions. To select a sample which offers many events that maintain a dijet-like structure, a maximum $\alpha$ threshold of $\alpha_\mathrm{max} = 0.25$ is introduced. \\
 In order to account for the $\alpha$ dependence of the measured asymmetry distributions the $\pt^{ave}$ and $|\eta|$ intervals for the resolution measurement are further subdivided in various $\alpha$ intervals. The upper boundaries of the $\alpha_\mathrm{max}$ intervals are $0.1, 0.125, 0.15, 0.175, 0.2, 0.225, 0.25$. Each interval ranges from $\alpha = 0.0$ to the respective upper boundary. \\
-\\
 For the simulated sample two further things have to be considered related to the modelling of pileup. The first problem is that sometimes the $\hat{\pt}$ of an additional pileup event is larger than the $\hat{\pt}$ of the hard interaction resulting in events with extremely large weights. In order to protect the sample against such cases simulated events are rejected, if the \pt of one of the two leading jets is larger than $2 \cdot \hat{\pt}$.\\
 The second issue is that the QCD sample is generated with a certain estimated pileup scenario. This is not necessarily the same as the observed pileup distribution in data. Therefore the simulated events are reweighted to match the pileup conditions in data. The pileup distribution in data is different for each individual trigger. This is due to the fact that the pileup conditions changed within the running periods in 2012 and due to the different prescales of the individual triggers which also changed over time each trigger path has an individual observed pileup distribution. Therefore each simulated event is reweighted to match the pileup scenario in the data distribution of that particular trigger path to which the simulated event would belong depending on the $\pt^{ave}$ of the event. This procedure can be checked by comparing the distribution of the number of primary vertices in data and simulation before and after reweighting since the number of primary vertices is a measure for the pileup activity in an event. The result is shown in Fig.~\ref{fig:pu_reweight} for the trigger path with the highest $\pt^{ave}$ threshold used in the analysis and shows a good agreement especially in the bulk of the distribution. The distributions of primary vertices before and after reweighting the pileup scenario of the other trigger paths relevant for the analysis are shown in Appendix \todo{app:pu reweight}. The pileup weight is considered as a multiplicative factor for each simulated event.
 \begin{figure}[!tp]
@@ -192,7 +140,7 @@ The resulting inclusive $\pt^{ave}$ spectrum of events after the described selec
   \label{fig:ptave_spec}
 \end{figure}
 
-Finally, some exemplary asymmetry distributions obtained after the dedicated selection described here are depicted in Fig.~\ref{fig:asymm_dists} for data and simulated events. 
+Finally, some exemplary asymmetry distributions obtained after the dedicated selection described here are depicted in Fig.~\ref{fig:asymm_dists} for data and simulated events. Since the relation between resolution and width of the asymmetry distribution as expressed in Eq.~\ref{eq:asymm} is based on the assumption that the asymmetry is normally distributed, only asymmetry distributions with at least 100 events in the specified \ptave,$\eta$ and $\alpha$ intervals are considered for the analysis.
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{cc}
@@ -205,6 +153,34 @@ Finally, some exemplary asymmetry distributions obtained after the dedicated sel
   \label{fig:asymm_dists}
 \end{figure}
 
+\section{Definition of the Asymmetry Width}
+\label{sec:jer_asymm_width_def}
+As the measurement of the resolution in collision data is based on the width of the dijet asymmetry distribution, a proper definition of the asymmetry width is of major importance.\\
+From the tails of the detector response events with large asymmetries can emerge leading to non-gaussian tails in the asymmetry distributions. These shall not be considered in the calculation of the asymmetry width in order to not bias the determination of the asymmetry width one is interested in for the measurement of the resolution. Hence the asymmetry width has to be defined such that the central part of the distribution is approximated reasonably well by a gaussian distribution. 
+\begin{figure}[!htp]   
+  \centering
+  \begin{tabular}{cc}
+                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosDataWithRatio_Eta0_pt5_alpha2_final_nominal_NoTruncation_v4.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosSimWithRatio_Eta0_pt5_alpha2_final_nominal_NoTruncation_v4.pdf} \\ 
+                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosDataWithRatio_Eta0_pt5_alpha2_final_nominal_v4.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosSimWithRatio_Eta0_pt5_alpha2_final_nominal_v4.pdf} \\
+                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosDataWithRatio_Eta0_pt5_alpha2_final_nominal_95Truncation_v4.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/AsymmHistosSimWithRatio_Eta0_pt5_alpha2_final_nominal_95Truncation_v4.pdf} \\
+  \end{tabular}
+  \caption{Asymmetry distributions for data (left) and simulation (right) compared to gaussian distributions obtained with standard deviations corresponding to 0\% truncation (top), 1.5\% truncation (middle) and 5\% truncation (bottom) of the tail regions.}
+  \label{fig:asymm_width}
+\end{figure}
+In Fig.~\ref{fig:asymm_width} the asymmetry distribution in data and in simulation for a certain $|\eta|$, $\pt^{ave}$ and $\alpha$ interval is compared to gaussian distributions where the standard deviation of the gaussian function is chosen such that it corresponds to different asymmetry widths. The width of the asymmetry is determined by taking the whole distribution into account or by truncating a certain percentage in the tail regions. It is visible that the core part of the asymmetry distribution can in good approximation be described by a gaussian function if the tails are neglected in the calculation of the asymmetry width as long as the truncation is not rejecting parts of the gaussian core.\\
+Thus the asymmetry width is in this analysis calculated as $98.5\%$-truncated root-mean-square
+\begin{equation}
+ \sigma_A = \mathrm{RMS}_{98.5\%} = \sqrt{\frac{1}{\sum_{i} y_i} \sum_{i} y_i \cdot A_i^2}  
+\end{equation} 
+where $y_i$ denotes the frequency of the asymmetry value $A_i$ and the sum over i includes all values such that $98.5\%$ of the total asymmetry distribution are covered. The statistical uncertainty is given by
+\begin{equation}
+\Delta \sigma_A = \Delta \mathrm{RMS}_{98.5\%} = \frac{\mathrm{RMS}_{98.5\%}}{\sqrt{\, 2 \cdot \mathrm{n_\mathrm{eff}}}} \,
+\end{equation} 
+with the number of effective entries $n_\mathrm{eff}$ in the specified interval for which the asymmetry distribution has been derived. 
+
 \section{Corrections to the Dijet Asymmetry}
 \label{sec:jer_corrections}
 The fundamental relation between the width of the asymmetry distribution and the jet energy resolution as expressed in Eq.~\ref{eq:asymm} holds in this form only for the case of an ideal dijet topology. In real collision events various effects can occur that disturb the exact balance of the two jets. Such effects can be soft radiation or additional jets originating from the hard scattering. They lead to imbalance in the event and hence broaden the oberserved asymmetry distribution resultng in an increased measured resolution. In order to determine the intrinsic resolution, the measured one has to be corrected for such effects. These corrections are explained in the following Sections~\ref{subsec:jer_corrections_alpha} and ~\ref{subsec:jer_corrections_pli}.
@@ -212,9 +188,7 @@ The fundamental relation between the width of the asymmetry distribution and the
 \subsection{Correction for Additional Jet Activity}
 \label{subsec:jer_corrections_alpha}
 In addition to the two jets originating from the hard interaction further jets can occur in an event from the emission of additional partons or pileup. The additional jet activity in the event is quantified by $\alpha$ introduced in Eq.~\ref{eq:alpha} which is the fractional \pt of the third jet. The impact from jets beyond the third one is neglected since there impact is expected to be small due to the strongly decreasing jet-production cross-section. \\
-\\
 The imbalance contribution arising from additional jet activity is taken care of by an extrapolation procedure. As described in Section~\ref{subsec:jer_sel_cuts} the asymmetry distribution is calculated for several intervals in $|\eta|$ and $\pt^{ave}$ with different selections on the maximum value of $\alpha$ ($=\alpha_{max}$). For each of these individual selections the width of the asymmetry is determined as stated in Section~\ref{sec:jer_application}. The measured values of $\sigma_{A}(\alpha_{max})$ are extrapolated to $\alpha_{max} \rightarrow 0$ assuming a linear behaviour. The y-intercept of the fitted linear function represents the resolution without further jet activity in the event while the statistical uncertainty is given by the respective fit error. The extrapolation procedure for two exemplary $|\eta|$ and $\pt^{ave}$ intervals is illustrated in Fig.~\ref{fig:extrapol} (further extrapolations are shown in Appendix \todo{appendix: extrapol}). \\
-\\
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{cc}
@@ -254,7 +228,6 @@ In Fig.~\ref{fig:goodness-of-fit} an overview of a goodness-of-fit test is shown
 \subsection{Correction for Particle-Level Imbalance}
 \label{subsec:jer_corrections_pli}
 In addition to an imbalance in dijet events caused by the presence of additional jets differences between the momentum of the parton and the corresponding particle-level jet can also arise e.g. from the jet clustering algorithm. This fact is referred to as particle-level imbalance (PLI) and estimated from simulation. \\
-\\
 The contribution arising from the particle-level imbalance is estimated from the dijet asymmetry at generator level which is defined along with the asymmetry introduced for the resolution measurement itself as
 \begin{equation}
   \mathrm{A_{gen}} = \frac{p_{T,1}^{gen} - p_{T,2}^{gen}}{p_{T,1}^{gen} + p_{T,2}^{gen}} 
@@ -323,88 +296,31 @@ The measured resolution in data and simulation can be compared after applying al
 
 \section{Validation of the Method}
 \label{sec:jer_validation}
-
+\begin{figure}[!tp]
+  \centering
+  \begin{tabular}{cc}
+                \includegraphics[width=0.49\textwidth]{figures/ScalingFactorsVsEta_with_pli_PythiaSmearedVsPythia_v4.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/ScalingFactorsVsEta_with_pli_MCSmearedWithMeasuredValues_final_v4.pdf}
+  \end{tabular}
+  \caption{Ratio $c\mathrm{(MC_{smeared}/MC)}$ of the resolution in the smeared QCD sample to the resolution of the unsmeared QCD sample as function of $|\eta|$ with statistical uncertainty (\textit{left}) and ratio $c\mathrm{(Data/MC_{smeared})}$ of the resolution in data to the resolution of the QCD sample smeared with the measured data-to-simulation ratio as function of $|\eta|$ with statistical uncertainty (\textit{right}). The red line indicates the target value of each validation test.}
+  \label{fig:mc_closure}
+\end{figure}
 \subsection{Validation in Simulated Events}
 \label{sec:jer_validation_closure}
-In order to test the quality of the method to predict the correct data-to-simulation ratio a so-called closure test on simulated events is performed. \\
+In order to test the quality of the method to predict the correct data-to-simulation ratio a so-called closure test on simulated events is performed. \\ 
 Therefore the simulated QCD sample is divided into two sub-samples with equal number of events. In one of the sub-samples the leading corrected jets \footnote{It is necessary to correct all jets which might get relevant for the analysis i.e. become one of the leading three jets. In this analysis the five leading jets in \pt are corrected.} in \pt in each event are smeared with a smearing factor $c$ to increase the \pt resolution, if they have a minimum \pt threshold of $10\,\rm{GeV}$. This means that for each reconstructed jet which has an associated generated jet within a $\Delta R$ cone size of 0.25 the transverse momentum is scaled as follows
 \begin{equation}
  p^{'}_{T} = p^{gen}_{T} + c \cdot (p_{T} - p^{gen}_{T}) \, .
 \end{equation} 
 After the smearing procedure the jets are re-ordered again descendent in \pt.\\
-\\
-For the closure test the smearing factor has been chosen to be $c = 1.1$ for each $|\eta|$ interval. The ratio of the measured resolution in the smeared QCD sub-sample to the resolution in the unsmeared sub-sample is derived with the asymmetry method including all corrections as described in Section~\ref{sec:jer_corrections}. This should result in a measured ratio of the input value $c\mathrm{(MC_{smeared}/MC)} = 1.1$. The resulting ratios from a constant fit as function of $\pt^{ave}$ in each $|\eta|$ region with statistical uncertainties are summarized in Tab.~\ref{tab:mc_closure}.\\
-\\
+For the closure test the smearing factor has been chosen to be $c = 1.1$ for each $|\eta|$ interval. The ratio of the measured resolution in the smeared QCD sub-sample to the resolution in the unsmeared sub-sample is derived with the asymmetry method including all corrections as described in Section~\ref{sec:jer_corrections}. This should result in a measured ratio of the input value $c\mathrm{(MC_{smeared}/MC)} = 1.1$. The resulting ratios from a constant fit as function of $\pt^{ave}$ in each $|\eta|$ region with statistical uncertainties are shown in Fig.~\ref{fig:mc_closure} (left).\\
 It can be seen that the input scaling factor of 1.1 is nicely recovered with this procedure within the statistical uncertainties. This allows the conclusion that a potential resolution difference in the ratio when comparing data and simulation can be determined with this approach as well.
-
-\begin{table}[!tp]
-\centering
-\caption{Ratio $c\mathrm{(MC_{smeared}/MC)}$ of the resolution in the smeared QCD sample to the resolution of the unsmeared QCD sample in various $|\eta|$ regions with statistical uncertainty.}
-\label{tab:mc_closure}
-% \makebox[\linewidth]{
-\begin{tabular}{cccccc}
-%\multicolumn{7}{c}{} \\
-\hline
- & & & & & \\
- & $|\eta|$ & & $c\mathrm{(MC_{smeared}/MC)}$ & $\rm{stat.}$ & \\
- & & & & & \\
-\hline
- & & & & & \\
- & $0.0 - 0.5$ & & 1.11 & $\pm \, 0.01$ & \\
- & & & & & \\
- & $0.5 - 1.1$ & & 1.12 & $\pm \, 0.01$ & \\
- & & & & & \\
- & $1.1 - 1.7$ & & 1.11 & $\pm \, 0.02$ & \\
- & & & & & \\
- & $1.7 - 2.3$ & & 1.06 & $\pm \, 0.04$ & \\
- & & & & & \\
- & $2.3 - 2.8$ & & 1.10 & $\pm \, 0.11$ & \\
- & & & & & \\   
- & $2.8 - 3.2$ & & - & - & \\
- & & & & & \\  
- & $3.2 - 5.0$ & & - & - & \\
- & & & & & \\ 
- \hline 
-\end{tabular}%}
-\end{table}  
 
 \subsection{Validation of the Measured Data-to-Simulation Ratio}
 \label{sec:jer_validation_ratio}
 In addition to the closure test on simulated events the measured data-to-simulation ratio can also be directly validated with a similar approach as described in Section~\ref{sec:jer_validation_closure}.\\
 For that the individual jet momenta in the simulated QCD sample are scaled with the measured resolution ratio values $c{(\mathrm{Data}/\mathrm{MC})}$ depending on the respective $|\eta|$ region. Applying the measurement procedure of the data-to-simulation ratio again after the smearing procedure one expects to obtain ratios of $c\mathrm{(Data/MC_{smeared})} = 1$ since the resolution differences between data and simulation have been adjusted before. \\
-The result of this test is summarized in Tab.~\ref{tab:data_closure} with statistical errors only. A nice agreement with the expected value of 1 is visible even without the consideration of systematic uncertainties in this consistency test. 
-
-\begin{table}[!tp]
-\centering
-\caption{Ratio $c\mathrm{(Data/MC_{smeared})}$ of the resolution in data to the resolution of the QCD sample smeared with the measured data-to-simulation ratio in various $|\eta|$ regions with statistical uncertainty.}
-\label{tab:data_closure}
-% \makebox[\linewidth]{
-\begin{tabular}{cccccc}
-%\multicolumn{7}{c}{} \\
-\hline
- & & & & & \\
- & $|\eta|$ & & $c\mathrm{(Data/MC_{smeared})}$ & $\rm{stat.}$ & \\
- & & & & & \\
-\hline
- & & & & & \\
- & $0.0 - 0.5$ & & 0.996 & $\pm \, 0.006$ & \\
- & & & & & \\
- & $0.5 - 1.1$ & & 0.997 & $\pm \, 0.006$ & \\
- & & & & & \\
- & $1.1 - 1.7$ & & 0.998 & $\pm \, 0.009$ & \\
- & & & & & \\
- & $1.7 - 2.3$ & & 1.012 & $\pm \, 0.021$ & \\
- & & & & & \\
- & $2.3 - 2.8$ & & 1.001 & $\pm \, 0.064$ & \\
- & & & & & \\   
- & $2.8 - 3.2$ & & - & - & \\
- & & & & & \\  
- & $3.2 - 5.0$ & & - & - & \\
- & & & & & \\ 
- \hline 
-\end{tabular}%}
-\end{table} 
-
+The result of this test is illustrated in Fig.~\ref{fig:mc_closure} (right) with statistical errors. A nice agreement with the expected value of 1 is visible even without the consideration of systematic uncertainties in this consistency test. 
 
 \section{Systematic Uncertainties}
 \label{sec:jer_syst_unc}
@@ -511,25 +427,16 @@ A summary of the data-to-simulation ratios measured with this method together wi
 \centering
 \caption{Summary of the measured data-to-simulation ratios $c\mathrm{(Data/MC)}$ with statistical uncertainty and systematic uncertainty for each uncertainty source in different $|\eta|$ regions.}
 \label{tab:syst_uncert_summary}
-% \makebox[\linewidth]{
+ \makebox[\linewidth]{
 \begin{tabular}{lcccccccc}
-%\multicolumn{10}{c}{} \\
-\hline
- %& & \multicolumn{7}{c}{} \\
- %& & \multicolumn{7}{c}{$|\eta|$} \\
- %& & \multicolumn{7}{c}{} \\
-\hline
- & & & & & & & & \\
+\multicolumn{9}{c}{} \\
+\toprule
+ & & \multicolumn{7}{c}{$|\eta|$} \\
  & & $0.0 - 0.5$ & $0.5 - 1.1$ & $1.1 - 1.7$ & $1.7 - 2.3$ & $2.3 - 2.8$ & $2.8 - 3.2$ & $3.2 - 5.0$ \\
- & & & & & & & & \\
- \hline
- & & & & & & & & \\
+ \midrule 
  $c\mathrm{(Data/MC)}$ & & 1.077 & 1.100 & 1.119 & 1.205 & 1.145 & - & - \\
- & & & & & & & & \\
  Stat. uncertainty & & $\pm$ 0.007 & $\pm$ 0.006 & $\pm$ 0.010 & $\pm$ 0.027 & $\pm$ 0.078 & - & - \\
- & & & & & & & & \\
-\hline
- & & & & & & & & \\
+\midrule
  PU reweighting & & $\pm$ 0.004 & $\pm$ 0.003 & $\pm$ 0.004 & $\pm$ 0.004 & $\pm$ 0.013 & - & -  \\
  & & & & & & & & \\
  Particle-level imbalance & & $\pm$ 0.004 & $\pm$ 0.005 &$\pm$  0.005 & $\pm$ 0.015 & $\pm$ 0.010 & - & - \\
@@ -545,28 +452,22 @@ A summary of the data-to-simulation ratios measured with this method together wi
  Jet Flavour & & $\pm$ 0.007 & $\pm$ 0.004 & $\pm$ 0.005 & $\pm$ 0.006 & $\pm$ 0.003 & - & - \\
  & & & & & & & & \\ 
  Ratio shape & & $\pm$ 0.022 & $\pm$ 0.022 & $\pm$ 0.022 & $\pm$ 0.024 & $\pm$ 0.023 & - & - \\
- & & & & & & & & \\ 
-\hline
- & & & & & & & & \\
+\midrule
  Total syst. uncertainty & & $\pm$ 0.025 & $\pm$ 0.027 & $\pm$ 0.026 & $\pm$ 0.038 & $\pm$ 0.038 & - & - \\
- & & & & & & & & \\ 
-\hline
-\end{tabular}%}
+\bottomrule
+\end{tabular}}
 \end{table} 
 
 \section{Extension of the Method to the Forward Detector Region}
 \label{sec:jer_forward_extension}
 The measurement presented until here is based on the requirement that the two leading jets in an event belong both to the same $|\eta|$ region. This means that the resolution of these two jets is the same and results in the relation that $\frac{\sigma (p_{T})}{\langle p_{T} \rangle} = \sqrt{2} \cdot \sigma_{A}$. This requirement of $|\eta_{\mathrm{jet},1}|$ = $|\eta_{\mathrm{jet},2}|$ reduces significantly the available number of events especially in the forward region of the detector as the jets in these events have low transverse momenta and consequently have to be triggered by the lowest $\pt^{ave}$ triggers which are highly prescaled. Thus for the intervals $|\eta| > 2.8$ no data-to-simulation ratio could be determined. \\
-\\
 In order to extend the analysis such that a measurement in the forward region of the detector is also possible one can drop the requirement that $|\eta_{\mathrm{jet},1}|$ = $|\eta_{\mathrm{jet},2}|$ and select events where the two leading jets belong to different pseudorapidity regions. The resolution $\sigma (p_{T}^{\mathrm{jet, probe}})$ in a probe interval $|\eta_\mathrm{probe}|$ can then be measured, if the resolution $\sigma (p_{T}^{\mathrm{jet, ref}})$ in a reference interval $|\eta_\mathrm{ref}|$ is already known. \\
-\\
 Starting again with the relation in Eq.~\ref{eq:asymm_first}, it can be shown that for $\langle p_{T,\mathrm{probe}} \rangle = \langle p_{T,\mathrm{ref}} \rangle = \langle \pt \rangle$ and $\sigma (p_{T,\mathrm{probe}}) \neq \sigma (p_{T,\mathrm{ref}})$ one obtains the relation
 \begin{equation}
  \label{eq:asymm_forward}
   \frac{\sigma (p_{T, \mathrm{probe}})}{\langle p_{T} \rangle} = \sqrt{4 \cdot \sigma_{A({|\eta_{\mathrm{probe}|} \neq |\eta_{\mathrm{ref}}|)}} - \left(\frac{\sigma (p_{T, \mathrm{ref}})}{\langle p_{T} \rangle} \right)^2} 
  \end{equation}
 where $\sigma_{A({|\eta_{\mathrm{probe}|} \neq |\eta_{\mathrm{ref}}|)}}$ is the width of the asymmetry calculated from the two leading jets in an event of which one jet is in a reference $|\eta|$ interval for which the resolution has been already measured with the same-$|\eta|$ requirement and the probe jet belonging to another $|\eta|$ region. The asymmetry width is taken after the correction for additional jet activity and the particle-level imbalance determined from $\sigma_{A, \mathrm{gen} ({|\eta_{\mathrm{probe}|} \neq |\eta_{\mathrm{ref}}|)}}$. The reference interval is preferred to be in the central detector region where the statistical precision from the same-$|\eta|$ measurement has already been sufficient. The statistical uncertainty of $\frac{\sigma (p_{T, \mathrm{ref}})}{{\langle p_{T} \rangle}}$ is propagated to the statistical uncertainty of $\frac{\sigma (p_{T, \mathrm{probe}})}{\langle p_{T} \rangle}$. \\
-\\
 As long as both jets belong to the same $|\eta|$ region residual effects from jet energy scale differences in data and simulation affect both jets the same way and should not have an impact on the resolution measurement. Since residual effects from the jet energy scale where the mean of the asymmetry is shifted and not exactly zero become more important, if both jets belong to different probe and reference intervals, the asymmetry is defined as
 \begin{equation}
 \label{eq:forwardasymmdef}
@@ -578,38 +479,26 @@ for the reference-and-probe interval measurement for the transverse momenta $p_{
   \sigma_{A} = \mathrm{RMS}_{98.5\%} = \sqrt{\frac{1}{n} \cdot \sum_{i}(A_i-A_\mathrm{mean})^2} 
  \end{equation}
 with the number of possible values $n$ for the individual asymmetry values $A_i$ where the sum over $i$ includes all values such that $98.5\%$ of the total asymmetry distribution are covered symmetric around the mean.\\
-\\
 The measurement with the reference-and-probe interval selection is performed taking the three innermost $|\eta|$ regions 0.0 -- 0.5, 0.5 -- 1.1 and 1.1 -- 1.7 as reference intervals each. This allows a measurement of the data-to-simulation ratio also in the intervals 2.8 -- 3.2 and 3.2 -- 5.0. In addition, it provides for the innermost $|\eta|$ intervals an enhancement of the available number of events and thus a further reduction of the statistical uncertainties.\\
-\\
 The systematic uncertainties of the two new measurements are evaluated the same way as for the same-$|\eta|$ measurement by varying a certain aspect in the determination of the data-to-simulation ratio and taking the deviation from the nominal ratio as uncertainty. The variation is done for the $\sigma_{A({|\eta_{\mathrm{probe}|} \neq |\eta_{\mathrm{ref}}|)}}$ value as well as for $\frac{\sigma (p_{T, \mathrm{ref}})}{{\langle p_{T} \rangle}}$ for each uncertainty source.\\
-\\
 A summary of the resulting data-to-simulation ratios determined in the measurements with the two different reference intervals and the corresponding uncertainties is shown in Table~\ref{tab:syst_uncert_summary_forward_central} for $|\eta_\mathrm{ref}|$ = 0.0 -- 0.5, Table~\ref{tab:syst_uncert_summary_forward_nexttocentral} for $|\eta_\mathrm{ref}|$ = 0.5 -- 1.1 and Table~\ref{tab:syst_uncert_summary_forward_secondnexttocentral} for $|\eta_\mathrm{ref}|$ = 1.1 -- 1.7, respectively.
 
 \begin{table}[!hp]
 \centering
 \caption{Summary of the measurement with reference bin $|\eta| = 0.0 - 0.5$ showing the nominal data-to-simulation ratio $c\mathrm{(Data/MC)}$ with statistical uncertainty and systematic uncertainty for each uncertainty source in different $|\eta|$ regions.}
 \label{tab:syst_uncert_summary_forward_central}
-% \makebox[\linewidth]{
+ \makebox[\linewidth]{
 \begin{tabular}{lcccccccc}
-%\multicolumn{9}{c}{} \\
-\hline
-% & & \multicolumn{7}{c}{} \\
-% & & \multicolumn{7}{c}{$|\eta_\mathrm{ref}| = 0.0 - 0.5$} \\
-% & & \multicolumn{7}{c}{} \\
-% & & \multicolumn{7}{c}{$|\eta_\mathrm{probe}|$} \\
-% & & \multicolumn{7}{c}{} \\
-\hline
- & & & & & & & & \\
+\multicolumn{9}{c}{} \\
+\toprule
+ & & \multicolumn{7}{c}{$|\eta_\mathrm{ref}| = 0.0 - 0.5$} \\
+ & & \multicolumn{7}{c}{$|\eta_\mathrm{probe}|$} \\
+\midrule
  & & $0.0 - 0.5$ & $0.5 - 1.1$ & $1.1 - 1.7$ & $1.7 - 2.3$ & $2.3 - 2.8$ & $2.8 - 3.2$ & $3.2-5.0$ \\
- & & & & & & & & \\
-\hline
- & & & & & & & & \\
+\midrule
  $c\mathrm{(Data/MC)}$ & & - & 1.106 & 1.133 & 1.227 & 1.253 & 1.410 & 1.171 \\
- & & & & & & & & \\
  Stat. uncertainty & & - & $\pm$ 0.008 & $\pm$ 0.009 & $\pm$ 0.025 & $\pm$ 0.047 & $\pm$ 0.068 & $\pm$ 0.116 \\
- & & & & & & & & \\
-\hline
- & & & & & & & & \\
+\midrule
  PU reweighting & & - & $\pm$ 0.002 & $\pm$ 0.001 & $\pm$ 0.001 & $\pm$ 0.021 & $\pm$ 0.025 & $\pm$ 0.007 \\
  & & & & & & & & \\
  Particle-level imbalance & & - & $\pm$ 0.005 & $\pm$ 0.005 & $\pm$ 0.008 & $\pm$ 0.009 & $\pm$ 0.006 & $\pm$ 0.004 \\
@@ -625,40 +514,28 @@ A summary of the resulting data-to-simulation ratios determined in the measureme
  Jet Flavour & & - & $\pm$ 0.004 & $\pm$ 0.004 & $\pm$ 0.001 & $\pm$ 0.021 & $\pm$ 0.013 & $\pm$ 0.008 \\
  & & & & & & & & \\ 
  Ratio shape & & - & $\pm$ 0.022 & $\pm$ 0.023 & $\pm$ 0.025 & $\pm$ 0.025 & $\pm$ 0.028 & $\pm$ 0.023 \\
- & & & & & & & & \\ 
-\hline
- & & & & & & & & \\
+\midrule
  Total syst. uncertainty & & - & $\pm$ 0.028 & $\pm$ 0.030 & $\pm$ 0.058 & $\pm$ 0.112 & $\pm$ 0.067 & $\pm$ 0.079 \\
- & & & & & & & & \\ 
-\hline
-\end{tabular}%}
+\bottomrule
+\end{tabular}}
 \end{table} 
 
 \begin{table}[!hp]
 \centering
 \caption{Summary of the measurement with reference bin $|\eta| = 0.5 - 1.1$ showing the nominal data-to-simulation ratio $c\mathrm{(Data/MC)}$ with statistical uncertainty and systematic uncertainty for each uncertainty source in different $|\eta|$ regions.}
 \label{tab:syst_uncert_summary_forward_nexttocentral}
-% \makebox[\linewidth]{
+ \makebox[\linewidth]{
 \begin{tabular}{lcccccccc}
-%\multicolumn{9}{c}{} \\
-\hline
-% & & \multicolumn{7}{c}{} \\
-% & & \multicolumn{7}{c}{$|\eta_\mathrm{ref}| = 0.5 - 1.1$} \\
-% & & \multicolumn{7}{c}{} \\
-% & & \multicolumn{7}{c}{$|\eta_\mathrm{probe}|$} \\
-% & & \multicolumn{7}{c}{} \\
-\hline
- & & & & & & & & \\
+\multicolumn{9}{c}{} \\
+\toprule
+ & & \multicolumn{7}{c}{$|\eta_\mathrm{ref}| = 0.5 - 1.1$} \\
+ & & \multicolumn{7}{c}{$|\eta_\mathrm{probe}|$} \\
+\midrule
  & & $0.0 - 0.5$ & $0.5 - 1.1$ & $1.1 - 1.7$ & $1.7 - 2.3$ & $2.3 - 2.8$ & $2.8 - 3.2$ & $3.2-5.0$ \\
- & & & & & & & & \\
-\hline
- & & & & & & & & \\
+\midrule
  $c\mathrm{(Data/MC)}$ & & 1.081 & - & 1.111 & 1.206 & 1.300 & 1.356 & 0.829 \\
- & & & & & & & & \\
  Stat. uncertainty & & $\pm$ 0.008 & - & $\pm$ 0.009 & $\pm$ 0.023 & $\pm$ 0.047 & $\pm$ 0.058 & $\pm$ 0.082 \\
- & & & & & & & & \\
-\hline
- & & & & & & & & \\
+\midrule
  PU reweighting & & $\pm$ 0.001 & - & $\pm$ 0.003 & $\pm$ 0.005 & $\pm$ 0.002 & $\pm$ 0.024 & $\pm$ 0.039 \\
  & & & & & & & & \\
  Particle-level imbalance & & $\pm$ 0.005 & - & $\pm$ 0.005 & $\pm$ 0.010 & $\pm$ 0.017 & $\pm$ 0.009 & $\pm$ 0.021 \\
@@ -674,40 +551,28 @@ A summary of the resulting data-to-simulation ratios determined in the measureme
  Jet Flavour & & $\pm$ 0.005 & - & $\pm$ 0.007 & $\pm$ 0.009 & $\pm$ 0.013 & $\pm$ 0.042 & $\pm$ 0.007 \\
  & & & & & & & & \\ 
  Ratio shape & & $\pm$ 0.022 & - & $\pm$ 0.022 & $\pm$ 0.024 & $\pm$ 0.026 & $\pm$ 0.027 & $\pm$ 0.017 \\
- & & & & & & & & \\ 
-\hline
- & & & & & & & & \\
+\midrule
  Total syst. uncertainty & & $\pm$ 0.026 & - & $\pm$ 0.030 & $\pm$ 0.039 & $\pm$ 0.082 & $\pm$ 0.105 & $\pm$ 0.149 \\
- & & & & & & & & \\ 
-\hline
-\end{tabular}%}
+\bottomrule
+\end{tabular}}
 \end{table} 
 
 \begin{table}[!hp]
 \centering
 \caption{Summary of the measurement with reference bin $|\eta| = 1.1 - 1.7$ showing the nominal data-to-simulation ratio $c\mathrm{(Data/MC)}$ with statistical uncertainty and systematic uncertainty for each uncertainty source in different $|\eta|$ regions.}
 \label{tab:syst_uncert_summary_forward_secondnexttocentral}
-% \makebox[\linewidth]{
+ \makebox[\linewidth]{
 \begin{tabular}{lcccccccc}
-%\multicolumn{9}{c}{} \\
-\hline
-% & & \multicolumn{7}{c}{} \\
-% & & \multicolumn{7}{c}{$|\eta_\mathrm{ref}| = 1.1 - 1.7$} \\
-% & & \multicolumn{7}{c}{} \\
-% & & \multicolumn{7}{c}{$|\eta_\mathrm{probe}|$} \\
-% & & \multicolumn{7}{c}{} \\
-\hline
- & & & & & & & & \\
+\multicolumn{9}{c}{} \\
+\toprule
+ & & \multicolumn{7}{c}{$|\eta_\mathrm{ref}| = 1.1 - 1.7$} \\
+ & & \multicolumn{7}{c}{$|\eta_\mathrm{probe}|$} \\
+\midrule
  & & $0.0 - 0.5$ & $0.5 - 1.1$ & $1.1 - 1.7$ & $1.7 - 2.3$ & $2.3 - 2.8$ & $2.8 - 3.2$ & $3.2-5.0$ \\
- & & & & & & & & \\
-\hline
- & & & & & & & & \\
+\midrule
  $c\mathrm{(Data/MC)}$ & & 1.084 & 1.082 & - & 1.189 & 1.250 & 1.432 & 1.137 \\
- & & & & & & & & \\
  Stat. uncertainty & & $\pm$ 0.012 & $\pm$ 0.012 & - & $\pm$ 0.031 & $\pm$ 0.051 & $\pm$ 0.066 & $\pm$ 0.105 \\
- & & & & & & & & \\
-\hline
- & & & & & & & & \\
+\midrule
  PU reweighting & & $\pm$ 0.005 & $\pm$ 0.004 & - & $\pm$ 0.024 & $\pm$ 0.001 & $\pm$ 0.002 & $\pm$ 0.029 \\
  & & & & & & & & \\
  Particle-level imbalance & & $\pm$ 0.004 & $\pm$ 0.004 & - & $\pm$ 0.016 & $\pm$ 0.017 & $\pm$ 0.019 & $\pm$ 0.006 \\
@@ -723,13 +588,10 @@ A summary of the resulting data-to-simulation ratios determined in the measureme
  Jet Flavour & & $\pm$ 0.005 & $\pm$ 0.007 & - & $\pm$ 0.012 & $\pm$ 0.015 & $\pm$ 0.031 & $\pm$ 0.054 \\
  & & & & & & & & \\ 
  Ratio shape & & $\pm$ 0.022 & $\pm$ 0.022 & - & $\pm$ 0.024 & $\pm$ 0.025 & $\pm$ 0.029 & $\pm$ 0.023 \\
- & & & & & & & & \\ 
-\hline
- & & & & & & & & \\
+\midrule
  Total syst. uncertainty & & $\pm$ 0.033 & $\pm$ 0.036 & - & $\pm$ 0.063 & $\pm$ 0.065 & $\pm$ 0.077 & $\pm$ 0.096 \\
- & & & & & & & & \\ 
-\hline
-\end{tabular}%}
+\bottomrule
+\end{tabular}}
 \end{table}  
 
 \section{Measurement for simulated events obtained with the \herwig generator} 
@@ -746,39 +608,33 @@ Fig.~\ref{fig:control_plots_herwig} shows the inclusive $\pt^{ave}$ spectrum com
   \label{fig:control_plots_herwig}
 \end{figure}
 The agreement of the $\pt^{ave}$ spectrum between data and simulation looks reasonable and is similar to the spectrum in simulated events from \pythia.\\
-\\ 
 The resulting data-to-simulation ratios for \herwig from the different measurements together with statistical uncertainties are summarized in Tab.~\ref{tab:result_herwig} 
-\begin{table}[!htp]
+\begin{table}[!hp]
 \centering
 \caption{Measured data-to-simulation ratio in various $|\eta|$ regions with statistical uncertainty for simulated events obtained with the \herwig generator.}
 \label{tab:result_herwig}
-% \makebox[\linewidth]{
-\begin{tabular}{ccccccccc}
-%\multicolumn{10}{c}{} \\
-\hline
-  & & & & & & & &\\
- & & & $|\eta_{1}|$ = $|\eta_{2}|$ & $|\eta_\mathrm{ref}|$ = 0.0 - 0.5 & $|\eta_\mathrm{ref}|$ = 0.5 - 1.1 & $|\eta_\mathrm{ref}|$ = 1.1 - 1.7 & &\\
- & & & & & & & &\\	
- & $|\eta|$ & & $c\mathrm{(Data/MC)}$ & $c\mathrm{(Data/MC)}$ & $c\mathrm{(Data/MC)}$ & $c\mathrm{(Data/MC)}$ & \\
-& & & & & & & &\\
-\hline
- & & & & & & & &\\
- & $0.0 - 0.5$ & & 1.090 $\pm \, 0.008$ & -                    &  1.091 $\pm \, 0.011$ & 1.129 $\pm \, 0.017$ & \\
- & & & & & & & &\\
- & $0.5 - 1.1$ & & 1.107 $\pm \, 0.008$ & 1.111 $\pm \, 0.010$ & -                     & 1.121 $\pm \, 0.016$ & \\
- & & & & & & & &\\
- & $1.1 - 1.7$ & & 1.117 $\pm \, 0.013$ & 1.177 $\pm \, 0.013$ & 1.149 $\pm \, 0.012$  & -                    & \\
- & & & & & & & &\\
- & $1.7 - 2.3$ & & 1.297 $\pm \, 0.038$ & 1.212 $\pm \, 0.035$ & 1.229 $\pm \, 0.033$  & 1.187 $\pm \, 0.041$ & \\
- & & & & & & & &\\
- & $2.3 - 2.8$ & & 1.085 $\pm \, 0.080$ & 1.231 $\pm \, 0.072$ & 1.178 $\pm \, 0.061$  & 1.363 $\pm \, 0.087$ & \\
- & & & & & & & &\\
- & $2.8 - 3.2$ & & -                    & 1.368 $\pm \, 0.094$ & 1.259 $\pm \, 0.061$  & 1.488 $\pm \, 0.112$ & \\
- & & & & & & & &\\
- & $3.2 - 5.0$ & & -                    & 1.245 $\pm \, 0.158$ & 1.124 $\pm \, 0.128$  & 1.324 $\pm \, 0.215$ & \\
- & & & & & & & &\\
-\hline
-\end{tabular}%}
+ \makebox[\linewidth]{
+\begin{tabular}{ccccccc}
+\multicolumn{7}{c}{} \\
+\toprule
+ & & $|\eta_{1}|$ = $|\eta_{2}|$ & $|\eta_\mathrm{ref}|$ = 0.0 - 0.5 & $|\eta_\mathrm{ref}|$ = 0.5 - 1.1 & $|\eta_\mathrm{ref}|$ = 1.1 - 1.7 & \\
+ $|\eta|$ & & $c\mathrm{(Data/MC)}$ & $c\mathrm{(Data/MC)}$ & $c\mathrm{(Data/MC)}$ & $c\mathrm{(Data/MC)}$ \\
+\midrule
+ $0.0 - 0.5$ & & 1.090 $\pm \, 0.008$ & -                    &  1.091 $\pm \, 0.011$ & 1.129 $\pm \, 0.017$ \\
+ & & & & & &\\
+ $0.5 - 1.1$ & & 1.107 $\pm \, 0.008$ & 1.111 $\pm \, 0.010$ & -                     & 1.121 $\pm \, 0.016$ \\
+ & & & & & &\\
+ $1.1 - 1.7$ & & 1.117 $\pm \, 0.013$ & 1.177 $\pm \, 0.013$ & 1.149 $\pm \, 0.012$  & -                    \\
+ & & & & & &\\
+ $1.7 - 2.3$ & & 1.297 $\pm \, 0.038$ & 1.212 $\pm \, 0.035$ & 1.229 $\pm \, 0.033$  & 1.187 $\pm \, 0.041$ \\
+ & & & & & &\\
+ $2.3 - 2.8$ & & 1.085 $\pm \, 0.080$ & 1.231 $\pm \, 0.072$ & 1.178 $\pm \, 0.061$  & 1.363 $\pm \, 0.087$ \\
+ & & & & & &\\
+ $2.8 - 3.2$ & & -                    & 1.368 $\pm \, 0.094$ & 1.259 $\pm \, 0.061$  & 1.488 $\pm \, 0.112$ \\
+ & & & & & &\\
+ $3.2 - 5.0$ & & -                    & 1.245 $\pm \, 0.158$ & 1.124 $\pm \, 0.128$  & 1.324 $\pm \, 0.215$ \\
+\bottomrule
+\end{tabular}}
 \end{table} 
 In general, the obtained data-to-simulation ratios for \herwig are quite similar to that obtained from \pythia while some further discussion can be found in Sec.~\ref{subsec:jer_combination}.
 
@@ -797,31 +653,27 @@ The determined ratios vary from 1.06 to 1.40 and are larger than one in all dete
 \centering
 \caption{Measured data-to-simulation ratio in various $|\eta|$ regions with statistical and systematic uncertainty as well as the total uncertainty.}
 \label{tab:result}
-% \makebox[\linewidth]{
-\begin{tabular}{cccc|cc|cc}
-%\multicolumn{9}{c}{} \\
-\hline
- & & & & & & &\\
- & $|\eta|$ & & $c\mathrm{(Data/MC)}$ & $\rm{stat.}$ & $\rm{syst.}$ & $\rm{tot.}$\\
- & & & & & & &\\
-\hline
- & & & & & & &\\
- & $0.0 - 0.5$ & & 1.079 & $\pm \, 0.005$ & $\pm \, 0.026$ & $\pm \, 0.026$ \\
- & & & & & & &\\
- & $0.5 - 1.1$ & & 1.099 & $\pm \, 0.005$ & $\pm \, 0.028$ & $\pm \, 0.028$ \\
- & & & & & & &\\
- & $1.1 - 1.7$ & & 1.121 & $\pm \, 0.005$ & $\pm \, 0.029$ & $\pm \, 0.029$ \\
- & & & & & & &\\
- & $1.7 - 2.3$ & & 1.208 & $\pm \, 0.013$ & $\pm \, 0.045$ & $\pm \, 0.046$ \\
- & & & & & & &\\
- & $2.3 - 2.8$ & & 1.254 & $\pm \, 0.026$ & $\pm \, 0.056$ & $\pm \, 0.062$ \\
- & & & & & & &\\
- & $2.8 - 3.2$ & & 1.395 & $\pm \, 0.036$ & $\pm \, 0.051$ & $\pm \, 0.063$ \\
- & & & & & & &\\
- & $3.2 - 5.0$ & & 1.056 & $\pm \, 0.048$ & $\pm \, 0.185$ & $\pm \, 0.191$ \\
- & & & & & & &\\
-\hline
-\end{tabular}%}
+\makebox[\linewidth]{
+\begin{tabular}{ccc|cc|cc}
+\multicolumn{7}{c}{} \\
+\toprule
+ $|\eta|$ & & $c\mathrm{(Data/MC)}$ & $\rm{stat.}$ & $\rm{syst.}$ & $\rm{tot.}$\\
+\midrule
+ $0.0 - 0.5$ & & 1.079 & $\pm \, 0.005$ & $\pm \, 0.026$ & $\pm \, 0.026$ \\
+ & & & & & &\\
+ $0.5 - 1.1$ & & 1.099 & $\pm \, 0.005$ & $\pm \, 0.028$ & $\pm \, 0.028$ \\
+ & & & & & &\\
+ $1.1 - 1.7$ & & 1.121 & $\pm \, 0.005$ & $\pm \, 0.029$ & $\pm \, 0.029$ \\
+ & & & & & &\\
+ $1.7 - 2.3$ & & 1.208 & $\pm \, 0.013$ & $\pm \, 0.045$ & $\pm \, 0.046$ \\
+ & & & & & &\\
+ $2.3 - 2.8$ & & 1.254 & $\pm \, 0.026$ & $\pm \, 0.056$ & $\pm \, 0.062$ \\
+ & & & & & &\\
+ $2.8 - 3.2$ & & 1.395 & $\pm \, 0.036$ & $\pm \, 0.051$ & $\pm \, 0.063$ \\
+ & & & & & &\\
+ $3.2 - 5.0$ & & 1.056 & $\pm \, 0.048$ & $\pm \, 0.185$ & $\pm \, 0.191$ \\
+\bottomrule
+\end{tabular}}
 \end{table} 
 
 \begin{figure}[!hp]
@@ -852,6 +704,9 @@ In comparison to the $\sqrt{s}=7$\tev results from dijet events the total uncert
 
 \section{Adjustment of the MC Resolution to Data}
 \label{sec:jer_adjustment}
+
+\section{Impact of the Resolution Measurement on other Analyses}
+\label{sec:jer_impact}
 
 
 

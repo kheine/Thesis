@@ -98,16 +98,16 @@ is introduced.\\
 In order to enrich the sample with events close to the ideal dijet topology where two jets point into opposite directions in the transverse plane and to reject events with very large asymmetries the two leading jets have to fulfill 
 \begin{equation}
 |\Delta \phi| > 2.7 \; \mathrm{with} \; \Delta \phi = \Delta \phi(\vec{p_{T,1}}, \vec{p_{T,2}}) \, .
-\end{equation}
+\end{equation}  
 This requirement keeps most of the well-balanced events, but suppresses those which feature a strong imbalance. \\
-The selection criteria described above are applied to data and simulation in an identical manner. However, a further adjustment is necessary for the simulated sample. Typically, the simulation is performed before the actual data-taking takes place. Thus, it is unknown which specific pile-up conditions will be present in data and the simulation is performed with an estimated pile-up scenario. Hence, it is necessary to adapt the observed pile-up scenario in data for the simulated events. This is done by reweighting the simulated events to match the pileup conditions in data. However, the pileup distribution in data differs for each individual trigger. Since the running conditions changed throughout the data taking in 2012, the pile-up conditions changed accordingly. The trigger paths utilized in this analysis have been mainly operated with pre-scale factors applied. In order to meet the changing running conditions over time, the pre-scales changed accordingly. Thus, each trigger path collected different amounts of data and consequently also the observed amount of pile-up differs per trigger. Hence, the reweighting of the pile-up scheme is done for each trigger path individually. Depending on the offline \ptave, a simulated event can be unambigously assigned to the corresponding trigger path, which is fully efficient for that particular \pt range, and reweighted to that particular pile-up scenario. Since the number of primary vertices in the event is a measure for the pile-up activity, the success of the reweighting procedure can be checked by comparing the distribution of the number of primary vertices in data and simulation before and after reweighting, respectively. Such a comparison is shown in Fig.~\ref{fig:pu_reweight} for the trigger path with the highest \ptave threshold. The primary vertex distributions show a good agreement after the application of the reweighting procedure; especially in the bulk of the distribution. Corresponding distributions of other trigger paths used in the analysis are shown in Appendix \todo{app:pu reweight}. The pileup weight is considered as a multiplicative factor for each simulated event. \\
+The selection criteria described above are applied to data and simulation in an identical manner. However, a further adjustment is necessary for the simulated sample. Typically, the simulation is performed before the actual data-taking takes place. Thus, it is unknown which specific pile-up conditions will be present in data and the simulation is performed with an estimated pile-up scenario. Hence, it is necessary to adapt the observed pile-up scenario in data for the simulated events. This is done by reweighting the simulated events to match the pileup conditions in data. However, the pileup distribution in data differs for each individual trigger. Since the running conditions changed throughout the data taking in 2012, the pile-up conditions changed accordingly. The trigger paths utilized in this analysis have been mainly operated with pre-scale factors applied. In order to meet the changing running conditions over time, the pre-scales changed accordingly. Thus, each trigger path collected different amounts of data and consequently also the observed amount of pile-up differs per trigger. Hence, the reweighting of the pile-up scheme is done for each trigger path individually. Depending on the offline \ptave, a simulated event can be unambigously assigned to the corresponding trigger path, which is fully efficient for that particular \pt range, and reweighted to that particular pile-up scenario. Since the number of primary vertices in the event is a measure for the pile-up activity, the success of the reweighting procedure can be checked by comparing the distribution of the number of primary vertices in data and simulation before and after reweighting, respectively. Such a comparison is shown in Fig.~\ref{fig:pu_reweight} for the trigger path with the highest \ptave threshold. The primary vertex distributions show a good agreement after the application of the reweighting procedure; especially in the bulk of the distribution. Corresponding distributions of other trigger paths used in the analysis are shown in Appendix~\ref{app:jer_pu_reweight}. The pileup weight is considered as a multiplicative factor for each simulated event. \\
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{cc}
                 \includegraphics[width=0.49\textwidth]{figures/NVtx_HltDiPFJetAve400_AfterTriggerSelection.pdf} &
                 \includegraphics[width=0.49\textwidth]{figures/NVtx_HltDiPFJetAve400_AfterPUReweighting.pdf}
   \end{tabular}
-  \caption{Distribution of number of primary vertices in data (black dots) and simulation (blue hisogram) before (\textit{left}) and after (\textit{right}) reweighting of the pile-up scenario in simulation for trigger path HltDiPFJetAve400.}
+  \caption{Distribution of number of primary vertices in data (black dots) and simulation (blue histogram) before (\textit{left}) and after (\textit{right}) reweighting of the pile-up scenario in simulation for trigger path HltDiPFJetAve400.}
   \label{fig:pu_reweight}
 \end{figure}
 In order to account for the dependence of the resolution on the transverse momentum and $\eta$, the asymmetry distributions are derived for various intervals of $|\eta|$ and $\pt^{ave}$. These are summarized in Tab.~\ref{tab:binning}. The \ptave intervals are chosen in correspondence to the \ptave values for which the different triggers become fully efficienct. If a trigger path provides enough statistical precision, the interval is separated into two. This definition of \ptave intervals ensures that all events in one \ptave interval are selected by the same trigger. The same interval boundaries are chosen for simulated events as well. The $|\eta|$ intervals are chosen to reflect the actual detector geometry. The most central part of the detector is covered by $|\eta| = 0.0 - 0.5, 0.5 - 1.1$ while the transition region, where the ECAL ends, is separated into an individiual bin $|\eta| = 2.8 - 3.2$. The forward detector is summarized into one large bin $|\eta| = 3.2 - 5.0$ mainly due to the small number of available events. In order to allow the application of Eq.~\ref{eq:asymm} for the determination of the resolution, both leading jets are required to belong to the same $|\eta|$ interval
@@ -141,7 +141,7 @@ The resulting inclusive $\pt^{ave}$ spectrum after applying the the described se
                 \includegraphics[width=0.49\textwidth]{figures/Jet3Pt__AfterAsymmHistos.pdf}
 
   \end{tabular}
-  \caption{Inclusive $\pt^{ave}$ spectrum of events after the total selection in data and in simulation (top left), leading jet-\pt (top right), subleading jet-\pt (bottom left) and third jet-\pt (bottom right).}
+  \caption{Inclusive $\pt^{ave}$ spectrum of events after the total selection in data and in simulation (\textit{top left}), leading jet-\pt (\textit{top right}), subleading jet-\pt (\textit{bottom left}) and third jet-\pt (\textit{bottom right}).}
   \label{fig:ptave_spec}
 \end{figure}
 Finally, some exemplary asymmetry distributions obtained after the described selection are depicted in Fig.~\ref{fig:asymm_dists} for data and simulated events. They have been obtained using Eq.~\ref{eq:asymmdef}. Instead of randomly assigning the first and second jet, the absolute value of the asymmetry has been taken. For corrected jet momenta both definitions are equivalent and the mean of the distribution is located at zero. The effect that the asymmetry distribution gets broadened for larger values of $\alpha$ is nicely visible when comparing the distributions in the top and the bottom row. Since the relation between resolution and width of the asymmetry distribution, as expressed in Eq.~\ref{eq:asymm}, is based on the assumption that the asymmetry is normally distributed, only asymmetry distributions with at least 100 events in the specified \ptave,$\eta$ and $\alpha$ intervals are considered for the analysis. 
@@ -153,7 +153,7 @@ Finally, some exemplary asymmetry distributions obtained after the described sel
                 \includegraphics[width=0.49\textwidth]{figures/AsymmHistos_Eta0_pt4_alpha5_final_nominal_v4.pdf} &
                 \includegraphics[width=0.49\textwidth]{figures/AsymmHistos_Eta0_pt9_alpha5_final_nominal_v4.pdf}
   \end{tabular}
-  \caption{Some example asymmetry distributions for the lowest $|\eta|$ region, two medium $\pt^{ave}$ intervals and for a low (top row) and a high (bottom row) $\alpha$ interval.}
+  \caption{Some example asymmetry distributions for the lowest $|\eta|$ region, two medium $\pt^{ave}$ intervals and for a low (\textit{top}) and a high (\textit{bottom}) $\alpha$ interval.}
   \label{fig:asymm_dists}
 \end{figure}
 
@@ -192,7 +192,7 @@ The fundamental relation between the width of the asymmetry distribution and the
 \label{subsec:jer_corrections_alpha}
 In addition to the two jets originating from the hard interaction, further jets can occur in an event from the emission of additional partons. The additional jet activity in the event is quantified by $\alpha$ introduced in Eq.~\ref{eq:alpha} which is the fractional \pt of the third jet. The impact from jets beyond the third one is neglected since there impact is expected to be small due to the strongly decreasing jet-production cross-section. \\
 The imbalance contribution arising from additional jet activity is taken care of by an extrapolation procedure. As described in Section~\ref{subsec:jer_sel_cuts} the asymmetry distribution is calculated for several intervals in $|\eta|$ and $\pt^{ave}$ with different selections on the maximum value of $\alpha$ ($=\alpha_{max}$). For each of these individual selections the width of the asymmetry is determined as stated in Section~\ref{sec:jer_asymm_width_def}. The measured values of $\sigma_{A}(\alpha_{max})$ are extrapolated to $\alpha_{max} \rightarrow 0$ assuming a linear behaviour. Thus, the measured asymmetry widths in one particular ($\pt^{ave}$, $|\eta|$, $\alpha$)-interval are fitted with a linear function. The y-intercept of the fitted linear function represents the resolution without further jet activity in the event while the statistical uncertainty is given by the respective fit uncertainty for the intercept. \\
-The extrapolation procedure for two exemplary $|\eta|$ and $\pt^{ave}$ intervals is illustrated in Fig.~\ref{fig:extrapol}. The performed extrapolation fits for all other non-empty intervals are shown in Appendix \todo{appendix: extrapol}). \\
+The extrapolation procedure for two exemplary $|\eta|$ and $\pt^{ave}$ intervals is illustrated in Fig.~\ref{fig:extrapol}. The performed extrapolation fits for all other non-empty intervals are shown in Appendix~\ref{app:extrapolations}. \\
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{cc}
@@ -217,7 +217,7 @@ C_{i,j}(\sigma_{A_i},\sigma_{A_j}) = (\Delta \sigma_{A_i})^2 \, \frac{\sigma_{A_
 \end{equation}
 where $n$ is the number of events in that particular $\alpha$ interval. The function minimization itself is performed with the Minuit package~\cite{Minuit}. 
 
-\begin{figure}[!htp]
+\begin{figure}[!tp]
   \centering
   \begin{tabular}{cc}
                 \includegraphics[width=0.49\textwidth]{figures/GoodnessOfFit_Eta0_final_nominal_v4.pdf} &
@@ -226,7 +226,7 @@ where $n$ is the number of events in that particular $\alpha$ interval. The func
  %               \includegraphics[width=0.49\textwidth]{figures/GoodnessOfFit_Eta3_final_nominal_v4.pdf} \\
  %               \includegraphics[width=0.49\textwidth]{figures/GoodnessOfFit_Eta4_final_nominal_v4.pdf}
   \end{tabular}
-  \caption{Goodness-of-fit test for the extrapolation fits in data and simulation in non-empty $|\eta|$ regions as function of $\pt^{ave}$.}
+  \caption{Goodness-of-fit test for the extrapolation fits in data and simulation in the two central $|\eta|$ regions as function of $\pt^{ave}$.}
   \label{fig:goodness-of-fit}
 \end{figure}
 
@@ -268,7 +268,7 @@ The results of the various extrapolation fits to determine $ \sigma_{A}(\alpha_{
   %              \includegraphics[width=0.49\textwidth]{figures/Extrapol_Eta3_final_nominal_v4.pdf} \\
   %              \includegraphics[width=0.49\textwidth]{figures/Extrapol_Eta4_final_nominal_v4.pdf}
   \end{tabular}
-  \caption{Results of extrapolation fits in non-empty $|\eta|$ regions as function of $\pt^{ave}$ for data, simulation and particle-level imbalance.}
+  \caption{Results of extrapolation fits in the two central $|\eta|$ regions as function of $\pt^{ave}$ for data, simulation and particle-level imbalance.}
   \label{fig:fit-results}
 \end{figure}
 
@@ -340,6 +340,16 @@ Thus, all systematic uncertainties are determined as absolute shift of the nomin
 \begin{description}
  \item[PU reweighting:] The trigger dependent pile-up distributions in data which are taken in order to reweight the simulated sample to match the observed pile-up distribution in data are calculated with a nominal minimum bias cross section of $69.4\,\rm{mb}$. In order to propagate the uncertainty on the minimum bias cross section to the data-to-simulation ratio, it is increased to $73.5\,\rm{mb}$. Hence, the pile-up scenario of the simulated \pythia QCD sample is reweighted to the data distributions obtained with this varied minimum bias cross section. Apart from that variation the measurement of the data-to-simulation ratio is performed as for the nominal ratio. \\
  Although the minimum bias cross section is only shifted upwards, the resulting shift in the data-to-simulation ratio is considered as symmetric uncertainty.
+
+\begin{figure}[!tp]
+  \centering
+  \begin{tabular}{cc}
+                \includegraphics[width=0.49\textwidth]{figures/PLI_comparison_Eta0_v4.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/PLI_comparison_Eta1_v4.pdf} \\
+  \end{tabular}
+  \caption{Comparison of the contributions to the asymmetry width due to particle-level imbalance in QCD multijet events generated with \pythia (yellow) to the same quantity derived with the \herwig generator (blue) in the two central $|\eta|$ regions as function of $\pt^{ave}$.}
+  \label{fig:pli_comp}
+\end{figure}
  
  \item[Particle-level imbalance:] 
 The measured resolution in data and simulation is corrected for an imbalance at particle level due to out-of-cone showering effects based on simulation. In order to account for the uncertainty on $\sigma_\mathrm{PLI}$ the PLI-correction factor for each measured resolution value is shifted by $\pm 25\%$. Consequently, the changed ratio is calculated as
@@ -347,25 +357,10 @@ The measured resolution in data and simulation is corrected for an imbalance at 
   c\mathrm{(Data/MC)_{PLI}} = \frac{\sqrt{2} \cdot \sigma_{A, Data}(\alpha_{max} \rightarrow 0) \ominus f \cdot \sigma_\mathrm{PLI}}{\sqrt{2} \cdot \sigma_{A, MC}(\alpha_{max} \rightarrow 0) \ominus f \cdot \sigma_\mathrm{PLI}}  
  \end{equation}
 with $f=0.75, 1.25$ respectively. The size of this variation is chosen by comparing the size of the PLI correction in simulated events from the nominal \pythia sample to the PLI correction estimated from simulated events obtained by the \herwig generator with tune EE3C. This comparison is illustrated in Fig.~\ref{fig:pli_comp}. Since the size of the PLI correction agrees within $25\%$ between both generators, the size of this uncertainty is justified.
-\begin{figure}[!htp]
-  \centering
-  \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/PLI_comparison_Eta0_v4.pdf} &
-                \includegraphics[width=0.49\textwidth]{figures/PLI_comparison_Eta1_v4.pdf} \\
-  \end{tabular}
-  \caption{Comparison of the contributions to the asymmetry width due to particle-level imbalance in QCD multijet events generated with \pythia (yellow) to the same quantity derived with the \herwig generator (blue) in two different $|\eta|$ regions as function of $\pt^{ave}$.}
-  \label{fig:pli_comp}
-\end{figure}
  
  \item[Jet energy scale:] The jet energy scale has been corrected to particle level by the application of dedicated calibration factors which have a certain uncertainty assigned. In order to propagate this uncertainty to the data-to-simulation ratio of the resolution all jet momenta in the simulated sample are shifted up and down by the JEC uncertainty. The jet momenta in data stay unchanged. Afterwards the data-to-simulation is determined again based on the varied jet momenta.
- 
- \item[$\alpha$-spectrum:] To account for additional jet activity in the event the measured widths of the asymmetry distributions are extrapolated to zero additional jet activity by a linear function. This linear behaviour is an empirically found relation rather than a theoretically fundamental connection. One influencing factor of the linear behaviour is the functional form of the $\alpha$-spectrum. It determines how many events are added to the asymmetry distribution in the next higher $\alpha$ interval and consequently how much the asymmetry distribution is broadened. This can result e.g. in a smaller or bigger slope of the linear function or result in a non-linear behaviour. However, such effects might cancel in the ratio as long as the $\alpha$-spectrum is the same in data and simulation. \\
- The observed inclusive $\alpha$-spectrum in the simulated sample is compared to the spectrum in data and shown in Fig.~\ref{fig:syst_uncert_alpha_spec} (left). The bottom part displays the ratio $\rm{Data/MC}$. Since the ratio shows that both spectra do not agree the influence of the $\alpha$-spectrum on the data-to-simulation ratio is evaluated by reweighting the $\alpha$-spectrum to roughly match the one observed in data. The red curve overlaid in the ratio of the left distribution is used to reweight the events in the simulation. For each event a weight $w(\alpha)$ is calculated according to 
-\begin{equation}
-w(\alpha) = 0.545 \cdot \mathrm{(erf}(13.5 \cdot \alpha -0.02) +1))
-\end{equation}
-where erf indicates the error-function~\footnote{ $\mathrm{erf} = \frac{1}{\sqrt{\pi}} \int\limits_{-x}^{x} e^{-t^2} dt$}. This weight is considered as multiplicative factor onto the usual event weight in simulation. For comparison, the reweighted $\alpha$-spectrum is shown on the right of Fig.~\ref{fig:syst_uncert_alpha_spec}.
- \begin{figure}[!thp]
+
+ \begin{figure}[!tp]
   \centering
   \begin{tabular}{cc}
                 \includegraphics[width=0.49\textwidth]{figures/Alpha__AfterAsymmHistos.pdf} &
@@ -375,10 +370,17 @@ where erf indicates the error-function~\footnote{ $\mathrm{erf} = \frac{1}{\sqrt
   \label{fig:syst_uncert_alpha_spec}
 \end{figure}
  
+ \item[$\alpha$-spectrum:] To account for additional jet activity in the event the measured widths of the asymmetry distributions are extrapolated to zero additional jet activity by a linear function. This linear behaviour is an empirically found relation rather than a theoretically fundamental connection. One influencing factor of the linear behaviour is the functional form of the $\alpha$-spectrum. It determines how many events are added to the asymmetry distribution in the next higher $\alpha$ interval and consequently how much the asymmetry distribution is broadened. This can result e.g. in a smaller or bigger slope of the linear function or result in a non-linear behaviour. However, such effects might cancel in the ratio as long as the $\alpha$-spectrum is the same in data and simulation. \\
+ The observed inclusive $\alpha$-spectrum in the simulated sample is compared to the spectrum in data and shown in Fig.~\ref{fig:syst_uncert_alpha_spec} (left). The bottom part displays the ratio $\rm{Data/MC}$. Since the ratio shows that both spectra do not agree the influence of the $\alpha$-spectrum on the data-to-simulation ratio is evaluated by reweighting the $\alpha$-spectrum to roughly match the one observed in data. The red curve overlaid in the ratio of the left distribution is used to reweight the events in the simulation. For each event a weight $w(\alpha)$ is calculated according to 
+\begin{equation}
+w(\alpha) = 0.545 \cdot \mathrm{(erf}(13.5 \cdot \alpha -0.02) +1))
+\end{equation}
+where erf indicates the error-function~\footnote{ $\mathrm{erf} = \frac{1}{\sqrt{\pi}} \int\limits_{-x}^{x} e^{-t^2} dt$}. This weight is considered as multiplicative factor onto the usual event weight in simulation. For comparison, the reweighted $\alpha$-spectrum is shown on the right of Fig.~\ref{fig:syst_uncert_alpha_spec}.
+ 
  \item[$\alpha$-range:] In addition to the functional form of the $\alpha$-spectrum also the specific range which has been chosen for $\alpha$ can result in a more or less linear behaviour of the measured asymmetry widths. The choice of the linear function implies that the linear behaviour holds also for small $\alpha$-values. However, especially for small values of $\alpha$ the linear behaviour could not be tested explicitly due to the imposed minimum \pt threshold of 10\gev for the third jet. \\
-In order to study the linear behaviour of the extrapolation also towards smaller $\alpha$-values, the minimum \pt cut of 10\gev for the third jet is dropped and an additional $\alpha$-interval 0.0 -- 0.05 is introduced for the measured asymmetries at detector level as well as the PLI correction. In Fig.~\ref{fig:syst_uncert_alpha_range} some exemplary extrapolations of the asymmetry widths in data and simulation with the additional $\alpha$-interval are shown. In general, the fit quality decreases slightly but is still reasonable (shown in App.\todo{app:fit quality}). The resulting difference to the nominal data-to-simulation ratio is considered as systematic uncertainty.
+In order to study the linear behaviour of the extrapolation also towards smaller $\alpha$-values, the minimum \pt cut of 10\gev for the third jet is dropped and an additional $\alpha$-interval 0.0 -- 0.05 is introduced for the measured asymmetries at detector level as well as the PLI correction. In Fig.~\ref{fig:syst_uncert_alpha_range} some exemplary extrapolations of the asymmetry widths in data and simulation with the additional $\alpha$-interval are shown. The resulting difference to the nominal data-to-simulation ratio is considered as systematic uncertainty.
 
-\begin{figure}[!thp]
+\begin{figure}[!tp]
   \centering
   \begin{tabular}{cc}
                 \includegraphics[width=0.49\textwidth]{figures/Extrapol_Eta0_pt4_final_nominal_NoMinPtCutForThirdJet_AddNewAlphaBin_v4.pdf} &
@@ -394,6 +396,25 @@ In order to study the linear behaviour of the extrapolation also towards smaller
 An event is considered as gluon splitting event, if one of the two leading jets undergoes a gluon splitting identified by utilizing generator truth information. All events identified as gluon splitting into heavy quarks get an event weight of 1.5. Afterwards the data-to-simulation ratio is derived as the resolution from data to the resolution in the reweighted simulated sample. 
 %An event is considered as gluon splitting event, if one of the two leading jets has a gluon jet flavour with respect to the physics definition for jet flavour. It is distinguished between gluon splitting into light and heavy jets by identifying if the jet considered as gluon in the physics definition has a b/c-flavour or a light flavour using the algorithmic definition. All events where at least one of the two leading jets is identified as a gluon splitting into heavy quarks get an event weight of 1.5. Afterwards the data-to-simulation ratio is derived as the resolution from data to the resolution in the reweighted simulated sample.
 
+\begin{figure}[!p]
+  \centering
+  \begin{tabular}{cc}
+                \includegraphics[width=0.49\textwidth]{figures/Pythia_NSCFit_Eta0_kNS_kC.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/Pythia_NSCFit_Eta1_kNS_kC.pdf}\\
+  \end{tabular}
+  \caption{Results of fitting the resolution in data and simulation with the respective NSC-functions in the two central $|\eta|$ interval.}
+  \label{fig:NSC_Fits_3}
+\end{figure} 
+\begin{figure}[!p]
+  \centering
+  \begin{tabular}{cc}
+                \includegraphics[width=0.49\textwidth]{figures/Pythia_NSCFit_Eta0_kNS_kC_ratio.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/Pythia_NSCFit_Eta1_kNS_kC_ratio.pdf}\\
+  \end{tabular}
+  \caption{Ratio of the results fitting the resolution in data and simulation with the NSC-functions in the two central $|\eta|$ interval together with the measured ratio and a constant fit.}
+  \label{fig:NSC_Fits_ratio}
+\end{figure} 
+
 \item[Shape of the data-to-simulation ratio:] The data-to-simulation ratio in this measurement is determined by fitting the ratio of $\sigma_\mathrm{JER,\, data}$ to $\sigma_\mathrm{JER,\, simulation}$ with a constant. This assumes that the ratio is flat as function of $\pt^{ave}$. In order to test this assumption one can fit the $\sigma_\mathrm{JER,\, data}$ and $\sigma_\mathrm{JER,\, simulation}$ distributions with a more model dependent approach. \\ 
 The following function, denoted \textit{NSC-function}, is used to fit the resolution in simulation
 \begin{equation}
@@ -405,30 +426,12 @@ In order to test the assumption of a flat ratio the data points are fitted with 
 f(\pt) = \sqrt{\frac{(k_{NS} \cdot N)^2}{\pt^{2}} + \frac{(k_{NS} \cdot S)^2}{\pt} + (k_{C} \cdot C)^2} 
 \end{equation} 
 which uses one common scale factor for parameters N and S and another one for C. Since there are no events with low transverse momenta available, no sensitivity to the special characteristics of N is expected and hence no separate scale factor for N is defined. Furthermore this means, that this procedure can not be used to study influences from pile-up. For the determination of $k_{NS}$ and $k_{C}$ the parameters N, S and C are fixed to the results of the fit to the simulation. Some example fits for the two most central $|\eta|$ intervals are summarized in Fig.~\ref{fig:NSC_Fits_3}. It turns out that typically the scale factors $k_{NS}$ and $k_{C}$ are not equal and thus a shape different from a constant could describe the measured data-to-simulation ratios as function of \ptave as well. In order to illustrate how big this effect is, the ratio of the two fitted NSC-functions for data and simulation is shown together with the measured values and the constant fit in Fig.~\ref{fig:NSC_Fits_ratio}. It is visible that the ratio derived from the NSC-fits is also compatible with the measured values for the ratio. Consequently, a trend versus $\pt^{ave}$ could be hidden in the measured points. The difference of the measured scale factors $k_{NS}$ and $k_{C}$ to the central value of the measurement from the constant fit amounts to about $2\%$ in the two central $|\eta|$ intervals. This is considered as systematic uncertainty for all $|\eta|$ intervals in order to compensate for this potentially hidden shape in the data-to-simulation ratio. Furthermore, this also covers possible differences of the scaling factors for jets with very low or very high transverse momenta which can not be directly measured in this analysis. Overall, this systematic uncertainty constitutes the major contribution to the total systematic uncertainty.
-\begin{figure}[!htp]
-  \centering
-  \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/Pythia_NSCFit_Eta0_kNS_kC.pdf} &
-                \includegraphics[width=0.49\textwidth]{figures/Pythia_NSCFit_Eta1_kNS_kC.pdf}\\
-  \end{tabular}
-  \caption{Results of fitting the resolution in data and simulation with the respective NSC-functions in each $|\eta|$ interval.}
-  \label{fig:NSC_Fits_3}
-\end{figure} 
-\begin{figure}[!htp]
-  \centering
-  \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/Pythia_NSCFit_Eta0_kNS_kC_ratio.pdf} &
-                \includegraphics[width=0.49\textwidth]{figures/Pythia_NSCFit_Eta1_kNS_kC_ratio.pdf}\\
-  \end{tabular}
-  \caption{Ratio of the results fitting the resolution in data and simulation with the NSC-functions in each $|\eta|$ interval together with the measured ratio and a constant fit.}
-  \label{fig:NSC_Fits_ratio}
-\end{figure} 
 
 \end{description}
 
 A summary of the data-to-simulation ratios measured with the dijet asymmetry method requiring that the two leading jets belong to the same $|\eta|$ interval together with all systematic uncertainties considered for the ratio is given in Tab~\ref{tab:syst_uncert_summary}. Due to limited event numbers no results could be determined for the two highest $|\eta|$ regions with this approach. In general, the measurement is limited by systematic effects which amount to uncertainties of about $2-2.5\%$ in the central detector part. However, in the $|\eta| = 2.3-2.8$ region the measurement is limited by the statistical uncertainty.   
 
-\begin{table}[!htp]
+\begin{table}[!h]
 \centering
 \caption{Summary of the measured data-to-simulation ratios $c\mathrm{(Data/MC)}$ with statistical uncertainty and systematic uncertainty for each uncertainty source in different $|\eta|$ regions up to $|\eta| = 2.8$.}
 \label{tab:syst_uncert_summary}
@@ -488,7 +491,7 @@ The measurement with the reference-and-probe interval selection is performed tak
 The systematic uncertainties of the two new measurements are evaluated according to same-eta measurement by varying a certain aspect in the determination of the data-to-simulation ratio and taking the absolute deviation from the nominal ratio as uncertainty. The variation is done simultaneously for the $\sigma_{A({|\eta_{\mathrm{probe}|} \neq |\eta_{\mathrm{ref}}|)}}$ value as well as for $\frac{\sigma (p_{T, \mathrm{ref}})}{{\langle p_{T} \rangle}}$ for each uncertainty source.\\
 A summary of the resulting data-to-simulation ratios determined in the measurements with the different reference intervals and the corresponding uncertainties is shown in Table~\ref{tab:syst_uncert_summary_forward_central} for $|\eta_\mathrm{ref}|$ = 0.0 -- 0.5, Table~\ref{tab:syst_uncert_summary_forward_nexttocentral} for $|\eta_\mathrm{ref}|$ = 0.5 -- 1.1 and Table~\ref{tab:syst_uncert_summary_forward_secondnexttocentral} for $|\eta_\mathrm{ref}|$ = 1.1 -- 1.7, respectively.
 
-\begin{table}[!hp]
+\begin{table}[!h]
 \centering
 \caption{Summary of the measurement with reference bin $|\eta| = 0.0 - 0.5$ showing the nominal data-to-simulation ratio $c\mathrm{(Data/MC)}$ with statistical uncertainty and systematic uncertainty for each uncertainty source in different $|\eta|$ regions.}
 \label{tab:syst_uncert_summary_forward_central}
@@ -525,7 +528,7 @@ A summary of the resulting data-to-simulation ratios determined in the measureme
 \end{tabular}}
 \end{table} 
 
-\begin{table}[!hp]
+\begin{table}[!h]
 \centering
 \caption{Summary of the measurement with reference bin $|\eta| = 0.5 - 1.1$ showing the nominal data-to-simulation ratio $c\mathrm{(Data/MC)}$ with statistical uncertainty and systematic uncertainty for each uncertainty source in different $|\eta|$ regions.}
 \label{tab:syst_uncert_summary_forward_nexttocentral}
@@ -562,7 +565,7 @@ A summary of the resulting data-to-simulation ratios determined in the measureme
 \end{tabular}}
 \end{table} 
 
-\begin{table}[!hp]
+\begin{table}[!h]
 \centering
 \caption{Summary of the measurement with reference bin $|\eta| = 1.1 - 1.7$ showing the nominal data-to-simulation ratio $c\mathrm{(Data/MC)}$ with statistical uncertainty and systematic uncertainty for each uncertainty source in different $|\eta|$ regions.}
 \label{tab:syst_uncert_summary_forward_secondnexttocentral}
@@ -601,7 +604,7 @@ A summary of the resulting data-to-simulation ratios determined in the measureme
 
 \section{Measurement for simulated events obtained with the \herwig generator} 
 \label{sec:jer_result_herwig}
-\begin{figure}[!tp]
+\begin{figure}[!h]
   \centering
   \begin{tabular}{c}
                 \includegraphics[width=0.49\textwidth]{figures/HerwigPtAve__AfterAsymmHistos.pdf}
@@ -612,7 +615,7 @@ A summary of the resulting data-to-simulation ratios determined in the measureme
 In order to test if the data-to-simulation ratio is generator independent or features specific differences due to the different fragmentation models used in the generators, the data-to-simulation ratio is not only derived with the \pythia QCD multijet sample, but also for simulated events generated with \herwig using tune EE3C. \\
 The applied selection criteria are the same as described in Section~\ref{subsec:jer_sel_cuts} and also the pile-up reweighting procedure is performed as described. Fig.~\ref{fig:control_plots_herwig} shows the inclusive $\pt^{ave}$ spectrum compared in data and simulation for simulated events taken from \herwig. The agreement of the \ptave spectrum between data and simulation looks reasonable and is similar to the spectrum in simulated events from \pythia.\\
 The nominal values of the data-to-simulation ratio have been determined with statistical uncertainties with the same-eta requirement as well as for the three different reference-and-probe jet combinations. Since this is only meant as cross-check, no systematic uncertainties have been studied. The resulting data-to-simulation ratios for simulated events taken from \herwig together with statistical uncertainties for the different measurements are summarized in Tab.~\ref{tab:result_herwig}. 
-\begin{table}[!tp]
+\begin{table}[!t]
 \centering
 \caption{Measured data-to-simulation ratio in various $|\eta|$ regions with statistical uncertainty for simulated events obtained with the \herwig generator.}
 \label{tab:result_herwig}
@@ -652,7 +655,7 @@ The $|\eta|$ region from 3.2 -- 5.0 covering the most forward region of the dete
 The obtained data-to-simulation ratios for the various $|\eta|$ regions are summarized in Tab.~\ref{tab:result} together with the statistical and systematic uncertainties. In addition, Fig.~\ref{fig:result_2012} shows the measured ratios together with the total uncertainty. This is given by the quadratic sum of the statistical and systematic uncertainties. \\
 The determined ratios vary from 1.06 to 1.40 and are larger than one in all detector parts. Possible sources of this difference can be e.g. mismodelled noise effects or inhomogenities of the detector.
 
-\begin{table}[!hp]
+\begin{table}[!h]
 \centering
 \caption{Measured data-to-simulation ratio in various $|\eta|$ regions with statistical and systematic uncertainty as well as the total uncertainty.}
 \label{tab:result}
@@ -679,7 +682,7 @@ The determined ratios vary from 1.06 to 1.40 and are larger than one in all dete
 \end{tabular}}
 \end{table} 
 
-\begin{figure}[!hp]
+\begin{figure}[!h]
   \centering
   \begin{tabular}{c}
                 \includegraphics[width=0.6\textwidth]{figures/JER_2012_final_combination_v1.pdf}
@@ -692,7 +695,7 @@ The determined ratios vary from 1.06 to 1.40 and are larger than one in all dete
 \label{subsec:jer_results_comparison}
 Earlier analyses using dijet events for data collected at $\sqrt{s}=7$\tev have obtained similar results showing data-to-simulation ratios greater than one. A complementary approach is followed using $\gamma +\rm{jet}$ events which offer a very precise opportunity to measure the jet resolution due to the excellent resolution of the photon energy. A comparison of the numbers derived in the context of this thesis to the latest results from dijet events obtained at $\sqrt{s}=7$\tev~\cite{thesis:Schroeder} and results for $\gamma +\rm{jet}$ measurements at $\sqrt{s}=8$\tev~\cite{CMS-AN-2013-179} are shown together in Fig.~\ref{fig:result_comparison}.
 
-\begin{figure}[!hp]
+\begin{figure}[!h]
   \centering
   \begin{tabular}{cc}
                 \includegraphics[width=0.49\textwidth]{figures/JER_2012_compPhoton_final_combination_v1.pdf} &
@@ -705,8 +708,16 @@ Earlier analyses using dijet events for data collected at $\sqrt{s}=7$\tev have 
 The results obtained from different methods and for the different center-of-mass energies are well compatible with each other. The main advantage of the dijet measurement presented in this thesis compared to the $\gamma +\rm{jet}$ analysis is that one obtains also results for the outermost $|\eta|$ region. In addition, the total uncertainties in the other $|\eta|$ regions are at a same accuracy or even slightly lower. \\
 In comparison to the $\sqrt{s}=7$\tev results from dijet events, the total uncertainty could be significantly reduced by incorporating the correlation among the different inclusive $\alpha$ regions in the extrapolation procedure. In the previous analyses, the statistical uncertainties were underestimated by not considering the above mentioned correlation. This effect was compensated by introducing a rather conservative systematic uncertainty on the extrapolation to zero additional jet activity. Since the treatment of the statistical uncertainty has been changed in this analysis, the estimation of systematic effects could be adjusted accordingly and lead to the overall reduced uncertainty values summarized in Table~\ref{tab:result}.
 
-\section{Adjustment of the MC Resolution to Data}
+\section{Adjustment of the MC-Resolution to Data}
 \label{sec:jer_adjustment}
+The determined data-to-simulation ratios as given in Tab.~\ref{fig:result_2012} can be used to adjust the resolution in simulated events to match the measured resolution in data. This can be done with different approaches depending on what the actual purpose of the analysis is. \\
+If a correspondence of the resolution in data and simulation per jet is needed (as it was used in Sec.~\ref{sec:jer_validation_ratio}), each detector-level jet in the simulation can be scaled according to the momentum difference to the respective generator-level jet. Since the resolution is proportional to this momentum difference, an adjustment of the resolution to data corresponds to scaling the momentum difference by the measured scale factor as expressed already in Eq.~\ref{eq:smear_gen}. \\
+If however an adjustment of the full response function is needed, the distribution can be adjusted by convolution with a Gaussian. Taking a Gaussian function with appropiate width $\sigma_{c}$, the width of the response function after convolution corresponds to the resolution in data such that 
+\begin{equation}
+\sigma_{c} = \sqrt{c^2-1} \cdot \left( \frac{\sigma_{MC}}{\pt} \right)
+\end{equation}
+Consequently, this method can only be used, if $c > 1$. \\
+Further discussion about the adjustment of the resolution in simulation to data can be found in Section~\ref{subsec:RA2_QCD} where this is actually applied in the estimation of background contributions arising from QCD multijet events to a search for new physics in an all-jet final state.  
 
 \section{Impact of the Resolution Measurement on other Analyses}
 \label{sec:jer_impact}

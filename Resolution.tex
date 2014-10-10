@@ -712,14 +712,14 @@ In comparison to the $\sqrt{s}=7$\tev results from dijet events, the total uncer
 \label{sec:jer_adjustment}
 The determined data-to-simulation ratios as given in Tab.~\ref{fig:result_2012} can be used to adjust the resolution in simulated events to match the measured resolution in data. This can be done with different approaches depending on what the actual purpose of the analysis is. \\
 If a correspondence of the resolution in data and simulation per jet is needed (as it was used in Sec.~\ref{sec:jer_validation_ratio}), each detector-level jet in the simulation can be scaled according to the momentum difference to the respective generator-level jet. Since the resolution is proportional to this momentum difference, an adjustment of the resolution to data corresponds to scaling the momentum difference by the measured scale factor as expressed already in Eq.~\ref{eq:smear_gen}. \\
-If however an adjustment of the full response function is needed, the distribution can be adjusted by convolution with a Gaussian. Taking a Gaussian function with appropiate width $\sigma_{c}$, the width of the response function after convolution corresponds to the resolution in data such that 
+If however an adjustment of the full response function is needed, the distribution can be adjusted by convolution with a Gaussian. Taking a Gaussian function with appropiate width $\sigma_{c}$, the width of the response function after convolution corresponds to the resolution in data according to 
 \begin{equation}
 \sigma_{c} = \sqrt{c^2-1} \cdot \left( \frac{\sigma_{MC}}{\pt} \right)
 \end{equation}
 Consequently, this method can only be used, if $c > 1$. \\
 Further discussion about the adjustment of the resolution in simulation to data can be found in Section~\ref{subsec:RA2_QCD} where this is actually applied in the estimation of background contributions arising from QCD multijet events to a search for new physics in an all-jet final state.  
 
-\section{Impact of the Resolution Measurement on other Analyses}
+\section{Impact of the Resolution Measurement on Other Analyses}
 \label{sec:jer_impact}
 
 

@@ -180,6 +180,7 @@ From the tails of the detector response events with large asymmetries can emerge
 The width of the asymmetry is determined by taking the whole distribution into account or by truncating a certain percentage of the tail regions. Thus, the asymmetry width is calculated as truncated root-mean-square
 \begin{equation}
  \sigma_A = \mathrm{RMS}_{t\%} = \sqrt{\frac{1}{\sum_{i} y_i} \sum_{i} y_i \cdot A_i^2}  
+ \label{eq:truncated_rms}
 \end{equation} 
 where $y_i$ denotes the frequency of the asymmetry value $A_i$ and the sum over i includes all values such that a percentage $t$ of the total asymmetry distribution is covered. The statistical uncertainty is hence given by
 \begin{equation}
@@ -216,9 +217,10 @@ by determining the parameters a and b. This is done for known $\alpha_{max}$ and
 \end{equation}
 where $dy = y_{\mathrm{measured}} - y_{\mathrm{predicted}}$ and $C$ denotes the covariance matrix. Consequently, the asymmetry width for vanishing additional jet activity is given by $b=\sigma_\mathrm{A}(\alpha_{max} \rightarrow 0)$. Under the assumption that all events that belong to $\alpha$ interval $i$ are also completely included in the next higher $\alpha$ interval $j$~\footnote{This assumption is only almost true since the asymmetry distributions are truncated to reject non-Gaussian components and some events might not fulfill this criterium.} the covariance matrix is given by
 \begin{equation}
-C_{i,j}(\sigma_{A_i},\sigma_{A_j}) = (\Delta \sigma_{A_i})^2 \, \frac{\sigma_{A_i}}{\sigma_{A_j}} \, \frac{n_i}{n_j} 
+C_{i,j}(\sigma_{A_i},\sigma_{A_j}) = (\Delta \sigma_{A_i})^2 \cdot \frac{\sigma_{A_i}}{\sigma_{A_j}} \cdot \frac{n_i}{n_j} 
+\label{eq:jer_corr}
 \end{equation}
-where $n$ is the number of events in that particular $\alpha$ interval. The function minimization itself is performed with the Minuit package~\cite{Minuit}. 
+where $n$ is the number of events in that particular $\alpha$ interval. A discussion regarding the derivation of that expression is summarized in Appendix~\ref{app:extrapol_corr}~\cite{JOtt}. The function minimization itself is performed with the Minuit package~\cite{Minuit}.   
 
 \begin{figure}[!tp]
   \centering
@@ -233,7 +235,7 @@ where $n$ is the number of events in that particular $\alpha$ interval. The func
   \label{fig:goodness-of-fit}
 \end{figure}
 
-In Fig.~\ref{fig:goodness-of-fit} an overview of a goodness-of-fit test is shown for the extrapolation fits in data and simulation. The resulting $\chi^2$ distributions over the number of degrees of freedom are shown as function of $\pt^{ave}$ for each individual $|\eta|$ interval. This expected to lie around 1. Consequently, the fit quality is in general quite good but worsens for larger $\pt^{ave}$ values. Since especially for higher $\pt^{ave}$ intervals in the central $|\eta|$ regions the statistical uncertainty is rather low, the fit is very sensitive to even small deviations from a linear behaviour which results in a minor fit quality. However, a possible non-linearity is considered in the systematic uncertainties of the measurement as discussed in Section~\ref{sec:jer_syst_unc}.
+In Fig.~\ref{fig:goodness-of-fit} an overview of a goodness-of-fit test is shown for the extrapolation fits in data and simulation. The resulting $\chi^2$ distributions over the number of degrees of freedom are shown as function of $\pt^{ave}$ exemplary for the two central $|\eta|$ intervals. This is expected to be distributed around 1. Consequently, the fit quality is in general quite good but worsens for larger $\pt^{ave}$ values. Since especially for higher $\pt^{ave}$ intervals in the central $|\eta|$ regions the statistical uncertainty is rather low, the fit is very sensitive to even small deviations from a linear behaviour which results in a minor fit quality. However, a possible non-linearity is considered in the systematic uncertainties of the measurement as discussed in Section~\ref{sec:jer_syst_unc}.
 
 \subsection{Correction for Particle-Level Imbalance}
 \label{subsec:jer_corrections_pli}

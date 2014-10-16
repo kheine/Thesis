@@ -108,13 +108,16 @@ The selection described above defines a loose validation region and provides a b
 
 \begin{figure}[!t]
   \centering
-\makebox[\linewidth]{
-  \begin{tabular}{ccc}
-                \includegraphics[width=0.4\textwidth]{figures/RA2_baseline_MC_HT.pdf} & 
-                \includegraphics[width=0.4\textwidth]{figures/RA2_baseline_MC_MHT.pdf} &
-                \includegraphics[width=0.4\textwidth]{figures/RA2_baseline_MC_NJets.pdf}
-  \end{tabular}}
-  \caption{Comparison of selected \HT (\textit{left}), \MHT (\textit{middle}) and \NJets (\textit{right}) distributions in data (\textit{black dots}) and simulated events (\textit{shaded curve}) found from applying the event cleaning and baseline selection criteria described in Sec.~\ref{subsec:RA2_cleaning} and~\ref{subsec:RA2_baseline}. Only statistical uncertainties are shown. Taken from~\cite{Chatrchyan:2014lfa}.}
+  % \makebox[\linewidth]{
+  \begin{minipage}[c]{1.\textwidth}
+    \begin{center}
+      \includegraphics[width=0.49\textwidth]{figures/RA2_baseline_MC_HT.pdf}  
+      \includegraphics[width=0.49\textwidth]{figures/RA2_baseline_MC_MHT.pdf} \\
+      \includegraphics[width=0.49\textwidth]{figures/RA2_baseline_MC_NJets.pdf}
+    \end{center}
+  \end{minipage}
+
+  \caption{Comparison of selected \HT (\textit{top left}), \MHT (\textit{top right}) and \NJets (\textit{bottom}) distributions in data (\textit{black dots}) and simulated events (\textit{shaded curve}) found from applying the event cleaning and baseline selection criteria described in Sec.~\ref{subsec:RA2_cleaning} and~\ref{subsec:RA2_baseline}. Only statistical uncertainties are shown. Taken from~\cite{Chatrchyan:2014lfa}.}
   \label{fig:ra2_baseline_mc}
 \end{figure}
 
@@ -231,20 +234,6 @@ Further systematic uncertainties taken into account for the hadronic $\tau$ back
 
 \subsection{Lost-Lepton Background}
 \label{subsec:RA2_lostlepton}
-Similar to background events from hadronic tau decays, the background contribution due to a failed veto of a light lepton is estimated from a $\mu + \mathrm{jets}$ control sample. This is selected with the same trigger as used for the search. The sample is selected by requiring exactly one well-reconstructed and isolated muon with $\pt > 10$\gev. Furthermore, the same transverse mass requirement of $m_T < 100$\gev as for the hadronic tau background is applied. \\ 
-The number of events in the zero-lepton search regions can be estimated from the single-muon sample by weighting the events according to the lepton reconstruction and isolation efficiencies as well as the detector and kinematic acceptance of the muons. The respective efficiencies and acceptances are obtained from simulated \ttbar and \WJets events and determined in intervals of \HT, \MHT and \NJets. \\
-In order to determine the number of events due to unidentified leptons the events in the control sample are weighted according to
-\begin{equation*}
-\frac{1}{\epsilon_\mathrm{iso}^\mathrm{\mu}} \times \frac{1-\epsilon_\mathrm{reco}^{e, \mu}}{\epsilon_\mathrm{reco}^{\mu}}
-\end{equation*}
-and with
-\begin{equation*}
-\frac{\epsilon_\mathrm{reco}^{e, \mu}}{\epsilon_\mathrm{reco}^{\mu}} \times \frac{1-\epsilon_\mathrm{iso}^{e, \mu}}{\epsilon_\mathrm{iso}^{\mu}}
-\end{equation*}
-to account for non-isolated leptons. Both equations are based on the reconstruction $\epsilon_\mathrm{reco}^{e, \mu}$ and isolation $\epsilon_\mathrm{iso}^{e, \mu}$ efficiencies of the electron and muon, respectively. 
-The method is validated in simulation by comparing the predicted event yields for lost-lepton events in \ttbar and \WJets from a signle-muon control sample after the baseline selection to the genuine background. This comparison is illustrated in Fig.~\ref{fig:ra2_ll} as function of \HT, \MHT and \NJets and shows a good overall agreement. An uncertainty of 15\% is assigned to jet multiplicities 3--5 and 40\% to the others in order to account for the statistical precision of this validation test.\\
-Main other uncertainties of the lost-lepton background prediction arise from the lack of sufficient events in the control sample in each defined search region, differences in lepton reconstruction and isolation efficiency between data and simulation, impact on the acceptance when varying the used PDFs and the acceptance of the transverse mass cut.
-
 \begin{figure}[!t]
   \centering
 
@@ -259,6 +248,19 @@ Main other uncertainties of the lost-lepton background prediction arise from the
   \caption{Predicted (a) \HT, (b) \MHT, and (c) \NJets distributions found from applying the lost lepton background evaluation method to simulated \ttbar and \WJets events (solid points) in comparison to the genuine \ttbar and \WJets background from simulation (shaded curves). Only statistical uncertainties are shown. Taken from~\cite{Chatrchyan:2014lfa}.}
   \label{fig:ra2_ll}
 \end{figure}
+Similar to background events from hadronic tau decays, the background contribution due to a failed veto of a light lepton is estimated from a $\mu + \mathrm{jets}$ control sample. This is selected with the same trigger as used for the search. The sample is selected by requiring exactly one well-reconstructed and isolated muon with $\pt > 10$\gev. Furthermore, the same transverse mass requirement of $m_T < 100$\gev as for the hadronic tau background is applied. \\ 
+The number of events in the zero-lepton search regions can be estimated from the single-muon sample by weighting the events according to the lepton reconstruction and isolation efficiencies as well as the detector and kinematic acceptance of the muons. The respective efficiencies and acceptances are obtained from simulated \ttbar and \WJets events and determined in intervals of \HT, \MHT and \NJets. \\
+In order to determine the number of events due to unidentified leptons the events in the control sample are weighted according to
+\begin{equation*}
+\frac{1}{\epsilon_\mathrm{iso}^\mathrm{\mu}} \times \frac{1-\epsilon_\mathrm{reco}^{e, \mu}}{\epsilon_\mathrm{reco}^{\mu}}
+\end{equation*}
+and with
+\begin{equation*}
+\frac{\epsilon_\mathrm{reco}^{e, \mu}}{\epsilon_\mathrm{reco}^{\mu}} \times \frac{1-\epsilon_\mathrm{iso}^{e, \mu}}{\epsilon_\mathrm{iso}^{\mu}}
+\end{equation*}
+to account for non-isolated leptons. Both equations are based on the reconstruction $\epsilon_\mathrm{reco}^{e, \mu}$ and isolation $\epsilon_\mathrm{iso}^{e, \mu}$ efficiencies of the electron and muon, respectively. 
+The method is validated in simulation by comparing the predicted event yields for lost-lepton events in \ttbar and \WJets from a signle-muon control sample after the baseline selection to the genuine background. This comparison is illustrated in Fig.~\ref{fig:ra2_ll} as function of \HT, \MHT and \NJets and shows a good overall agreement. An uncertainty of 15\% is assigned to jet multiplicities 3--5 and 40\% to the others in order to account for the statistical precision of this validation test.\\
+Main other uncertainties of the lost-lepton background prediction arise from the lack of sufficient events in the control sample in each defined search region, differences in lepton reconstruction and isolation efficiency between data and simulation, impact on the acceptance when varying the used PDFs and the acceptance of the transverse mass cut.
 
 %\begin{figure}[!t]
 %  \centering
@@ -385,7 +387,7 @@ Exclusion limits are derived with the modified $\mathrm{CL_s}$~\cite{0954-3899-2
 \item The systematic variation of PDFs~\cite{Botje:2011sn} leads to uncertainties of $1-8$\% in the signal acceptance. 
 \item In order to match the maesured rate of initial-state radiation in data the simulation of the signal events is corrected accordingly~\cite{isrfsr}. For model parameter points with small differences between the LSP and the gluino or squark mass this results in an uncertainty of 22\% whereas it is usually less than a few percent for others.  
 \end{itemize}
-Finally, the resulting exclusion limits for the above described processes (a)-(d) are shown in Fig.~\ref{fig:ra2_limits}(a)-(d), respectively. The expected (\textit{dashed}) and observed (\textit{solid}) 95\% CL upper limits are shown accordingly in the gluino-LSP and squark-LSP mass plane for the signal production cross sections. The one-standard-deviation uncertainty for the theory prediction is obtained by varying the renormalization and factorization scale by a factor of two and incorporating CTEQ6.6~\cite{Nadolsky:2008zw} and MSTW2008~\cite{Martin:2009iq} as alternative PDF sets. By considering conservatively the observed limit minus the one sigma theory uncertainty, pair production of squarks of the first two generations is excluded below 780\gev for a LSP mass less than 200\gev. However, if only one light squark is accessible the limit decreases to 400\gev for LSP masses below 80\gev. Similarly, the pair production of gluinos could be excluded for the three different decay modes (b)-(d) in case of a LSP mass less than 100\gev for gluino masses up to 1.16\tev, 1.13\tev and 1.21\tev, respectively. These results exceed the exclusion limits derived from the 7\tev analysis by around 200\gev in the masses of the gluino and squark for light LSPs.
+Finally, the resulting exclusion limits for the above described processes (a)-(d) are shown in Fig.~\ref{fig:ra2_limits}(a)-(d), respectively. The expected (\textit{dashed}) and observed (\textit{solid}) 95\% CL upper limits are shown accordingly in the gluino-LSP and squark-LSP mass plane for the signal production cross sections. The one-standard-deviation uncertainty for the theory prediction is obtained by varying the renormalization and factorization scale by a factor of two and incorporating CTEQ6.6~\cite{Nadolsky:2008zw} and MSTW2008~\cite{Martin:2009iq} as alternative PDF sets. By considering conservatively the observed limit minus the one sigma theory uncertainty, pair production of squarks of the first two generations is excluded below 780\gev for a LSP mass less than 200\gev. However, if only one light squark is accessible the limit decreases to 400\gev for LSP masses below 80\gev. Similarly, the pair production of gluinos could be excluded for the three different decay modes (b)-(d) in case of a LSP mass less than 100\gev for gluino masses up to 1.16\tev, 1.13\tev and 1.21\tev, respectively. 
 
 \begin{figure}[!h]
   \centering
@@ -410,6 +412,7 @@ Finally, the resulting exclusion limits for the above described processes (a)-(d
 
 \subsection{Comparison to Other Measurements}
 \label{subsec:RA2_comp}
+The exclusion limits obtained with the analysis presented here exceed the exclusion limits derived from the 7\tev analysis (cf. Fig.~\ref{fig:SMS_7TeV}). Especially, the limit on the gluino mass is improved by around 200\gev for light LSPs. Furthermore, the extension of the analysis into the \NJets plane provided a good sensitivity towards the gluino-mediated production of third generation squarks and to decays involving $W$ and $Z$ bosons.
 
 \begin{figure}[!h]
   \centering
@@ -422,7 +425,7 @@ Finally, the resulting exclusion limits for the above described processes (a)-(d
     \end{center}
   \end{minipage}}
 
-  \caption{Comparison of various exclusion limits derived by different CMS analyses for the SMS T1qqqq (\textit{top left}), the SMS T2qq (\textit{top right}) and the SMS T1tttt (\textit{bottom}). Taken from ... (cms susy public results).}
+  \caption{Comparison of various exclusion limits derived by different CMS analyses for the process $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^0$ (\textit{top left}), $\tilde{q} \rightarrow q + \tilde{\chi}_1^0$ (\textit{top right}) and $\tilde{g} \rightarrow t\bar{t} + \tilde{\chi}_1^0$ (\textit{bottom}). Taken from~\cite{bib:CMS:PhysicsResultsSUS}}
   \label{fig:result_comp}
 \end{figure}
 

@@ -164,13 +164,10 @@ Consequently, the expected exclusion reach of the analysis is supposed to improv
   \label{fig:stop_gen_top_pt}
 \end{figure} 
 In order to gain a better understanding of the kinematics of the investigated final state, the \pt spectrum of the leading generated top quark is illustrated in Fig.~\ref{fig:stop_gen_top_pt} for \ttbar background and two selected signal points without applying any selection criteria. It turns out that the \pt spectrum of the signal is significantly harder than that of the \ttbar background. For instance for a stop mass of 1000\gev the maximum lies at a \pt range around 400-500\gev. As discussed in Sec.~\ref{sec:boosted_tops}, decay products emerging from the decay of a top quark with large transverse momentum do not show up as separated objects in the detector, but merge into jets with large radius parameter. Following Equation~\ref{eq:rule-of-thumb} the opening angle of decay products from a top quark with transverse momentum between 400-500\gev is supposed to be $R = 0.8$. Thus, such topologies are well suited to utilize the top tagging techniques described in Sec.~\ref{sec:boosted_tops}. \\
-The performance of the CMS- and the HEP-top-tagging algorithms are investigated based on the 13\tev simulation samples and reviewed in the following section. 
-
-\subsection{Top Tagging Efficiency Studies}
-\label{subsec:stop_toptagging}
-In order to evaluate the performance of the top-tagging algorithms, the top tagging efficiencies and misidentification rates are derived. While the top tagging efficiency is determined for \ttbar events, the QCD multijet sample is used to measure the misidentification rate. The top tag efficiency is defined as the number of hadronically decaying generated top quarks matched to a top-tagged CA-jet divided by the number of all generated hadronically decaying generated top quarks. A successful match is identified by requiring the $\Delta R$ of a generated top quark and a top-tagged CA-jet to be less than the jet radius parameter which is $R=0.8$ for the CMS top tagger and $R=1.5$ for the HEP top tagger, respectively. 
-
-
+The performance of the CMS- and the HEP-top-tagging algorithms are investigated based on the 13\tev simulation samples and reviewed in the following. 
+\begin{description}
+\item {\textbf{Top Tagging Efficiency Studies:}} In order to evaluate the performance of the top-tagging algorithms, the top tagging efficiencies and misidentification rates are derived. While the top tagging efficiency is determined for \ttbar events, the QCD multijet sample is used to measure the misidentification rate. \\
+The top tag efficiency is defined as the number of hadronically decaying generated top quarks matched to a top-tagged CA-jet divided by the number of all generated hadronically decaying generated top quarks. A successful match is identified by requiring the $\Delta R$ of a generated top quark and a top-tagged CA-jet to be less than the jet radius parameter which is $R=0.8$ for the CMS top tagger and $R=1.5$ for the HEP top tagger, respectively. The obtained efficiency as function of the transverse momentum of the generated hadronically decaying top quark is shown in the left part of Fig.~\ref{fig:stop_top_eff} for both the CMS and the HEP top tagger. It is visible that the turn-on of the HEP top tagger starts already around 200\gev while the CMS tagger begins to become efficient not before around 400\gev. However, the efficiency of the HEP top tagger lies around 20\% in the plateau region while the plateau efficiency of the CMS top tagger is in general higher with a value of around 25\%. This behaviour results mainly from the different jet sizes and selection criteria which are in case of the HEP top tagger optimized to be sensitive already in the \pt range around 200-300\gev.\\
 \begin{figure}[!t]
   \centering
 \makebox[\linewidth]{
@@ -181,8 +178,21 @@ In order to evaluate the performance of the top-tagging algorithms, the top tagg
   \caption{Top tag efficiency for \ttbar events as function of the transverse momentum of the generated top quark (\textit{left}) and misidentification rate for QCD multijet events as function of the CA-jet \pt (\textit{right}). In case of the CMS top tagger CA-jets with a distance parameter of $R=0.8$ are used while the HEP top tagger is based on CA-jets with $R=1.5$.}
   \label{fig:stop_top_eff}
 \end{figure} 
-
-
+The misidentification rate can be evaluated by dividing the number of top-ttaged CA-jets by the number of all CA-jets. Again, in case of the CMS top tagger the jet distance parameter is $R=0.8$ and for the HEP top tagger it is $R=1.5$. The misidentification rate as function of the respective CA-jet transverse momentum is shown in the right part of Fig.~\ref{fig:stop_top_eff}. Here, a similar feature as for the efficiency curve is observed. The HEP top tagger shows a certain misidentification rate already for lower transverse momenta than the CMS top tagger. However, in general the misidentification rate of the HEP top tagger is significantly smaller with a plateau around 1.5\% compared to the CMS top tagger which shows a misidentification rate of up to 4-5\% in the plateau. \\
+Consequently, in analyses which rely on top quarks with moderate transverse momenta and suffer mainly from QCD background the HEP top tagger is a good choice since the efficiency has an early turn-on and the misidentification rate is small. However, when the main background is top-like, as it is the case for top squarks, the more important property is to have an efficiency as high as possible to retain signal efficiency while the actual misidentification rate only plays a minor role. 
+\end{description}
+\begin{figure}[!t]
+  \centering
+\makebox[\linewidth]{
+  \begin{tabular}{cc}
+                \includegraphics[width=0.49\textwidth]{figures/Stop_DeltaPhiSelection_N_jets_toptagged.pdf} & 
+                \includegraphics[width=0.49\textwidth]{figures/Stop_DeltaPhiSelection_N_jets_HEPtoptagged.pdf} \\
+  \end{tabular}}
+  \caption{Top tag multiplicity for the CMS top tagger (\textit{left}) and the HEP top tagger (\textit{right}) after application of the baseline selection. Only CA-jets of the correpsonding jet size with a transverse momentum above 150\gev are considered.}
+  \label{fig:stop_top_tag_multi}
+\end{figure} 
+The impact on the analysis when applying top tag requirements can be studied when looking for instance at the top tag multiplicity. In Fig.~\ref{fig:stop_top_tag_multi} the top tag multiplicity is shown for the CMS top tagger (left) and the HEP top tagger (right) after the application of the baseline selection. Here, only CA-jets of the corresponding jet size with a transverse momentum above 150\gev are considered since the taggers are not supposed to be efficienct for smaller momenta. The distributions exhibit that although also a significant amount of signal events does not have a CA-jet identified as top jet by the respective algorithm the background can be significantly reduced when reuqiring at least one top-tagged jet. In general the number of signal events with one or two top tags is larger when using the HEP top tagger than for the CMS tagger, but also the number of background events from \ttbar shows a larger value for the HEP top tagger case since more \ttbar events with lower top transverse momenta are selected. \\
+In order to test the impact of the top tagging requirement on the search sensitivity, the expected limits are derived again based on the search regions defined in Tab.~\ref{tab:stop_excl_search_bins} with the same uncertainties as assumed in Sec.~\ref{sec:stop_baseline}. The results are illustrated in Fig~\ref{fig:stop_baselinetoptag_limit}. \\
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
@@ -191,6 +201,8 @@ In order to evaluate the performance of the top-tagging algorithms, the top tagg
   \caption{Expected 95\% upper limit for signal strength versus $m_{\tilde{t}}$. The LSP mass is chosen to be 50\gev.}
   \label{fig:stop_baselinetoptag_limit}
 \end{figure}
+
+It turns out that for the HEP top tagger as well as for the CMS top tagger the usage of a top tag requirement in addition to the baseline selections significantly improves the search sensitivity by a factor of two to three. Hence, mass points up to ($m_{\tilde{t}}, m_\mathrm{LSP}$) = (700, 50) or even (800, 50) can be probed. This selection is also better than the result obtained when adding a b-tag requirement as discussed in Sec.~\ref{sec:stop_btagging} which allows to probe stop masses around 600\gev for an LSP mass of 50\gev. In general, the selection based on the CMS top tagger performs better than the selection involving the HEP top tagger, since the signal to background ratio is higher as discussed above.
 
 \section{Performance Comparison of Various Kinematic Selections}
 \label{sec:stop_cuts}

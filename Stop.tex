@@ -124,7 +124,7 @@ which are meant to be total uncertainties such that the actual statistical uncer
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
-                \includegraphics[width=0.75\textwidth]{figures/limitplot4BinSel_Baseline.pdf} 
+                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_Baseline.pdf} 
   \end{tabular}
   \caption{Expected 95\% upper limit for signal strength versus $m_{\tilde{t}}$. The LSP mass is chosen to be 50\gev.}
   \label{fig:stop_baseline_limit}
@@ -133,7 +133,7 @@ which are meant to be total uncertainties such that the actual statistical uncer
 \section{Sensitivity Improvement using b Tagging}
 \label{sec:stop_btagging}
 As illustrated in Fig.~\ref{fig:T2tt}, the targeted signal final state involves the presence of bottom quarks emerging from the decay of the top quarks. Thus, a very common thing to possibly enhance the sensitivity of such an analysis is to employ b-tagging techniques to identify the b quarks in the final state. Typical b-tagging algorithms for the identification of b-quark jets used within the CMS experiment have been discussed in Section~\ref{sec:btagging}. In this analysis b-quark jets are identified based on the CSV-algorithm using the medium working point. In Fig.~\ref{fig:stop_baseline_btag} the b-tag multiplicity, \ie the number of b-tagged jets in the event is illustrated. As expected the maximum of this distribution for signal and \ttbar events is around two, since two b-quark jets are expected from the two decaying top quarks. Values above two or b-tagged jets in backgrounds not containing real b-quarks can be explained by the misidentification rate of the tagging algorithm. \\
-The resulting distributions for \HT, \met and \NJets after requiring the presence of at least one b-tagged jet in the event are illustrated in Fig.~\ref{fig:stop_baseline_btag_HT_MET_NJets}. It can be seen that all backgrounds except for \ttbar can be significantly reduced when requiring the presence of at least one b-quark jet. \\
+The resulting distributions for \HT, \met and \NJets after requiring the presence of at least one b-tagged jet in the event are illustrated in Fig.~\ref{fig:stop_baseline_btag_HT_MET_NJets} in App.~\ref{app:stop}. It turns out that all backgrounds except for \ttbar can be significantly reduced when requiring the presence of at least one b-quark jet. This is expected, since the \ttbar background is the only background containing real b quarks. \\
 \begin{figure}[!t]
   \centering
   \begin{tabular}{c}
@@ -142,26 +142,12 @@ The resulting distributions for \HT, \met and \NJets after requiring the presenc
   \caption{B-tag multiplicity after applying the baseline selection in simulated events. The signal points are labeled as (X, Y) where X is the top squark mass and Y is the LSP mass.}
   \label{fig:stop_baseline_btag}
 \end{figure}
-\begin{figure}[!t]
-  \centering
-  % \makebox[\linewidth]{
-  \begin{minipage}[c]{1.\textwidth}
-    \begin{center}
-      \includegraphics[width=0.49\textwidth]{figures/Stop_BTag_HThad.pdf}  
-      \includegraphics[width=0.49\textwidth]{figures/Stop_BTag_MET.pdf} \\
-      \includegraphics[width=0.49\textwidth]{figures/Stop_BTag_N_jets.pdf}
-    \end{center}
-  \end{minipage}
-
-  \caption{Comparison of selected \HT (\textit{top left}), \met (\textit{top right}) and \NJets (\textit{bottom}) distributions in simulated events found from applying the baseline selection criteria and requiring at least one b-tagged jet. The signal points are labeled as (X, Y) where X is the top squark mass and Y is the LSP mass.}
-  \label{fig:stop_baseline_btag_HT_MET_NJets}
-\end{figure}
 Consequently, the expected exclusion reach of the analysis is supposed to improve when applying the b-tag requirement in addition to the baseline selection. Thus, the same exclusive search regions as defined in Tab.~\ref{tab:stop_excl_search_bins} are used considering the same total uncertainties as described in Sec.~\ref{sec:stop_baseline} for a performance comparison of this improved selection with respect to the baseline requirements. The expected limits for the baseline selection as well as the baseline selection and the b-tag requirement are shown in Fig~\ref{fig:stop_baselinebtag_limit}. It turns out that the b-tag requirement significantly improves the sensitivity of the analysis towards the specified top squark mass range. Especially lower masses could be tested with such an anlaysis strategy. However, since the focus of this analysis is put on higher stop quark masses, it is discussed in the next section how this mass range can be adressed better.  
 
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
-                \includegraphics[width=0.75\textwidth]{figures/limitplot4BinSel_BaselineBTag.pdf} 
+                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_BaselineBTag.pdf} 
   \end{tabular}
   \caption{Expected 95\% upper limit for signal strength versus $m_{\tilde{t}}$. The LSP mass is chosen to be 50\gev.}
   \label{fig:stop_baselinebtag_limit}
@@ -169,19 +155,38 @@ Consequently, the expected exclusion reach of the analysis is supposed to improv
 
 \section{Sensitivity Improvement using top Tagging}
 \label{sec:stop_btagging}
+\begin{figure}[!t]
+  \centering
+  \begin{tabular}{c}
+                \includegraphics[width=0.49\textwidth]{figures/Stop_NoCuts_leading_t_ptgen.pdf} 
+  \end{tabular}
+  \caption{Transverse momentum spectrum of the leading generated top quarks without applying any selection criteria. The signal points are labeled as (X, Y) where X is the top squark mass and Y is the LSP mass.}
+  \label{fig:stop_gen_top_pt}
+\end{figure} 
+In order to gain a better understanding of the kinematics of the investigated final state, the \pt spectrum of the leading generated top quark is illustrated in Fig.~\ref{fig:stop_gen_top_pt} for \ttbar background and two selected signal points without applying any selection criteria. It turns out that the \pt spectrum of the signal is significantly harder than that of the \ttbar background. For instance for a stop mass of 1000\gev the maximum lies at a \pt range around 400-500\gev. As discussed in Sec.~\ref{sec:boosted_tops}, decay products emerging from the decay of a top quark with large transverse momentum do not show up as separated objects in the detector, but merge into jets with large radius parameter. Following Equation~\ref{eq:rule-of-thumb} the opening angle of decay products from a top quark with transverse momentum between 400-500\gev is supposed to be $R = 0.8$. Thus, such topologies are well suited to utilize the top tagging techniques described in Sec.~\ref{sec:boosted_tops}. \\
+The performance of the CMS- and the HEP-top-tagging algorithms are investigated based on the 13\tev simulation samples and reviewed in the following section. 
 
 \subsection{Top Tagging Efficiency Studies}
 \label{subsec:stop_toptagging}
+In order to evaluate the performance of the top-tagging algorithms, the top tagging efficiencies and misidentification rates are derived. While the top tagging efficiency is determined for \ttbar events, the QCD multijet sample is used to measure the misidentification rate. The top tag efficiency is defined as the number of hadronically decaying generated top quarks matched to a top-tagged CA-jet divided by the number of all generated hadronically decaying generated top quarks. A successful match is identified by requiring the $\Delta R$ of a generated top quark and a top-tagged CA-jet to be less than the jet radius parameter which is $R=0.8$ for the CMS top tagger and $R=1.5$ for the HEP top tagger, respectively. 
 
-\begin{description}
- \item \textbf{Top Tag Efficiency}
- \item \textbf{Misidentification Rate}
-\end{description}
+
+\begin{figure}[!t]
+  \centering
+\makebox[\linewidth]{
+  \begin{tabular}{cc}
+                \includegraphics[width=0.49\textwidth]{figures/Comparison_TopTagEfficiencyGenTopPt_13TeV.pdf} & 
+                \includegraphics[width=0.49\textwidth]{figures/Comparison_MistagRate_13TeV.pdf} \\
+  \end{tabular}}
+  \caption{Top tag efficiency for \ttbar events as function of the transverse momentum of the generated top quark (\textit{left}) and misidentification rate for QCD multijet events as function of the CA-jet \pt (\textit{right}). In case of the CMS top tagger CA-jets with a distance parameter of $R=0.8$ are used while the HEP top tagger is based on CA-jets with $R=1.5$.}
+  \label{fig:stop_top_eff}
+\end{figure} 
+
 
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
-                \includegraphics[width=0.75\textwidth]{figures/limitplot4BinSel_BaselineTopTag.pdf} 
+                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_BaselineTopTag.pdf} 
   \end{tabular}
   \caption{Expected 95\% upper limit for signal strength versus $m_{\tilde{t}}$. The LSP mass is chosen to be 50\gev.}
   \label{fig:stop_baselinetoptag_limit}

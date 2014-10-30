@@ -1,11 +1,11 @@
-The search for hints of supersymmetric particles is among the important goals of the LHC physics program. As discussed in Sec.~\ref{subsec:susy_collider}, searches performed at $\sqrt{s} = 7$\tev have constrained the allowed parameter space for light-flavour squarks and gluinos already up to around 800\gev and 1\tev for light LSP masses, respectively. However, the increased centre of mass energy from 7\tev to 8\tev and the recorded dataset which is around four times larger than at 7\tev provide the opportunity to extend the reach of such searches into entirely unexplored parameter regions. In Fig.~\ref{fig:susy_theory_xs} the theory cross section for the production of supersymmetric particles is shown as function of the SUSY particle mass. The y-axis on the right indicates how many events are expected in 20\fbinv of pp collision data at the LHC at $\sqrt{s}=8$\tev. \\
+The search for hints of supersymmetric particles is among the important goals of the LHC physics program. As discussed in Sec.~\ref{subsec:susy_collider}, searches performed at $\sqrt{s} = 7$\tev have constrained the allowed parameter space for light-flavour squarks and gluinos already up to around 800\gev and 1\tev for light LSP masses, respectively. However, the increased centre of mass energy from 7\tev to 8\tev and the recorded dataset which is around four times larger than at 7\tev provide the opportunity to extend the reach of such searches into entirely unexplored parameter regions. In Fig.~\ref{fig:susy_theory_xs} the theory cross section for the production of supersymmetric particles is shown as function of the SUSY particle mass. The y-axis on the right indicates how many events are expected in 20\fbinv of \pp collision data at the LHC at $\sqrt{s}=8$\tev. \\
 
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
                 \includegraphics[width=0.65\textwidth]{figures/xsections_strong.pdf} 
   \end{tabular}
-  \caption{Theory cross sections for selected SUSY processes as function of the SUSY sparticle mass. The y-axis on the right indicates the expected number of events in 20\fbinv of pp collision data at the LHC at $\sqrt{s}=8$\tev. Taken from~\cite{Kramer:2012bx}.}
+  \caption{Theory cross sections for selected SUSY processes as function of the SUSY sparticle mass. The y-axis on the right indicates the expected number of events in 20\fbinv of \pp collision data at the LHC at $\sqrt{s}=8$\tev~\cite{Kramer:2012bx}.}
   \label{fig:susy_theory_xs}
 \end{figure}
 It is visible that especially light-squarks and gluinos are expected at a sizable rate even for high masses above 1\tev. For instance, around 100 pairs of gluinos are expected at a mass of 1200\gev. \\
@@ -16,8 +16,8 @@ After the description of the event selection (Sec.~\ref{sec:RA2_sel}), it is dis
 
 \subsection{Data Samples and Trigger}
 \label{subsec:RA2_samples_trigger}
-The analysis is based on pp collision data recorded with the CMS detector at a centre-of-mass energy of $\sqrt{s} = 8$\tev. This corresponds to an integrated luminosity of 19.5\fbinv for all sub-detectors fully functional. \\
-The data have been collected by triggering on \HT, the scalar sum of the jet transverse momenta, and \met, the missing transverse energy. An overview of the considered runs and the integrated luminosity is shown together with the respective HLT trigger paths in Tab.~\ref{tab:RA2_trigger}. \HT and \met are calculated from particle-flow objects at trigger level with nominal thresholds of 350\gev and 100\gev, respectively. Jets considered in this calculation are reconstructed with the anti-$k_T$ algorithm and distance parameter $R = 0.5$. The labelling \textit{PFNoPU} indicates that for that particular runs also charged-hadron subtraction was applied to jets at trigger level. \\
+The analysis is based on \pp collision data recorded with the CMS detector at a centre of mass energy of $\sqrt{s} = 8$\tev. This corresponds to an integrated luminosity of 19.5\fbinv for all sub-detectors fully functional. \\
+The data have been collected by triggering on \HT, the scalar sum of the jet transverse momenta, and \met, the missing transverse energy. An overview of the considered runs and the integrated luminosity is shown together with the respective HLT trigger paths in Tab.~\ref{tab:RA2_trigger}. \HT and \met are calculated from particle-flow objects at trigger level with nominal thresholds of 350\gev and 100\gev, respectively. Jets considered in this calculation are reconstructed with the anti-$k_T$ algorithm and distance parameter $R = 0.5$. The labelling \textit{PFNoPU} indicates that for that particular runs also charged-hadron subtraction was applied to jets at trigger level. 
 \begin{table}[!b]
 \centering
 \caption{Utilized signal trigger paths in individual run ranges listed together with the integrated luminosity.}
@@ -38,6 +38,7 @@ The data have been collected by triggering on \HT, the scalar sum of the jet tra
 \bottomrule
 \end{tabular}}
 \end{table}  
+\\
 In order to determine the offline values for \HT and \MHT (calculated according to the definition following in Sec.~\ref{subsec:RA2_baseline}) for which the triggers reach the plateau efficiency, the trigger efficiencies are measured with respect to a single electron trigger (HLT\_Ele27\_WP80). In principal, an orthogonal trigger is needed in order to get an unbiased estimate of the trigger efficiency. However, due to the PF-algorithm all subdetectors are used simultaneously to reconstruct the particles in an event. Hence, no independent trigger paths providing enough statistical precision are available. Consequently, only the reach of a plateau efficiency for a certain trigger path can be determined while the absolute efficiency is not accessible. The determination of the trigger plateau efficiency is performed for different jet multiplicity intervals (\NJets~$ = 3-5$, \NJets~$ = 6-7$ and \NJets~$ \ge 8$). The obtained trigger turn-on curves for the two different HLT paths are shown as function of offline \HT and \MHT for jet multiplicity \NJets~$ = 3-5$ in Fig.~\ref{fig:trig_eff_3njets5}. For both trigger paths, the efficiency plateau is reached around offline values of \HT$ = 500$\gev and \MHT$ = 200$\gev. The integrated trigger efficiencies for these particular values in different jet multiplicity intervals are summarized with statistical uncertainties in Tab.~\ref{tab:trig_eff}. In general, they are close to 100\% with small uncertainties below 1\%. However, for the highest jet multiplicity selection of \NJets~$ \ge 8$ only few events where selected such that statistical uncertainties are few 10\% large. Though, no hints for a systematic inefficiency have been observed and the signal triggers are considered as fully efficient with an uncertainty of $2\%$ for offline values of \HT$ > 500$\gev and \MHT$ > 200$\gev independent of the jet multiplicity. \\
 
 \begin{figure}[!t]
@@ -276,46 +277,59 @@ Main other uncertainties of the lost-lepton background prediction arise from the
 
 \section{QCD Background Estimation with the Rebalance-And-Smear Method}
 \label{subsec:RA2_QCD}
-Background contributions arising from events with no intrinsic missing energy -- except for neutrinos in jets coming e.g. from electroweak decaying heavy flavor quarks -- are estimated with the 
-\textit{Rebalance-and-Smear} (R+S) method. The main contribution is due to QCD multijet events while fully hadronically decaying \ttbar, $W$ or $Z+ \mathrm{jets}$ events lead only to minor contributions. \\
-The prediction of this background is performed in two subsequent steps. First, the events are rebalanced in a kinematic fit such that the missing energy in the event is removed and one obtains an ideal multijet event. Second, all jets in the event are smeared with the full jet response function to model the contribution to various kinematic distributions like \HT or \MHT. \\
-This method was already successfully used for the previous analyses~\cite{springerlink:10.1007/JHEP08(2011)155, Chatrchyan:2012lia}. The main changes with respect to previous versions are that the search bins are extended to the jet multiplicity dimension and that the amount of pile-up increased drastically compared to the 7\tev data-taking. The R+S method is improved such that it leads to solid results regarding this new conditions. \\
-The main changes are due to the following situation: In order to reject most of the jets coming from pile-up events, only jets above a certain \pt threshold are considered in the rebalancing procedure. In Sec.~\ref{subsec:RA2_reb}, the choice of the \pt threshold is described and how this affects the R+S method. The application of this \pt cut leads to additional imbalance in the event. An empirical correction factor is introduced to compensate for this in the kinematic fit.\\
-The QCD Monte Carlo sample which is used \eg to perform validation tests is generated with Madgraph \todo{details sample}. This sample is well suited to describe the high jet multiplicity region due to the additional generated partons. In particular, the simulated sample is used to estimate systematic uncertainties of the method as discussed in Sec.~\ref{subsec:RA2_syst_unc}. \todo{Method without pile-up}
+Background contributions arising from events with no intrinsic missing energy, except for neutrinos in jets arising for instance from electroweak decays of heavy-flavour quarks, are estimated with the \textit{Rebalance-and-Smear} (R+S) method. The main contribution is caused by QCD multijet events which also caused the naming 'QCD background'. However, minor contributions originate also from fully-hadronic decaying \ttbar, \WJets and \ZJets events. The high values of missing transverse energy which cause these events to contribute to the analysed signal regions is consequently arising from severe jet mismeasurements. \\
+Typically, QCD background is the most difficult background to model for all-hadronic SUSY searches, as a precise description of the underlying particle-level jet spectrum is needed and how this manifests in the detector. Especially the former suffers from large theoretical uncertainties in particular in the extreme kinematic phase space the analysis is performed in. To overcome this, the data-based R+S-method was developed and already successfully used in previous analyses~\cite{springerlink:10.1007/JHEP08(2011)155, Chatrchyan:2012lia}. In this thesis, particularly improvements of the R+S method are discussed that became inevitable to handle the main changes of this analysis at $\sqrt{s} = 8$\tev manifesting in the extension of the search regions in several jet mulitplicities and the increased amount of pileup compared to the 7\tev analyses. Consequently, the R+S method is adjusted such that it leads to precise results regarding also this new conditions. In general, the method is based on the assumption that if the momenta of particle-level jets in an event are known, the reconstructed jet momenta can be modeled by a per-jet resolution function.  \\
+After the discussion of the general concept of the R+S method in Sec.~\ref{subsec:RPlusS_concept}, the adjustment of the procedure to the actual conditions for 8\tev data are introduced in Sec.~\ref{subsec:RPlusS_app}. Furthermore, systematic uncertainties are discussed in Sec.~\ref{subsec:RA2_syst_unc} and the results of the actual QCD background prediction are presented in Sec.~\ref{subsec:RA2_qcd_pred}. 
 
-\subsection{Rebalance Procedure using Kinematic Fits}
-\label{subsec:RA2_reb}
-Collision events are rebalanced in transverse momentum such that the missing transverse momentum is almost completely removed ($|\MHT^x| + |\MHT^y| < 0.02$) using a full kinematic fit \todo{Ref. + description}. The jet momenta are allowed to vary in the fit according to the Gaussian core of the jet energy response. \\
-The presence of pile-up affects the rebalancing and needs to be taken particularly care of. Jets assigned to an event, especially soft jets, do not necessarily have to belong to the hard interaction, but might arise from pile-up events. Therefore, it is necessary to discard jets below a certain \pt threshold in the rebalancing step in order to not balance pile-up jets against the hard interaction. This \pt threshold can be chosen such that a good inclusive closure on Monte Carlo is observed. Nevertheless, by not taking all jets into account in the rebalancing, also soft jets belonging to the hard interaction are not considered. By doing this, additional imbalance in the event is introduced. It can be observed that this affects the kinematic fit such that especially jets with small \pt ($<$ 100 GeV) are on average rebalanced to too high momenta. This results then in the fact that more jets pass the threshold of 50 GeV than expected. As a consequence, the number of predicted QCD events in the higher jet multiplicity bins is too large. The resulting trend in the \NJets distribution for a \pt cut of 10\gev is illustrated in the left plot of Fig.~\ref{fig:qcd_rs_rebnjets}.\\
-
+\subsection{General concept of the Rebalance-and-Smear method}
+\label{subsec:RPlusS_concept} 
+As stated above, QCD background contributions arise from jet mismeasurements in the detector. Thus, this background contribution can be estimated by retracing the measurement of multijet events. In order to do this, the prediction of the QCD background is performed in two subsequent steps. First, the events are rebalanced, as described below, such that the missing energy in the event is removed and almost ideal multijet events denoted \textit{seed events} are obtained. The resulting seed events reflect the event kinematics before the actual detector measurement is performed and are thus estimators of the true particle-level jet momenta. In a second step, all jets in the event are smeared with the full jet response function, \ie jet momenta are scaled with a factor randomly drawn according to the jet response distribution, to model the interaction of the multijet state with the detector. Smeared events contain the whole event kinematics of the studied background contribution, such that these can be used to derive contributions to various kinematic distributions, like \HT or \MHT. The general outline of the R+S method is illustrated in Fig.~\ref{fig:RPlusS_concept}.
 \begin{figure}[!t]
   \centering
-  \begin{tabular}{cc}
-                \includegraphics[width=0.47\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_DoNotUseRebCorrection_v1.png} &
-                \includegraphics[width=0.47\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} 
-
-  \end{tabular}
-  \caption{Prediction of QCD background on a Monte Carlo sample compared to the expectation from full simulation showing the $N_{\text{jets}}$ distribution for a \pt cut of 10 GeV on jets considered in the rebalancing \textit{without} the application of a correction factor for the rebalancing (left) and \textit{with} a correction of the rebalancing procedure (right) as described in the text.}
-  \label{fig:qcd_rs_rebnjets}
+  \makebox[\linewidth]{
+  \begin{tabular}{c}
+                \includegraphics[width=0.99\textwidth]{figures/RPlusR.pdf}  
+  \end{tabular}}
+  \caption{Outline of the two steps performed in the R+S method for estimation of QCD background events~\cite{MSchrode}.}
+  \label{fig:RPlusS_concept}
 \end{figure}
+\begin{description}
+ \item \textbf{Reponse Templates:}
+As indicated above, the R+S method crucially relies on a precise parametrization of the jet response to both perform the rebalancing and the jet smearing. The MC-truth response is derived for simulated events obtained with \pythia6 as well as \madgraph and the full detector simulation for $\pt^\mathrm{gen}$ and $|\eta^\mathrm{gen}|$ intervals summarized in Tab.~\ref{tab:RPlusS_binning}. Reconstructed jets at detector-level are calibrated according to the description in Sec.~\ref{subsec:jets_calib}. \\
+As explained in Sec.~\ref{sec:jer_response}, the truth jet response is derived by performing an unambigous matching of reconstructed jet $i$ to generated jet $i$ using here $\Delta R < 0.1$. In addition, any further reconstructed or generated jet $j \ne i$ around this matched pair is vetoed in a cone of size $R < 0.7$ by requiring
+\begin{equation}
+ \pt^{\rm{GenJet}_j} / \pt^{\rm{GenJet}_i} < 0.05
+\end{equation} 
+and
+\begin{equation}
+ \pt^{\rm{Jet}_j} < 30\,\mathrm{GeV} \;\; \mathrm{and} \;\; \pt^{\rm{Jet}_j} / \pt^{\rm{Jet}_i} < 0.05
+\end{equation} 
+The obtained jet response distributions are averaged over all jets in an event not separating them according to their rank, \ie their position in a descending \pt order, or according to the jet flavour. Thus, the flavour composition reflects that of an average QCD multijet sample. 
+\begin{table}[!t]
+\centering
+\caption{Overview of the $|\eta|$ and $\pt^{ave}$ interval boundaries used for the MC-truth response determination used as input for the R+S method.}
+\label{tab:RPlusS_binning}
+\makebox[\linewidth]{
+\begin{tabular}{c}
+\multicolumn{1}{c}{} \\
+\toprule
+ $|\eta^\mathrm{gen}|$ \\
+ 0, 0.3, 0.5, 0.8, 1.1, 1.4, 1.7, 2.0, 2.3, 2.8, 3.2, 4.1, 5.0 \\
+\midrule
+$\pt^\mathrm{gen} \; [\mathrm{GeV}]$ \\
+0, 20, 30, 50, 80, 120, 170, 230, 300, 380, \\
+470, 570, 680, 800, 1000, 1300, 1700, 2200, 2800, 3500 \\
+\bottomrule
+\end{tabular}}
+\end{table} 
+\\
+The truth response templates to be used for applying the R+S method in simulated events, \eg for validation tests, are determined as described above. However, when using the truth response templates for the actual QCD background predictions in data, they have to be corrected for potential data to simulation jet resolution differences. As seen in Chap.~\ref{chap:Resolution}, the resolution in data is typically worse than in simulation. Thus, the determined truth response templates are adjusted accordingly. This correction is done for the Gaussian core and the non-Gaussian tails separately. First, the response function is splitted into the respective core and tail parts. This is done by fitting the response distribution with a Gaussian in the range of $\pm$ 1\,RMS around the mean which is then subtracted from the total response distribution in order to obtain the tail parts and vice versa. The correction factors for the core resolution are applied by convoluting the MC-truth response with a Gaussian of width $\sigma_{c}$ according to Eq.~\ref{eq:res_adjust}. The considered correction factors are listed in Tab.~\ref{tab:jer_RPlusS_core} in the appendix and correspond to the data-to-simulation ratios obtained from dijet data at $\sqrt{s} = 7$\tev, as illustrated in Fig.~\ref{fig:result_comparison} (right). Although the correction factors for the data-to-simulation ratio derived in the context of this thesis are more precise, these have not been available at that time when the analysis presented in this chapter has been performed. The residual tail contributions are scaled according to the correction factors $\rho_\mathrm{tail}$ listed in Tab.~\ref{tab:jer_RPlusS_tails} in the appendix derived from dijet asymmetry parts fulfilling $(\mathcal{A} > 2 \sigma_c)$~\cite{thesis:Schroeder}.   
 
-In order to account for this unavoidable threshold effect, an empirical correction factor (f) is introduced. This is done by comparing the \pt-spectrum of the rebalanced jets to the \pt-spectrum of matched generated jets when rejecting jets below 10 GeV in the rebalancing procedure. The mean of this ratio is taken as correction factor and evaluated versus the momentum of the matched reconstructed jets. The correction factor is used such that in the rebalancing procedure each jet momentum is scaled by $1/\rm{f}$ before the kinematic fit is performed. This adjusted method then leads to correct predictions of the QCD event yields also in the high jet multiplicity bins as demonstrated in the right plot of Fig.~\ref{fig:qcd_rs_rebnjets}.\\
-The correction factor is derived by using generator-truth information and hence can only be determined on Monte Carlo samples. This is performed on the flat PYTHIA QCD Monte Carlo sample and on the MADGRAPH Monte Carlo sample. The difference of the correction factors derived from these two samples is found to be of the order of $1-2\%$ cf. Fig.~\ref{fig:qcd_rs_rebfactor}, left. In addition, the correction factor was also determined for different bins of primary vertices and thus for different pile-up conditions. It is observed that the functional form of the correction factor is independent of the pile-up conditions cf. Fig.~\ref{fig:qcd_rs_rebfactor}, right. This justifies the assumption that the observed harder jet \pt-spectrum after the rebalancing without the correction factor is just due to the acceptance of the jet \pt cut on the jets considered for the rebalancing. Therefore, the correction factor derived from Monte Carlo is applied to data where the same \pt cut value of 10 GeV for jets considered in the rebalancing is chosen. Since a remaining non-closure of the method due to the rebalancing step is covered by the total non-closure uncertainty (discussed in Sec.~\ref{subsec:RA2_clsoure}), no additional uncertainty is assigned. 
+ \item \textbf{Rebalance Procedure:}
+Collision events are rebalanced in transverse momentum such that the missing transverse momentum is almost completely removed ($|\MHT^x| + |\MHT^y| < 0.02$) using a full kinematic fit. The jet momenta are allowed to vary in the fit according to the Gaussian core of the jet energy response. \\
 
-\begin{figure}[!t]
-  \centering
-  \begin{tabular}{cc}
-                \includegraphics[width=0.47\textwidth]{figures/RebalanceCorrectionFactors_DR53X_chsJets_TuneZ2star_withoutPUReweighting_pt10_vsRecoWithMadgraphComp.png} &
-                \includegraphics[width=0.47\textwidth]{figures/RebalanceCorrectionFactors_DR53X_chsJets_TuneZ2star_withoutPUReweighting_pt10_vsRecoNVtxSplit.png}\\
-
-  \end{tabular}
-  \caption{Comparison of the rebalance correction factor determined on the PYTHIA and the MADGRAPH QCD Monte Carlo (left) and rebalance correction factor for different primary vertex bins (right).}
-  \label{fig:qcd_rs_rebfactor}
-\end{figure}
-
-\subsection{Response Smearing}
-\label{subsec:RA2_smear}
-All jets of a rebalanced event are smeared with the full jet response templates including non-Gaussian tails obtained from simulated Monte Carlo samples. Since the jet response strongly depends on the \pt and $\eta$ of the jet, the following binning in \pt and $\eta$ for the truth response templates has been chosen: $\pt~=~$ 0, 20, 30, 50, 80, 120, 170, 230, 300, 380, 470, 570, 680, 800, 1000, 1300, 1700, 2200, 2800, 3500 GeV and $|\eta|~=~$0, 0.3, 0.5, 0.8, 1.1, 1.4, 1.7, 2.0, 2.3, 2.8, 3.2, 4.1, 5.0. They are derived by matching reconstructed to generated jets on a fully simulated sample. Further activity around this matched pair is vetoed in a cone of size R $< 0.7$ by requiring $\pt^{\rm{additional~Jet}} < 30$ GeV and $\pt^{\rm{additional~Jet}}/\pt^{\rm{genJet/recoJet}} < 0.05$. These truth response templates are corrected for data to Monte Carlo differences by applying the scaling factors listed in Tab. ... as described in Sec. ... \todo{correct how?, values, tails}. \\
+ \item \textbf{Response Smearing:}
+All jets of a rebalanced event are smeared with the full jet response templates including non-Gaussian tails obtained from simulated Monte Carlo samples. \\
 The prediction of QCD contributions to the \HT and \MHT distributions are obtained using a bootstrap method \todo{ref}. Thus, each event is smeared $N = 100$ times. The mean of these N predictions is taken as final result while the statistical uncertainty is obtained as the standard deviation of this set of predictions \todo{formulas}.\\
 In order to validate the smearing procedure, generated QCD events are smeared as described above and compared to fully simulated events at reconstruction level. The result of this generator jet smearing is shown in Fig.~\ref{fig:qcd_rs_genjets}. \\
 
@@ -330,9 +344,37 @@ In order to validate the smearing procedure, generated QCD events are smeared as
 \end{figure}
 
 The jet response templates do not incorporate a separation according to the heavy flavour composition of the sample since this composition depends on the jet rank and the templates are averaged over the rank of the jets. This leads to a potential non-closure of the method since light and heavy flavour jets are smeared with the same averaged response templates. In the end, this is covered by the uncertainty of the overall closure of the method. No additional uncertainty has to be assigned.
+\end{description}
 
-\subsection{Validation Tests}
-\label{subsec:RA2_clsoure}
+\subsection{Application to Realistic Collision Events}
+\label{subsec:RPlusS_app} 
+The presence of pile-up affects the rebalancing and needs to be taken particularly care of. Jets assigned to an event, especially soft jets, do not necessarily have to belong to the hard interaction, but might arise from pile-up events. Therefore, it is necessary to discard jets below a certain \pt threshold in the rebalancing step in order to not balance pile-up jets against the hard interaction. This \pt threshold can be chosen such that a good inclusive closure on Monte Carlo is observed. Nevertheless, by not taking all jets into account in the rebalancing, also soft jets belonging to the hard interaction are not considered. By doing this, additional imbalance in the event is introduced. It can be observed that this affects the kinematic fit such that especially jets with small \pt ($<$ 100 GeV) are on average rebalanced to too high momenta. This results then in the fact that more jets pass the threshold of 50 GeV than expected. As a consequence, the number of predicted QCD events in the higher jet multiplicity bins is too large. The resulting trend in the \NJets distribution for a \pt cut of 10\gev is illustrated in the left plot of Fig.~\ref{fig:qcd_rs_rebnjets}.\\
+
+\begin{figure}[!t]
+  \centering
+  \begin{tabular}{cc}
+                \includegraphics[width=0.47\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_DoNotUseRebCorrection_v1.png} &
+                \includegraphics[width=0.47\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} 
+
+  \end{tabular}
+  \caption{Prediction of QCD background on a Monte Carlo sample compared to the expectation from full simulation showing the $N_{\text{jets}}$ distribution for a \pt cut of 10 GeV on jets considered in the rebalancing \textit{without} the application of a correction factor for the rebalancing (left) and \textit{with} a correction of the rebalancing procedure (right) as described in the text.}
+  \label{fig:qcd_rs_rebnjets}
+\end{figure}
+
+In order to account for this unavoidable threshold effect, an empirical correction factor (f) is introduced. This is done by comparing the \pt-spectrum of the rebalanced jets to the \pt-spectrum of matched generated jets when rejecting jets below 10 GeV in the rebalancing procedure. The mean of this ratio is taken as correction factor and evaluated versus the momentum of the matched reconstructed jets. The correction factor is used such that in the rebalancing procedure each jet momentum is scaled by $1/\rm{f}$ before the kinematic fit is performed. This adjusted method then leads to correct predictions of the QCD event yields also in the high jet multiplicity bins as demonstrated in the right plot of Fig.~\ref{fig:qcd_rs_rebnjets}.\\
+The correction factor is derived by using generator-truth information and hence can only be determined on Monte Carlo samples. This is performed on the flat PYTHIA QCD Monte Carlo sample and on the MADGRAPH Monte Carlo sample. The difference of the correction factors derived from these two samples is found to be of the order of $1-2\%$ cf. Fig.~\ref{fig:qcd_rs_rebfactor}, left. In addition, the correction factor was also determined for different bins of primary vertices and thus for different pile-up conditions. It is observed that the functional form of the correction factor is independent of the pile-up conditions cf. Fig.~\ref{fig:qcd_rs_rebfactor}, right. This justifies the assumption that the observed harder jet \pt-spectrum after the rebalancing without the correction factor is just due to the acceptance of the jet \pt cut on the jets considered for the rebalancing. Therefore, the correction factor derived from Monte Carlo is applied to data where the same \pt cut value of 10 GeV for jets considered in the rebalancing is chosen. Since a remaining non-closure of the method due to the rebalancing step is covered by the total non-closure uncertainty (discussed in Sec. ...), no additional uncertainty is assigned. 
+
+\begin{figure}[!t]
+  \centering
+  \begin{tabular}{cc}
+                \includegraphics[width=0.47\textwidth]{figures/RebalanceCorrectionFactors_DR53X_chsJets_TuneZ2star_withoutPUReweighting_pt10_vsRecoWithMadgraphComp.png} &
+                \includegraphics[width=0.47\textwidth]{figures/RebalanceCorrectionFactors_DR53X_chsJets_TuneZ2star_withoutPUReweighting_pt10_vsRecoNVtxSplit.png}\\
+
+  \end{tabular}
+  \caption{Comparison of the rebalance correction factor determined on the PYTHIA and the MADGRAPH QCD Monte Carlo (left) and rebalance correction factor for different primary vertex bins (right).}
+  \label{fig:qcd_rs_rebfactor}
+\end{figure}
+
 The quality of the R+S method to predict background contributions from QCD multijet events is tested on Monte Carlo samples by several closure tests in different kinematic regions. Therefore, the data-based prediction is applied to Monte Carlo events and compared to the results from full simulation. The different closure tests as function of \MHT for various jet multiplicity bins for a low \HT ($= 500 - 1000$~GeV) and a high \HT ($\ge 1000$~GeV) selection are shown in Fig.~\ref{fig:qcd_rs_closure}. These closure tests are used to determine the remaining bias of the R+S method. \\
 The first choice for the determination of remaining biases is to calculate the difference between prediction and expectation for the signal region (defined by \MHT $>$~200 GeV and the application of the $\Delta \phi$ cut) and take the observed difference as systematic uncertainty or even correct the prediction for a statistically significant non-closure of the method. The calculated differences with their statistical errors for the signal region are summarized in Tab.~\ref{tab:qcd_rs_closure_unc} (left column). \\
 There is one bin (for 3 -- 5 jets and \HT $= 500 - 1000$~GeV) where the signal region shows a statistically significant non-closure. In Fig.~\ref{fig:qcd_rs_closure_comp}, this particular distribution is shown for the MADGRAPH QCD sample (left) and the PYTHIA sample (right). In the region between \MHT $=$ 200 -- 350 GeV, the MADGRAPH sample shows an underprediction of $\approx 60\%$, while the PYTHIA sample tends to a statistically not significant overprediction. Therefore, it is hard to judge, if it is really a systematic effect or just a statistical fluctuation. In order to treat this conservatively, the result is not corrected for this effect, but the whole $60\%$ deviation in the madgraph sample is considered as systematic uncertainty. As QCD is not the dominant background contribution in this search bin, it will hardly affect the final result.\\
@@ -375,6 +417,7 @@ The uncertainty which is then finally chosen by the procedure described above as
   \label{tab:qcd_rs_closure_unc}
    \makebox[\linewidth]{
     \begin{tabular}{cc|cccc}
+      \multicolumn{6}{c}{} \\
       \hline
       & & Signal region & Control region 1 & Control region 2 & Cross check region\\
       \hline
@@ -419,6 +462,7 @@ The performance of the R+S method can also be tested directly on data by compari
   \label{fig:qcd_rs_dataclosure}
 \end{figure}
 Nevertheless no perfect agreement is expected since contaminations from other backgrounds do still contribute. Especially the deviations in the \MHT distribution increase with increasing values of \MHT as QCD is not dominant here, so that a comparison is only reasonable for the low \MHT region. 
+
 
 \subsection{Systematic Uncertainties}
 \label{subsec:RA2_syst_unc}

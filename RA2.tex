@@ -283,7 +283,7 @@ After the discussion of the general concept of the R+S method in Sec.~\ref{subse
 
 \subsection{General concept of the Rebalance-and-Smear method}
 \label{subsec:RPlusS_concept} 
-As stated above, QCD background contributions arise from jet mismeasurements in the detector. Thus, this background contribution can be estimated by retracing the measurement of multijet events. In order to do this, the prediction of the QCD background is performed in two subsequent steps. First, the events are rebalanced, as described below, such that the missing energy in the event is removed and almost ideal multijet events denoted \textit{seed events} are obtained. The resulting seed events reflect the event kinematics before the actual detector measurement is performed and are thus estimators of the true particle-level jet momenta. In a second step, all jets in the event are smeared with the full jet response function, \ie jet momenta are scaled with a factor randomly drawn according to the jet response distribution, to model the interaction of the multijet state with the detector. Smeared events contain the whole event kinematics of the studied background contribution, such that these can be used to derive contributions to various kinematic distributions, like \HT or \MHT. The general outline of the R+S method is illustrated in Fig.~\ref{fig:RPlusS_concept}.
+As stated above, QCD background contributions arise from jet mismeasurements in the detector. Thus, this background contribution can be estimated by retracing the measurement of multijet events. In order to do this, the prediction of the QCD background is performed in two subsequent steps. First, the events are \textit{rebalanced}, as described below, such that the missing energy in the event is removed and almost ideal multijet events denoted \textit{seed events} are obtained. The resulting seed events reflect the event kinematics before the actual detector measurement is performed and are thus estimators of the true particle-level jet momenta. In a second step, all jets in the event are \textit{smeared} with the full jet response function, \ie jet momenta are scaled with a factor randomly drawn according to the jet response distribution, to model the interaction of the multijet state with the detector. Smeared events contain the whole event kinematics of the studied background contribution, such that these can be used to derive contributions to various kinematic distributions, like \HT or \MHT, so that the R+S method can be used to really predict event kinematics rather than only event counts for the selected search regions. The general outline of the R+S method is illustrated in Fig.~\ref{fig:RPlusS_concept}.
 \begin{figure}[!t]
   \centering
   \makebox[\linewidth]{
@@ -295,19 +295,19 @@ As stated above, QCD background contributions arise from jet mismeasurements in 
 \end{figure}
 \begin{description}
  \item \textbf{Reponse Templates:}
-As indicated above, the R+S method crucially relies on a precise parametrization of the jet response to both perform the rebalancing and the jet smearing. The MC-truth response is derived for simulated events obtained with \pythia6 as well as \madgraph and the full detector simulation for $\pt^\mathrm{gen}$ and $|\eta^\mathrm{gen}|$ intervals summarized in Tab.~\ref{tab:RPlusS_binning}. Reconstructed jets at detector-level are calibrated according to the description in Sec.~\ref{subsec:jets_calib}. \\
-As explained in Sec.~\ref{sec:jer_response}, the truth jet response is derived by performing an unambigous matching of reconstructed jet $i$ to generated jet $i$ using here $\Delta R < 0.1$. In addition, any further reconstructed or generated jet $j \ne i$ around this matched pair is vetoed in a cone of size $R < 0.7$ by requiring
+As indicated above, the R+S method crucially relies on a precise parametrization of the jet response to both perform the rebalancing and the jet smearing. The MC-truth response is derived for simulated QCD multijet events with the full detector simulation for $\pt^\mathrm{gen}$ and $|\eta^\mathrm{gen}|$ intervals summarized in Tab.~\ref{tab:RPlusS_binning}. Although a very fine binning is chosen, the response in each interval is averaged over a certain part of the $\pt^\mathrm{ave}$ spectrum. Thus, the response distribution tends to overestimate the width of the resolution for high-\pt jets while it behaves the other way round for low-\pt jets. Reconstructed jets at detector-level are AK5 jets with charged-hadron subtraction applied and calibrated according to the description in Sec.~\ref{subsec:jets_calib}. Furthermore, the pileup scenario of the simulated sample is reweighted to match the one observed in data, as explained in Sec.~\ref{subsec:jer_sel_cuts}. \\
+As explained in Sec.~\ref{sec:jer_response}, the truth jet response is derived by performing an unambigous matching of reconstructed jet $i$ to generated jet $i$ using here $\Delta R < 0.1$. In order to avoid tails from splitiing and merging effects of the jet reconstruction, any further reconstructed or generated jet $j \ne i$ around a matched pair is vetoed in a cone of size $R < 0.7$ by requiring
 \begin{equation}
  \pt^{\rm{GenJet}_j} / \pt^{\rm{GenJet}_i} < 0.05
 \end{equation} 
 and
 \begin{equation}
- \pt^{\rm{Jet}_j} < 30\,\mathrm{GeV} \;\; \mathrm{and} \;\; \pt^{\rm{Jet}_j} / \pt^{\rm{Jet}_i} < 0.05
+ \pt^{\rm{Jet}_j} < 30\,\mathrm{GeV} \;\; \mathrm{and} \;\; \pt^{\rm{Jet}_j} / \pt^{\rm{Jet}_i} < 0.05 \; .
 \end{equation} 
 The obtained jet response distributions are averaged over all jets in an event not separating them according to their rank, \ie their position in a descending \pt order, or according to the jet flavour. Thus, the flavour composition reflects that of an average QCD multijet sample. 
 \begin{table}[!t]
 \centering
-\caption{Overview of the $|\eta|$ and $\pt^{ave}$ interval boundaries used for the MC-truth response determination used as input for the R+S method.}
+\caption{Overview of the $|\eta^\mathrm{gen}|$ and $\pt^\mathrm{gen}$ interval boundaries used for the MC-truth response determination used as input for the R+S method.}
 \label{tab:RPlusS_binning}
 \makebox[\linewidth]{
 \begin{tabular}{c}
@@ -323,95 +323,84 @@ $\pt^\mathrm{gen} \; [\mathrm{GeV}]$ \\
 \end{tabular}}
 \end{table} 
 \\
-The truth response templates to be used for applying the R+S method in simulated events, \eg for validation tests, are determined as described above. However, when using the truth response templates for the actual QCD background predictions in data, they have to be corrected for potential data to simulation jet resolution differences. As seen in Chap.~\ref{chap:Resolution}, the resolution in data is typically worse than in simulation. Thus, the determined truth response templates are adjusted accordingly. This correction is done for the Gaussian core and the non-Gaussian tails separately. First, the response function is splitted into the respective core and tail parts. This is done by fitting the response distribution with a Gaussian in the range of $\pm$ 1\,RMS around the mean which is then subtracted from the total response distribution in order to obtain the tail parts and vice versa. The correction factors for the core resolution are applied by convoluting the MC-truth response with a Gaussian of width $\sigma_{c}$ according to Eq.~\ref{eq:res_adjust}. The considered correction factors are listed in Tab.~\ref{tab:jer_RPlusS_core} in the appendix and correspond to the data-to-simulation ratios obtained from dijet data at $\sqrt{s} = 7$\tev, as illustrated in Fig.~\ref{fig:result_comparison} (right). Although the correction factors for the data-to-simulation ratio derived in the context of this thesis are more precise, these have not been available at that time when the analysis presented in this chapter has been performed. The residual tail contributions are scaled according to the correction factors $\rho_\mathrm{tail}$ listed in Tab.~\ref{tab:jer_RPlusS_tails} in the appendix derived from dijet asymmetry parts fulfilling $(\mathcal{A} > 2 \sigma_c)$~\cite{thesis:Schroeder}.   
+The truth response templates to be used for applying the R+S method in simulated events, \eg for validation tests, are determined as described above. However, when using the truth response templates for the actual QCD background predictions in data, they have to be corrected for potential data to simulation jet resolution differences. As seen in Chap.~\ref{chap:Resolution}, the resolution in data is typically worse than in simulation. Thus, the determined truth response templates are adjusted accordingly. This correction is done for the Gaussian core and the non-Gaussian tails separately. First, the response function is splitted into the respective core and tail parts. This is done by fitting the response distribution with a Gaussian in the range of $\pm$ 1\,RMS around the mean which is then subtracted from the total response distribution in order to obtain the tail parts and vice versa. The correction factors for the core resolution are applied by convoluting the MC-truth response with a Gaussian of width $\sigma_{c}$ according to Eq.~\ref{eq:res_adjust}. The considered correction factors are listed in Tab.~\ref{tab:jer_RPlusS_core} in the appendix and correspond to the data-to-simulation ratios obtained from dijet data at $\sqrt{s} = 7$\tev, as illustrated in Fig.~\ref{fig:result_comparison} (right).\footnote{Although the correction factors for the data-to-simulation ratio derived in the context of this thesis are more precise, these have not been available at that time when the analysis presented in this chapter has been performed.} The residual tail contributions are scaled according to the correction factors $\rho_\mathrm{tail}$ listed in Tab.~\ref{tab:jer_RPlusS_tails} in the appendix derived from dijet asymmetry parts fulfilling $(\mathcal{A} > 2 \sigma_c)$~\cite{thesis:Schroeder}.   
 
  \item \textbf{Rebalance Procedure:}
-Collision events are rebalanced in transverse momentum such that the missing transverse momentum is almost completely removed ($|\MHT^x| + |\MHT^y| < 0.02$) using a full kinematic fit. The jet momenta are allowed to vary in the fit according to the Gaussian core of the jet energy response. \\
+As stated above, the first step in the R+S method is to create a sample of seed events that serve as estimator of the true particle-level jets by performing a rebalancing of the multijet events. This rebalancing is done based on a \textit{kinematic fit}~\cite{D'Hondt:926540}. \\
+This is based on the hypothesis that for a given event all measured and unmeasured quantities fulfill certain kinematic constraints, like energy and momentum conservation. However, due to the uncertainties of these quantities the constraints are not exactly fulfilled. Thus, the constraints can be used to adjust the measured values within the uncertainties to meet the event hypothesis. This is done on an event-by-event basis by performing a least-square fit considering the kinematic constraints by Lagrange multipliers which provide a general method to determine local extrema of non-linear functions of many variables. Mathematically, the likelihood function 
+\begin{equation}
+L(\vec{y}, \vec{a}, \vec{\lambda}) = d\vec{y}^{\,T} C^{-1} d \vec{y} + 2 \sum_{k=1}^{m} \lambda_{k} f_k(\vec{y}, \vec{a})
+\end{equation}
+with $dy^i = y_{\mathrm{measured}}^i - y_{\mathrm{predicted}}^i$, covariance matrix $C$, the Lagrange multipliers $\lambda_k$ and the kinematic constraints $f_k$ is minimised. \\
+In this particular case, the measured jet four-momenta are fitted using the constraint of transverse momentum balance while the uncertainties are quantified by the jet resolution. However, the resolution for the angular components is not explicitly determined and for simplification set to a fixed tiny value, such that in fact no proper angular fit is performed. The uncertainties for the jet transverse momenta are approximated by the Gaussian MC-truth resolution, since the procedure is insensitive to the minor contributions of the non-Gaussian tails. For each response template the Gaussian core is extracted, as described above, by performing a fit with a Gaussian function within $\pm$ 1\,RMS around the mean. The obtained resolutions are illustrated as function of $\pt^\mathrm{gen}$ for two example $|\eta^\mathrm{gen}|$ intervals in Fig. ... . These are fitted with
+\begin{equation}
+\frac{\sigma_\mathrm{MC}(\pt)}{\pt} = \sqrt{\mathrm{sgn}(N) \cdot \left(\frac{N}{\pt}\right)^2 + S^2 \cdot \pt^{m-1} + C^2}
+\end{equation} 
+where $N, S, C$ and $m$ are free parameters. This function is a modified version of Eq.~\ref{eq:NSC} introduced for the characterizarion of the resolution in Chap.~\ref{chap:Resolution}. It is adjusted to describe more precisely the resolution development for particle-flow jets. The term $\mathrm{sgn}(N)$ considers the improved momentum resolution at low \pt due to the employed tracking information. Since also at medium \pt the tracking information still compensates for non-linearities of the calorimeters, the parameter $m$ is introduced. The fitted functions are also illustrated in Fig. ... and used as input for the kinematic fit. \\  
+All events for which the fit converged within ($|\MHT^x| + |\MHT^y| < 0.02$) are then kept as seed events. Thus, the imbalance in each multijet event is removed by actually scaling the jet transverse momenta within the range of the respective resolution. Contributions to the seed sample from non-QCD multijet SM processes or even signal events in data do not have to be treated special, since this rebalancing procedure turns each of those events into QCD-like balanced topologies. Furthermore, the seed sample can be generated from an inclusive sample and their is no necessity to apply certain preselection cuts. Typically, selections suppressing high tails of missing energy tend to bias the QCD kinematics. This is due to the fact that for QCD events usually \HT and \MHT are correlated quantities, as high values of \MHT caused by severe jet mismeasurements can only occur, if there is a certain amount of energy in the event. Consequently, selection cuts removing high-\MHT tails also remove parts of the \HT spectrum resulting in an overall underestimation of QCD contributions to the high \HT and \MHT tails. Thus, the rebalancing with a kinematic fit allows to generate an unbiased seed sample.  
 
  \item \textbf{Response Smearing:}
-All jets of a rebalanced event are smeared with the full jet response templates including non-Gaussian tails obtained from simulated Monte Carlo samples. \\
-The prediction of QCD contributions to the \HT and \MHT distributions are obtained using a bootstrap method \todo{ref}. Thus, each event is smeared $N = 100$ times. The mean of these N predictions is taken as final result while the statistical uncertainty is obtained as the standard deviation of this set of predictions \todo{formulas}.\\
-In order to validate the smearing procedure, generated QCD events are smeared as described above and compared to fully simulated events at reconstruction level. The result of this generator jet smearing is shown in Fig.~\ref{fig:qcd_rs_genjets}. \\
-
-\begin{figure}[hbtp]
+The second step of the R+S method is made up of the smearing procedure. Here, all jets of a seed event are smeared with the full jet response distributions including non-Gaussian tails. This means that the magnitudes of the transverse momenta of the jets are scaled with a factor that is randomly obtained from the jet response function of the respective $\pt$ and $|\eta|$ interval to model the reconstructed transverse momentum. These smeared events hence resemble the full QCD event kinematics and thus contributions from QCD events to the search regions can be estimated by imposing the respective selection cuts to the smeared events. \\
+Similarly to the hadronic-tau background prediction, also the R+S method makes use of a bootstrap method in the smearing step. Instead of using all events only once, each seed event is smeared $N = 100$ times. The mean of these $N$ predictions is taken as final result while the statistical uncertainty is obtained as the standard deviation of this set of predictions. This definition of the statistical uncertainty on the prediction ignores the statistical fluctuations of the seed sample. However, since the seed sample is very large, this uncertainty indeed is negligible to good approximation. \\
+\\
+In order to validate the smearing procedure, generated QCD multijet events obtained from the \madgraph generator are smeared as described above and compared to fully simulated events at reconstruction level. This is performed on a sample which has a loose pre-selection at detetcor-level of $\NJets \ge 2$ and $\HT > 350$\gev applied. The result of this generator jet smearing is shown in Fig.~\ref{fig:qcd_rs_genjets}. 
+\begin{figure}[!t]
   \centering
   \begin{tabular}{cc}
-                \includegraphics[width=0.47\textwidth]{figures/HT_presel_madgraph_DR53X_chs_TuneZ2star_SmearedGenJets_withoutPUReweighting_v1.png} &
-                \includegraphics[width=0.47\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_SmearedGenJets_withoutPUReweighting_v1.png} 
+                \includegraphics[width=0.49\textwidth]{figures/HT_presel_madgraph_DR53X_chs_TuneZ2star_SmearedGenJets_withoutPUReweighting_v1.png} &
+                \includegraphics[width=0.49\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_SmearedGenJets_withoutPUReweighting_v1.png} 
   \end{tabular}
-  \caption{Generated jets smeared with the truth response templates are compared to the expectation from full simulation. This comparison is shown for \HT (left) with a loose pre-selection of at least three jets and $N_{\text{jets}}$ (right) after the $\Delta \phi$ and the baseline \HT cut.}
+  \caption{Generated jets obtained from a QCD multijet sample generated with MADGRAPH smeared with the truth response templates are compared to the expectation from full simulation. This comparison is shown for \HT (left) with a loose pre-selection of at least three jets and $N_{\text{jets}}$ (right) after the $\Delta \phi$ and the baseline \HT cut.}
   \label{fig:qcd_rs_genjets}
 \end{figure}
-
-The jet response templates do not incorporate a separation according to the heavy flavour composition of the sample since this composition depends on the jet rank and the templates are averaged over the rank of the jets. This leads to a potential non-closure of the method since light and heavy flavour jets are smeared with the same averaged response templates. In the end, this is covered by the uncertainty of the overall closure of the method. No additional uncertainty has to be assigned.
+\\
+Overall the distributions derived from the smeared generator jets reproduce nicely the expectation from the simulation and tends to a slight overprediction of events for high jet multiplicities at the level of 10\%. Such potential disagreements between the predicted and expected quantities are here denoted \textit{non-closure} of the method. In general, non-closure can occur due to the limited granularity of the response template binning and the averaged flavour composition of the response. In the end, the non-closure of the method is quantified for the whole R+S method including also the rebalancing step (see Sec.~\ref{subsec:RPlusS_app}) and is assigned as systematic uncertainty to the QCD background prediction (see Sec.~\ref{subsec:RA2_syst_unc}). This covers also the deviations observed in Fig.~\ref{fig:qcd_rs_genjets} for the smearing of generator jets. 
 \end{description}
 
 \subsection{Application to Realistic Collision Events}
 \label{subsec:RPlusS_app} 
-The presence of pile-up affects the rebalancing and needs to be taken particularly care of. Jets assigned to an event, especially soft jets, do not necessarily have to belong to the hard interaction, but might arise from pile-up events. Therefore, it is necessary to discard jets below a certain \pt threshold in the rebalancing step in order to not balance pile-up jets against the hard interaction. This \pt threshold can be chosen such that a good inclusive closure on Monte Carlo is observed. Nevertheless, by not taking all jets into account in the rebalancing, also soft jets belonging to the hard interaction are not considered. By doing this, additional imbalance in the event is introduced. It can be observed that this affects the kinematic fit such that especially jets with small \pt ($<$ 100 GeV) are on average rebalanced to too high momenta. This results then in the fact that more jets pass the threshold of 50 GeV than expected. As a consequence, the number of predicted QCD events in the higher jet multiplicity bins is too large. The resulting trend in the \NJets distribution for a \pt cut of 10\gev is illustrated in the left plot of Fig.~\ref{fig:qcd_rs_rebnjets}.\\
-
+The presence of pile-up affects the rebalancing and needs to be taken particularly care of. Jets assigned to an event, especially soft jets, do not necessarily have to belong to the hard interaction, but might arise from pile-up events. Therefore, it is necessary to discard jets below a certain \pt threshold in the rebalancing step in order to not balance pile-up jets against the hard interaction. This \pt threshold can be chosen such that a good inclusive closure on Monte Carlo is observed. Nevertheless, by not taking all jets into account in the rebalancing, also soft jets belonging to the hard interaction are not considered. By doing this, additional imbalance in the event is introduced. It can be observed that this affects the kinematic fit such that especially jets with small \pt ($<$ 100 GeV) are on average rebalanced to too high momenta. This results then in the fact that more jets pass the threshold of 50 GeV than expected. As a consequence, the number of predicted QCD events in the higher jet multiplicity bins is too large. The resulting trend in the \NJets distribution for a \pt cut of 10\gev is illustrated in the left plot of Fig.~\ref{fig:qcd_rs_rebnjets}.
 \begin{figure}[!t]
   \centering
   \begin{tabular}{cc}
-                \includegraphics[width=0.47\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_DoNotUseRebCorrection_v1.png} &
-                \includegraphics[width=0.47\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} 
+                \includegraphics[width=0.49\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_DoNotUseRebCorrection_v1.png} &
+                \includegraphics[width=0.49\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} 
 
   \end{tabular}
   \caption{Prediction of QCD background on a Monte Carlo sample compared to the expectation from full simulation showing the $N_{\text{jets}}$ distribution for a \pt cut of 10 GeV on jets considered in the rebalancing \textit{without} the application of a correction factor for the rebalancing (left) and \textit{with} a correction of the rebalancing procedure (right) as described in the text.}
   \label{fig:qcd_rs_rebnjets}
 \end{figure}
-
+\\
 In order to account for this unavoidable threshold effect, an empirical correction factor (f) is introduced. This is done by comparing the \pt-spectrum of the rebalanced jets to the \pt-spectrum of matched generated jets when rejecting jets below 10 GeV in the rebalancing procedure. The mean of this ratio is taken as correction factor and evaluated versus the momentum of the matched reconstructed jets. The correction factor is used such that in the rebalancing procedure each jet momentum is scaled by $1/\rm{f}$ before the kinematic fit is performed. This adjusted method then leads to correct predictions of the QCD event yields also in the high jet multiplicity bins as demonstrated in the right plot of Fig.~\ref{fig:qcd_rs_rebnjets}.\\
-The correction factor is derived by using generator-truth information and hence can only be determined on Monte Carlo samples. This is performed on the flat PYTHIA QCD Monte Carlo sample and on the MADGRAPH Monte Carlo sample. The difference of the correction factors derived from these two samples is found to be of the order of $1-2\%$ cf. Fig.~\ref{fig:qcd_rs_rebfactor}, left. In addition, the correction factor was also determined for different bins of primary vertices and thus for different pile-up conditions. It is observed that the functional form of the correction factor is independent of the pile-up conditions cf. Fig.~\ref{fig:qcd_rs_rebfactor}, right. This justifies the assumption that the observed harder jet \pt-spectrum after the rebalancing without the correction factor is just due to the acceptance of the jet \pt cut on the jets considered for the rebalancing. Therefore, the correction factor derived from Monte Carlo is applied to data where the same \pt cut value of 10 GeV for jets considered in the rebalancing is chosen. Since a remaining non-closure of the method due to the rebalancing step is covered by the total non-closure uncertainty (discussed in Sec. ...), no additional uncertainty is assigned. 
-
+The correction factor is derived by using generator-truth information and hence can only be determined on Monte Carlo samples. This is performed on the flat PYTHIA QCD Monte Carlo sample and on the MADGRAPH Monte Carlo sample. The difference of the correction factors derived from these two samples is found to be of the order of $1-2\%$ cf. Fig.~\ref{fig:qcd_rs_rebfactor}, left. In addition, the correction factor was also determined for different bins of primary vertices and thus for different pile-up conditions. It is observed that the functional form of the correction factor is independent of the pile-up conditions cf. Fig.~\ref{fig:qcd_rs_rebfactor}, right. This justifies the assumption that the observed harder jet \pt-spectrum after the rebalancing without the correction factor is just due to the acceptance of the jet \pt cut on the jets considered for the rebalancing. Therefore, the correction factor derived from Monte Carlo is applied to data where the same \pt cut value of 10 GeV for jets considered in the rebalancing is chosen. Since a remaining non-closure of the method due to the rebalancing step is covered by the total non-closure uncertainty (discussed in Sec.~\ref{subsec:RA2_syst_unc}), no additional uncertainty is assigned. \\
 \begin{figure}[!t]
   \centering
   \begin{tabular}{cc}
-                \includegraphics[width=0.47\textwidth]{figures/RebalanceCorrectionFactors_DR53X_chsJets_TuneZ2star_withoutPUReweighting_pt10_vsRecoWithMadgraphComp.png} &
-                \includegraphics[width=0.47\textwidth]{figures/RebalanceCorrectionFactors_DR53X_chsJets_TuneZ2star_withoutPUReweighting_pt10_vsRecoNVtxSplit.png}\\
+                \includegraphics[width=0.49\textwidth]{figures/RebalanceCorrectionFactors_DR53X_chsJets_TuneZ2star_withoutPUReweighting_pt10_vsRecoWithMadgraphComp.png} &
+                \includegraphics[width=0.49\textwidth]{figures/RebalanceCorrectionFactors_DR53X_chsJets_TuneZ2star_withoutPUReweighting_pt10_vsRecoNVtxSplit.png}\\
 
   \end{tabular}
   \caption{Comparison of the rebalance correction factor determined on the PYTHIA and the MADGRAPH QCD Monte Carlo (left) and rebalance correction factor for different primary vertex bins (right).}
   \label{fig:qcd_rs_rebfactor}
 \end{figure}
-
-The quality of the R+S method to predict background contributions from QCD multijet events is tested on Monte Carlo samples by several closure tests in different kinematic regions. Therefore, the data-based prediction is applied to Monte Carlo events and compared to the results from full simulation. The different closure tests as function of \MHT for various jet multiplicity bins for a low \HT ($= 500 - 1000$~GeV) and a high \HT ($\ge 1000$~GeV) selection are shown in Fig.~\ref{fig:qcd_rs_closure}. These closure tests are used to determine the remaining bias of the R+S method. \\
-The first choice for the determination of remaining biases is to calculate the difference between prediction and expectation for the signal region (defined by \MHT $>$~200 GeV and the application of the $\Delta \phi$ cut) and take the observed difference as systematic uncertainty or even correct the prediction for a statistically significant non-closure of the method. The calculated differences with their statistical errors for the signal region are summarized in Tab.~\ref{tab:qcd_rs_closure_unc} (left column). \\
-There is one bin (for 3 -- 5 jets and \HT $= 500 - 1000$~GeV) where the signal region shows a statistically significant non-closure. In Fig.~\ref{fig:qcd_rs_closure_comp}, this particular distribution is shown for the MADGRAPH QCD sample (left) and the PYTHIA sample (right). In the region between \MHT $=$ 200 -- 350 GeV, the MADGRAPH sample shows an underprediction of $\approx 60\%$, while the PYTHIA sample tends to a statistically not significant overprediction. Therefore, it is hard to judge, if it is really a systematic effect or just a statistical fluctuation. In order to treat this conservatively, the result is not corrected for this effect, but the whole $60\%$ deviation in the madgraph sample is considered as systematic uncertainty. As QCD is not the dominant background contribution in this search bin, it will hardly affect the final result.\\
-Since the number of events in the signal region is low for all bins except the one discussed above and thus the statistical uncertainties are large and do not lead to reasonable conclusions about the closure of the method, two sidebands of the signal region are studied. The prediction is compared to the full simulation either for control region 1 defined by \MHT $= 100 - 200$~GeV (second column in Tab.~\ref{tab:qcd_rs_closure_unc}) or for control region 2 defined by an inverted $\Delta \phi$ criterium (third column in Tab.~\ref{tab:qcd_rs_closure_unc}). 
-\begin{itemize}
- \item If the differences in both control regions are statistically significant, the larger one is considered as systematic uncertainty. 
- \item If only one of the numbers is statistically significant, it has to be made sure that the assigned uncertainty by taking this number, e.g. coming from control region 1, is not too small, as a remaining bias might come from the application of the $\Delta \phi$ cut. Therefore, the chosen value is compared to the numbers in the corresponding cross check region bin (right column of Tab.~\ref{tab:qcd_rs_closure_unc}). If the values in the cross check region are smaller than the chosen uncertainty value from the control region, the number from the control region is considered as systematic error. Otherwise take largest number from cross check region.
- \item If none of the numbers is statistically significant, take the number with highest precision and proceed as above by comparing this value to the numbers in the cross check region. If the cross check region does not show larger values, take the number with highest precision, otherwise take largest number from cross check region.
-\end{itemize}
-The uncertainty which is then finally chosen by the procedure described above as the non-closure uncertainty of the method, is printed in bold letters in Tab.~\ref{tab:qcd_rs_closure_unc}.
-
-\begin{figure}[h]
+The quality of the R+S method to predict background contributions from QCD multijet events is tested on Monte Carlo samples by several closure tests in different kinematic regions. Therefore, the data-based prediction is applied to Monte Carlo events and compared to the results from full simulation. The different closure tests as function of \MHT for various jet multiplicity bins for a low \HT ($= 500 - 1000$~GeV) and a high \HT ($\ge 1000$~GeV) selection are shown in Fig.~\ref{fig:qcd_rs_closure}. These closure tests are used to determine the remaining bias of the R+S method. 
+\begin{figure}[!hp]
   \centering
   \begin{tabular}{cc}
-                \includegraphics[width=0.45\textwidth]{figures/MHT_JetBin2_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
-                \includegraphics[width=0.45\textwidth]{figures/MHT_JetBin2_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
-                \includegraphics[width=0.45\textwidth]{figures/MHT_JetBin3_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
-                \includegraphics[width=0.45\textwidth]{figures/MHT_JetBin3_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
-                \includegraphics[width=0.45\textwidth]{figures/MHT_JetBin4_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
-                \includegraphics[width=0.45\textwidth]{figures/MHT_JetBin4_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin3_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin3_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin4_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin4_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
 
   \end{tabular}
   \caption{Prediction of QCD background on a Monte Carlo sample compared to the expectation from full simulation. The closure test is shown for various jet multiplicity bins and low (left) or high (right) \HT selections.}
   \label{fig:qcd_rs_closure}
 \end{figure}
-
-\begin{figure}[h]
-  \centering
-  \begin{tabular}{cc}
-                \includegraphics[width=0.47\textwidth]{figures/MHT_JetBin2_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
-                \includegraphics[width=0.47\textwidth]{figures/MHT_JetBin2_HTlow_pythia_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
-  \end{tabular}
-  \caption{Prediction of QCD background on a Monte Carlo sample compared to the expectation from full simulation. The closure test is shown for 3 -- 5 jets and \HT $= 500 - 1000$~GeV on the madgraph QCD sample (left) and the pythia QCD sample (right).}
-  \label{fig:qcd_rs_closure_comp}
-\end{figure}
-
-\begin{table}[h] 
+\\
+The first choice for the determination of remaining biases is to calculate the difference between prediction and expectation for the signal region (defined by \MHT $>$~200 GeV and the application of the $\Delta \phi$ cut) and take the observed difference as systematic uncertainty or even correct the prediction for a statistically significant non-closure of the method. The calculated differences with their statistical errors for the signal region are summarized in Tab.~\ref{tab:qcd_rs_closure_unc} (left column). 
+\begin{table}[!t] 
   \centering
   \caption{Summary of non-closure uncertainties with their statistical error derived for the signal region (left) and two control regions with \MHT $= 100 - 200$~GeV (second column) and inverted $\Delta \phi$ criterium (third column). The fourth column is used as additional cross check region as described in the text. The numbers marked in bold letters are taken as the final non-closure uncertainties of the method.} 
   \label{tab:qcd_rs_closure_unc}
@@ -434,29 +423,46 @@ The uncertainty which is then finally chosen by the procedure described above as
       \hline
     \end{tabular}}
 \end{table}
-
+\\
+There is one bin (for 3 -- 5 jets and \HT $= 500 - 1000$~GeV) where the signal region shows a statistically significant non-closure. In Fig.~\ref{fig:qcd_rs_closure_comp}, this particular distribution is shown for the MADGRAPH QCD sample (left) and the PYTHIA sample (right). In the region between \MHT $=$ 200 -- 350 GeV, the MADGRAPH sample shows an underprediction of $\approx 60\%$, while the PYTHIA sample tends to a statistically not significant overprediction. Therefore, it is hard to judge, if it is really a systematic effect or just a statistical fluctuation. In order to treat this conservatively, the result is not corrected for this effect, but the whole $60\%$ deviation in the madgraph sample is considered as systematic uncertainty. As QCD is not the dominant background contribution in this search bin, it will hardly affect the final result.
+\begin{figure}[!t]
+  \centering
+  \begin{tabular}{cc}
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HTlow_pythia_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
+  \end{tabular}
+  \caption{Prediction of QCD background on a Monte Carlo sample compared to the expectation from full simulation. The closure test is shown for 3 -- 5 jets and \HT $= 500 - 1000$~GeV on the madgraph QCD sample (left) and the pythia QCD sample (right).}
+  \label{fig:qcd_rs_closure_comp}
+\end{figure}
+\\
+Since the number of events in the signal region is low for all bins except the one discussed above and thus the statistical uncertainties are large and do not lead to reasonable conclusions about the closure of the method, two sidebands of the signal region are studied. The prediction is compared to the full simulation either for control region 1 defined by \MHT $= 100 - 200$~GeV (second column in Tab.~\ref{tab:qcd_rs_closure_unc}) or for control region 2 defined by an inverted $\Delta \phi$ criterium (third column in Tab.~\ref{tab:qcd_rs_closure_unc}). 
+\begin{itemize}
+ \item If the differences in both control regions are statistically significant, the larger one is considered as systematic uncertainty. 
+ \item If only one of the numbers is statistically significant, it has to be made sure that the assigned uncertainty by taking this number, e.g. coming from control region 1, is not too small, as a remaining bias might come from the application of the $\Delta \phi$ cut. Therefore, the chosen value is compared to the numbers in the corresponding cross check region bin (right column of Tab.~\ref{tab:qcd_rs_closure_unc}). If the values in the cross check region are smaller than the chosen uncertainty value from the control region, the number from the control region is considered as systematic error. Otherwise take largest number from cross check region.
+ \item If none of the numbers is statistically significant, take the number with highest precision and proceed as above by comparing this value to the numbers in the cross check region. If the cross check region does not show larger values, take the number with highest precision, otherwise take largest number from cross check region.
+\end{itemize}
+The uncertainty which is then finally chosen by the procedure described above as the non-closure uncertainty of the method, is printed in bold letters in Tab.~\ref{tab:qcd_rs_closure_unc}.\\
+\\
 Furthermore, the method can also be validated directly in data. The QCD background prediction is performed on a QCD enriched data control sample collected by a set of prescaled and unprescaled PFHT triggers. Thus, it has to be made sure that the events are collected such that the background prediction is not biased and the highest possible statistical precision is obtained. This is done as follows: For each event, the trigger with the lowest prescale is determined. The event then gets a weight according to this prescale factor. Since only one prescaled PFHT trigger exists, this assignment is unambigious. This leads to a smooth \HT spectrum going down to the lowest trigger threshold. The prescale weighted seed \HT distribution is shown in Fig.~\ref{fig:qcd_rs_seedht}.
-
-\begin{figure}[h]
+\begin{figure}[!t]
   \centering
   \begin{tabular}{c}
-                \includegraphics[width=0.47\textwidth]{figures/HT_data.png}
+                \includegraphics[width=0.49\textwidth]{figures/HT_data.png}
   \end{tabular}
   \caption{Seed \HT spectrum of full 2012 dataset used as input for the R+S method after correcting for trigger prescales.}
   \label{fig:qcd_rs_seedht}
 \end{figure}
-
 The usage of prescaled triggers is important in order to collect also events with \HT lower than 500 GeV which enter the signal region through a fluctuation to large response values. Nevertheless the events collected by the prescaled trigger come along with high event weights and spoil artifically the prediction when they enter the signal region since they lead to a substantially higher standard deviation. This problem is solved by smearing the events not only $N = 100$ times, but $N = \rm{prescale~factor} \times 100$ times and weighting them accordingly with one.\\
 \\
 The performance of the R+S method can also be tested directly on data by comparing the prediction with selected data events in QCD enriched phase-space regions. This is done for \HT~$>~1000~\rm{GeV}$ and an inverted $\Delta \phi$ criterium in order to select a QCD enriched data sample as depicted in Fig.~\ref{fig:qcd_rs_dataclosure}. 
-\begin{figure}[h]
+\begin{figure}[!hp]
   \centering
   \begin{tabular}{cc}
-                \includegraphics[width=0.45\textwidth]{figures/HT_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png} &
-                \includegraphics[width=0.45\textwidth]{figures/MHT_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png}\\
-                \includegraphics[width=0.45\textwidth]{figures/Jet1Pt_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png} &
-                \includegraphics[width=0.45\textwidth]{figures/Jet1Eta_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png}\\
-                \multicolumn{2}{c}{\includegraphics[width=0.45\textwidth]{figures/NJets_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png}}
+                \includegraphics[width=0.49\textwidth]{figures/HT_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png} &
+                \includegraphics[width=0.49\textwidth]{figures/MHT_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png}\\
+                \includegraphics[width=0.49\textwidth]{figures/Jet1Pt_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png} &
+                \includegraphics[width=0.49\textwidth]{figures/Jet1Eta_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png}\\
+                \multicolumn{2}{c}{\includegraphics[width=0.49\textwidth]{figures/NJets_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png}}
   \end{tabular}
   \caption{Prediction of QCD background on data compared to the expectation from data for a QCD enriched control region with \HT$>~1000~\rm{GeV}$, inverted $\Delta \phi$ cut and at least three jets.}
   \label{fig:qcd_rs_dataclosure}
@@ -468,185 +474,100 @@ Nevertheless no perfect agreement is expected since contaminations from other ba
 \label{subsec:RA2_syst_unc}
 Different uncertainties of the R+S method have been evaluated:
 \begin{itemize}
-\item \textbf{Core of response functions:} The uncertainties on the factors of the Gaussian core resolution in Tab.~\ref{tab:QCDJetRes:MLCoreScaleFactors} accounting for the differences in data and Monte Carlo are propagated to the prediction. This is done by shifting the scaling factors by $\pm 1\sigma$ up and down. The variations are between 10 to 30 $\%$ in the search bins where QCD leads to significant contributions.
+\item \textbf{Core of response functions:} The uncertainties on the factors of the Gaussian core resolution in Tab.~\ref{tab:jer_RPlusS_core} accounting for the differences in data and Monte Carlo are propagated to the prediction. This is done by shifting the scaling factors by $\pm 1\sigma$ up and down. The variations are between 10 to 30 $\%$ in the search bins where QCD leads to significant contributions.
 \item \textbf{Tail of response functions:} The uncertainties on the scaling factors of the non-Gaussian tails are also propagated to the prediction. The typical size of this uncertainty in QCD dominated regions is between 20 to 35 $\%$ which results in the main systematic uncertainty of the method. 
-\item \textbf{Non-closure:} The systematic uncertainty due to possible non-closure and remaining biases of the R+S method is evaluated as described in section \ref{sec:qcd_RS_closure}. This uncertainty also covers uncertainties on the rebalance correction factor and the jet-\pt cut value chosen for the jets considered in the rebalancing. It is evaluated for each jet multiplicity bin which is separated into a low and a high \HT $(>~1000~\rm{GeV})$ region.
+\item \textbf{Non-closure:} The systematic uncertainty due to possible non-closure and remaining biases of the R+S method is evaluated as described in section \ref{subsec:RPlusS_app}. This uncertainty also covers uncertainties on the rebalance correction factor and the jet-\pt cut value chosen for the jets considered in the rebalancing. It is evaluated for each jet multiplicity bin which is separated into a low and a high \HT $(>~1000~\rm{GeV})$ region.
 \item \textbf{Pile-up:} In general, the R+S method is relatively safe against pile-up since very soft jets are neglected in the rebalancing procedure. Additionally, it is expected that pile-up is an issue especially for \textit{soft} jets which do not contribute significantly to the high \MHT search bins because they are mainly populated due to heavily mis-measured \textit{hard} jets. Therefore, a valid approach is to evaluate possible remaining pile-up effects in the low \MHT region for \MHT $> 100 \rm{~GeV}$. This approach also ensures that statistical limitations are reduced.\\
 The general approach is to study the difference in the behaviour of the prediction in data and Monte Carlo for different pile-up conditions. Hence, the sample is divided into three different bins of primary vertices $(0-10, 11-20, > 20)$. The prediction for each vertex bin (for \HT $>~500$~GeV) is calculated and normalized to the number of seed events contributing to that particular bin. It is assumed that pile-up effects are negligible in the lowest primary vertex bin. Therefore the distributions in data and Monte Carlo are normalized to each other such that they have the same yield in the first primary vertex bin. Then, the absolute difference between data and Monte Carlo prediction is calculated for the second and the third vertex bin, multiplied each with the seed events in data for that bin and summed up. The input distributions for this calculation are illustrated in Fig.~\ref{fig:qcd_rs_pileup}. The ratio of this pile-up dependent fraction of the prediction calculated as described above and the total prediction is taken as pile-up uncertainty. It is evaluated for each jet multiplicity bin separately. 
 \end{itemize}
-
-\begin{figure}[hbtp]
+\begin{figure}[!hp]
   \centering
   \begin{tabular}{cc}
-                \includegraphics[width=0.5\textwidth]{figures/PUUncertainty_NJet3_5.png} &
-                \includegraphics[width=0.5\textwidth]{figures/PUUncertainty_NJet6_7.png} \\
-                \multicolumn{2}{c}{\includegraphics[width=0.5\textwidth]{figures/PUUncertainty_NJet8.png}}
+                \includegraphics[width=0.49\textwidth]{figures/PUUncertainty_NJet3_5.png} &
+                \includegraphics[width=0.49\textwidth]{figures/PUUncertainty_NJet6_7.png} \\
+                \multicolumn{2}{c}{\includegraphics[width=0.49\textwidth]{figures/PUUncertainty_NJet8.png}}
   \end{tabular}
-  \caption{Prediction of QCD background in data and Monte Carlo as a function of primary vertices (NVtx) normalized to the number of contributing seed events used for the determination of the pile-up uncertainty as described in Sec.~\ref{sec:qcd_RS_uncertainty}.}
+  \caption{Prediction of QCD background in data and Monte Carlo as a function of primary vertices (NVtx) normalized to the number of contributing seed events used for the determination of the pile-up uncertainty as described in Sec.~\ref{subsec:RA2_syst_unc}.}
   \label{fig:qcd_rs_pileup}
 \end{figure}
 
 \subsection{QCD Background Prediction}
 \label{subsec:RA2_qcd_pred}
-The final prediction for QCD background contributions derived with the R+S method is summarized in tables~\ref{tab:qcd_rs_pred_njet3-5}, ~\ref{tab:qcd_rs_pred_njet6-7} and~\ref{tab:qcd_rs_pred_njet8} for jet multiplicity bins 3 --5, 6 --7 and $\ge 8$. The quoted total systematic uncertainty is obtained by adding the single contributions in quadrature. \\
+The final prediction for QCD background contributions derived with the R+S method is summarized in Tab.~\ref{tab:QCDPred} for jet multiplicity bins 3--5, 6--7 and $\ge 8$. The quoted total systematic uncertainty is obtained by adding the single contributions in quadrature. \\
 Some search bins show very large uncertainties of 100 $\%$ or sometimes even larger for the core and tail scaling uncertainties. This occurs only in bins where QCD is almost negligible and is caused by the fact that the statistical variations are so large that they also dominate the evaluation of systematic effects. As a conservative estimate the largest observed variation is taken as systematic uncertainty for core and tail scaling. 
+\begin{table}[!hp]
+  \centering
+  \caption{Predicted event yields for the QCD background in the search regions defined by \HT, \MHT and \NJets shown together with statistical and systematic uncertainties. The uncertainties of the different systematic uncertainty sources are added in quadrature to obtain the total systematic uncertainties.}
+  \label{tab:QCDPred}
+  \makebox[\linewidth]{
+    % \begin{tabular*}{\textwidth}{lll@{\extracolsep{\fill}}|r|r|r|r|r|r}
+   % \begin{tabular}{lll|r|l|c|c|c|c|c}
+    \begin{tabular}{lll|rc|cccc|c}
+      \multicolumn{10}{c}{} \\
+    
 
-\begin{table}[htbp]
- \caption{Prediction of QCD background in 19.47 \fbinv for jet multiplicity 3 -- 5.}
- \label{tab:qcd_rs_pred_njet3-5}
-  \begin{center}
-    \begin{tabular} {c|c|c|c|c|c|c|c|c}
-    \hline
-    % \nJet $= 3 - 5$   \\
-    %\hline
-    HT (GeV) & MHT (GeV) & Pred. & Stat. & Core (\%) & Tail (\%) & Bias (\%) & PU (\%)& Tot. Sys. \\
-    \hline
-    500 - 800 & 200 - 300 & 307.4 & 18.48 & 13.03 & 35.95 & 60.4 & 2.9 & 219.93 \\ 
-    & & & & -12.18 & -34.43 & -60.4 & -2.9 & 217.15 \\ 
-    & 300 - 450 & 34.45 & 5.84 & 7.34 & 22.9 & 60.4 & 2.9 & 22.42 \\ 
-    & & & & -10.48 & -31.58 & -60.4 & -2.9 & 23.78 \\ 
-    & 450 - 600 & 1.32 & 1.15 & 24.24 & 37.88 & 60.4 & 2.9 & 0.99 \\ 
-    & & & & -16.67 & -26.52 & -60.4 & -2.9 & 0.90 \\ 
-    &  $>=$ 600 & 0.09 & 0.29 & 55.56 & 55.56 & 60.4 & 2.9 & 0.09 \\ 
-    & & & & -55.56 & -55.56 & -60.4 & -2.9 & 0.09 \\ 
-    \hline
-    %800 - 1000 & 100 - 200 & 3.129e+04 & 184.2 & 19.96 & 11.69 & 22.6 & 2.9 & \\ 
-    %& & & & -17.88 & -11.84 & -22.6 & -2.9 & \\ 
-    800 - 1000 & 200 - 300 & 91.68 & 10.2 & 14.7 & 33.16 & 60.4 & 2.9 & 64.65 \\ 
-    & & & & -13.83 & -33.53 & -60.4 & -2.9 & 64.65 \\ 
-    & 300 - 450 & 9.94 & 3.22 & 5.23 & 29.78 & 60.4 & 2.9 & 6.72 \\ 
-    & & & & -5.13 & -27.06 & -60.4 & -2.9 & 6.60 \\ 
-    & 450 - 600 & 0.84 & 0.91 & 65.48 & 65.48 & 60.4 & 2.9 & 0.93 \\ 
-    & & & & -65.48 & -65.48 & -60.4 & -2.9 & 0.84 \\ 
-    &  $>=$ 600 & 0.12 & 0.35 & 75.00 & 8.33 & 60.4 & 2.9 & 0.12 \\ 
-    & & & & -41.67 & -41.67 & -60.4 & -2.9 & 0.10 \\ 
-    \hline
-    %1000 - 1250 & 100 - 200 & 1.296e+04 & 115.1 & 18.57 & 10.39 & 14.5 & 2.9 & \\ 
-    %& & & & -17.29 & -10.54 & -14.5 & -2.9 & \\ 
-    1000 - 1250 & 200 - 300 & 59.00 & 7.20 & 19.03 & 34.71 & 14.5 & 2.9 & 24.93 \\ 
-    & & & & -14.56 & -31.69 & -14.5 & -2.9 & 22.35 \\ 
-    & 300 - 450 & 5.09 & 2.16 & 12.18 & 32.02 & 14.5 & 2.9 & 1.90 \\ 
-    & & & & -8.84 & -16.9 & -14.5 & -2.9 & 1.23 \\ 
-    & 450 - 600 & 0.51 & 0.67 & 35.29 & 23.53 & 14.5 & 2.9 & 0.23 \\ 
-    & & & & -3.92 & -5.88 & -14.5 & -2.9 & 0.08 \\ 
-    &  $>=$ 600 & 0.12 & 0.33 & 41.67 & 41.67 & 14.5 & 2.9 & 0.07 \\ 
-    & & & & -41.67 & -41.67 & -14.5 & -2.9 & 0.07 \\ 
-    \hline
-    %1250 - 1500 & 100 - 200 & 4171 & 59.17 & 17.07 & 8.553 & 14.5 & 2.9 & \\ 
-    %& & & & -16.23 & -9.374 & -14.5 & -2.9 & \\ 
-    1250 - 1500 & 200 - 300 & 31.17 & 5.30 & 18.29 & 30.32 & 14.5 & 2.9 & 11.96 \\ 
-    & & & & -19.12 & -29.68 & -14.5 & -2.9 & 11.93 \\ 
-    & 300 - 450 & 2.27 & 1.27 & 16.3 & 38.33 & 14.5 & 2.9 & 1.00 \\ 
-    & & & & -5.29 & -30.4 & -14.5 & -2.9 & 0.78 \\ 
-    &  $>=$ 450 & 0.24 & 0.50 & 0.00 & 54.17 & 14.5 & 2.9 & 0.13 \\ 
-    & & & & -8.33 & -8.33 & -14.5 & -2.9 & 0.05 \\ 
-    \hline
-    %$>=$ 1500 & 100 - 200 & 2350 & 48.78 & 14.87 & 7.565 & 14.5 & 2.9 & \\ 
-    %& & & & -14.78 & -7.81 & -14.5 & -2.9 & \\ 
-    $>=$ 1500 & 200 - 300 & 35.14 & 6.12 & 19.55 & 23.31 & 14.5 & 2.9 & 11.89 \\ 
-    & & & & -19.98 & -29.43 & -14.5 & -2.9 & 13.54 \\ 
-    &  $>=$ 300 & 2.43 & 1.37 & 39.92 & 39.92 & 14.5 & 2.9 & 1.42 \\ 
-    & & & & -39.92 & -39.92 & -14.5 & -2.9 & 1.42 \\ 
-    \hline
-    \end{tabular}
-  \end{center}
-\end{table}
-
-\begin{table}[htbp]
- \caption{Prediction of QCD background in 19.47 \fbinv for jet multiplicity 6 -- 7.}
- \label{tab:qcd_rs_pred_njet6-7}
-  \begin{center}
-    \begin{tabular} {c|c|c|c|c|c|c|c|c}
-    \hline
-    % \nJet $= 6 - 7$   \\
-    %\hline
-    HT (GeV) & MHT (GeV) & Pred. & Stat. & Core (\%) & Tail (\%) & Bias (\%) & PU (\%)& Tot. Sys. \\
-    \hline
-    500 - 800 & 200 - 300 & 18.19 & 3.85 & 8.91 & 37.38 & 25.4 & 8.0 & 8.50 \\ 
-    & & & & -12.48 & -33.53 & -25.4 & -8.0 & 8.11 \\ 
-    & 300 - 450 & 1.85 & 1.37 & 31.89 & 31.89 & 25.4 & 8.0 & 0.97 \\ 
-    & & & & -31.89 & -31.89 & -25.4 & -8.0 & 0.97 \\ 
-    &  $>=$ 450 & 0.01 & 0.10 & 400 & 400 & 25.4 & 8.0 & 0.06 \\ 
-    & & & & -100 & -100 & -25.4 & -8.0 & 0.01 \\ 
-    \hline
-    %800 - 1000 & 100 - 200 & 3151 & 59.26 & 21.81 & 13.95 & 25.4 & 8.0 & \\ 
-    %& & & & -18.72 & -13.73 & -25.4 & -8.0 & \\ 
-    800 - 1000 & 200 - 300 & 13.13 & 3.40 & 15.00 & 33.74 & 25.4 & 8.0 & 5.98 \\ 
-    & & & & -8.15 & -29.55 & -25.4 & -8.0 & 5.33 \\ 
-    & 300 - 450 & 1.95 & 1.14 & 5.13 & 30.77 & 25.4 & 8.0 & 0.80 \\ 
-    & & & & -20.00 & -28.21 & -25.4 & -8.0 & 0.85 \\ 
-    &  $>=$ 450 & 0.15 & 0.39 & 46.67 & 46.67 & 25.4 & 8.0 & 0.11 \\ 
-    & & & & -46.67 & -46.67 & -25.4 & -8.0 & 0.11 \\ 
-    \hline
-    %1000 - 1250 & 100 - 200 & 1853 & 40.37 & 19.92 & 12.29 & 10.9 & 8.0 & \\ 
-    %& & & & -18.45 & -12.88 & -10.9 & -8.0 & \\ 
-    1000 - 1250 & 200 - 300 & 11.92 & 3.84 & 5.87 & 33.47 & 10.9 & 8.0 & 4.36 \\ 
-    & & & & -12.67 & -35.82 & -10.9 & -8.0 & 4.81 \\ 
-    & 300 - 450 & 1.54 & 1.31 & 31.82 & 31.82 & 10.9 & 8.0 & 0.72 \\ 
-    & & & & -31.82 & -31.82 & -10.9 & -8.0 & 0.72 \\ 
-    &  $>=$ 450 & 0.11 & 0.32 & 100.00 & 100.00 & 10.9 & 8.0 & 0.16 \\ 
-    & & & & -100.00 & -100.00 & -10.9 & -8.0 & 0.11 \\ 
-    \hline
-    %1250 - 1500 & 100 - 200 & 759.2 & 27.43 & 18.52 & 10.96 & 10.9 & 8.0 & \\ 
-    %& & & & -18.19 & -11.52 & -10.9 & -8.0 & \\ 
-    1250 - 1500 & 200 - 300 & 6.82 & 2.95 & 12.02 & 32.55 & 10.9 & 8.0 & 2.54 \\ 
-    & & & & -11.88 & -32.40 & -10.9 & -8.0 & 2.53 \\ 
-    & 300 - 450 & 0.92 & 1.03 & 54.35 & 54.35 & 10.9 & 8.0 & 0.72 \\ 
-    & & & & -54.35 & -54.35 & -10.9 & -8.0 & 0.72 \\ 
-    &  $>=$ 450 & 0.09 & 0.29 & 44.44 & 44.44 & 10.9 & 8.0 & 0.06 \\ 
-    & & & & -44.44 & -44.44 & -10.9 & -8.0 & 0.06 \\ 
-    \hline
-    %$>=$ 1500 & 100 - 200 & 526.3 & 23.55 & 15.79 & 6.947 & 10.9 & 8.0 & \\ 
-    %& & & & -16.86 & -10.42 & -10.9 & -8.0 & \\ 
-    $>=$ 1500 & 200 - 300 & 8.0 & 2.84 & 20.9 & 31.54 & 10.9 & 8.0 & 3.13 \\ 
-    & & & & -15.38 & -25.77 & -10.9 & -8.0 & 2.57 \\ 
-    &  $>=$ 300 & 0.83 & 0.92 & 46.99 & 46.99 & 10.9 & 8.0 & 0.56 \\ 
-    & & & & -46.99 & -46.99 & -10.9 & -8.0 & 0.56 \\ 
-    \hline
-    \end{tabular}
-  \end{center}
-\end{table}
-
-\begin{table}[htbp]
- \caption{Prediction of QCD background in 19.47 \fbinv for jet multiplicity $\ge$ 8.}
- \label{tab:qcd_rs_pred_njet8}
-  \begin{center}
-    \begin{tabular} {c|c|c|c|c|c|c|c|c}
-    \hline
-    % \nJet $>= 8$   \\
-    %\hline
-    HT (GeV) & MHT (GeV) & Pred. & Stat. & Core (\%) & Tail (\%) & Bias (\%) & PU (\%)& Tot. Sys. \\
-    \hline
-    500 - 800 &  $>=$ 200 & 0.14 & 0.38 & 71.43 & 71.43 & 86.0 & 33.4 & 0.19 \\ 
-    & & & & -71.43 & -71.43 & -86.0 & -33.4 & 0.14 \\ 
-    \hline
-    %800 - 1000 & 100 - 200 & 127.6 & 11.36 & 20.84 & 15.22 & 86.0 & 33.4 & \\ 
-    %& & & & -16.67 & -14.35 & -86.0 & -33.4 & \\ 
-    800 - 1000 &  $>=$ 200 & 0.54 & 0.69 & 33.33 & 33.33 & 86.0 & 33.4 & 0.56 \\ 
-    & & & & -33.33 & -33.33 & -86.0 & -33.4 & 0.54 \\ 
-    \hline
-    %1000 - 1250 & 100 - 200 & 124 & 11.53 & 18.46 & 12.63 & 42.6 & 33.4 & \\ 
-    %& & & & -20.06 & -14.16 & -42.6 & -33.4 & \\ 
-    1000 - 1250 &  $>=$ 200 & 0.73 & 0.78 & 19.18 & 56.16 & 42.6 & 33.4 & 0.59 \\ 
-    & & & & -1.37 & -27.4 & -42.6 & -33.4 & 0.44 \\ 
-    \hline
-    %1250 - 1500 & 100 - 200 & 71.07 & 8.204 & 19.39 & 13.37 & 42.6 & 33.4 & \\ 
-    %& & & & -15.53 & -13.68 & -42.6 & -33.4 & \\ 
-    1250 - 1500 &  $>=$ 200 & 0.54 & 0.75 & 55.56 & 55.56 & 42.6 & 33.4 & 0.52 \\ 
-    & & & & -55.56 & -55.56 & -42.6 & -33.4 & 0.52 \\ 
-    \hline
-    %$>=$ 1500 & 100 - 200 & 64.96 & 7.861 & 16.04 & 8.544 & 42.6 & 33.4 & \\ 
-    %& & & & -17.47 & -9.883 & -42.6 & -33.4 & \\ 
-    $>=$ 1500 &  $>=$ 200 & 0.89 & 0.94 & 65.17 & 65.17 & 42.6 & 33.4 & 0.95 \\ 
-    & & & & -65.17 & -65.17 & -42.6 & -33.4 & 0.89 \\ 
-    \hline
-    \end{tabular}
-  \end{center}
+  %    \NJets{} & \HT{} [GeV] &\MHT{} [GeV]
+      \NJets{} & \HT{} [GeV]& \MHT{} [GeV] & Pred. & stat. unc. & Core [\%] & Tail [\%] & Bias [\%] & PU [\%] & syst. unc. \\
+      \midrule
+      3-5     & 500-800  & 200-300 & 307.4 & $\pm$  18.5  & $^{+13.0}_{-12.2}$ & $^{36.0}_{-34.4} $ & $\pm$ 60.4 & $\pm$ 2.9 & $^{+220}_{-217}$  \\
+      3-5     & 500-800  & 300-450 & 34.5  & $\pm$  5.8   & $^{+7.3}_{-10.5}$ & $^{22.9}_{-31.6} $  & $\pm$ 60.4 & $\pm$ 2.9 & $^{+22.4}_{-23.8}$ \\
+      3-5     & 500-800  & 450-600 & 1.3   & $\pm$  1.2   & $^{+24.2}_{-16.7}$ & $^{+37.9}_{-26.5}$ &  $\pm$ 60.4 & $\pm$ 2.9 & $^{+1.0}_{-0.9}$  \\
+      3-5     & 500-800  & $>600$  & 0.1   & $\pm$  0.3   & $^{+55.6}_{-55.6}$ & $^{+55.6}_{-55.6}$ & $\pm$  60.4 & $\pm$ 2.9 & $^{+0.09}_{-0.09}$\\ 
+      \midrule
+      3-5    & 800-1000  & 200-300 & 91.7  & $\pm$  10.2  & $^{+14.7}_{-13.8}$  & $^{+33.2}_{-33.5}$ & $\pm$  60.4 & $\pm$ 2.9 & $^{+64.7}_{-64.7}$\\
+      3-5    & 800-1000  & 300-450 & 9.9   & $\pm$  3.2   & $^{+5.2}_{-5.1}$ & $^{+29.8}_{-27.1}$  & $\pm$  60.4  & $\pm$ 2.9 & $^{+6.7}_{-6.6}$ \\
+      3-5    & 800-1000  & 450-600 & 0.8   & $\pm$  0.9  & $^{+65.5}_{-65.5}$ &  $^{+65.5}_{-65.5}$ & $\pm$  60.4 & $\pm$ 2.9 & $^{+0.9}_{-0.8}$  \\
+      3-5    & 800-1000  & $>600$  & 0.1   & $\pm$  0.4  & $^{+75.0}_{-41.7}$ &  $^{+8.3}_{-41.7}$  & $\pm$  60.4 & $\pm$ 2.9 & $^{+0.1}_{-0.1}$  \\
+      \midrule
+      3-5   & 1000-1250  & 200-300 & 59.0  & $\pm$  7.2  & $^{+19.0}_{-14.6}$ & $^{+34.7}_{-31.7}$ & $\pm$  14.5   & $\pm$ 2.9 & $^{+24.9}_{-22.4}$\\
+      3-5   & 1000-1250  & 300-450 & 5.1   & $\pm$  2.2  & $^{+12.2}_{-8.8}$ & $^{+32.0}_{-16.9}$ & $\pm$  14.5   & $\pm$ 2.9 & $^{+1.9}_{-1.2}$ \\
+      3-5   & 1000-1250  & 450-600 & 0.5   & $\pm$  0.7  & $^{+35.3}_{-3.9}$ & $^{+23.5}_{-5.9}$ &  $\pm$  14.5   & $\pm$ 2.9 & $^{+0.2}_{-0.1}$ \\
+      3-5   & 1000-1250  & $>600$  & 0.1   & $\pm$  0.3  & $^{+41.7}_{-41.7}$ & $^{+41.7}_{-41.7}$ & $\pm$ 14.5   &  $\pm$ 2.9 & $^{+0.1}_{-0.1}$ \\
+      \midrule
+      3-5   & 1250-1500  & 200-300 & 31.2  & $\pm$  5.3  & $^{+18.3}_{-19.1}$ & $^{+30.3}_{-29.7}$ & $\pm$  14.5  & $\pm$ 2.9 & $^{+12.0}_{-11.9}$\\
+      3-5   & 1250-1500  & 300-450 & 2.3   & $\pm$  1.3  & $^{+16.3}_{-5.3}$ & $^{+38.3}_{-30.4}$ & $\pm$  14.5  & $\pm$ 2.9 & $^{+1.0}_{-0.8}$ \\
+      3-5   & 1250-1500  & $>450$  & 0.2   & $\pm$  0.5  & $^{+0.0}_{-8.3}$ & $^{+54.2}_{-8.3}$  & $\pm$   14.5 & $\pm$ 2.9 & $^{+0.1}_{-0.1}$  \\
+      \midrule
+      3-5   & $>$1500    & 200-300 & 35.1  & $\pm$  6.1  & $^{+19.6}_{-20.0}$ & $^{+23.3}_{-29.4}$ & $\pm$   14.5 & $\pm$ 2.9 & $^{+11.9}_{-13.5}$ \\
+      3-5   & $>$1500    & $>300$  & 2.4   & $\pm$  1.4  & $^{+39.9}_{-39.9}$ & $^{+39.9}_{-39.9}$ & $\pm$   14.5 & $\pm$ 2.9 & $^{+1.4}_{-1.4}$ \\
+      \midrule 
+      \midrule
+      6-7   & 500-800   & 200-300  &  18.2 & $\pm$  3.9  & $^{+8.9}_{-12.5}$ & $^{+37.4}_{-33.5}$ & $\pm$  25.4  & $\pm$ 8.0 & $^{+8.5}_{-8.1}$  \\
+      6-7   & 500-800   & 300-450  &  1.9  & $\pm$  1.4  & $^{+31.9}_{-31.9}$ & $^{+31.9}_{-31.9}$ & $\pm$  25.4 & $\pm$ 8.0 & $^{+1.0}_{-1.0}$  \\
+      6-7   & 500-800   & $>450$   &  0.01 & $\pm$  0.1  & $^{+400.0}_{-100.0}$ & $^{+400.0}_{-100.0}$ & $\pm$  25.4 & $\pm$ 8.0 & $^{+0.1}_{-0.01}$\\
+      \midrule
+      6-7   & 800-1000  & 200-300  &  13.13& $\pm$  3.4  & $^{+15.0}_{-8.2}$ & $^{+33.7}_{-30.0}$ & $\pm$  25.4  & $\pm$ 8.0 & $^{+6.0}_{-5.3}$  \\
+      6-7   & 800-1000  & 300-450  &  2.0  & $\pm$  1.1  & $^{+5.1}_{-20.0}$ & $^{+30.8}_{-28.2}$ & $\pm$  25.4  & $\pm$ 8.0 & $^{+0.8}_{-0.9}$  \\
+      6-7   & 800-1000  & $>450$   &  0.2  & $\pm$  0.4  & $^{+46.7}_{-46.7}$ & $^{+46.7}_{-46.7}$ & $\pm$  25.4 & $\pm$ 8.0 & $^{+0.1}_{-0.1}$  \\ 
+      \midrule
+      6-7   & 1000-1250 & 200-300  &  11.9 & $\pm$  3.8  & $^{+5.9}_{-12.7}$ & $^{+33.5}_{-35.8}$  & $\pm$  10.9 & $\pm$ 8.0 & $^{+4.4}_{-4.8}$ \\
+      6-7   & 1000-1250 & 300-450  &  1.5  & $\pm$  1.3  & $^{+31.8}_{-31.8}$ & $^{+31.8}_{-31.8}$  & $\pm$  10.9 &  $\pm$ 8.0 & $^{+0.7}_{-0.7}$ \\
+      6-7   & 1000-1250 & $>450$   &  0.1  & $\pm$  0.3  & $^{+100.0}_{-100.0}$ & $^{+100.0}_{-100.0}$ & $\pm$  10.9 & $\pm$ 8.0 & $^{+0.2}_{-0.1}$ \\
+      \midrule
+      6-7   & 1250-1500 & 200-300  &  6.8  & $\pm$  3.0  & $^{+12.0}_{-11.9}$ & $^{+32.6}_{-32.4}$ & $\pm$   10.9   & $\pm$ 8.0 & $^{+2.5}_{-2.5}$ \\
+      6-7   & 1250-1500 & 300-450  &  0.9  & $\pm$  1.0  & $^{+54.4}_{-54.4}$ & $^{+54.4}_{-54.4}$ & $\pm$   10.9   & $\pm$ 8.0 & $^{+0.7}_{-0.7}$ \\
+      6-7   & 1250-1500 & $>450$   &  0.09 & $\pm$  0.3  & $^{+44.4}_{-44.4}$ & $^{+44.4}_{-44.4}$ & $\pm$   10.9  & $\pm$ 8.0 & $^{+0.06}_{-0.06}$\\
+      \midrule
+      6-7   & $>$1500   & 200-300  &  8.0  & $\pm$  2.8  & $^{+20.9}_{-15.4}$ & $^{+31.5}_{-25.8}$ & $\pm$   10.9  & $\pm$ 8.0 & $^{+3.1}_{-2.6}$\\
+      6-7   & $>$1500   & $>300$   &  0.8  & $\pm$  0.9  & $^{+47.0}_{-47.0}$ & $^{+47.0}_{-47.0}$ & $\pm$   10.9  & $\pm$ 8.0 & $^{+0.6}_{-0.6}$ \\
+      \midrule 
+      \midrule 
+      $\geq$8 & 500-800 & $>200$   &  0.14 & $\pm$  0.38 & $^{+71.4}_{-71.4}$ & $^{+71.4}_{-71.4}$ & $\pm$ 86.0  & $\pm$ 33.4 & $^{+0.19}_{-0.14}$ \\
+      $\geq$8 & 800-1000 & $>200$  &  0.54 & $\pm$  0.69 & $^{+33.3}_{-33.3}$ & $^{+33.3}_{-33.3}$ & $\pm$ 86.0  & $\pm$ 33.4 & $^{+0.56}_{-0.54}$ \\
+      $\geq$8 & 1000-1250 & $>200$ &  0.73 & $\pm$  0.78 & $^{+19.2}_{-1.4}$ & $^{+56.2}_{-27.4}$  & $\pm$ 86.0 & $\pm$ 33.4 & $^{+0.59}_{-0.44}$ \\
+      $\geq$8 & 1250-1500 & $>200$ &  0.54 & $\pm$  0.75 & $^{+55.6}_{-55.6}$ & $^{+55.6}_{-55.6}$ & $\pm$ 86.0 & $\pm$ 33.4 & $^{+0.52}_{-0.52}$ \\
+      $\geq$8 & $>$1500   & $>200$ &  0.89 & $\pm$  0.94 & $^{+65.2}_{-65.2}$ & $^{+65.2}_{-65.2}$ & $\pm$ 86.0 & $\pm$ 33.4 & $^{+0.95}_{-0.89}$ \\
+      \bottomrule
+    \end{tabular}}
+  % \end{lrbox}
+  % \scalebox{0.95}{\usebox{\closureBox}}
+  % }
+  % \end{center}
 \end{table}
 
 \section{Results and Interpretation}
 \label{sec:RA2_results}
-\begin{table}[!t]
+\begin{table}[!hp]
   \centering
   \caption{Predicted event yields for the different background components in the search regions defined by \HT, \MHT and \NJets. The uncertainties of the different background sources are added in quadrature to obtain the total uncertainties. Taken from~\cite{Chatrchyan:2014lfa}.
   }
@@ -730,7 +651,7 @@ in case of light-flavour squarks and
 \item (d) $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^{\pm}/\tilde{\chi}_2^0 \;\; \mathrm{where} \;\; \tilde{\chi}_1^{\pm} \rightarrow W + \tilde{\chi}_1^0 \;\; \mathrm{and} \;\; \tilde{\chi}_2^0 \rightarrow Z + \tilde{\chi}_1^0$
 \end{description}  
 for decays of the gluino. The branching ratios are assumed to be 100\% for the different decay modes, except for case (d) where the decay via $\tilde{\chi}_1^{+}$, $\tilde{\chi}_1^{-}$ and $\tilde{\chi}_2^0$ is considered with equal probabilities. \\
-Exclusion limits are derived with the modified $\mathrm{CL_s}$~\cite{0954-3899-28-10-313, Thomas1999435, bib:Higgs:CLS} approach \todo{CLs} and denote the 95\% confidence level (CL) upper limit on the production cross section of the signal. The profile likelihood ratio is used as test statistics which is derived from the combined likelihood of the acceptance, efficiencies and uncertainties for the signal as well as the background predictions for all search regions. The uncertainties considered for the signal acceptance and efficiency in the limit setting procedure are 
+Exclusion limits are derived with the modified $\mathrm{CL_s}$~\cite{0954-3899-28-10-313, Thomas1999435, bib:Higgs:CLS} approach and denote the 95\% confidence level (CL) upper limit on the production cross section of the signal. The profile likelihood ratio is used as test statistics which is derived from the combined likelihood of the acceptance, efficiencies and uncertainties for the signal as well as the background predictions for all search regions. The uncertainties considered for the signal acceptance and efficiency in the limit setting procedure are 
 \begin{itemize} 
 \item The uncertainty on the integrated luminosity amounts to 2.6\%~\cite{CMS-PAS-LUM-13-001}.
 \item An uncertainty of 2\% is considered for a possible trigger inefficiency (cf. Sec.~\ref{subsec:RA2_samples_trigger}).

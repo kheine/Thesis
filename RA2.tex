@@ -351,21 +351,38 @@ All events for which the fit converged within ($|\MHT^x| + |\MHT^y| < 0.02$) are
 
  \item \textbf{Response Smearing:}
 The second step of the R+S method is made up of the smearing procedure. Here, all jets of a seed event are smeared with the full jet response distributions including non-Gaussian tails. This means that the magnitudes of the transverse momenta of the jets are scaled with a factor that is randomly obtained from the jet response distribution histogram of the respective $\pt$ and $|\eta|$ interval to model the reconstructed transverse momentum. These smeared events hence resemble the full QCD event kinematics and thus contributions from QCD events to the search regions can be estimated by imposing the respective selection cuts to the smeared events. \\
-Similarly to the hadronic-tau background prediction, also the R+S method makes use of a bootstrap method in the smearing step. Instead of using all events only once, each seed event is smeared $N = 100$ times. The mean of these $N$ predictions is taken as final result while the statistical uncertainty is obtained as the standard deviation of this set of predictions. This definition of the statistical uncertainty on the prediction ignores the statistical fluctuations of the seed sample. However, since the seed sample is very large, this uncertainty is negligible to good approximation. \\
-\\
+Similarly to the hadronic-tau background prediction, also the R+S method makes use of a bootstrap method. Instead of using all events only once, each seed event is smeared $N = 100$ times. The mean of these $N$ predictions is taken as final result while the statistical uncertainty is obtained as the standard deviation of this set of predictions. This definition of the statistical uncertainty on the prediction ignores the statistical fluctuations of the seed sample. However, since the seed sample is very large, this uncertainty is negligible to good approximation. \\
 In order to validate the smearing procedure, generated QCD multijet events obtained from the \madgraph generator are smeared as described above and compared to fully simulated events at reconstruction level. This is performed on a sample which has a loose pre-selection at detetcor-level of $\NJets \ge 2$ and $\HT > 350$\gev applied. The result of this generator jet smearing is shown in Fig.~\ref{fig:qcd_rs_genjets}. 
 \begin{figure}[!t]
   \centering
-  \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/HT_presel_madgraph_DR53X_chs_TuneZ2star_SmearedGenJets_withoutPUReweighting_v1.png} &
-                \includegraphics[width=0.49\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_SmearedGenJets_withoutPUReweighting_v1.png} 
-  \end{tabular}
-  \caption{Generated jets obtained from a QCD multijet sample generated with MADGRAPH smeared with the truth response templates are compared to the expectation from full simulation. This comparison is shown for \HT (left) with a loose pre-selection of at least three jets and $N_{\text{jets}}$ (right) after the $\Delta \phi$ and the baseline \HT cut.}
+
+  \begin{minipage}[c]{1.\textwidth}
+    \begin{center}
+      \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HThigh_madgraph_DR53X_chs_withoutPUReweighting_SmearedGenJets_v1.pdf}% \hspace {1.5 pt} 
+      \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin3_HThigh_madgraph_DR53X_chs_withoutPUReweighting_SmearedGenJets_v1.pdf}\\ 
+      \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin4_HThigh_madgraph_DR53X_chs_withoutPUReweighting_SmearedGenJets_v1.pdf}
+    \end{center}
+  \end{minipage}
+  \caption{Generated jets obtained from a QCD multijet sample generated with \madgraph smeared with the truth response templates are compared to the expectation from full simulation. This comparison is shown for search regions with non-negligible QCD multijet background contributions as a function of \MHT defined by $\HT \ge 1000$\gev for $3 \le \NJets \le 5$ (\textit{top left}), $6 \le \NJets \le 7$ (\textit{top right}) and $8 \le \NJets$ (\textit{bottom}) after the application of the minimum $\Delta \phi$ selection.}
   \label{fig:qcd_rs_genjets}
 \end{figure}
 \\
-Overall the distributions derived from the smeared generator jets reproduce nicely the expectation from the simulation and tends to a slight overprediction of events for high jet multiplicities at the level of 10\%. Such potential disagreements between the predicted and expected quantities are here denoted \textit{non-closure} of the method. In general, non-closure can occur due to the limited granularity of the response template binning and the averaged flavour composition of the response. In the end, the non-closure of the method is quantified for the whole R+S method including also the rebalancing step (see Sec.~\ref{subsec:RPlusS_app}) and is assigned as systematic uncertainty to the QCD background prediction (see Sec.~\ref{subsec:RA2_syst_unc}). This covers also the deviations observed in Fig.~\ref{fig:qcd_rs_genjets} for the smearing of generator jets. 
+Overall the distributions derived from the smeared generator jets reproduce nicely the expectation from the simulation. Potential disagreements between the predicted and expected quantities are in this thesis denoted \textit{non-closure} of the method. In general, non-closure can occur due to the limited granularity of the response template binning and the averaged flavour composition of the response. In the end, the non-closure of the method is quantified for the whole R+S method including also the rebalancing step (see Sec.~\ref{subsec:RPlusS_app}) and is assigned as systematic uncertainty to the QCD background prediction (see Sec.~\ref{subsec:RA2_syst_unc}). 
 \end{description}
+\begin{figure}[!t]
+  \centering
+
+  \begin{minipage}[c]{1.\textwidth}
+    \begin{center}
+      \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HThigh_pythia_chsJets_pt0_NoPU_v1.pdf}% \hspace {1.5 pt} 
+      \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin3_HThigh_pythia_chsJets_pt0_NoPU_v1.pdf}\\ 
+      \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin4_HThigh_pythia_chsJets_pt0_NoPU_v1.pdf}
+    \end{center}
+  \end{minipage}
+  \caption{Prediction of QCD background on a QCD multijet sample generated with \pythia \textit{without the simulation of pileup events} compared to the expectation from full simulation. This comparison is shown for search regions with non-negligible QCD multijet background contributions as a function of \MHT defined by $\HT \ge 1000$\gev for $3 \le \NJets \le 5$ (\textit{top left}), $6 \le \NJets \le 7$ (\textit{top right}) and $8 \le \NJets$ (\textit{bottom}) after the application of the minimum $\Delta \phi$ selection.}
+  \label{fig:qcd_rs_closure_nopu}
+\end{figure}
+In order to study the general feasibility of the R+S method to predict background contributions arising from QCD multijet events, the whole procedure is first performed on simulated QCD multijet events \textit{without} simulated pileup events and compared to the expectated event yields. Thus, the events are first reblanced with the kinematic fit adjusting the transverse momenta of all reconstructed jets in the event and then smeared according to the full jet response distribution, as done already for the smearing of generator jets. The resulting QCD background predictions are compared to the expectation in Fig.~\ref{fig:qcd_rs_closure_nopu} for representative search regions with non-negligible QCD background contributions. In general, the disagreement for the actual search regions of $\MHT > 200$\gev is statistically compatible with zero. Thus, the R+S method successfully predicts QCD multijet background in such idealised QCD multijet events without additional pileup interactions. The necessary adjustment of the method to realistic collision events is discussed in the next section.
 
 \subsection{Application to Realistic Collision Events}
 \label{subsec:RPlusS_app} 
@@ -373,11 +390,11 @@ The R+S method as introduced above has been shown to work properly on simulated 
 \begin{figure}[!t]
   \centering
   \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_DoNotUseRebCorrection_v1.png} &
-                \includegraphics[width=0.49\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} 
+                \includegraphics[width=0.49\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_DoNotUseRebCorrection_v1.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/NJets_baseline_withoutMHT_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.pdf} 
 
   \end{tabular}
-  \caption{Prediction of QCD background on a Monte Carlo sample compared to the expectation from full simulation showing the $N_{\text{jets}}$ distribution for a \pt cut of 10 GeV on jets considered in the rebalancing \textit{without} the application of a correction factor for the rebalancing (left) and \textit{with} a correction of the rebalancing procedure (right) as described in the text.}
+  \caption{Prediction of QCD background on a QCD multijet sample generated with \madgraph compared to the expectation from full simulation showing the $N_{\text{jets}}$ distribution for a \pt cut of 10 GeV on jets considered in the rebalancing \textit{without} the application of a correction factor for the rebalancing (\textit{left}) and \textit{with} a correction of the rebalancing procedure (\textit{right}) as described in the text.}
   \label{fig:qcd_rs_rebnjets}
 \end{figure}
 \\
@@ -389,7 +406,7 @@ Jets assigned to an event, especially soft jets, do not necessarily have to belo
                 \includegraphics[width=0.49\textwidth]{figures/RebalanceCorrectionFactors_DR53X_chsJets_TuneZ2star_withoutPUReweighting_pt10_vsRecoNVtxSplit.pdf}\\
 
   \end{tabular}
-  \caption{Comparison of the rebalance correction factor determined on the PYTHIA and the MADGRAPH QCD Monte Carlo (left) and rebalance correction factor for different primary vertex bins (right).}
+  \caption{Comparison of the rebalance correction factor determined on the \pythia and the \madgraph QCD Monte Carlo (left) and rebalance correction factor for different primary vertex bins (right).}
   \label{fig:qcd_rs_rebfactor}
 \end{figure}
 \\
@@ -402,15 +419,15 @@ The quality of the R+S method to predict background contributions from QCD multi
 \begin{figure}[!hp]
   \centering
   \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
-                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
-                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin3_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
-                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin3_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
-                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin4_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
-                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin4_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.pdf}\\
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin3_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin3_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.pdf}\\
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin4_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin4_HThigh_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.pdf}\\
 
   \end{tabular}
-  \caption{Prediction of QCD background on a Monte Carlo sample compared to the expectation from full simulation. The closure test is shown for various jet multiplicity bins and low (left) or high (right) \HT selections.}
+  \caption{Prediction of QCD background on a QCD multijet sample generated with \madgraph compared to the expectation from full simulation. The closure test is shown for various jet multiplicity bins and low (left) or high (right) \HT selections.}
   \label{fig:qcd_rs_closure}
 \end{figure}
 \\
@@ -439,14 +456,14 @@ The first choice for the determination of remaining biases is to calculate the d
     \end{tabular}}
 \end{table}
 \\
-There is one bin (for 3 -- 5 jets and \HT $= 500 - 1000$~GeV) where the signal region shows a statistically significant non-closure. In Fig.~\ref{fig:qcd_rs_closure_comp}, this particular distribution is shown for the MADGRAPH QCD sample (left) and the PYTHIA sample (right). In the region between \MHT $=$ 200 -- 350 GeV, the MADGRAPH sample shows an underprediction of $\approx 60\%$, while the PYTHIA sample tends to a statistically not significant overprediction. Therefore, it is hard to judge, if it is really a systematic effect or just a statistical fluctuation. In order to treat this conservatively, the result is not corrected for this effect, but the whole $60\%$ deviation in the madgraph sample is considered as systematic uncertainty. As QCD is not the dominant background contribution in this search bin, it will hardly affect the final result.
+There is one bin (for 3 -- 5 jets and \HT $= 500 - 1000$~GeV) where the signal region shows a statistically significant non-closure. In Fig.~\ref{fig:qcd_rs_closure_comp}, this particular distribution is shown for the \madgraph QCD sample (left) and the \pythia sample (right). In the region between \MHT $=$ 200 -- 350 GeV, the \madgraph sample shows an underprediction of $\approx 60\%$, while the \pythia sample tends to a statistically not significant overprediction. Therefore, it is hard to judge, if it is really a systematic effect or just a statistical fluctuation. In order to treat this conservatively, the result is not corrected for this effect, but the whole $60\%$ deviation in the madgraph sample is considered as systematic uncertainty. As QCD is not the dominant background contribution in this search bin, it will hardly affect the final result.
 \begin{figure}[!t]
   \centering
   \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png} &
-                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HTlow_pythia_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.png}\\
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HTlow_madgraph_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/MHT_JetBin2_HTlow_pythia_DR53X_chs_TuneZ2star_pt10_withoutPUReweighting_UseRebCorrection_v1.pdf}\\
   \end{tabular}
-  \caption{Prediction of QCD background on a Monte Carlo sample compared to the expectation from full simulation. The closure test is shown for 3 -- 5 jets and \HT $= 500 - 1000$~GeV on the madgraph QCD sample (left) and the pythia QCD sample (right).}
+  \caption{Prediction of QCD background on a simulated QCD multijet sample compared to the expectation from full simulation. The closure test is shown for 3-5 jets and $ 500 \leq \HT \leq 1000$~GeV on the \madgraph QCD sample (\textit{left}) and the \pythia QCD sample (\textit{right}).}
   \label{fig:qcd_rs_closure_comp}
 \end{figure}
 \\
@@ -475,10 +492,10 @@ The performance of the R+S method can also be tested directly on data by compari
 \begin{figure}[!h]
   \centering
   \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/HT_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png} &
-                \includegraphics[width=0.49\textwidth]{figures/NJets_presel_HThigh_chsJets_535_Run2012ABCD_data_pt10_withUncertainties_UseRebCorrection_v3.png} \\
+                \includegraphics[width=0.49\textwidth]{figures/HT_presel_HThigh_data_DR53X_chs_HThigh_invertedDeltaPhi_v1.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/NJets_presel_HThigh_data_DR53X_chs_HThigh_invertedDeltaPhi_v1.pdf} \\
   \end{tabular}
-  \caption{Prediction of QCD background on data compared to the expectation from data for a QCD enriched control region with \HT$>~1000~\rm{GeV}$, inverted $\Delta \phi$ cut and at least three jets.}
+  \caption{Prediction of QCD background on data compared to the expectation from data for a QCD enriched control region with \HT$>~1000~\rm{GeV}$, inverted $\Delta \phi$ cut, $\NJets \geq 3$ and $100 \leq \MHT \leq 200$\gev.}
   \label{fig:qcd_rs_dataclosure}
 \end{figure}
 Nevertheless no perfect agreement is expected since contaminations from other backgrounds do still contribute. Especially the deviations in the \MHT distribution increase with increasing values of \MHT as QCD is not dominant here, so that a comparison is only reasonable for the low \MHT region. 

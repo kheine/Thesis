@@ -43,13 +43,18 @@ The CMS detector with its typical cylindrical design of different sub-detector c
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=1.0\textwidth]{figures/Figures_Experimental_Apparatus_CMS_perspective.png}
+    \includegraphics[width=0.95\textwidth]{figures/Figures_Experimental_Apparatus_CMS_perspective.png}
   \end{tabular}
   \caption{A perspective view of the CMS detector~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS}
 \end{figure}
-As a typical high-energy particle experiment, the CMS detector makes mainly use of tracking detectors and calorimeters to measure momenta of particles, energy depositions and flight directions in order to identify the objects emerging from the particle collisions. The CMS detector with a length of 21.6\,m and a diameter of 14.6\,m exhibits a total weight of 12\,500\,t. \\  
-The following sections comprise a description of the CMS detector and its individual sub-detectors. A detailed discussion of the detector design can be found in~\cite{Chatrchyan:2008zzk, bib:cmsptdr1}. After the introduction of the CMS coordinate conventions in Sec.~\ref{subsec:cms_coordinates}, the superconducting magnet is discussed (Sec.~\ref{subsec:cms_magnet}). Afterwards, the tracking system (Sec.~\ref{subsec:cms_tracker}), the calorimeters (Sec.~\ref{subsec:cms_ecal} and~\ref{subsec:cms_hcal}) and the muon system (Sec.~\ref{subsec:cms_muon}) are described moving from the inside of the detector outwards. The detector description ends with a short review of the trigger system in Sec.~\ref{subsec:cms_trigger}.  
+Such as other high-energy particle experiments, the CMS detector makes use of tracking detectors and calorimeters to measure momenta of particles, energy depositions and flight directions in order to identify the objects emerging from the particle collisions. A typical characteristic of calorimeters is given by the ratio $e/h$. This quantifies the relation between the detection efficiencies of electromagnetic ($e$) and hadronic ($h$) energy deposits in a particle shower. Often it is determined as the ratio of the calorimeter response to pions and electrons of the same energy. Furthermore, the calorimeter performance can be characterized by the relative calorimeter energy-resolution
+\begin{equation}
+\frac{\sigma(E)}{E}= \frac{N}{E} \oplus \frac{S}{\sqrt{E}} \oplus C 
+\end{equation}
+which improves with increasing energy $E$ of the measured particle. At low momenta, the resolution is mainly dominated by electronic noise, described by the \textit{noise term} $N$. For increasing energies, the resolution is driven by fluctuations of the shower development described by the \textit{stochastic term} $S$ and at high energies, the resolution is eventually limited by calorimeter miscalibration and non-uniformities described by the \textit{constant term} $C$.\\ 
+\\ 
+The following sections comprise a description of the CMS detector which exhibits a total weight of 12\,500\,t and has a length of 21.6\,m and a diameter of 14.6\,m. A detailed discussion of the detector design can be found in~\cite{Chatrchyan:2008zzk, bib:cmsptdr1}. After the introduction of the CMS coordinate conventions in Sec.~\ref{subsec:cms_coordinates}, the superconducting magnet is discussed (Sec.~\ref{subsec:cms_magnet}). Afterwards, the tracking system (Sec.~\ref{subsec:cms_tracker}), the calorimeters (Sec.~\ref{subsec:cms_ecal} and~\ref{subsec:cms_hcal}) and the muon system (Sec.~\ref{subsec:cms_muon}) are described moving from the inside of the detector outwards. The detector description ends with a short review of the trigger system in Sec.~\ref{subsec:cms_trigger}.  
 
 \subsection{Coordinate Conventions and Kinematic Variables}
 \label{subsec:cms_coordinates}
@@ -65,7 +70,7 @@ At the LHC, the hard interaction, \ie the actual momentum transfer, is not takin
 \begin{equation}
 \pt = \sqrt{p_x^2 + p_y^2} 
 \end{equation}
-with the components $p_x, p_y$ of the momentum vector in the $x$ and $y$ direction. Momentum conservation in the transverse plane is then used to constrain the final state. Hence, the momentum imbalance in the transverse plane (\metvec) is determined as the negative vector sum of the momenta of all $N$ particles in the event
+with the components $p_x$ and $p_y$ of the momentum vector in the $x$ and $y$ direction. Momentum conservation in the transverse plane is then used to constrain the final state. Hence, the momentum imbalance in the transverse plane (\metvec) is determined as the negative vector sum of the momenta of all $N$ particles in the event
 \begin{equation}
 \metvec = - \sum_{i=1}^{N} \vec{p}_\mathrm{T,i} \; .
 \end{equation}
@@ -112,7 +117,12 @@ An overview of the ECAL layout is shown in Fig.~\ref{fig:CMS_ecal}. The individu
  \item \textbf{Endcap ECAL (EE):} The EB is complemented on each side by an endcap which consists of two D-shaped halfs. The ECAL endcaps extend from $|\eta| = 1.479$ to $|\eta| = 3.0$. In total, they contain another 14\,648 crystals. They have an individual length of 220\,mm, which corresponds to 24.7~$\mathrm{X}_0$. For the collection of scintillation light, vacuum phototriodes are used in the endcaps.
  \item \textbf{Preshower (ES):} In front of the endcap crystals, a preshower detector is placed. It covers the pseudorapidity range of $1.653 < |\eta| <2.6$ and is a two-layer sampling calorimeter with lead as absorber material and silicon strip sensors measuring the deposited energy. The total thickness of the preshower is 20\,cm (3~$\mathrm{X_0}$). With its high granularity, it offers the possibility to identify neutral pions decaying into two collimated photons. These constitute an important background contribution in the search for the Higgs boson in the $H \rightarrow \gamma \gamma$ decay channel.
 \end{description}
-In order to achieve a stable and uniform energy measurement across the whole ECAL, it has to be calibrated. In addition to the calibration of the absolute energy scale especially channel-to-channel effects referred to as \textit{intercalibration} have to be accounted for. This intercalibration is performed based on $\pi^0 \rightarrow \gamma \gamma, W \rightarrow e\nu$ and $Z \rightarrow ee$ events and results in a crystal-intercalibration accuracy of 0.6\% ~\cite{CMS-PAS-EGM-10-003}. Changes in the transparency of the ECAL crystals during operation caused by irradiation are monitored by a dedicated laser system based on the injection of reference laser pulses into the crystals. The typical relative energy resolution for electrons with a transverse momentum of 120\gev with this calorimeter configuration is of the order of 0.5\%.
+The performance of the ECAL has already been evaluated based on test-beam results~\cite{Abramov:2000vd, springerlink:10.1140/epjc/s10052-009-0959-5}. The ratio $e/h$ has been found to be 1.6 while the relative resolution of electrons with energy $E$ is determined to be
+\begin{equation}
+\frac{\sigma(E)}{E}= \frac{0.124}{E/\mathrm{GeV}} \oplus \frac{0.036}{\sqrt{E/\mathrm{GeV}}} \oplus 0.0026 \; .
+\end{equation}
+Thus, the typical relative energy resolution for electrons with a transverse momentum of 120\gev with this calorimeter configuration is of the order of 0.5\%. \\
+In addition to the calibration of the absolute energy scale, especially channel-to-channel effects referred to as \textit{intercalibration} have to be accounted for. This intercalibration is performed based on $\pi^0 \rightarrow \gamma \gamma, W \rightarrow e\nu$ and $Z \rightarrow ee$ events and results in a crystal-intercalibration accuracy of 0.6\% ~\cite{CMS-PAS-EGM-10-003}. Changes in the transparency of the ECAL crystals during operation caused by irradiation are monitored by a dedicated laser system based on the injection of reference laser pulses into the crystals. \\
 
 \subsection{Hadron Calorimeter}
 \label{subsec:cms_hcal}
@@ -134,7 +144,12 @@ Each half barrel is divided into 16 $\eta$-regions for which the individual tile
  \item \textbf{Hadron endcap (HE):} The hadron barrel calorimeter is supplemented by the hadron endcap. It is mounted on the endcap iron yoke and covers the pseudorapidity region of $1.3 \le |\eta| \le 3.0$ using 18 scintillator layers inserted into brass absorber plates. The granularity of the endcap calorimeter is the same as for the barrel up to $|\eta| = 1.6$ and gets coarser for larger pseudorapidities with $(\Delta \eta, \Delta \phi) \approx (0.17, 0.17)$.
  \item \textbf{Hadron forward (HF):} The forward hadron calorimeter extends the pseudorapidity coverage from $|\eta| = 2.9$ (slightly overlapping with the HE) up to $|\eta| = 5.2$. It is located 11.2\,m from the nominal interaction point and has to be radiation hard to cope with the vast particle flux. Thus, the HF is made of steel absorber plates with radiation hard quartz fibres integrated as active material. These fibres are arranged parallel to the beam line and form towers with a size in $(\Delta \eta, \Delta \phi)$ of $\approx$ (0.175, 0.175). The signal is detected as Cerenkov light originating from the quartz fibres.
 \end{description}
-Similar to the ECAL, also the performance of the HCAL has to be well monitored during operation. Thus, an initial calibration using a radioactive source is combined with test beam data to derive the absolute energy scale. A continous update of this calibrations is performed using isolated energetic particles, \eg from decays of W or Z bosons. 
+The HCAL performance has been measured based on test-beam data as well~\cite{Abramov:2000vd, springerlink:10.1140/epjc/s10052-009-0959-5}. From the measurement of the HCAL response to pions and electrons, the ratio $e/h = 1.4$ is extracted and the relative energy resolution of the combined ECAL and HCAL system is determined as
+\begin{equation}
+\frac{\sigma(E)}{E}= \frac{1.2}{\sqrt{E/\mathrm{GeV}}} \oplus 0.069  
+\end{equation}
+which corresponds to a relative energy resolution of roughly 14\% for pions with an incident energy of $E = 100$\gev. \\
+Similar to the ECAL, also the performance of the HCAL has to be well monitored during operation. Thus, an initial calibration using a radioactive source is combined with test beam data to derive the absolute energy scale. A continous update of this calibrations is performed using isolated energetic particles, \eg from decays of $W$ or $Z$ bosons. 
 
 \subsection{Muon System}
 \label{subsec:cms_muon}
@@ -158,14 +173,6 @@ The global muon reconstruction efficiency is in general about 95--99\% and only 
 
 \subsection{Trigger System}
 \label{subsec:cms_trigger}
-\begin{figure}[!t]
-  \centering
-  \begin{tabular}{c}
-    \includegraphics[width=0.7\textwidth]{figures/int_lumi_cumulative_pp_2.pdf}
-  \end{tabular}
-  \caption{Cumulative integrated luminosity versus day delivered to CMS during stable beams for pp collisions. Different data-taking periods are indicated as follows: green for 2010, red for 2011 and blue for 2012~\cite{bib:lhc:lumi12}.}
-  \label{fig:lhc_data}
-\end{figure}
 The LHC operating at design conditions provides particle collisions with a bunch crossing rate of 40\,MHz. This results in an enormous amount of event data which have to be processed and stored for later analyses. With an approximate event size of 1\,MB, it is technically impossible to record all events. However, as illustrated in Fig.~\ref{fig:CrossSections}, the event rate of interesting events is orders of magnitudes smaller than the total inelastic proton-proton cross section. Thus, already in the trigger system a fast event preselection is performed that allows to reduce the amount of data to a storable size while still retaining the information of interest. Hence, the trigger system makes up the first step in the physics analysis process.\\
 In order to achieve the necessary rate reduction, the CMS experiment uses a two-stage trigger system:
 \begin{description}
@@ -179,9 +186,17 @@ In the two trigger stages, various different conditions can be tested in paralle
 \begin{figure}[!t]
   \centering
   \begin{tabular}{c}
+    \includegraphics[width=0.7\textwidth]{figures/int_lumi_cumulative_pp_2.pdf}
+  \end{tabular}
+  \caption{Cumulative integrated luminosity versus day delivered to CMS during stable beams for pp collisions. Different data-taking periods are indicated as follows: green for 2010, red for 2011 and blue for 2012~\cite{bib:lhc:lumi12}.}
+  \label{fig:lhc_data}
+\end{figure}
+\begin{figure}[!t]
+  \centering
+  \begin{tabular}{c}
     \includegraphics[width=0.7\textwidth]{figures/pileup_pp_2012.pdf} 
   \end{tabular}
-  \caption{Mean number of interactions per bunch crossing in \pp collisions at $\sqrt{s} = 8$\tev~\cite{bib:lhc:lumi12}.}
+  \caption{Mean number of interactions per bunch crossing in \pp collisions at a centre of mass energy of $\sqrt{s} = 8$\tev~\cite{bib:lhc:lumi12}.}
   \label{fig:lhc_pileup}
 \end{figure}
 The first operation of the LHC took place in September 2008. After a major cooling incident only a few days later requiring a longer technical stop, beams were circulated again in November 2009. The first collisions at a center of mass energy of 7\tev finally happened end of March 2010~\cite{bib:lhcmachineoutreach}. In the following running period in 2010, data corresponding to an integrated luminosity of 44.2\pbinv were delivered to the experiments with a maximum peak instantaneous luminosity of $2.05 \times 10^{32} \cm^{-2} \second^{-1}$. These data allowed studies of the detector performance and made first searches for new physics possible. The next data taking period performed during 2011 at the same centre of mass energy even delivered a total amount of 6.1\fbinv \pp collision data reaching a peak instantaneous luminosity of $3.5 \times 10^{33} \cm^{-2} \second^{-1}$. Following another technical shutdown during winter, the centre of mass energy was finally increased to 8\tev for the running period during 2012 and the peak luminosity reached values of up to $7.7 \times 10^{33} \cm^{-2} \second^{-1}$, which is already almost design conditions. In total, 23.3\fbinv of integrated luminosity \pp collisions were produced by the LHC operating at stable beam conditions. The evolution of the integrated luminosity versus days is illustrated in Fig.~\ref{fig:lhc_data} for data-taking periods in 2010, 2011 and 2012. \\

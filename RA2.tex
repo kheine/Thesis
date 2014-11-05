@@ -288,7 +288,7 @@ As stated above, QCD background contributions arise from jet mismeasurements in 
   \centering
   \makebox[\linewidth]{
   \begin{tabular}{c}
-                \includegraphics[width=0.99\textwidth]{figures/RPlusR.pdf}  
+                \includegraphics[width=0.99\textwidth]{figures/SketchJetSmearingMethod_LabelMHT.pdf}  
   \end{tabular}}
   \caption{Outline of the two steps performed in the R+S method for estimation of QCD background events~\cite{MSchrode}.}
   \label{fig:RPlusS_concept}
@@ -511,16 +511,16 @@ Different uncertainties of the R+S method have been evaluated:
 \item \textbf{Pile-up:} In general, the R+S method is relatively safe against pile-up since very soft jets are neglected in the rebalancing procedure. Additionally, it is expected that pile-up is an issue especially for \textit{soft} jets which do not contribute significantly to the high \MHT search bins because they are mainly populated due to heavily mis-measured \textit{hard} jets. Therefore, a valid approach is to evaluate possible remaining pile-up effects in the low \MHT region for \MHT $> 100 \rm{~GeV}$. This approach also ensures that statistical limitations are reduced.\\
 The general approach is to study the difference in the behaviour of the prediction in data and Monte Carlo for different pile-up conditions. Hence, the sample is divided into three different bins of primary vertices $(0-10, 11-20, > 20)$. The prediction for each vertex bin (for \HT $>~500$~GeV) is calculated and normalized to the number of seed events contributing to that particular bin. It is assumed that pile-up effects are negligible in the lowest primary vertex bin. Therefore the distributions in data and Monte Carlo are normalized to each other such that they have the same yield in the first primary vertex bin. Then, the absolute difference between data and Monte Carlo prediction is calculated for the second and the third vertex bin, multiplied each with the seed events in data for that bin and summed up. The input distributions for this calculation are illustrated in Fig.~\ref{fig:qcd_rs_pileup}. The ratio of this pile-up dependent fraction of the prediction calculated as described above and the total prediction is taken as pile-up uncertainty. It is evaluated for each jet multiplicity bin separately. 
 \end{itemize}
-\begin{figure}[!h]
-  \centering
-  \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/PUUncertainty_NJet3_5.pdf} &
-                \includegraphics[width=0.49\textwidth]{figures/PUUncertainty_NJet6_7.pdf} \\
-                \multicolumn{2}{c}{\includegraphics[width=0.49\textwidth]{figures/PUUncertainty_NJet8.pdf}}
-  \end{tabular}
-  \caption{Prediction of QCD background in data and Monte Carlo as a function of primary vertices (NVtx) normalized to the number of contributing seed events used for the determination of the pile-up uncertainty as described in Sec.~\ref{subsec:RA2_syst_unc}.}
-  \label{fig:qcd_rs_pileup}
-\end{figure}
+%\begin{figure}[!h]
+%  \centering
+%  \begin{tabular}{cc}
+%                \includegraphics[width=0.49\textwidth]{figures/PUUncertainty_NJet3_5.pdf} &
+%                \includegraphics[width=0.49\textwidth]{figures/PUUncertainty_NJet6_7.pdf} \\
+%                \multicolumn{2}{c}{\includegraphics[width=0.49\textwidth]{figures/PUUncertainty_NJet8.pdf}}
+%  \end{tabular}
+%  \caption{Prediction of QCD background in data and Monte Carlo as a function of primary vertices (NVtx) normalized to the number of contributing seed events used for the determination of the pile-up uncertainty as described in Sec.~\ref{subsec:RA2_syst_unc}.}
+%  \label{fig:qcd_rs_pileup}
+%\end{figure}
 
 \subsection{QCD Background Prediction}
 \label{subsec:RA2_qcd_pred}

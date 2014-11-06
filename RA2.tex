@@ -532,13 +532,13 @@ The general approach is to study the difference in the behaviour of the predicti
   \label{fig:qcd_rs_pileup}
 \end{figure}
 Then, the absolute difference between data and Monte Carlo prediction is calculated for the second and the third vertex bin, multiplied each with the seed events in data for that vertex bin and summed up. %The input distributions for this calculation are illustrated in Fig.~\ref{fig:qcd_rs_pileup}. 
-The ratio of this pileup dependent fraction of the prediction calculated and the nominal QCD prediction is considered as pileup uncertainty. It is evaluated for each jet multiplicity interval separately. 
+The calculated ratio of this pileup dependent fraction of the prediction to the nominal QCD prediction is considered as pileup uncertainty. It is evaluated for each jet multiplicity interval separately. 
 
 \subsection{QCD Background Prediction}
 \label{subsec:RA2_qcd_pred}
 The final prediction for QCD background contributions derived with the R+S method from a multijet control sample in data is summarized in Tab.~\ref{tab:QCDPred} for jet multiplicity bins 3--5, 6--7 and $\ge 8$. The quoted total systematic uncertainty is obtained by adding the single contributions in quadrature. \\
 Some search bins show very large statistical uncertainties of $\geq 100 \%$ which then also affects the evaluation of systematic effects, \eg the core and tail scaling uncertainties. However, since this happens only in bins where QCD background is almost negligible, it does not impact the final result of the analysis significantly. For the affected systematic variations, the largest observed variation is considered as systematic uncertainty as a conservative estimate. Search bins that are affected by that are mainly the high \MHT and the highest jet multiplicity search bins. \\
-However, search regions with non-negligible contributions from QCD background, like high \HT ($\ge 1000$\gev) and low \MHT bins, in general show quite moderate total uncertainties around only 50\% which is a remarkable result for a prediction of a background that is that difficult to model, as discussed in the beginning of this section. The main contributions to the systematic uncertainty arise from the propagated uncertainties of the core and tail scaling factors. The resulting variations in the prediction from the variation of the core scaling factors are typically between 10 to 30 $\%$ in the search bins with non-negligible QCD contributions while it is between 20 to 35 $\%$ from the tail scaling factors. This emphasizes the importance to precisely measure the resolution scaling factors, as described in Chap.~\ref{chap:Resolution} for the scaling factors of the response core. 
+However, search regions with non-negligible contributions from QCD background, like high \HT ($\ge 1000$\gev) and low \MHT bins, in general show quite moderate total uncertainties around only 50\% which is a remarkable result for a prediction of a background that is that difficult to model, as discussed in the beginning of this section. The main contributions to the systematic uncertainty arise from the propagated uncertainties of the core and tail scaling factors. The resulting variations in the prediction from the variation of the core scaling factors are typically between 10--30 $\%$ in the search bins with non-negligible QCD contributions while it is between 20--35 $\%$ from the tail scaling factors. This emphasizes the importance to precisely measure the resolution data-to-simulation scale factors, as described in Chap.~\ref{chap:Resolution} for the scaling factors of the response core. 
 \begin{table}[!hp]
   \centering
   \caption{Predicted event yields for the QCD background in the search regions defined by \HT, \MHT and \NJets shown together with statistical and systematic uncertainties. The uncertainties of the different systematic uncertainty sources are added in quadrature to obtain the total systematic uncertainties.}
@@ -729,8 +729,8 @@ Finally, the resulting exclusion limits for the above described processes (a)-(d
 
 \subsection{Comparison to Other Measurements}
 \label{subsec:RA2_comp}
-The exclusion limits obtained with the analysis presented here exceed the exclusion limits derived from the 7\tev analysis (cf. Fig.~\ref{fig:SMS_7TeV}). Especially, the limit on the gluino mass is improved by around 200\gev for light LSPs. Furthermore, the extension of the analysis into the \NJets plane provided a good sensitivity towards the gluino-mediated production of third generation squarks and to decays involving $W$ and $Z$ bosons.
-
+The exclusion limits obtained with the analysis presented in this thesis exceed the exclusion limits derived from the 7\tev analysis (cf. Fig.~\ref{fig:SMS_7TeV}). Especially, the limit on the gluino mass is improved by around 200\gev for light LSPs. Furthermore, the extension of the analysis into the \NJets plane provides a good sensitivity towards the gluino-mediated production of third generation squarks and to decays involving $W$ and $Z$ bosons which could not be explored before. \\
+Similar studies targeting the same simplified models have been performed within CMS, also with different analysis techniques or final states. A comparison of the analysis presented here, to the respective other CMS analyses is illustrated in Fig.~\ref{fig:result_comp} for models (a)--(c) introduced in Sec.~\ref{sec:RA2_results}. It turns out that the analyses shown there, all have similar expected sensitivity to the respective models for $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^0$ and $\tilde{q} \rightarrow q + \tilde{\chi}_1^0$ decays. This is somewhat expected as the compared analyses all make use of the all-hadronic final state. However, the analysis ~\cite{CMS-PAS-SUS-13-019} performs better especially in case of squark production, as here also search regions based on dijet events are employed. It is interesting to note that the analysis presented in this thesis is also similarly sensitive to gluino-mediated stop production as other all-hadronic searches. Here, other hadronic analyses typically employ b-tagging information  while the analysis presented here followed a complementary approach by employing high jet multiplicity search regions. However, the best sensitivity to this respective model is achieved by an analysis which is based on a single lepton, multiple jets and b-tags. 
 \begin{figure}[!h]
   \centering
 \makebox[\linewidth]{
@@ -742,38 +742,37 @@ The exclusion limits obtained with the analysis presented here exceed the exclus
     \end{center}
   \end{minipage}}
 
-  \caption{Comparison of various exclusion limits derived by different CMS analyses for the process $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^0$ (\textit{top left}), $\tilde{q} \rightarrow q + \tilde{\chi}_1^0$ (\textit{top right}) and $\tilde{g} \rightarrow t\bar{t} + \tilde{\chi}_1^0$ (\textit{bottom}). Taken from~\cite{bib:CMS:PhysicsResultsSUS}}
+  \caption{Comparison of various exclusion limits derived by different CMS analyses for the process $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^0$ (\textit{top left}), $\tilde{q} \rightarrow q + \tilde{\chi}_1^0$ (\textit{top right}) and $\tilde{g} \rightarrow t\bar{t} + \tilde{\chi}_1^0$ (\textit{bottom}). Taken from~\cite{bib:CMS:PhysicsResultsSUS}}.
   \label{fig:result_comp}
 \end{figure}
-
-%\begin{figure}[!tp]
-%  \centering
-%  \begin{tabular}{c}
-%    \includegraphics[width=0.9\textwidth]{figures/T1_ICHEP2014_All.png}
-%  \end{tabular}
-%  \caption{Comparison of various exclusion limits derived by different CMS analyses for the SMS T1qqqq. Taken from ... (cms susy public results).}
-%  \label{fig:T1_comp}
-%\end{figure}
-
-%\begin{figure}[!tp]
-%  \centering
-%  \begin{tabular}{c}
-%    \includegraphics[width=0.9\textwidth]{figures/T2_ICHEP2014.png}
-%  \end{tabular}
-%  \caption{Comparison of various exclusion limits derived by different CMS analyses for the SMS T2qq. Taken from ... (cms susy public results).}
-%  \label{fig:T1_comp}
-%\end{figure}
-
-%\begin{figure}[!tp]
-%  \centering
-%  \begin{tabular}{c}
-%    \includegraphics[width=0.9\textwidth]{figures/T1tttt_ICHEP2014_All.png}
-%  \end{tabular}
-%  \caption{Comparison of various exclusion limits derived by different CMS analyses for the SMS T1tttt. Taken from ... (cms susy public results).}
-%  \label{fig:T1_comp}
-%\end{figure}
+\\
+Comparable analyses have also been performed by the ATLAS experiment~\cite{Aad:2014wea, Aad:2013wta, Aad:2014lra} and the obtained exclusion limits on sparticle masses lie in a very similar mass region.
 
 \section{Status of natural supersymmetry after LHC Run-I}
 \label{sec:susy_status}
-
-
+In general, the SUSY search presented in this thesis as well as other measurements, as discussed in Sec.~\ref{subsec:RA2_comp}, pushed the mass limits of supersymmetric particles even closer to the TeV range than the 7\tev analyses or even beyond. However, most of the interpretations are in fact presented in simplified models assuming 100\% branching fraction of that specific decay. This is something which most probably is not realised in nature. Scaling the respective branching ratios down, typically results in much weaker mass limits. \\
+Nonetheless, it is also interesting to look at more realistic SUSY models, like \eg the CMSSM again. In addition, to direct interpretations of searches in the CMSSM which, \eg in case of the ATLAS experiment, result in exclusions of $m_{1/2} \lesssim 800$\gev for $m_{0} \lesssim 1$\tev and $m_{1/2} \lesssim 600$\gev for $m_{0} \lesssim 6$\tev ($\mathrm{tan} \, \beta = 30$, $A_0 = -2m_0$, $\mu >0$)~\cite{bib:ATLAS:PhysicsResultsSUS}, also global fits to constrain SUSY parameters are performed (\cf for instance~\cite{Bechtle:2012zk, Buchmueller:2013rsa}). Typically, these take not only direct searches from the LHC, but also constraints from low-energy precision observables, flavour measurements or the cosmological cold dark matter density into account to constrain for instance the CMSSM. In general it turns out, that there is a growing tension between low-energy observables, the non-observation of SUSY at the LHC and the CMSSM, such best fit values are pushed up to larger and larger values of $m_0/m_{1/2}$. \\
+Thus, also models beyond the CMSSM catch growing attention. One such example is the pMSSM~\cite{Djouadi:1998di}. An interpretation of SUSY searches comprising also the analysis presented in this thesis in the context of the pMSSM, has been performed by the CMS experiment~\cite{CMS-PAS-SUS-13-020}. The pMSSM is a 19-parameter realization of the MSSM and captures most of the features of general $R-$parity conserving SUSY models and covers a wide diversity of possible SUSY topologies. In order to investigate the impact of direct searches at CMS a global Bayesian analysis~\cite{robert2001bayesian, o2004bayesian} is performed that furthermore also includes pre-CMS data and indirect measurements. Here, probability distributions prior and posterior to the CMS dearches are investigated. In Fig.~\ref{fig:pMSSM}, example distributions of such prior and posterior probability distributions for gluino and squark masses are illustrated.
+\begin{figure}[!h]
+  \centering
+  \begin{tabular}{cc}
+                \includegraphics[width=0.49\textwidth]{figures/pMSSM_gluino.pdf} &
+                \includegraphics[width=0.49\textwidth]{figures/pMSSM_squark.pdf} 
+  \end{tabular}
+\caption{Marginalized distributions of gluino masses (\textit{left}) and $\tilde{u}_L,\tilde{c}_L$ masses (\textit{right}). Filled histograms show prior distributions while line histograms illustrate posterior dostributions including the results of the analysis presented in this chapter and~\cite{Chatrchyan:2012lia}. Solid curves denote the nominal curves while dashed lines represent systematic variations. Taken from~\cite{CMS-PAS-SUS-13-020}.} 
+  \label{fig:pMSSM}
+\end{figure}
+\\
+It turns out that the data disfavours pMSSM scenarios with $\tilde{g}$ masses below 1200\gev and scenarios with $\tilde{u}_L,\tilde{c}_L$ masses below 1000\gev. Consequently, also in this analysis excluded mass ranges reach or exceed already the 1\tev mark, such that the impression arises that natural SUSY is under increasing threat. \\
+However, as discussed in Sec.~\ref{sec:susy}, if SUSY is supposed to provide a solution to the hierarchy problem, especially the supersymmetric partner of the top quark should not be too heavy. A summary of searches performed within the CMS experiment at a centre of mass energy of $\sqrt{s} = 8$\tev for direct production of top squark pairs, is illustrated in Fig.~\ref{fig:8TeV_stop_limits}.
+\begin{figure}[!h]
+  \centering
+  \begin{tabular}{c}
+                \includegraphics[width=0.49\textwidth]{figures/T2tt_ICHEP2014_All.pdf} 
+  \end{tabular}
+\caption{Exclusion limits derived by different CMS analyses for the process $\tilde{t} \rightarrow t\tilde{\chi}_1^0$ in the $m_{\tilde{t}}$ versus $m_\mathrm{LSP}$. Taken from~\cite{bib:CMS:PhysicsResultsSUS}.} 
+  \label{fig:8TeV_stop_limits}
+\end{figure}
+\\
+Here, top squarks with masses between 200--750\gev have been excluded for LSP masses below around 200\gev. Although these limits also approach the 1\tev mark, there is still lots of the parameter space uninvestigated. Since the LHC starts a second run period in 2015 with an increased centre of mass energy of $\sqrt{s} = 13$\tev, this parameter region up to 1\tev can be further investigated.\\
+A feasability study based on simulated events to explore direct stop quark pair-production at $\sqrt{s} = 13$\tev is presented in the next chapter. Here, also techniques introduced in Chap.~\ref{chap:Objects}, to identify boosted hadronically-decaying top quarks emerging from the stop quark decays, are employed.

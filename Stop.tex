@@ -3,14 +3,14 @@ The targeted process of this analysis is illustrated in a diagram in Fig.~\ref{f
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
-                \includegraphics[width=0.65\textwidth]{figures/T2tt.pdf} 
+                \includegraphics[width=0.68\textwidth]{figures/T2tt.pdf} 
   \end{tabular}
   \caption{Schematic diagram of the direct pair production of stop quarks in pp collisions with subsequent decay into a top quark and the LSP. Taken from~\cite{bib:CMS:PhysicsResultsSUS}. }
   \label{fig:T2tt}
 \end{figure}
    
 Here, the pair production of top squarks is shown with subsequent decay into a top quark and the LSP. Since the top quark decays into a $b$ quark and a $W$ boson, the expected final state signature further depends on the decay modes of the $W$ boson. In this analysis, only final states with fully hadronic top decays are considered. Consequently, this analysis targets a jet final state accompanied by missing transverse energy caused by the LSPs. As discussed in Section~\ref{subsec:susy_collider}, background contributions from the SM to such signatures arise mainly from QCD multijet events, \WJets, \ZJets and \ttbar events. \\
-In this Chapter, various analysis strategies for a search for top squarks at $\sqrt{s} = 13$\tev are discussed and compared in order to address mass scenarios with large mass differences between the stop quark mass and the LSP. Furthermore, the performance of studied selections is compared to the existing all-hadronic stop search performed by the CMS experiment at $\sqrt{s} = 8$\tev which is published in~\cite{CMS-PAS-SUS-13-015}. In addition, it is interesting to study, if selections that are found to be suited for direct stop production are also sensitive to the gluino-mediated production of third generation quarks. \\
+In this Chapter, various analysis strategies for a search for top squarks at $\sqrt{s} = 13$\tev are discussed and compared in order to address mass scenarios with large mass differences between the stop quark mass and the LSP. Furthermore, the performance of studied selections is compared to the existing all-hadronic stop search performed by the CMS experiment at $\sqrt{s} = 8$\tev which is published in~\cite{CMS-PAS-SUS-13-015}. In addition, it is interesting to study, if selections that are found to be suited for direct stop production are also sensitive to the gluino-mediated production of third generation quarks. 
 
 \section{Data Samples}
 \label{sec:stop_samples}
@@ -83,7 +83,7 @@ for all jets that have $\pt > 50$\gev and $|\eta| < 2.5$. This condition selects
 \end{equation*} 
 are selected. The value of 0.5 is chosen according to the jet size parameter. However, this is reduced in case of the third jet in order to retain signal efficiency. }
 \end{itemize}
-Since only simulated events are used, no dedicated event cleaning filters are applied as it is necessary for data (cf. Sec~\ref{subsec:RA2_cleaning}). The selection described here is denoted \textit{baseline} selection in the following. In Tab.~\ref{tab:stop_baseline_cutflow} the event yields of background and two signal processes obtained from simulation normalized to an integrated luminosity of 19.5\fbinv are shown after various requirements together with the statistical uncertainty. It is visible that the \met and $\Delta \phi$ requirement reject most of the background events. After the baseline selection the background is composed quite equally of all four SM processes. Furthermore, in Fig.~\ref{fig:stop_baseline}, the obtained spectra of \HT, \met and \NJets after applying the baseline selection are shown for the SM backgrounds and two selected signal points. The signal points represent mass values of 600\gev and 1100\gev for the stop mass while the LSP mass is in both cases 50\gev. These two signal points illustrate the difference in the kinematic properties of events for low and high stop masses. Typically, the \HT and \met spectrum get harder for higher stop masses while the shape of the \NJets spectrum stays nearly unchanged. \\
+Since only simulated events are used, no dedicated event cleaning filters are applied as it is necessary for data (cf. Sec~\ref{subsec:RA2_cleaning}). The selection described here is denoted \textit{baseline} selection in the following. In Tab.~\ref{tab:stop_baseline_cutflow} the event yields of background and two signal processes obtained from simulation normalized to an integrated luminosity of 19.5\fbinv are shown after various requirements together with the statistical uncertainty. It is visible that the \met and $\Delta \phi$ requirement reject most of the background events. After the baseline selection the background is composed quite equally of all four SM processes. Furthermore, in Fig.~\ref{fig:stop_baseline}, the obtained spectra of \HT, \met and \NJets after applying the baseline selection are shown for the SM backgrounds and two selected signal points. The signal points represent mass values of 600\gev and 1100\gev for the stop mass while the LSP mass is in both cases 50\gev. These two signal points illustrate the difference in the kinematic properties of events for low and high stop masses. Typically, the \HT and \met/\MHT spectrum get harder for higher stop masses while the shape of the \NJets spectrum stays nearly unchanged. 
 \begin{table}[!t]
 \fontsize{9 pt}{1.2 em}
 \selectfont
@@ -106,7 +106,6 @@ Since only simulated events are used, no dedicated event cleaning filters are ap
 \end{tabular}}
 \label{tab:stop_baseline_cutflow}
 \end{table}    
-
 \begin{figure}[!t]
   \centering
   % \makebox[\linewidth]{
@@ -122,6 +121,7 @@ Since only simulated events are used, no dedicated event cleaning filters are ap
   \caption{Comparison of selected \HT (\textit{top left}), \NJets (\textit{top right}), \met (\textit{bottom left}) and \MHT (\textit{bottom right}) distributions in simulated events found from applying the baseline selection criteria. The signal points are labelled as (X, Y) where X is the top squark mass and Y is the LSP mass.}
   \label{fig:stop_baseline} 
 \end{figure}
+\\
 In order to investigate how this baseline selection can be further improved to gain sensitivity to the model of interest the evolution of the signal and background efficiencies is studied when changing specific selections in the analysis. In general, the signal and background efficiencies $\epsilon_\mathrm{sig/bg}$ are defined according to
 \begin{equation}
 \epsilon = \frac{\mathrm{no. \; of \; selected \; events}}{\mathrm{no. \; of \; all \; events}}
@@ -139,17 +139,8 @@ In order to investigate how this baseline selection can be further improved to g
   \caption{Evolution of the signal versus background efficiency for a stop mass of 600\gev (\textit{top}) and 1100\gev (\textit{bottom}) where the background is the sum of all backgrounds (\textit{left}) or the \ttbar background (\textit{right}).}
   \label{fig:stop_baseline_cutscan_ht_met_mht_njets}
 \end{figure}
-
-for the number of signal and background events, respectively. In Fig.~\ref{fig:stop_baseline_cutscan_ht_met_mht_njets} the development of the signal versus background efficiencies are shown for the stop mass 600\gev and 1100\gev signal points and \ttbar as well as the total background events. The curves are obtained from increasing the cut value for the denoted variable by keeping the selection for all other variables fixed. The curve of a variable with good separation power runs close to the lower right corner. Here, the performance of \HT, \met and \NJets is compared. In addition to \met, also \MHT, as defined in Sec.~\ref{subsec:RA2_baseline}, is shown in this comparison. Both variables show a very similar performance such that in principle both variables could be employed with similar results. However, the performance of \met seems to be slightly better and thus this variable is used in these studies rather than \MHT. Furthermore, as stated above the same trigger as for the analysis presented in Chapter~\ref{chap:RA2} could be used to collect the data. Since this trigger is based on \met, the choice of the offline selections is closer to the online definition when using \met instead of \MHT. As can be seen in Fig.~\ref{fig:stop_baseline_cutscan_ht_met_mht_njets}, \met shows in general the best performance when comparing these variables. Furthermore, also \HT provides a good separation power and is only in case of the stop mass of 600~\gev inferior to \NJets. However, when only \ttbar background is considered, the jet multiplicity is not suitable as discriminating variable since the \NJets spectra of signal and \ttbar background are almost identical. As in general the kinematic features of \ttbar background are closest to the signal, it is of special importance to identify selections that can reduce this background. Consequently, \met and \HT are the preferred variables to distinguish signal and background processes. In the following, an analysis strategy close to the one described in Chapter~\ref{chap:RA2} is pursued. Events selected with the baseline selection are further categorized according to their \HT and \met values in exclusive search regions shown in Tab.~\ref{tab:stop_excl_search_bins}. \\ 
-In order to determine the expected exclusion reach, the uncertainties for the individual background processes have to be considered. These are chosen in correspondence to the uncertainties obtained for similar kinematic regimes in the published all-hadronic stop analysis~\cite{CMS-PAS-SUS-13-015}. The respective uncertainties considered for the different processes are
-\begin{itemize}
- \item QCD multijet events: 100\%
- \item \ZJets: 50\%
- \item \WJets: 20\%
- \item \ttbar: 20\% + additional 20\% in the high \met search regions
-\end{itemize}  
-which are meant to be total uncertainties such that the actual statistical uncertainty of the number of simulated MC events is not considered explicitly. Based on the selected event yields and the estimated uncertainties the 95\% confidence-level expected upper limit is calculated as an asymptotic $\mathrm{CL_s}$ limit~\cite{bib:theta}. The obtained exclusion curve is shown in Fig.~\ref{fig:stop_baseline_limit} for the signal strength $\mu$ which is the excluded production cross section divided by the theoretical cross section for direct stop production as function of the stop quark mass. The LSP mass is fixed to 50\gev in order to study the sensitivity of the selection for signal scenarios with large mmass splittings between stop and neutralino mass. A particular mass point can be excluded, if the expected limit drops below one. However, it turns out that this baseline selection cuts and the subsequent binning in exclusive search regions is not yet sensitive enough to probe any of the selected mass points. Thus, possible improvements of the analysis are discussed in the following sections.  
-
+for the number of signal and background events, respectively. In Fig.~\ref{fig:stop_baseline_cutscan_ht_met_mht_njets} the development of the signal versus background efficiencies are shown for the stop mass 600\gev and 1100\gev signal points and \ttbar as well as the total background events. The curves are obtained from increasing the cut value for the denoted variable by keeping the selection for all other variables fixed. The curve of a variable with good separation power runs close to the lower right corner. Here, the performance of \HT, \met and \NJets is compared. In addition to \met, also \MHT, as defined in Sec.~\ref{subsec:RA2_baseline}, is shown in this comparison. Both variables show a very similar performance such that in principle both variables could be employed with similar results. However, the performance of \met seems to be slightly better and thus this variable is used in these studies rather than \MHT. Furthermore, as stated above the same trigger as for the analysis presented in Chapter~\ref{chap:RA2} could be used to collect the data. Since this trigger is based on \met, the choice of the offline selections is closer to the online definition when using \met instead of \MHT. As can be seen in Fig.~\ref{fig:stop_baseline_cutscan_ht_met_mht_njets}, \met shows in general the best performance when comparing these variables. Furthermore, also \HT provides a good separation power and is only in case of the stop mass of 600~\gev inferior to \NJets. However, when only \ttbar background is considered, the jet multiplicity is not suitable as discriminating variable since the \NJets spectra of signal and \ttbar background are almost identical. As in general the kinematic features of \ttbar background are closest to the signal, it is of special importance to identify selections that can reduce this background. Consequently, \met and \HT are the preferred variables to distinguish signal and background processes. \\
+In the following, an analysis strategy close to the one described in Chapter~\ref{chap:RA2} is pursued. Events selected with the baseline selection are further categorized according to their \HT and \met values in exclusive search regions shown in Tab.~\ref{tab:stop_excl_search_bins}. 
 \begin{table}[!t]
 %\fontsize{10 pt}{1.2 em}
 %\selectfont
@@ -170,8 +161,16 @@ which are meant to be total uncertainties such that the actual statistical uncer
 \end{tabular}
 \label{tab:stop_excl_search_bins}
 \end{table}    
-
-
+\\ 
+In order to determine the expected exclusion reach, the uncertainties for the individual background processes have to be considered. These are chosen in correspondence to the uncertainties obtained for similar kinematic regimes in the published all-hadronic stop analysis~\cite{CMS-PAS-SUS-13-015}. The respective uncertainties considered for the different processes are
+\begin{itemize}
+ \item QCD multijet events: 100\%
+ \item \ZJets: 50\%
+ \item \WJets: 20\%
+ \item \ttbar: 20\% + additional 20\% in the high \met search regions
+\end{itemize}  
+which are meant to be total uncertainties such that the actual statistical uncertainty of the number of simulated MC events is not considered explicitly. \\
+Based on the selected event yields and the estimated uncertainties the 95\% confidence-level expected upper limit is calculated as an asymptotic $\mathrm{CL_s}$ limit~\cite{bib:theta}. The obtained exclusion curve is shown in Fig.~\ref{fig:stop_baseline_limit} for the signal strength $\mu$ which is the excluded production cross section divided by the theoretical cross section for direct stop production as function of the stop quark mass. The LSP mass is fixed to 50\gev in order to study the sensitivity of the selection for signal scenarios with large mmass splittings between stop and neutralino mass. A particular mass point can be excluded, if the expected limit drops below one. However, it turns out that this baseline selection cuts and the subsequent binning in exclusive search regions is not yet sensitive enough to probe any of the selected mass points. Thus, possible improvements of the analysis are discussed in the following sections.  
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
@@ -184,7 +183,7 @@ which are meant to be total uncertainties such that the actual statistical uncer
 \section{Sensitivity Improvement using B Tagging}
 \label{sec:stop_btagging}
 As illustrated in Fig.~\ref{fig:T2tt}, the targeted signal final state involves the presence of bottom quarks emerging from the decay of the top quarks. Thus, a very common thing to possibly enhance the sensitivity of such an analysis is to employ b-tagging techniques to identify the b quarks in the final state. Typical b-tagging algorithms for the identification of b-quark jets used within the CMS experiment have been discussed in Section~\ref{sec:btagging}. In this analysis b-quark jets are identified based on the CSV-algorithm using the medium working point. Furthermore, they are required to have \pt$> 30$\gev in order to be not sensitive to potentially large flavour-dependent JEC uncertainties for jet transverse momenta smaller than 30\gev. In Fig.~\ref{fig:stop_baseline_btag} the b-tag multiplicity, \ie the number of b-tagged jets in the event is illustrated. As expected the maximum of this distribution for signal and \ttbar events is around two, since two b-quark jets are expected from the two decaying top quarks. Values above two or b-tagged jets in backgrounds not containing real b-quarks can be explained by the misidentification rate of the tagging algorithm. \\     
-The resulting distributions for \HT, \met and \NJets after requiring the presence of at least one b-tagged jet in the event are illustrated in Fig.~\ref{fig:stop_baseline_btag_HT_MET_NJets} in App.~\ref{app:stop}. It turns out that all backgrounds except for \ttbar can be significantly reduced when requiring the presence of at least one b-quark jet. This is expected, since the \ttbar background is the only background containing real b quarks. \\    
+The resulting distributions for \HT, \met and \NJets after requiring the presence of at least one b-tagged jet in the event are illustrated in Fig.~\ref{fig:stop_baseline_btag_HT_MET_NJets} in App.~\ref{app:stop}. It turns out that all backgrounds except for \ttbar can be significantly reduced when requiring the presence of at least one b-quark jet. This is expected, since the \ttbar background is the only background containing real b quarks.     
 \begin{figure}[!t]
   \centering
   \begin{tabular}{c}
@@ -193,12 +192,12 @@ The resulting distributions for \HT, \met and \NJets after requiring the presenc
   \caption{B-tag multiplicity after applying the baseline selection in simulated events. The signal points are labelled as (X, Y) where X is the top squark mass and Y is the LSP mass.}
   \label{fig:stop_baseline_btag}
 \end{figure}
-Consequently, the expected exclusion reach of the analysis is supposed to improve when applying the b-tag requirement in addition to the baseline selection. Thus, the same exclusive search regions as defined in Tab.~\ref{tab:stop_excl_search_bins} are used considering the same total uncertainties as described in Sec.~\ref{sec:stop_baseline} for a performance comparison of this improved selection with respect to the baseline requirements. The expected limits for the baseline selection as well as the baseline selection and the b-tag requirement are shown in Fig~\ref{fig:stop_baselinebtag_limit}. It turns out that the b-tag requirement significantly improves the sensitivity of the analysis towards the specified top squark mass range. Especially lower masses could be tested with such an anlaysis strategy. However, since the focus of this analysis is put on higher stop quark masses, it is discussed in the next section how this mass range can be adressed better.  
-
+\\
+Consequently, the expected exclusion reach of the analysis is supposed to improve when applying the b-tag requirement in addition to the baseline selection. Thus, the same exclusive search regions as defined in Tab.~\ref{tab:stop_excl_search_bins} are used considering the same total uncertainties as described in Sec.~\ref{sec:stop_baseline} for a performance comparison of this improved selection with respect to the baseline requirements. The expected limits for the baseline selection as well as the baseline selection and the b-tag requirement are shown in Fig~\ref{fig:stop_baselinebtag_limit}. It turns out that the b-tag requirement significantly improves the sensitivity of the analysis towards the specified top squark mass range. Especially lower masses could be tested with such an analysis strategy. However, since the focus of this analysis is put on higher stop quark masses, it is discussed in the next section how this mass range can be adressed better.  
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
-                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_BaselineBTag.pdf} 
+                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_BaselineBTag_LSP50.pdf} 
   \end{tabular}
   \caption{Expected 95\% upper limit for signal strength versus $m_{\tilde{t}}$. The LSP mass is chosen to be 50\gev.}
   \label{fig:stop_baselinebtag_limit}
@@ -218,7 +217,7 @@ In order to gain a better understanding of the kinematics of the investigated fi
 The performance of the CMS- and the HEP-top-tagging algorithms are investigated based on the 13\tev simulation samples and reviewed in the following. 
 \begin{description}
 \item {\textbf{Top Tagging Efficiency Studies:}} In order to evaluate the performance of the top-tagging algorithms, the top tagging efficiencies and misidentification rates are derived. While the top tagging efficiency is determined for \ttbar events, the QCD multijet sample is used to measure the misidentification rate. \\
-The top tag efficiency is defined as the number of hadronically decaying generated top quarks matched to a top-tagged CA-jet divided by the number of all generated hadronically decaying generated top quarks. A successful match is identified by requiring the $\Delta R$ of a generated top quark and a top-tagged CA-jet to be less than the jet radius parameter which is $R=0.8$ for the CMS top tagger and $R=1.5$ for the HEP top tagger, respectively. The obtained efficiency as function of the transverse momentum of the generated hadronically decaying top quark is shown in the left part of Fig.~\ref{fig:stop_top_eff} for both the CMS and the HEP top tagger. It is visible that the turn-on of the HEP top tagger starts already around 200\gev while the CMS tagger begins to become efficient not before around 400\gev. However, the efficiency of the HEP top tagger lies around 20\% in the plateau region while the plateau efficiency of the CMS top tagger is in general higher with a value of around 25\%. This behaviour results mainly from the different jet sizes and selection criteria which are in case of the HEP top tagger optimized to be sensitive already in the \pt range around 200-300\gev.\\
+The top tag efficiency is defined as the number of hadronically decaying generated top quarks matched to a top-tagged CA-jet divided by the number of all generated hadronically decaying generated top quarks. A successful match is identified by requiring the $\Delta R$ of a generated top quark and a top-tagged CA-jet to be less than the jet radius parameter which is $R=0.8$ for the CMS top tagger and $R=1.5$ for the HEP top tagger, respectively. The obtained efficiency as function of the transverse momentum of the generated hadronically decaying top quark is shown in the left part of Fig.~\ref{fig:stop_top_eff} for both the CMS and the HEP top tagger. It is visible that the turn-on of the HEP top tagger starts already around 200\gev while the CMS tagger begins to become efficient not before around 400\gev. However, the efficiency of the HEP top tagger lies around 20\% in the plateau region while the plateau efficiency of the CMS top tagger is in general higher with a value of around 25\%. This behaviour results mainly from the different jet sizes and selection criteria which are in case of the HEP top tagger optimized to be sensitive already in the \pt range around 200-300\gev.
 \begin{figure}[!t]
   \centering
 \makebox[\linewidth]{
@@ -229,6 +228,7 @@ The top tag efficiency is defined as the number of hadronically decaying generat
   \caption{Top tag efficiency for \ttbar events as function of the transverse momentum of the generated top quark (\textit{left}) and misidentification rate for QCD multijet events as a function of the CA-jet \pt (\textit{right}). In case of the CMS top tagger CA-jets with a distance parameter of $R=0.8$ are used while the HEP top tagger is based on CA-jets with $R=1.5$.}
   \label{fig:stop_top_eff}
 \end{figure} 
+\\
 The misidentification rate can be evaluated by dividing the number of top-ttaged CA-jets by the number of all CA-jets. Again, in case of the CMS top tagger the jet distance parameter is $R=0.8$ and for the HEP top tagger it is $R=1.5$. The misidentification rate as function of the respective CA-jet transverse momentum is shown in the right part of Fig.~\ref{fig:stop_top_eff}. Here, a similar feature as for the efficiency curve is observed. The HEP top tagger shows a certain misidentification rate already for lower transverse momenta than the CMS top tagger. However, in general the misidentification rate of the HEP top tagger is significantly smaller with a plateau around 1.5\% compared to the CMS top tagger which shows a misidentification rate of up to 4-5\% in the plateau. \\
 Consequently, in analyses which rely on top quarks with moderate transverse momenta and suffer mainly from QCD background the HEP top tagger is a good choice since the efficiency has an early turn-on and the misidentification rate is small. However, when the main background is top-like, as it is the case for top squarks, the more important property is to have an efficiency as high as possible to retain signal efficiency while the actual misidentification rate only plays a minor role. 
 \end{description}
@@ -243,45 +243,34 @@ Consequently, in analyses which rely on top quarks with moderate transverse mome
   \label{fig:stop_top_tag_multi}
 \end{figure} 
 The impact on the analysis when applying top tag requirements can be studied when looking for instance at the top tag multiplicity. In Fig.~\ref{fig:stop_top_tag_multi} the top tag multiplicity is shown for the CMS top tagger (left) and the HEP top tagger (right) after the application of the baseline selection. Here, only CA-jets of the corresponding jet size with a transverse momentum above 150\gev are considered since the taggers are not supposed to be efficienct for smaller momenta. The distributions exhibit that although also a significant amount of signal events does not have a CA-jet identified as top jet by the respective algorithm the background can be significantly reduced when requiring at least one top-tagged jet. In general the number of signal events with one or two top tags is larger when using the HEP top tagger than for the CMS tagger, but also the number of background events from \ttbar shows a larger value for the HEP top tagger case since more \ttbar events with lower top transverse momenta are selected. \\
-In order to test the impact of the top tagging requirement on the search sensitivity, the expected limits are derived again based on the search regions defined in Tab.~\ref{tab:stop_excl_search_bins} with the same uncertainties as assumed in Sec.~\ref{sec:stop_baseline}. The results are illustrated in Fig~\ref{fig:stop_baselinetoptag_limit}. \\
-\begin{figure}[!h]
+In order to test the impact of the top tagging requirement on the search sensitivity, the expected limits are derived again based on the search regions defined in Tab.~\ref{tab:stop_excl_search_bins} with the same uncertainties as assumed in Sec.~\ref{sec:stop_baseline}. The results are illustrated in Fig~\ref{fig:stop_baselinetoptag_limit}. 
+\begin{figure}[!t]
   \centering
   \begin{tabular}{c}
-                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_BaselineTopTag.pdf} 
+                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_BaselineBTagTopTag_LSP50.pdf} 
   \end{tabular}
   \caption{Expected 95\% upper limit for signal strength versus $m_{\tilde{t}}$. The LSP mass is chosen to be 50\gev.}
   \label{fig:stop_baselinetoptag_limit}
 \end{figure}
-It turns out that for the HEP top tagger as well as for the CMS top tagger the usage of a top tag requirement in addition to the baseline selections significantly improves the search sensitivity by a factor of two to three. Hence, mass points up to ($m_{\tilde{t}}, m_\mathrm{LSP}$) = (700, 50) or even (800, 50) can be probed. This selection is also better than the result obtained when adding a b-tag requirement as discussed in Sec.~\ref{sec:stop_btagging} which allows to probe stop masses around 600\gev for an LSP mass of 50\gev. In general, the selection based on the CMS top tagger performs better than the selection involving the HEP top tagger, since the signal to background ratio is higher as discussed above.
+\\
+It turns out that for the HEP top tagger as well as for the CMS top tagger the usage of a top tag requirement in addition to the baseline selections significantly improves the search sensitivity by a factor of two to three. Hence, mass points up to ($m_{\tilde{t}}, m_\mathrm{LSP}$) = (700, 50) or even (800, 50) can be probed. This selection is also better than the result obtained when adding a b-tag requirement as discussed in Sec.~\ref{sec:stop_btagging} which allows to probe stop masses around 600\gev for an LSP mass of 50\gev. In general, the selection based on the CMS top tagger performs better than the selection involving the HEP top tagger, since the signal to background ratio is higher as discussed above. \\
+Furthermore, the selections including the top tagging requirements are also compared when imposing an additional b-tag requirement, as defined in Sec.~\ref{sec:stop_btagging}. In both cases the b-tag requirement further improves the sensitivity. The selection involving the CMS Top Tagger still performs better. However, since after the requirement of at least one top-tagged jet, \ttbar is the largest background contribution, kinematic selections specifically meant to reduce the \ttbar background, which can not be achieved by b tagging as \ttbar events contain real b quarks, are discussed in the following section.
 
 \section{Performance Comparison of Various Kinematic Selections}
 \label{sec:stop_cuts}
 The sensitivity of the analysis for top squark searches based on the baseline requirements discussed in Sec.~\ref{sec:stop_baseline} can be improved already significantly when employing in addition b-tag and top-tag requirements, as shown in Sec.~\ref{sec:stop_btagging} and~\ref{sec:stop_btagging}. Nevertheless, the sensitivity might still be improved when imposing further kinematic selections. \\
+In order to address the specific kinematics of the various background contributions, first the background composition is studied. In Fig.~\ref{fig:stop_top_channels} the background and signal processes are shown according to the decay mode of the process after the application of the baseline selection (left) and the baseline selection with an additional requirement of $\ge 1$ CMS Top Tag (right). These channels are defined according to the top quark properties based on generator information. The first channel includes all non-top backgrounds and the all-hadronic top decays. Channels two to four exhibit the semi-leptonic top decays which are involving electrons (channel two), muons (channel three) and tau leptons (channel four). The distributions exhibit that after the application of the top-tagging requirement the main background contribution arises from \ttbar events. Here, contributions from lost-leptons (channel two and three) and hadronically decaying tau leptons (channel four) occur in about equal amounts with slightly more hadronic tau events. Since in general the number of events is small after application of the top tag requirement, kinematic selections and their performance are investigated when applying baseline selection criteria. Nonetheless, since \ttbar is known to be the largest background after top tagging, special emphasis is put on reducing the \ttbar background contributions.
 \begin{figure}[!t]
-  \centering
+\centering
 \makebox[\linewidth]{
-  \begin{tabular}{cc}
-                \includegraphics[width=0.49\textwidth]{figures/Stop_DeltaPhiSelection_t_decay_channels.pdf} & 
-                \includegraphics[width=0.49\textwidth]{figures/Stop_TopTag_t_decay_channels.pdf} \\
-  \end{tabular}}
-  \caption{Comparison of decay modes of signal and background processes defined according to the top quark properties based on generator information after the baseline selection (\textit{left}) and after the baseline selection and the requirement of $\ge 1$ CMS Top Tag (\textit{right}). For a definition of the decay channels see text.}
-  \label{fig:stop_top_channels}
+\begin{tabular}{cc}
+\includegraphics[width=0.49\textwidth]{figures/Stop_DeltaPhiSelection_t_decay_channels.pdf} &
+\includegraphics[width=0.49\textwidth]{figures/Stop_TopTag_t_decay_channels.pdf} \\
+\end{tabular}}
+\caption{Comparison of decay modes of signal and background processes defined according to the top quark properties based on generator information after the baseline selection (\textit{left}) and after the baseline selection and the requirement of $\ge 1$ CMS TopTag (\textit{right}). For a definition of the decay channels see text.}
+\label{fig:stop_top_channels}
 \end{figure} 
-In order to address the specific kinematics of the various background contributions, first the background composition is studied. In Fig.~\ref{fig:stop_top_channels} the background and signal processes are shown according to the decay mode of the process after the application of the baseline selection (left) and the baseline selection with an additional requirement of $\ge 1$ CMS Top Tag (right). These channels are defined according to the top quark properties based on generator information. The first channel includes all non-top backgrounds and the all-hadronic top decays. Channels two to four exhibit the semi-leptonic top decays which are involving electrons (channel two), muons (channel three) and tau leptons (channel four). The distributions exhibit that after the application of the top-tagging requirement the main background contribution arises from \ttbar events. Here, contributions from lost-leptons (channel two and three) and hadronically decaying tau leptons (channel four) occur in about equal amounts with slightly more hadronic tau events. Since in general the number of events is small after application of the top tag requirement, kinematic selections and their performance are investigated when applying baseline selection criteria. Nonetheless, since \ttbar is known to be the largest background after top tagging, special emphasis is put on reducing the \ttbar background contributions. \\
-\begin{figure}[!t]
-  \centering
-  % \makebox[\linewidth]{
-  \begin{minipage}[c]{1.\textwidth}
-    \begin{center}
-      \includegraphics[width=0.49\textwidth]{figures/Stop_DeltaPhiSelection_AlphaT.pdf}  
-      \includegraphics[width=0.49\textwidth]{figures/Stop_DeltaPhiSelection_MT2.pdf} \\
-      \includegraphics[width=0.49\textwidth]{figures/Stop_DeltaPhiSelection_Razor_R.pdf}
-    \end{center}
-  \end{minipage}
-
-  \caption{Distribution of the $\alpha_T$ variable (\textit{top left}), $M_\mathrm{T2}$ (\textit{top right}) and  the razor variable $R^2$ (\textit{bottom}) after application of the baseline selection requirements for background and two selected signal samples. The signal points are labelled as (X, Y) where X is the top squark mass and Y is the LSP mass.}
-  \label{fig:stop_baseline_kin_vars}
-\end{figure}
+\\
 Several kinematic variables exist that have been successfully used already in various susy searches at $\sqrt{s} = 7$ and 8\tev:
 \begin{description}
  \item $\mathbf{\alpha_\mathrm{T}:}$ The $\alpha_\mathrm{T}$ variable is mainly used to reject QCD multijet events which have no intrinsic \met~\cite{Chatrchyan:2012wa, Chatrchyan:2013lya}. In case of dijet events, it is defined as:
@@ -315,6 +304,20 @@ R = \frac{M_\mathrm{T}^\mathrm{R}}{M_\mathrm{R}}
 with the transverse momenta of the two jets $\pt^{j1}$ and $\pt^{j2}$. For signal events $M_\mathrm{T}^\mathrm{R}$ has an endpoint and $R$ a maximum of approximately one. \\
 For these studies, the two leading CA8 jets and \met are used to compute the razor variables. In Fig.~\ref{fig:stop_baseline_kin_vars} the variable $R^2$ is illustrated (bottom) after the application of baseline selection criteria. 
 \end{description} 
+\begin{figure}[!t]
+  \centering
+  % \makebox[\linewidth]{
+  \begin{minipage}[c]{1.\textwidth}
+    \begin{center}
+      \includegraphics[width=0.49\textwidth]{figures/Stop_DeltaPhiSelection_AlphaT.pdf}  
+      \includegraphics[width=0.49\textwidth]{figures/Stop_DeltaPhiSelection_MT2.pdf} \\
+      \includegraphics[width=0.49\textwidth]{figures/Stop_DeltaPhiSelection_Razor_R.pdf}
+    \end{center}
+  \end{minipage}
+
+  \caption{Distribution of the $\alpha_T$ variable (\textit{top left}), $M_\mathrm{T2}$ (\textit{top right}) and  the razor variable $R^2$ (\textit{bottom}) after application of the baseline selection requirements for background and two selected signal samples. The signal points are labelled as (X, Y) where X is the top squark mass and Y is the LSP mass.}
+  \label{fig:stop_baseline_kin_vars}
+\end{figure}
 In addition to these variables, which are already well established in searches for supersymmetry, also other kinematic quantities can be considered
 \begin{description}
  \item \textbf{Transverse mass} $\mathbf{m_\mathrm{T}}$ \textbf{:} As shown in Fig.~\ref{fig:stop_top_channels}, background contributions from \ttbar events arise predominantly from semi-leptonic top quark decays. In such decays the missing transverse energy is mainly arising from the leptonically decaying top quark. This is caused by neutrinos from the decay of the W boson and becomes even more prominent for lost-lepton events in which also the undetected lepton contributes to the missing energy. In both cases however, the missing energy is expected to point into the direction of the leptonic top decay which is supposed to be accompanied by a b-quark jet also stemming from the top decay. Thus, the missing transverse energy and the closest b-tagged jet in $\Delta \phi$ can be utilized to calculate a transverse mass according to
@@ -348,17 +351,17 @@ In order to quantify the quality of these various kinematic selections, the sepa
 \end{figure}
 The calculation of $\alpha_\mathrm{T}$, $\Delta \phi(\mathrm{CA}$--$\mathrm{jet}_1, \mathrm{CA}$--$\mathrm{jet}_2)$, $M_\mathrm{T2}$ and the razor variable $R^2$ imply that there exist two CA8 jets with \pt$> 150$\gev in the event. Consequently, the starting point of that scan curves is different than that of the \met curve which represents the signal and background efficiencies after the baseline selection. Similarly the curve for $m_T$ implies that each event has at least one b-tagged jet. For each event which does not possess a b-tagged jet, the transverse mass is considered as zero. The first point of the $m_T$ curve corresponds to a requirement of $m_T > 20$\gev.  \\
 The distributions exhibit that among the variables based on the presence of two CA8 jets $M_\mathrm{T2}$ performs best especially for high top squark masses. This statement applies to the total background as well as to the \ttbar background only. Furthermore, the selection based on $m_T$ shows a nice separation power as well but preferentially for smaller stop masses. It is visible that the curve for $m_T$ shows a distinct kink. This corresponds to a selection keeping only events with $m_\mathrm{T}$ greater than the top quark mass. When imposing even tighter selection requirements on $m_T$, the separation power decreases rapidly. \\ 
-Consequently,  the sensitivity of the analysis is tested adding further selection criteria to the baseline requirements after the requirement of $\ge 1$ CMS top tag. In Fig.~\ref{fig:stop_baselinetoptag_limit} the expected exclusion limits are compared for various selections as function of the top squark mass for a LSP mass of 50\gev. Exclusion curves are derived based on the same exclusive search regions as defined in Tab.~\ref{tab:stop_excl_search_bins} considering the uncertainties for each background source as described in Sec.~\ref{sec:stop_baseline}. \\
+Consequently,  the sensitivity of the analysis is tested adding further selection criteria to the baseline requirements after the requirement of $\ge 1$ CMS top tag. In Fig.~\ref{fig:stop_baselinetoptag_limit} the expected exclusion limits are compared for various selections as function of the top squark mass for a LSP mass of 50\gev. Exclusion curves are derived based on the same exclusive search regions as defined in Tab.~\ref{tab:stop_excl_search_bins} considering the uncertainties for each background source as described in Sec.~\ref{sec:stop_baseline}. 
+\\
+Here, different selections are compared. The exclusion curves derived from the baseline requirements is shown and indicates the sensitivity based on a very basic selection as discussed in Sec.~\ref{sec:stop_baseline}. Furthermore, the selection discussed in Sec.~\ref{sec:stop_btagging} in which at least one CMS top tag is reuqired in addition to the baseline selection is illustrated in light green. This selection can be easily combined with a b-tag requirement as discussed in Sec.~\ref{sec:stop_btagging} and is shown as dark green curve in Fig.~\ref{fig:stop_baselinetoptag_limit}. Hence, the combination of b-tagging and top tagging can further improve the search sensitivity. Finally, the baseline and top tagging selection is combined with a requirement of $m_T > 180$\gev which further reduces especially \ttbar background events. It turns out that the latter performs best among those described selections. 
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
-                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_BaselineBTagTopTagTransverseMass.pdf} 
+                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_BaselineBTagTopTagTransverseMassMT2_LSP50.pdf} 
   \end{tabular}
   \caption{Expected 95\% upper limit for signal strength versus $m_{\tilde{t}}$. The LSP mass is chosen to be 50\gev.}
   \label{fig:stop_baselinetoptag_limit}
 \end{figure}
-
-Here, different selections are compared. The exclusion curves derived from the baseline requirements is shown and indicates the sensitivity based on a very basic selection as discussed in Sec.~\ref{sec:stop_baseline}. Furthermore, the selection discussed in Sec.~\ref{sec:stop_btagging} in which at least one CMS top tag is reuqired in addition to the baseline selection is illustrated in light green. This selection can be easily combined with a b-tag requirement as discussed in Sec.~\ref{sec:stop_btagging} and is shown as dark green curve in Fig.~\ref{fig:stop_baselinetoptag_limit}. Hence, the combination of b-tagging and top tagging can further improve the search sensitivity. Finally, the baseline and top tagging selection is combined with a requirement of $m_T > 180$\gev which further reduces especially \ttbar background events. It turns out that the latter performs best among those described selections. 
 
 \section[Performance Comparison to Selection Based on Published Stop Analysis]{Performance Comparison to Selection Based on Published Stop Analysis at $\sqrt{s} = 8$\tev}
 \label{sec:stop_pub}
@@ -370,8 +373,7 @@ The comparison is done by performing the same selections as done in the offical 
  \item There has to be at least one b-tagged jet in the event based on the CSV algorithm with medium working point. 
  \item The minimum azimuthal angle between the three highest jets and the missing transverse momentum has to be $\Delta \phi(\mathrm{jet}_n, \met) > 0.5$, $n = 1,2$ and $\Delta \phi(\mathrm{jet}_3, \met) > 0.3$.\footnote{The missing transverse energy in the published analysis is denoted with $\pt^\mathrm{miss}$.}% However, just like \met, it is the magnitude of the negative vector sum of the transverse momenta of all particles reconstructed in the event.}
 \end{itemize}
-The only difference between these selection criteria and the published analysis is related to the lepton veto. The published analysis requires to have no events with identified and isolated electrons and muons with \pt$> 5$\gev while here only events with electrons and muons with \pt$> 10$\gev are vetoed. However, since the 10\gev lepton veto is the same lepton veto requirement as for the other selections studied in this chapter, it is easier to compare the quality of the different selections applied to the sample after selecting the all-jet final state. \\
-In addition to those pre-selection requirements, further selection criteria are imposed in order to reconstruct the hadronically-decaying top quarks. The set of five or more jets in the event is separated into all possible combinations of three jets and a remnant which must contain at least one b-tagged jet. These sets are used to reconstruct the two expected top quarks in the event: one is based on one of the trijet combinations and denoted \textit{fully-reconstructed} top while the other is based on the remnant system and referred to as \textit{partially-reconstructed} top. Details on the reconstruction process of the two top quark systems can be found in~\cite{CMS-PAS-SUS-13-015}. In particular this process involves, that the fully-reconstructed top quark has to satisfy the criteria described in Eq.~\ref{eq:hep_1},~\ref{eq:hep_2} and~\ref{eq:hep_3} with $R_\mathrm{min} = 0.85 \cdot (m_W/m_\mathrm{top})$, $R_\mathrm{max} = 1.25 \cdot (m_W/m_\mathrm{top})$, $m_W = 80.4$\gev and $m_\mathrm{top} = 173.1$\gev. If there is more than one trijet system satisfying these criteria the combination with $m^{3-\mathrm{jet}}$ closest to $m_\mathrm{top}$ is selected. The selected remnant system is denoted Rsys. \\
+The only difference between these selection criteria and the published analysis is related to the lepton veto. The published analysis requires to have no events with identified and isolated electrons and muons with \pt$> 5$\gev while here only events with electrons and muons with \pt$> 10$\gev are vetoed. However, since the 10\gev lepton veto is the same lepton veto requirement as for the other selections studied in this chapter, it is easier to compare the quality of the different selections applied to the sample after selecting the all-jet final state. In addition to those pre-selection requirements, further selection criteria are imposed in order to reconstruct the hadronically-decaying top quarks. The set of five or more jets in the event is separated into all possible combinations of three jets and a remnant which must contain at least one b-tagged jet. These sets are used to reconstruct the two expected top quarks in the event: one is based on one of the trijet combinations and denoted \textit{fully-reconstructed} top while the other is based on the remnant system and referred to as \textit{partially-reconstructed} top. Details on the reconstruction process of the two top quark systems can be found in~\cite{CMS-PAS-SUS-13-015}. In particular this process involves, that the fully-reconstructed top quark has to satisfy the criteria described in Eq.~\ref{eq:hep_1},~\ref{eq:hep_2} and~\ref{eq:hep_3} with $R_\mathrm{min} = 0.85 \cdot (m_W/m_\mathrm{top})$, $R_\mathrm{max} = 1.25 \cdot (m_W/m_\mathrm{top})$, $m_W = 80.4$\gev and $m_\mathrm{top} = 173.1$\gev. If there is more than one trijet system satisfying these criteria the combination with $m^{3-\mathrm{jet}}$ closest to $m_\mathrm{top}$ is selected. The selected remnant system is denoted Rsys. 
 \begin{figure}[!t]
   \centering
 \makebox[\linewidth]{
@@ -384,7 +386,8 @@ In addition to those pre-selection requirements, further selection criteria are 
   \caption{Comparison of \met, $M_\mathrm{T2}$, $M_\mathrm{T}^\mathrm{3-jet}$ and $M_\mathrm{T}^\mathrm{Rsys}$ distributions for signal and background events after applying pre-selection criteria and $\met > 200$\gev. The signal points are labelled as (X, Y) where X is the top squark mass and Y is the LSP mass.}
   \label{fig:stop_ref_plots}
 \end{figure} 
-After the successful identification of the two top quark systems according to the above mentioned criteria, further topological requirements are used. These are:
+\\
+After the successful identification of the two top quark systems according to the above mentioned criteria, further topological requirements are used:
 \begin{itemize}
  \item \met $> 200$\gev
  \item The variable $M_\mathrm{T2}$, as discussed in Sec.~\ref{sec:stop_cuts}, is required to be $\ge 300$\gev. It is calculated from the four momenta of the fully- and the partially-reconstructed top quark as well as \met assuming the invisible particles to be massless. 
@@ -397,19 +400,18 @@ and
 ( M_\mathrm{T}^\mathrm{Rsys})^2 = (m^\mathrm{Rsys})^2 + 2(E_\mathrm{T}^\mathrm{Rsys} \, \met - p_\mathrm{T}^\mathrm{Rsys} \, \met \, \mathrm{cos} \Delta \phi) \; .
 \end{equation*} 
 \end{itemize}
-A comparison of the \met, $M_\mathrm{T2}$, $M_\mathrm{T}^\mathrm{3-jet}$ and $M_\mathrm{T}^\mathrm{Rsys}$ distributions for signal and background events after the pre-selection and a \met$ > 200$\gev requirement is shown in Fig.~\ref{fig:stop_ref_plots}. These exhibit that those topological variables are able to reject several background events while keeping good acceptance for signal events. However, the transverse mass variables $M_\mathrm{T}^\mathrm{3-jet}$ reveals that the distribution for the higher stop mass does not peak around the stop quark mass, as expected, but at values below. This shows that the assignment of indiviudal jets to the three jet system does not work properly for high stop quark masses where decay products start to merge and are not reconstructed as individual objects. Consequently, this selection might not be well suited to search for stop quarks with masses entering the TeV range.   \\
-In order to probe different points of the parameter space, events are further categorized into four inclusive search regions:
+A comparison of the \met, $M_\mathrm{T2}$, $M_\mathrm{T}^\mathrm{3-jet}$ and $M_\mathrm{T}^\mathrm{Rsys}$ distributions for signal and background events after the pre-selection and a \met$ > 200$\gev requirement is shown in Fig.~\ref{fig:stop_ref_plots}. These exhibit that those topological variables are able to reject several background events while keeping good acceptance for signal events. However, the transverse mass variables $M_\mathrm{T}^\mathrm{3-jet}$ reveals that the distribution for the higher stop mass does not peak around the stop quark mass, as expected, but at values below. This shows that the assignment of indiviudal jets to the three jet system does not work properly for high stop quark masses where decay products start to merge and are not reconstructed as individual objects. Consequently, this selection might not be well suited to search for stop quarks with masses entering the TeV range. In order to probe different points of the parameter space, events are further categorized into four inclusive search regions:
 \begin{itemize}
  \item \met $>$ 200\gev, $N_\mathrm{b-jets} \ge 1$ 
  \item \met $>$ 350\gev, $N_\mathrm{b-jets} \ge 1$ 
  \item \met $>$ 200\gev, $N_\mathrm{b-jets} \ge 2$ 
  \item \met $>$ 350\gev, $N_\mathrm{b-jets} \ge 2$ 
 \end{itemize}   
-Uncertainties in the expected limit calculation performed for each of these categories to compare the reach to the selections discussed above are considered to be the same as those assumed in Sec.~\ref{sec:stop_baseline}. This again makes it easier to compare the actual performance of various selections. From each of the four search regions the expected limit giving the best sensitivity to a specific mass point is considered in the comparison. This is for the scenarios tested here with stop masses ranging from 600 -- 1100\gev and a LSP mass of 50\gev, the selection requiring \met $>$ 350\gev, $N_\mathrm{b-jets} \ge 2$. The actual comparison of the expected limits is illustrated in Fig~\ref{fig:stop_baselinetoptagref_limit}. 
+Uncertainties in the expected limit calculation performed for each of these categories to compare the reach to the selections discussed above are considered to be the same as those assumed in Sec.~\ref{sec:stop_baseline}. This again makes it easier to compare the actual performance of various selections. From each of the four search regions the expected limit giving the best sensitivity to a specific mass point is considered in the comparison. This is for the scenarios tested here with stop masses ranging from 600 -- 1100\gev and a LSP mass of 50\gev, the selection requiring \met $>$ 350\gev, $N_\mathrm{b-jets} \ge 2$. The comparison of the expected limits is illustrated in Fig~\ref{fig:stop_baselinetoptagref_limit}. 
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
-                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_BaselineTopTagTransverseMassRef.pdf} 
+                \includegraphics[width=0.42\textwidth]{figures/limitplot4BinSel_BaselineTopTagTransverseMassRef_LSP50.pdf} 
   \end{tabular}
   \caption{Expected 95\% upper limit for signal strength versus $m_{\tilde{t}}$. The LSP mass is chosen to be 50\gev.}
   \label{fig:stop_baselinetoptagref_limit}
@@ -431,6 +433,23 @@ The distributions exhibit that the selection based on the requirements used in~\
 %  \label{fig:stop_signal efficiency}
 %\end{figure}
 
+\section{Systematic Variations}
+\label{sec:stop_syst}
+In order to study the stability of the sensitivity of the identified selection towards specific choices and assumptions, the expected limit for the selection using the baseline requirements, at least one CMS Top Tag and $m_\mathrm{T} > 180$\gev is evaluated when varying the binning of the search regions and the assumed \ttbar uncertainty. \\
+The behaviour concerning the binning of the search regions is studied by dividing the region $ 200 < \met < 400$\gev into two: $ 200 < \met < 300$\gev and $ 300 < \met < 400$\gev. Here, the systematic uncertainties are considered as before. The dependence on the assumed uncertainties is studied by increasing the uncertainties considered for \ttbar from 20\% to 50\% while the other stay as before. Since \ttbar is for this selection the main background, the variation of the \ttbar uncertainty is supposed to show the main effect. \\
+The expected limits for the shifts described above are illustrated together with the nominal result in Fig.~\ref{fig:stop_varied_limit}. It turns out that the resulting changes for the sensitivity caused by the systematic shifts is small and only impacts small stop quark masses.  
+\begin{figure}[!t]
+  \centering
+  \begin{tabular}{c}
+                \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_SystVariation_LSP50.pdf} 
+  \end{tabular}
+  \caption{Expected 95\% upper limit for signal strength versus $m_{\tilde{g}}$. The LSP mass is chosen to be 50\gev.}
+  \label{fig:stop_varied_limit}
+\end{figure}
+\\
+Consequently, the derived selection is able to probe the top squark mass region up to 1\tev even for a much higher uncertainty on the \ttbar background. Accordingly, if the \ttbar background can not be determined in data to a precision of 20\%, the sensitivity of the analysis is supposed to be not much degraded for high stop quark masses. Furthermore, the variation of the search region binning has shown that it is not expected that much more sensitivity can be gained by increasing the number of exclusive search regions. Thus, another improvement of the analysis would require to identify further kinematic selections.                   
+
+
 \section{Sensitivity to Gluino-Mediated Stop Production}
 \label{sec:stop_gluinos}
 \begin{figure}[!t]
@@ -446,8 +465,8 @@ The distributions exhibit that the selection based on the requirements used in~\
   \label{fig:stop_gluinos_ht_met}
 \end{figure}
 The selections studied in this chapter are mainly aiming at identifying events from direct pair production of top squarks which subsequently decay into a top quark and a LSP each. Special emphasis is put on identifying mass scenarios with large mass splittings between top squark and LSP which is suitable for employing top tagging techniques. However, the studied selections possibly offer an interesting alternative to classical selections targeting gluino-mediated production of third generation squarks. In those scenarios pair produced gluinos are considered that subsequently decay into a pair of top quarks and a LSP. Thus, the final state exhibits four top quarks. For gluino masses exceeding 1\tev this potentially gives rise to also boosted top quark decays in the final state. Consequently, the sensitivity of the best performing selection criteria based on the baseline selection, at least one CMS top-tagged jet and a transverse mass selection of $m_\mathrm{T} > 180$\gev is also evaluated with respect to the gluino-mediated stop production. A comparison of \HT and \met for one selected signal point and respective background events after applying these selection criteria is shown in Fig.~\ref{fig:stop_gluinos_ht_met}. \\
-The evaluation of the sensitivity towards gluino-mediated stop production is performed for three different mass scenarios, as specififed in Sec.~\ref{sec:stop_samples}, with gluino masses of 1.3\tev, 1.5\tev and 1.7\tev for a LSP mass of 50\gev, respectively. Based on the same search strategy as before, using exclusive \HT and \met search regions, the derived expected exclusion curve for gluino-mediated stop production is illustrated in Fig.~\ref{fig:stop_gluino_mediated_limit}. \\
-\begin{figure}[!h]
+The evaluation of the sensitivity towards gluino-mediated stop production is performed for three different mass scenarios, as specififed in Sec.~\ref{sec:stop_samples}, with gluino masses of 1.3\tev, 1.5\tev and 1.7\tev for a LSP mass of 50\gev, respectively. Based on the same search strategy as before, using exclusive \HT and \met search regions, the derived expected exclusion curve for gluino-mediated stop production is illustrated in Fig.~\ref{fig:stop_gluino_mediated_limit}. 
+\begin{figure}[!t]
   \centering
   \begin{tabular}{c}
                 \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_T1tttt.pdf} 
@@ -455,7 +474,7 @@ The evaluation of the sensitivity towards gluino-mediated stop production is per
   \caption{Expected 95\% upper limit for signal strength versus $m_{\tilde{g}}$. The LSP mass is chosen to be 50\gev.}
   \label{fig:stop_gluino_mediated_limit}
 \end{figure}
-
+\\
 The distributions exhibit that the derived selection described in Sec.~\ref{sec:stop_cuts} is also sensitive to the tested mass scenarios of gluino-mediated stop production. Thus, selections involving top tagging are also offering the opportunity to probe susy scenarios than direct stop production as long as top quarks with high transverse momenta are present in the final state. Such selections could serve as complementary approach to search strategies like those employed in chapter~\ref{chap:RA2} for further supersymmetry searches at $\sqrt{s} = 13$\tev. 
 
 \section{Results and Discussion}

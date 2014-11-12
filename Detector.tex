@@ -43,12 +43,18 @@ The CMS detector with its typical cylindrical design of different sub-detector c
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.95\textwidth]{figures/Figures_Experimental_Apparatus_CMS_perspective.png}
+    \includegraphics[width=0.99\textwidth]{figures/Figures_Experimental_Apparatus_CMS_perspective.png}
   \end{tabular}
   \caption{A perspective view of the CMS detector~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS}
 \end{figure}
-Such as other high-energy particle experiments, the CMS detector makes use of tracking detectors and calorimeters to measure momenta of particles, energy depositions and flight directions in order to identify the objects emerging from the particle collisions. A typical characteristic of calorimeters is given by the ratio $e/h$. This quantifies the relation between the detection efficiencies of electromagnetic ($e$) and hadronic ($h$) energy deposits in a particle shower. Often it is determined as the ratio of the calorimeter response to pions and electrons of the same energy. Furthermore, the calorimeter performance can be characterized by the relative calorimeter energy-resolution
+Such as other high-energy particle experiments, the CMS detector makes use of tracking detectors and calorimeters to measure momenta of particles, energy depositions and flight directions in order to identify the objects emerging from the particle collisions. \\
+A typical characteristic of calorimeters is given by the ratio $e/h$. This quantifies the relation between the detection efficiencies of electromagnetic ($e$) and hadronic ($h$) energy deposits in a particle shower. Often it is determined from the ratio of the calorimeter response to pions and electrons $\pi/e$ of the same energy
+\begin{equation}
+\frac{\pi}{e} = \frac{f_\mathrm{em}\, e + (1 - f_\mathrm{em}) h}{e} = \frac{1+(e/h - 1) f_\mathrm{em}}{e/h}
+\end{equation}
+with the \textit{electromagnetic fraction} $f_\mathrm{em}$, \ie the fraction of the hadronic shower transferred into an electromagnetic component via the decay of neutral pions into two photons initiating an electromagnetic shower. Since $f_\mathrm{em}$ depends on the energy, the same holds true for $\pi/e$ and the calorimeter response is said to be \textit{non-linear}. \\
+Furthermore, the calorimeter performance can be characterized by the relative calorimeter energy-resolution
 \begin{equation}
 \frac{\sigma(E)}{E}= \frac{N}{E} \oplus \frac{S}{\sqrt{E}} \oplus C 
 \end{equation}
@@ -89,7 +95,7 @@ In order to fulfill these tasks, the CMS experiment makes use of a tracker desig
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/Figures_Experimental_Apparatus_Tracker.png}
+    \includegraphics[width=0.95\textwidth]{figures/Figures_Experimental_Apparatus_Tracker.png}
   \end{tabular}
   \caption{Sketch of the CMS tracking system in a $rz$-view. Each tracker module is represented by one line~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS_tracker}
@@ -107,7 +113,7 @@ An overview of the ECAL layout is shown in Fig.~\ref{fig:CMS_ecal}. The individu
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/Figures_Experimental_Apparatus_ECALRapidity.png}
+    \includegraphics[width=0.95\textwidth]{figures/Figures_Experimental_Apparatus_ECALRapidity.png}
   \end{tabular}
   \caption{View of one quarter section of the CMS electromagnetic calorimeter in a $yz$-view~\cite{bib:cmsptdr1}.}
   \label{fig:CMS_ecal}
@@ -132,7 +138,7 @@ An overview of the layout of the CMS hadron calorimeter is shown in Fig.~\ref{fi
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/Figures_Experimental_Apparatus_HCAL.png}
+    \includegraphics[width=0.95\textwidth]{figures/Figures_Experimental_Apparatus_HCAL.png}
   \end{tabular}
   \caption{Longitudinal view of one quarter of the CMS detector showing the location of the individual HCAL sub-detector parts~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS_hcal}
@@ -158,7 +164,7 @@ Three different types of gaseous detectors are used to achieve a good muon momen
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/Figures_Experimental_Apparatus_MuonDetector.png}
+    \includegraphics[width=0.95\textwidth]{figures/Figures_Experimental_Apparatus_MuonDetector.png}
   \end{tabular}
   \caption{View of one quarter section of the muon system in the $rz$-plane~\cite{bib:cmsptdr1}.}
   \label{fig:CMS_muon}
@@ -186,21 +192,22 @@ In the two trigger stages, various different conditions can be tested in paralle
 \begin{figure}[!t]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.7\textwidth]{figures/int_lumi_cumulative_pp_2.pdf}
+    \includegraphics[width=0.95\textwidth]{figures/int_lumi_cumulative_pp_2.pdf}
   \end{tabular}
   \caption{Cumulative integrated luminosity versus day delivered to CMS during stable beams for pp collisions. Different data-taking periods are indicated as follows: green for 2010, red for 2011 and blue for 2012~\cite{bib:lhc:lumi12}.}
   \label{fig:lhc_data}
 \end{figure}
+The first operation of the LHC took place in September 2008. After a major cooling incident only a few days later requiring a longer technical stop, beams were circulated again in November 2009. The first collisions at a center of mass energy of 7\tev finally happened end of March 2010~\cite{bib:lhcmachineoutreach}. In the following running period in 2010, data corresponding to an integrated luminosity of 44.2\pbinv were delivered to the experiments with a maximum peak instantaneous luminosity of $2.05 \times 10^{32} \cm^{-2} \second^{-1}$. These data allowed studies of the detector performance and made first searches for new physics possible. The next data taking period performed during 2011 at the same centre of mass energy even delivered a total amount of 6.1\fbinv \pp collision data reaching a peak instantaneous luminosity of $3.5 \times 10^{33} \cm^{-2} \second^{-1}$. Following another technical shutdown during winter, the centre of mass energy was finally increased to 8\tev for the running period during 2012 and the peak luminosity reached values of up to $7.7 \times 10^{33} \cm^{-2} \second^{-1}$, which is already almost design conditions. In total, 23.3\fbinv of integrated luminosity \pp collisions were produced by the LHC operating at stable beam conditions. The evolution of the integrated luminosity versus days is illustrated in Fig.~\ref{fig:lhc_data} for data-taking periods in 2010, 2011 and 2012. Typically, these periods are referred to as \textit{LHC Run I}. \\
+During most of the operation in 2012, the LHC was circulating 1380 bunches per beam with a spacing of 50\,ns. The average bunch intensity, \ie the number of protons per bunch, was varying from $1.6$ to $1.7 \times 10^{11}$ exceeding even the design value~\cite{bib:lhc:lumi12, Lamont:2013cma}. \\
+In general, such conditions result in multiple interactions per bunch crossing known as \textit{pileup} (PU). Typically, two sources of pileup are distinguished: \textit{in-time} pileup (IT PU) and \textit{out-of-time} pileup (OOT PU). While IT PU is caused by additional \pp collisions occuring within the same bunch-crossing as the primary hard collision and leads to additional tracks in the tracking system and energy deposits in the calorimeters, OOT PU arises from \pp collisions in previous and following bunch crossings and contributes further energy deposits in the calorimeters to the hard interaction due to the finite signal decay time in the calorimeters. An overview of the pileup profile in collision data taken in 2012 is given in Fig.~\ref{fig:lhc_pileup}. Here, the mean number of interactions per bunch crossing is illustrated with the mean of this distribution located at 21. The maximum number of mean pileup events even reached a value of $\approx 40$. Dedicated techniques in order to mitigate effects from pileup have been developed of which some are discussed in Chap.~\ref{chap:Objects}.
 \begin{figure}[!t]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.7\textwidth]{figures/pileup_pp_2012.pdf} 
+    \includegraphics[width=0.95\textwidth]{figures/pileup_pp_2012.pdf} 
   \end{tabular}
   \caption{Mean number of interactions per bunch crossing in \pp collisions at a centre of mass energy of $\sqrt{s} = 8$\tev~\cite{bib:lhc:lumi12}.}
   \label{fig:lhc_pileup}
 \end{figure}
-The first operation of the LHC took place in September 2008. After a major cooling incident only a few days later requiring a longer technical stop, beams were circulated again in November 2009. The first collisions at a center of mass energy of 7\tev finally happened end of March 2010~\cite{bib:lhcmachineoutreach}. In the following running period in 2010, data corresponding to an integrated luminosity of 44.2\pbinv were delivered to the experiments with a maximum peak instantaneous luminosity of $2.05 \times 10^{32} \cm^{-2} \second^{-1}$. These data allowed studies of the detector performance and made first searches for new physics possible. The next data taking period performed during 2011 at the same centre of mass energy even delivered a total amount of 6.1\fbinv \pp collision data reaching a peak instantaneous luminosity of $3.5 \times 10^{33} \cm^{-2} \second^{-1}$. Following another technical shutdown during winter, the centre of mass energy was finally increased to 8\tev for the running period during 2012 and the peak luminosity reached values of up to $7.7 \times 10^{33} \cm^{-2} \second^{-1}$, which is already almost design conditions. In total, 23.3\fbinv of integrated luminosity \pp collisions were produced by the LHC operating at stable beam conditions. The evolution of the integrated luminosity versus days is illustrated in Fig.~\ref{fig:lhc_data} for data-taking periods in 2010, 2011 and 2012. Typically, these periods are referred to as \textit{LHC Run I}. \\
-During most of the operation in 2012, the LHC was circulating 1380 bunches per beam with a spacing of 50\,ns. The average bunch intensity, \ie the number of protons per bunch, was varying from $1.6$ to $1.7 \times 10^{11}$ exceeding even the design value~\cite{bib:lhc:lumi12, Lamont:2013cma}. In general, such conditions result in multiple interactions per bunch crossing known as \textit{pileup} (PU). In general, two sources of pileup are distinguished: \textit{in-time} pileup (IT PU) and \textit{out-of-time} pileup (OOT PU). While IT PU is caused by additional \pp collisions occuring within the same bunch-crossing as the primary hard collision and leads to additional tracks in the tracking system and energy deposits in the calorimeters, OOT PU arises from \pp collisions in previous and following bunch crossings and contributes further energy deposits in the calorimeters to the hard interaction due to the finite signal decay time in the calorimeters. An overview of the pileup profile in collision data taken in 2012 is given in Fig.~\ref{fig:lhc_pileup}. Here, the mean number of interactions per bunch crossing is illustrated with the mean of this distribution located at 21. The maximum number of mean pileup events even reached a value of $\approx 40$. Dedicated techniques in order to mitigate effects from pileup have been developed of which some are discussed in Chapter~\ref{chap:Objects}.
 
 
 

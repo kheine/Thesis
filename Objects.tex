@@ -64,7 +64,7 @@ Based on the information used from the various CMS subdetectors for the jet clus
  \item \textbf{Calorimeter (Calo) jets:} Calo jets are clustered from energy deposits in the calorimeters. For this purpose, calorimeter towers are defined which consist of at least one HCAL cell and the geometrically associated ECAL cells. For instance in case of the barrel detector region, a calorimeter tower consists of one HCAL cell and $\mathrm{5 \times 5}$ ECAL cells. The four-momentum of each tower is defined by the tower position as seen from the primary interaction vertex and the energy deposit in the tower, above a certain threshold assuming a mass of zero. 
  \item \textbf{Jet-Plus-Track (JPT) jets:} JPT jets are reconstructed from calorimeter jets complemented by tracking information~\cite{CMS-PAS-JME-09-002}. Tracks of charged particles can be associated to calo jets based on the separation of the jet axis and the momentum vector of the track in the $(\eta,\phi)$-plane. Associated tracks are projected to the jet cone and are exploited to correct the jet energy and direction. 
  \item \textbf{Particle-Flow (PF) jets:} PF jets are clustered from the four-momentum vectors of particle-flow candidates as identified by the PF algorithm described in Section~\ref{sec:pf_algo}. Typically, these types of jets show the best performance as the excellent resolution of the tracking system and the ECAL are utilized. Only neutral hadrons which constitute around 15\% of the jet energy (cf. Fig.~\ref{fig:jets_pf_comp}) rely on the energy measurement of the HCAL with its relatively poor resolution. Thus, PF jets are the default jets to be used at the CMS experiment, as it is done within this thesis. In order to mitigate influences from pile-up, charged hadrons unambigously associated to vertices other than the primary vertex can be removed from the jet algorithm input list before the actual jet clustering is performed. This technique is referred to as \textit{charged hadron subtraction} (CHS) and used as default throughout this thesis. 
-\end{description}
+00\end{description}
 
 \subsection{Jet Transverse-Momentum Response}
 \label{subsec:jets_response}
@@ -77,7 +77,15 @@ where \pt denotes the transverse momentum of the jet measured at detector level 
 In this thesis, the average response $\langle \mathcal{R} \rangle$ is referred to as \textit{jet energy scale} (JES) while the width of the response distribution is denoted as relative \textit{jet transverse-momentum resolution} (JER).
 
 \subsection{Jet Energy Calibration}
-\label{subsec:jets_calib}
+\label{subsec:jets_calib} 
+\begin{figure}[!t]
+  \centering 
+  \begin{tabular}{c}
+    \includegraphics[width=0.91\textwidth]{figures/JEC.jpg} 
+  \end{tabular}
+  \caption{Sketch of the factorized approach used for jet energy corrections at the CMS experiment.}
+  \label{fig:jec_sketch}
+\end{figure}
 In order to relate the measured jet momentum on average to the momentum of the corresponding particle-level jet, a jet calibration procedure is applied. This compensates for the non-linear response of the calorimeters and ensures that $\langle \mathcal{R} \rangle = 1$. Within the CMS experiment, a factorized approach is utilized which is described in detail in~\cite{1748-0221-6-11-P11002}. The actual set of correction factors used in this thesis, if not stated otherwise, is documented in~\cite{CMS-DP-2013-033}. \\
 The calibrated jet four-momentum vector $p^\mathrm{cor}$ is obtained from the raw jet momentum four-vector $p^\mathrm{raw}$ by scaling the raw momentum with a correction factor $C$ according to
 \begin{equation}
@@ -85,11 +93,12 @@ p^\mathrm{cor} = C \cdot p^\mathrm{raw} = C_{\mathrm{offset}}(\pt^\mathrm{raw}, 
 \end{equation} 
  where $C$ is composed of the offset correction $C_{\mathrm{offset}}$, the calibration factors $C_{\mathrm{rel}}$ and $C_{\mathrm{abs}}$ as well as residual correction factors $C_{\mathrm{res}}$. While $C_{\mathrm{offset}}$, $C_{\mathrm{rel}}$ and $C_{\mathrm{abs}}$ are applied to both data and simulation, the residual correction factors $C_{\mathrm{res}}$ are applied to data only. Each correction factor is applied sequentially after the other in a fixed order such that $\pt'$ denotes the transverse momentum after the application of the offset correction and $\pt''$ is the transverse momentum after applying the respective previous corrections. Some details for each individual correction are given in the following: 
 \begin{description}
- \item \textbf{L1 Offset:} The L1 offset correction is designed to compensate for additional energy contributions arising from instrumental noise or pile-up events. The \pt offset is estimated in dependence of $\eta$, the effective jet area $A_j$ and the \pt-density $\rho$ (\textit{hybrid jet area method}~\cite{Cacciari2008119}). The jet area is determined by adding a large number of inifinitely soft four-momentum vectors to the event. The active jet area is then defined as the fraction of soft particles clustered together with the true hard jet components. The \pt-density $\rho$ is defined on an event-by-event basis as the median of the distribution $\pt^{j}/A_{j}$ where $j$ denotes all reconstructed jets in the event. The estimated offset in simulated QCD multijet events and data is illustrated in Fig.~\ref{fig:l1offset}.
+ \item \textbf{L1 Offset:} The L1 offset correction is designed to compensate for additional energy contributions arising from instrumental noise or pile-up events. The \pt offset is estimated in dependence of $\eta$, the effective jet area $A_j$ and the \pt-density $\rho$ (\textit{hybrid jet area method}~\cite{Cacciari2008119}). \\
+The jet area is determined by adding a large number of inifinitely soft four-momentum vectors to the event. The active jet area is then defined as the fraction of soft particles clustered together with the true hard jet components. The \pt-density $\rho$ is defined on an event-by-event basis as the median of the distribution $\pt^{j}/A_{j}$ where $j$ denotes all reconstructed jets in the event. The estimated offset in simulated QCD multijet events and data is illustrated in Fig.~\ref{fig:l1offset}.
 \begin{figure}[!h]
   \centering 
   \begin{tabular}{c}
-    \includegraphics[width=0.39\textwidth]{figures/OffsetVsEta_NPV_PF5_data53_vs_mc53.pdf} 
+    \includegraphics[width=0.49\textwidth]{figures/OffsetVsEta_NPV_PF5_data53_vs_mc53.pdf} 
   \end{tabular}
   \caption{L1 offset transverse momentum correction for AK5 PF jets as a function of jet pseudorapidity in data (black) and simulation (green). Different intervals of reconstructed primary vertices ($\mathrm{N_{PV}}$) are shown with different markers~\cite{CMS-DP-2013-033}.}
   \label{fig:l1offset}
@@ -98,7 +107,7 @@ p^\mathrm{cor} = C \cdot p^\mathrm{raw} = C_{\mathrm{offset}}(\pt^\mathrm{raw}, 
 \begin{figure}[!h]
   \centering 
   \begin{tabular}{c}
-    \includegraphics[width=0.5\textwidth]{figures/CorrectionVsEta_Overview_TDR_ak5pfl1_L2L3.pdf} 
+    \includegraphics[width=0.7\textwidth]{figures/CorrectionVsEta_Overview_TDR_ak5pfl1_L2L3.pdf} 
   \end{tabular}
   \caption{MC-Truth corrections for AK5 PF jets as a function of jet pseudorapidity for three reference transverse momentum values: 30\gev (white hollow circles), 100\gev (red squares) and 300\gev (blue circles)~\cite{CMS-DP-2013-033}.}
   \label{fig:l2l3}
@@ -107,7 +116,7 @@ p^\mathrm{cor} = C \cdot p^\mathrm{raw} = C_{\mathrm{offset}}(\pt^\mathrm{raw}, 
 \begin{figure}[!h]
   \centering 
   \begin{tabular}{c}
-    \includegraphics[width=0.4\textwidth]{figures/ResComp_FSRcorr_residuals_Abseta_PF_DiJetData.pdf} 
+    \includegraphics[width=0.49\textwidth]{figures/ResComp_FSRcorr_residuals_Abseta_PF_DiJetData.pdf} 
   \end{tabular}
   \caption{L2 residual corrections for AK5 PF jets as a function of jet pseudorapidity, obtained from dijet events, shown with JES uncertainty (yellow band) and the statistical uncertainty (blue band)~\cite{CMS-DP-2013-033}.}
   \label{fig:l2res}
@@ -169,9 +178,9 @@ by analysing the substructure of fat jets. Typically, fat jets are clustered by 
 z = \frac{\mathrm{min}(p_{\mathrm{T},i}, p_{\mathrm{T},j})}{|\vec{p}_{\mathrm{T},i} + \vec{p}_{\mathrm{T},j}|} < z_\mathrm{cut}
 \end{equation*}
 \begin{equation*}
-\Delta R_{i,j} > D_\mathrm{cut} = \frac{m_{J}}{p_{\mathrm{T}, J}}
+\Delta R_{i,j} > D_\mathrm{cut} = \frac{m_\mathrm{J}}{p_{\mathrm{T}, \mathrm{J}}}
 \end{equation*}
-where $m_{J}$ and $p_{\mathrm{T}, J}$ are the mass and the transverse momentum of the original fat jet, respectively. Whenever these two conditions are satistified, the recombination of objects $i$ and $j$ is not performed. Thus, the jet clustering is rerun using the initial jet constituents, but in addition employing a veto rule. For the Cambridge-Aachen algorithm $z_\mathrm{cut}$ is typically chosen to be 0.1.
+where $m_\mathrm{J}$ and $p_{\mathrm{T}, \mathrm{J}}$ are the mass and the transverse momentum of the original fat jet, respectively. Whenever these two conditions are satistified, the recombination of objects $i$ and $j$ is not performed. Thus, the jet clustering is rerun using the initial jet constituents, but in addition employing a veto rule. For the Cambridge-Aachen algorithm $z_\mathrm{cut}$ is typically chosen to be 0.1.
  \item \textbf{Trimming~\cite{Krohn:2009th}:} Similarly to the filtering procedure, the jet trimming is based on the concept of identifying subjets within an initially clustered large jet, here called \textit{seed jet}. The constituents of this seed jet are reclustered using a jet clustering algorithm with a smaller distance parameter than for the seed jet. If 
 \begin{equation*}
 p_{\mathrm{T},i} < f_{\mathrm{cut}} \cdot \Lambda_{\mathrm{hard}} \; ,

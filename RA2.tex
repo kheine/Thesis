@@ -1,26 +1,60 @@
-The search for hints of supersymmetric particles is among the important goals of the LHC physics program. As discussed in Sec.~\ref{subsec:susy_collider}, searches performed at $\sqrt{s} = 7$\tev have constrained the allowed parameter space for light-flavour squarks and gluinos already up to around 800\gev and 1\tev for light LSP masses, respectively. However, the increased centre of mass energy from 7\tev to 8\tev and the recorded dataset which is around four times larger than at 7\tev provide the opportunity to extend the reach of such searches into entirely unexplored parameter regions. In Fig.~\ref{fig:susy_theory_xs} the theory cross section for the production of supersymmetric particles is shown as function of the SUSY particle mass. The y-axis on the right indicates how many events are expected in 20\fbinv of \pp collision data at the LHC at $\sqrt{s}=8$\tev. \\
-
+The search for of supersymmetric particles is among the most important goals of the LHC physics program. As discussed in Sec.~\ref{subsec:susy_collider}, searches performed at $\sqrt{s} = 7$\tev have constrained the allowed parameter space for light-flavour squarks and gluinos already up to around 800\gev and 1\tev for light LSP masses, respectively. However, the increased centre of mass energy from 7\tev to 8\tev and the recorded dataset, which is around four times larger than at 7\tev, provide the opportunity to extend the reach of such searches into entirely unexplored parameter regions. In Fig.~\ref{fig:susy_theory_xs}, the theory cross section for the production of supersymmetric particles is shown as a function of the SUSY particle mass. The $y$-axis on the right indicates how many events are expected in 20\fbinv of \pp collision data at the LHC at $\sqrt{s}=8$\tev. 
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
                 \includegraphics[width=0.65\textwidth]{figures/xsections_strong.pdf} 
   \end{tabular}
-  \caption{Theory cross sections for selected SUSY processes as function of the SUSY sparticle mass. The y-axis on the right indicates the expected number of events in 20\fbinv of \pp collision data at the LHC at $\sqrt{s}=8$\tev~\cite{Kramer:2012bx}.}
+  \caption{Theory cross sections for selected SUSY processes as a function of the sparticle mass. The $y$-axis on the right indicates the expected number of events in 20\fbinv of \pp collision data at the LHC at $\sqrt{s}=8$\tev~\cite{Kramer:2012bx}.}
   \label{fig:susy_theory_xs}
 \end{figure}
-It is visible that especially light-squarks and gluinos are expected at a sizable rate even for high masses above 1\tev. For instance, around 100 pairs of gluinos are expected at a mass of 1200\gev. \\
-The analysis presented in this Chapter is aiming at a search for supersymmetric cascade decays arising from strongly produced light-flavour squarks or gluinos. Thus, events are selected based on the scalar sum of the jet transverse momenta (\HT), the missing transverse momentum calculated from the jet momenta (\MHT) and the number of jets (\NJets). However, the generic structure makes the analysis in principle sensitive to any new physics model that manifests in final states containing several hard jets accompanied by missing transverse energy. \\
-After the description of the event selection (Sec.~\ref{sec:RA2_sel}), it is discussed how contributions from standard model processes to the selected final state are estimated. Special emphasis is put on the estimation of the QCD multijet background (Sec.~\ref{subsec:RA2_QCD}). Finally, results are presented and interpreted in various simplified supersymmetric models (Sec.~\ref{sec:RA2_results}). Parts of this Chapter are taken from~\cite{bib:AN-12-350}, having been written by the author. This analysis follows previous inclusive searches~\cite{springerlink:10.1007/JHEP08(2011)155, Chatrchyan:2012lia} and is published in~\cite{Chatrchyan:2014lfa}.    
+\\
+Especially light-squarks and gluinos are expected at a sizable rate, even for high masses above 1\tev. For instance, around 100 pairs of gluinos are expected at a mass of 1200\gev. \\
+The analysis presented in this chapter searches for supersymmetric cascade decays arising from strongly produced light-flavour squarks or gluinos. As introduced in Sec.~\ref{subsec:susy_collider}, the expected experimental signature contains several hard jets and a certain amount of missing transverse energy. Thus, events are selected based on the scalar sum of the jet transverse momenta (\HT), the missing transverse momentum calculated from the jet momenta (\MHT) and the number of jets (\NJets). However, the generic structure makes the analysis in principle sensitive to any new physics model that manifests in final states containing several hard jets accompanied by missing transverse energy, in case the cross section of the process and the acceptance of the selection is large enough. \\
+After the description of the event selection (Sec.~\ref{sec:RA2_sel}), it is discussed how contributions from standard model processes to the selected final state are estimated. Special emphasis is put on the estimation of the QCD multijet background (Sec.~\ref{subsec:RA2_QCD}). Finally, results are presented and interpreted in various simplified supersymmetric models (Sec.~\ref{sec:RA2_results}). Parts of this chapter are taken from~\cite{bib:AN-12-350}, written by the author. This analysis follows previous inclusive searches~\cite{springerlink:10.1007/JHEP08(2011)155, Chatrchyan:2012lia} and is published in~\cite{Chatrchyan:2014lfa}.
+    
 \section{Event Selection}
 \label{sec:RA2_sel}
-
-\subsection{Data Samples and Trigger}
+\subsection{Data Samples}
 \label{subsec:RA2_samples_trigger}
 The analysis is based on \pp collision data recorded with the CMS detector at a centre of mass energy of $\sqrt{s} = 8$\tev. This corresponds to an integrated luminosity of 19.5\fbinv for all sub-detectors fully functional. \\
-The data have been collected by triggering on \HT, the scalar sum of the jet transverse momenta, and \met, the missing transverse energy. An overview of the considered runs and the integrated luminosity is shown together with the respective HLT trigger paths in Tab.~\ref{tab:RA2_trigger}. \HT and \met are calculated from particle-flow objects at trigger level with nominal thresholds of 350\gev and 100\gev, respectively. Jets considered in this calculation are reconstructed with the anti-$k_T$ algorithm and distance parameter $R = 0.5$. The labelling \textit{PFNoPU} indicates that for that particular runs also charged-hadron subtraction was applied to jets at trigger level. 
-\begin{table}[!b]
+In addition, it is made use of several simulated samples describing SM background processes. These are especially employed in the validation of the background estimation methods described in Sec.~\ref{subsec:RA2_QCD} and~\ref{sec:RA2_Non-QCD}. The standard model processes for \ttbar, \WJets, \ZJets, $\gamma + \mathrm{{jets}}$ and QCD multijet events are generated with the \madgraph~\cite{Alwall:2007st} generator at leading order and are interfaced with the parton-shower model in \pythia 6.4.24~\cite{Sjostrand:2006za}. They are scaled to cross-section predictions at next-to-leading order or next-to-next-to-leading order, when available~\cite{Kidonakis:2010dk, Melnikov:2006kv}. The events are processed with the full detector simulation. 
+%\begin{table}[!t]
+%\fontsize{9 pt}{1.2 em}
+%\selectfont
+%\centering
+%\caption{Overview of simulated background samples used in the analysis and corresponding production cross sections.}
+%\makebox[\linewidth]{
+%\begin{tabular}{llrc}
+%\multicolumn{4}{c}{} \\
+%\toprule
+%   Process &  & $\sigma$ [pb] & Precision \\
+%   \midrule
+%   \midrule
+%   \ttbar & semi-leptonic decays & 102.5 & NNLO \\
+%          & fully-leptonic decays & 24.6 & NNLO \\
+%          & hadronic decays & 106.9 & NNLO \\
+%   \midrule
+%   \WJets & \HT = [400, $\infty$]\gev  & 30.1 & NNLO \\
+%   \midrule
+%   \ZJets & \HT = [400, $\infty$]\gev & 6.3 & NNLO \\
+%   \midrule
+%   QCD multijet & \HT = [100, 250]\gev & $1.04 \cdot 10^7$& LO \\
+%                & \HT = [250, 500]\gev & $276\,000.0$ & LO \\
+%                & \HT = [500, 1000]\gev & 8426.0 & LO \\
+%                & \HT = [1000, $\infty$]\gev & 204.0 & LO \\
+%   \bottomrule
+%\end{tabular}}
+%\label{tab:ra2_samples}
+%\end{table}    
+\\
+Furthermore, SUSY signal samples are obtained from simulation. They are generated with \madgraph~\cite{Alwall:2007st} (with up to two additional partons), the CTEQ6L parton distribution functions~\cite{Pumplin:2002vw} and processed with the fast detector simulation. Cross sections are determined at NLO with a resummation of soft gluon emission at the accuracy of next-to-leading-log~\cite{Beenakker:1996ch, PhysRevLett.102.111802, PhysRevD.80.095004, Beenakker:2009ha, Beenakker:2011fu, Kramer:2012bx}. The cross section calculation as well as the generation of signal events for a certain type of sparticle is performed by effectively removing contributions from other sparticles by assuming their mass to be very large.
+
+\subsection{Trigger}
+\label{subsec:RA2_trigger}
+The data have been collected by triggering on \HT, the scalar sum of the jet transverse momenta, and \met, the missing transverse energy. An overview of the considered runs and the integrated luminosity is shown together with the respective HLT trigger paths in Tab.~\ref{tab:RA2_trigger}. \HT and \met are calculated from particle-flow objects at trigger level with nominal thresholds of 350\gev and 100\gev, respectively. Jets considered in this calculation are reconstructed with the anti-$k_T$ algorithm and distance parameter $R = 0.5$. The labelling \textit{PFNoPU} indicates that, for that particular runs, also charged-hadron subtraction was applied to jets at trigger level. 
+\begin{table}[!t]
 \centering
-\caption{Utilized signal trigger paths in individual run ranges listed together with the integrated luminosity.}
+\caption{Signal trigger paths used in different run ranges listed together with the integrated luminosity.}
 \label{tab:RA2_trigger}
  \makebox[\linewidth]{
 \begin{tabular}{lccc}
@@ -28,18 +62,19 @@ The data have been collected by triggering on \HT, the scalar sum of the jet tra
 \toprule
  Trigger path & Run range & Luminosity [\fbinv] \\
 \midrule
- HLT\_PFHT350\_PFMET100 & 190456 -- 196531 & 0.9 \\
+ HLT\_PFHT350\_PFMET100 & 190456--196531 & 0.9 \\
  & & & \\
- HLT\_PFHT350\_PFMET100 & 190782 -- 190949 & 4.4 \\
+ HLT\_PFHT350\_PFMET100 & 190782--190949 & 4.4 \\
  & & & \\
- HLT\_PFNoPUHT350\_PFMET100 & 198022 -- 198523 & 6.9 \\
+ HLT\_PFNoPUHT350\_PFMET100 & 198022--198523 & 6.9 \\
  & & & \\
- HLT\_PFNoPUHT350\_PFMET100 & 198524 -- 208686 & 7.3 \\
+ HLT\_PFNoPUHT350\_PFMET100 & 198524--208686 & 7.3 \\
 \bottomrule
 \end{tabular}}
 \end{table}  
 \\
-In order to determine the offline values for \HT and \MHT (calculated according to the definition following in Sec.~\ref{subsec:RA2_baseline}) for which the triggers reach the plateau efficiency, the trigger efficiencies are measured with respect to a single electron trigger (HLT\_Ele27\_WP80). In principal, an orthogonal trigger is needed in order to get an unbiased estimate of the trigger efficiency. However, due to the PF-algorithm all subdetectors are used simultaneously to reconstruct the particles in an event. Hence, no independent trigger paths providing enough statistical precision are available. Consequently, only the reach of a plateau efficiency for a certain trigger path can be determined while the absolute efficiency is not accessible. The determination of the trigger plateau efficiency is performed for different jet multiplicity intervals (\NJets~$ = 3-5$, \NJets~$ = 6-7$ and \NJets~$ \ge 8$). The obtained trigger turn-on curves for the two different HLT paths are shown as function of offline \HT and \MHT for jet multiplicity \NJets~$ = 3-5$ in Fig.~\ref{fig:trig_eff_3njets5}. The respective turn-on curves for jet multiplicities $6 \leq$ \NJets $\leq 7$ and $8 \leq \NJets$ are shown in App.~\ref{fig:trig_eff_6njets7} and App.~\ref{fig:trig_eff_njets8}, respectively. For both trigger paths, the efficiency plateau is reached around offline values of \HT$ = 500$\gev and \MHT$ = 200$\gev. The integrated trigger efficiencies for these particular values in different jet multiplicity intervals are summarized with statistical uncertainties in Tab.~\ref{tab:trig_eff}. In general, they are close to 100\% with small uncertainties below 1\%. However, for the highest jet multiplicity selection of \NJets~$ \ge 8$ only few events where selected such that statistical uncertainties are few 10\% large. Though, no hints for a systematic inefficiency have been observed and the signal triggers are considered as fully efficient with an uncertainty of $2\%$ for offline values of \HT$ > 500$\gev and \MHT$ > 200$\gev independent of the jet multiplicity. \\
+In order to determine the offline values for \HT and \MHT (calculated according to the definition following in Sec.~\ref{subsec:RA2_baseline}) for which the triggers reach the plateau efficiency, the trigger efficiencies are measured with respect to a single electron trigger (HLT\_Ele27\_WP80), \ie it is tested how many events that are triggered by the reference electron trigger also pass the trigger under study. In principle, an independent trigger is desirable in order to get an unbiased estimate of the trigger efficiency. However, due to the PF-algorithm all subdetectors are used simultaneously to reconstruct the particles in an event. Hence, no independent trigger paths providing enough statistical precision are available. Consequently, only the reach and position of a plateau efficiency for a certain trigger path can be determined. \\
+The determination of the relative trigger plateau efficiency is performed for different jet multiplicity intervals ($3 \leq \NJets \leq 5$, $6 \leq \NJets \leq 7$ and \NJets~$ \ge 8$). The obtained trigger turn-on curves for the two different HLT paths are shown as a function of \HT and \MHT, as used in the analysis, for jet multiplicity $3 \leq \NJets \leq 5$ in Fig.~\ref{fig:trig_eff_3njets5}. The respective turn-on curves for jet multiplicities $6 \leq$ \NJets $\leq 7$ and \NJets~$ \ge 8$ are shown in App.~\ref{fig:trig_eff_6njets7} and App.~\ref{fig:trig_eff_njets8}. For both trigger paths, the efficiency plateau is reached around values of \HT$ = 500$\gev and \MHT$ = 200$\gev. The integrated trigger efficiencies for these particular values in different jet multiplicity intervals are summarized with statistical uncertainties in Tab.~\ref{tab:trig_eff}. In general, they are close to 100\% with small uncertainties below 1\%. However, for the highest jet multiplicity selection of \NJets~$ \ge 8$ only few events where selected such that statistical uncertainties are few 10\% large. Though, no hints for a systematic inefficiency have been observed and the signal triggers are considered as fully efficient with an uncertainty of $2\%$ for values of \HT$ > 500$\gev and \MHT$ > 200$\gev independent of the jet multiplicity. 
 
 \begin{figure}[!t]
   \centering
@@ -49,43 +84,41 @@ In order to determine the offline values for \HT and \MHT (calculated according 
                 \includegraphics[width=0.49\textwidth]{figures/turn_on_HT_TagEle27WP80_ProbePFNoPUHT350PFMET100_MHT200_chs_NJets3-5.pdf} &
                 \includegraphics[width=0.49\textwidth]{figures/turn_on_MHT_TagEle27WP80_ProbePFNoPUHT350PFMET100_HT500_chs_NJets3-5.pdf} \\
   \end{tabular}
-\caption{Measured trigger efficiency for paths HLT\_PFHT350\_PFMET100 (\textit{top}) and HLT\_PFNoPUHT350\_PFMET100 (\textit{bottom}) as a function of \HT (\textit{left}) and \MHT (\textit{right}) shown for $3 \leq$ \NJets $\leq 5$.} 
+\caption{Measured relative trigger efficiency for paths HLT\_PFHT350\_PFMET100 (\textit{top}) and HLT\_PFNoPUHT350\_PFMET100 (\textit{bottom}) as a function of \HT (\textit{left}) and \MHT (\textit{right}) shown for $3 \leq$ \NJets $\leq 5$.} 
   \label{fig:trig_eff_3njets5}
 \end{figure}
 
 \begin{table}[!t]
-  \caption{Summary of total trigger efficiencies of the signal triggers for selections of offline \HT$ > 500$\gev and \MHT$ > 200$\gev in different jet multiplicity intervals.} 
+  \caption{Summary of total trigger efficiencies of the signal triggers for selections of \HT$ > 500$\gev and \MHT$ > 200$\gev in different jet multiplicity intervals determined with respect to the reference trigger path.} 
   \label{tab:trig_eff}
   \begin{center}
     \begin{tabular}{lcc}
       \toprule
       \NJets & HLT\_PFHT350\_PFMET100 &  HLT\_PFNoPUHT350\_PFMET100\\
       \midrule
-      3 - 5   & $99.4 _{-0.3} ^{+0.2}$   & $99.8 _{-0.1} ^{+0.1}$\\
-      6 - 7   & $99.1 _{-2.0} ^{+0.7}$   & $100.0 _{-0.6} ^{+0.0}$\\
+      3--5   & $99.4 _{-0.3} ^{+0.2}$   & $99.8 _{-0.1} ^{+0.1}$\\
+      6--7   & $99.1 _{-2.0} ^{+0.7}$   & $100.0 _{-0.6} ^{+0.0}$\\
       $\ge$ 8 & $100.0 _{-36.9} ^{+0.0}$ & $100.0 _{-10.9} ^{+0.0}$\\
       \bottomrule
     \end{tabular}
   \end{center}
 \end{table}
 
-In order to validate the basic event selection discussed in Sec.~\ref{subsec:RA2_cleaning} and~\ref{subsec:RA2_baseline} and the background estimation methods described in Sec.~\ref{subsec:RA2_QCD} and~\ref{sec:RA2_Non-QCD}, several MC simulation samples are used. The standard model processes for \ttbar, \WJets, \ZJets, $\gamma + \mathrm{{jets}}$ and QCD multijet events are generated with the MadGraph5~\cite{Alwall:2007st} generator at leading order and are interfaced with the parton-shower model in Pythia 6.4.24~\cite{Sjostrand:2006za}. They are scaled to cross-section predictions at next-to-leading order or even next-to-next-to-leading order when available~\cite{Kidonakis:2010dk, Melnikov:2006kv}. The events are processed with the full detector simulation. Furthermore, SUSY signal samples are obtained from simulation. They are generated with MadGraph5~\cite{Alwall:2007st} (with up to two additional partons), the CTEQ6L parton distribution functions~\cite{Pumplin:2002vw} and processed with the fast detector simulation. Cross sections are determined at NLO with a resummation of soft gluon emission at the accuracy of next-to-leading-log~\cite{Beenakker:1996ch, PhysRevLett.102.111802, PhysRevD.80.095004, Beenakker:2009ha, Beenakker:2011fu, Kramer:2012bx}. The cross section calculation as well as the generation of signal events for a certain type of sparticle is performed by effectively removing contributions from other sparticles by assuming their mass to be very large.
-
 \subsection{Event Cleaning}
 \label{subsec:RA2_cleaning}
-The analysis presented in this Chapter realies on a precise measurement of the momentum imbalance in the event. In order to remove events with large values of fake missing momentum arising from detector noise a dedicated sequence of cleaning filters is applied: 
+The analysis presented in this chapter relies on a precise measurement of the momentum imbalance in the event. In order to remove events with large values of fake missing momentum arising from detector noise, a dedicated sequence of cleaning filters is applied: 
 \begin{description}
- \item{\textbf{Primary Vertex and Beam Halo:}} Only events with at least one high-quality primary vertex are considered in the analysis. A primary vertex is classified as good, if it has more than four associated tracks and is located within 24\,cm in $z$ and 2\,cm in $xy$ direction from the nominal interaction point (\textit{good-vertex filter}). In order to reject events in which protons from the beam interact with residual gas molecules in the beam pipe, the CSC subdetector is used to identify muons moving parallel to the beam (\textit{beam-halo filter}).
- \item{\textbf{Anomalous Calorimeter Signals:}} Some events are affected by particles hitting the readout electronics or other technical instrumentation and cause anomalous signals in the ECAL or HCAL. For instance, noise in the readout system can fake artifical energy deposits at random times. Such events are identified based on timing and pulse-shape information (\textit{HBHE noise filter}). Furthermore, two $5 \times 5 $ supercrystal regions in the EE have been observed to give anomalously high energies. They are removed by imposing selections on the deposited energy in the identified supercrystals (\textit{EE bad supercrystal filter}). In order to account for transparency losses in the ECAL crystals, the system is calibrated with a dedicated laser. However, in the data some crystals are observed which receive unphysically large corrections. Events affected by this unusually large ECAL laser correction factors are rejected (\textit{ECAL laser correction filter}). The HCAL is also monitored by a dedicated laser system. Sometimes the laser fires into the collision bunch-crossing resulting in unwanted signals. These events are removed according to an event list indicating the affected events (\textit{HCAL laser filter}). The jet reconstruction utilizes information from the HO. This is used as identifier of significant leakage beyong the HCAl barrel. However, events with anomalous energy deposits in the HO have to be rejected. Thus, events in which the fraction of the momentum deposited in the HO is $> 40\%$ are removed (\textit{HO filter}).
+ \item{\textbf{Primary Vertex and Beam Halo:}} Only events with at least one high-quality primary vertex are considered in the analysis. A primary vertex is classified as good, if it has more than four associated tracks and is located within 24\,cm in $z$ and 2\,cm in $xy$ direction from the nominal interaction point (\textit{good-vertex filter}). In order to detect events in which protons from the beam interact with residual gas molecules in the beam pipe, the CSC subdetector is used to identify muons moving parallel to the beam (\textit{beam-halo filter}).
+ \item{\textbf{Anomalous Calorimeter Signals:}} Some events are affected by particles hitting the readout electronics or other technical instrumentation and cause anomalous signals in the ECAL or HCAL. For instance, noise in the readout system can fake artifical energy deposits at random times. Such events are identified based on timing and pulse-shape information (\textit{HBHE noise filter}). Furthermore, two $5 \times 5 $ supercrystal regions in the EE have been observed to give anomalously high energies. They are removed by imposing selections on the deposited energy in the identified supercrystals (\textit{EE bad supercrystal filter}). In order to account for transparency losses in the ECAL crystals, the system is calibrated with a dedicated laser. However, in the data some crystals are observed which receive unphysically large corrections. Events affected by this unusually large ECAL laser correction factors are rejected (\textit{ECAL laser correction filter}). The HCAL is also monitored by a dedicated laser system. Sometimes the laser fires into the collision bunch-crossing resulting in unwanted signals. These events are removed according to an event list indicating the affected events (\textit{HCAL laser filter}). The jet reconstruction utilizes information from the HO. This is used as identifier of significant leakage beyong the HCAL barrel. However, events with anomalous energy deposits in the HO result in fake \MHT and have to be rejected. Thus, events in which the fraction of the momentum deposited in the HO is $> 40\%$ are removed (\textit{HO filter}).
  \item{\textbf{Dead ECAL Cells:}} Some single crystals in the ECAL are affected by malfunctioning. These single dead ECAL cells make up around $1\%$ in total and can be responsible for energy losses resulting in large values of fake-\MHT. Such events can be identified by using the trigger primitive information to determine how much energy was lost (\textit{TP filter}) or by using the surrounding energy of the masked cells (\textit{BE filter}).
- \item{\textbf{Tracking Failure:}} In some events the track reconstruction is observed to fail manifesting in large calorimeter energy deposits with lack of associated tracks. This can be caused e.g. by too many seed clusters or by collisions not taking place in the actual center of the detector. Thus, the scalar sum of track momenta associated to the good vertices divided by \HT in the event has to be larger than 10\% (\textit{tracking failure filter}) and if at least ten tracks are present in the event, good-quality tracks have to be more than 25\% (\textit{beam-scraping filter}). In addition, events with misreconstructed muon momenta in the PF algorithm (\textit{inconsistent muon filter}) or events where soft muons wrongly absorb energy from energetic HCAL towers they traverse (\textit{greedy muon filter}) are rejected. Furthermore, events with coherent noise in the strip tracker can occur. These cause several clusters distributed across the whole detector and lead to the identification of fake tracks. Such events where the track reconstruction aborted can be identified by comparing the number of pixel clusters to the number of strip clusters (\textit{many strip clusters filter}, \textit{too many strip clusters filter}, \textit{log error too many strip clusters filter}). Another failure of track reconstruction occurs sometimes when track seeds from the TOB and TEC are used. Consequently, events are rejected, if a jet with number of charged hadrons above 200 is reconstructed within $0.9 < |\eta| < 1.9$ (\textit{TOB/TEC tracking filter}).
- \item{\textbf{Noise Induced Jets:}} In order to reject events with fake jets from detector noise, events are discarded if the energy of a jet with \pt$ > 30$\gev is composed of more than 95\% from PF photon candidates or more than 90\% from PF neutral hadron energy (\textit{PBNR filter}).
+ \item{\textbf{Tracking Failure:}} In some events, the track reconstruction is observed to fail which manifests in large calorimeter energy deposits with lack of associated tracks. This can be caused, \eg by too many seed clusters or by collisions not taking place in the actual centre of the detector. Thus, the scalar sum of track momenta associated to the good vertices divided by \HT in the event has to be larger than 10\% (\textit{tracking failure filter}) and if at least ten tracks are present in the event, good-quality tracks have to be more than 25\% (\textit{beam-scraping filter}). In addition, events with misreconstructed muon momenta in the PF algorithm (\textit{inconsistent muon filter}) or events in which soft muons wrongly absorb energy from energetic HCAL towers they traverse (\textit{greedy muon filter}) are rejected. Furthermore, events with coherent noise in the strip tracker can occur. These cause several clusters distributed across the whole detector and lead to the identification of fake tracks. Such events, in which the track reconstruction aborted, can be identified by comparing the number of pixel clusters to the number of strip clusters (\textit{many strip clusters filter}, \textit{too many strip clusters filter}, \textit{log error too many strip clusters filter}). Another failure of track reconstruction occurs sometimes when track seeds from the TOB and TEC are used. Thus, events are rejected, if a jet with number of charged hadrons above 200 is reconstructed within $0.9 < |\eta| < 1.9$ (\textit{TOB/TEC tracking filter}).
+ \item{\textbf{Noise Induced Jets:}} In order to reject events with fake jets from detector noise, events are discarded, if the energy of a jet with \pt$ > 30$\gev is composed of more than 95\% from PF photon candidates or more than 90\% from PF neutral hadron energy (\textit{PBNR filter}).
 \end{description}
 
 \subsection{Baseline Selection}
 \label{subsec:RA2_baseline}
-The physics objects used in the analysis are reconstructed with the PF algorithm. Jets are clustered from the particle-flow objects with the anti$-k_T$ algorithm using $R = 0.5$. Furthermore, they are calibrated as discussed in Sec.~\ref{subsec:jets_calib} including residual correction factors for data. \\
-The following \textit{baseline selection} criteria are used to pre-define the event sample used for the analysis.
+The physics objects used in the analysis are reconstructed with the PF algorithm. Jets are clustered from the particle-flow objects with the anti-$k_\mathrm{T}$ algorithm using $R = 0.5$. Furthermore, they are calibrated, as discussed in Sec.~\ref{subsec:jets_calib}, including residual correction factors for data. \\
+The following \textit{baseline selection} criteria are used to define the event sample used for the analysis. This selection defines a validation region and provides a basis for tighter criteria.
 \begin{itemize}
  \item{The number of jets (\NJets) is required to be $\ge 3$. \NJets is defined as the number of jets with $\pt > 50$\gev and $|\eta| < 2.5$. This requirement is imposed in order to select multijet events.}
  \item{The scalar sum of jet momenta (\HT) is required to be $\ge 500$\gev with 
@@ -95,17 +128,18 @@ The following \textit{baseline selection} criteria are used to pre-define the ev
 for all jets that have $\pt > 50$\gev and $|\eta| < 2.5$. This condition selects events with a large visible energy in the event indicating a high energy scale of the hard interaction.}   
  \item{The absolute value of the negative vectorial sum of the jet momenta (\MHT) is required to be $\ge 200$\gev with
 \begin{equation*}
-\MHT = |\MHTvec|= |- \sum_{\mathrm{jets}} \ptvec|
+\MHT = |\MHTvec|= |- \sum_{\mathrm{jets}} \ptvec |
 \end{equation*}
-for all jets with $\pt > 30$\gev and $|\eta| < 5.0$. This selection reduces contributions from standard model processes where missing transverse momentum is expected to be small. Especially, QCD multijet background is suppressed. } 
- \item{In order to suppress events where missing transverse energy is mainly arising from jet mismeasurements, as for QCD multijet events, it is required that \MHT is not aligned with the leading three jets. Thus, events with
+for all jets with $\pt > 30$\gev and $|\eta| < 5.0$. This selection reduces contributions from standard model processes where missing transverse momentum is expected to be small. In particular, QCD multijet background is suppressed. } 
+ \item{In order to suppress events in which missing transverse energy is mainly arising from jet mismeasurements, as for QCD multijet events, it is required that \MHT is not aligned with any of the leading three jets and events with
 \begin{equation*}
 \Delta \phi(\mathrm{jet}_n, \MHT) > 0.5 \;\; \mathrm{for} \;\; n = 1,2 \;\; \mathrm{and} \;\; \Delta \phi(\mathrm{jet}_3, \MHT) > 0.3
 \end{equation*} 
-are selected. The value of 0.5 is chosen according to the jet size parameter. However, this is reduced in case of the third jet in order to retain signal efficiency. }
- \item{Background contributions arising from \ttbar and \WJets events are reduced by rejecting events containing isolated electrons or muons with $\pt > 10$\gev. These are required to have a good quality track that can be associated with the primary interaction vertex~\cite{CMS-PAS-EGM-10-004, CMS-PAS-MUO-10-002}. The isolation is given as the scalar sum of transverse momenta of PF particles (except for the lepton itself) within a cone of width $\Delta R = 0.3$ for the electron and $\Delta R = 0.4$ for the muon, respectively. This is required to be less than 15\% of the transverse momentum of the electron and less than 20\% of the transverse momentum of the muon.}
+are selected. The value of 0.5 is chosen according to the jet distance parameter. However, this is reduced in case of the third jet in order to retain signal efficiency. }
+ \item{Background contributions arising from \ttbar and \WJets events are reduced by rejecting events containing isolated electrons or muons with $\pt > 10$\gev. These are required to have a good quality track that can be associated with the primary interaction vertex~\cite{CMS-PAS-EGM-10-004, CMS-PAS-MUO-10-002}. The isolation is given as the scalar sum of transverse momenta of PF particles (except for the lepton itself) within a cone of radius $\Delta R = 0.3$ for the electron and $\Delta R = 0.4$ for the muon, respectively. It is required to be less than 15\% of the transverse momentum of the electron and less than 20\% of the transverse momentum of the muon.}
 \end{itemize}
-The selection described above defines a loose validation region and provides a basis for tighter criteria. In data, 11753 events are selected after the application of the baseline selection including the event cleaning filters. A comparison of selected events in data and simulation after the basline selection is shown in Fig.~\ref{fig:ra2_baseline_mc}. Although a reasonable data and MC agreement is observed especially in the bulk of the distributions, the background estimation from simulation is not further used in the analysis, but is meant to give an impression of the relative background contributions. Since the analysis is performed in extreme tails of the \HT, \MHT and \NJets phase space with only few events and large theoretical uncertainties in the simulation, SM background contributions are estimated solely with data-based methods.
+After the application of the baseline selection, 26909 events are selected in data without the application of event cleaning filters. When imposing in addition the cleaning sequence, 11753 events constitute the event sample in data used for the analysis. This corresponds to a cleaning efficiency of around 56\%. In simulated events, around 28\% of the QCD multijet sample are rejected by the filters after the baseline criteria while it is less than 4\% for other background contributions. \\
+A comparison of the events selected by the baseline criteria, including cleaning filters, in data and simulation is shown in Fig.~\ref{fig:ra2_baseline_mc}. In general, a reasonable agreement between data and MC distributions is observed. Especially in the bulk of the distributions, deviations are only at the order of 10--20\%. However, the background estimation from simulation is not further used in the analysis, but is meant to give an impression of the relative background contributions. Since the analysis is performed in extreme tails of the \HT, \MHT and \NJets phase space with only few events and large uncertainties in the simulation, SM background contributions are estimated solely with data-based methods.
 
 \begin{figure}[!t]
   \centering
@@ -124,7 +158,8 @@ The selection described above defines a loose validation region and provides a b
 
 \subsection{Exclusive Search Regions}
 \label{subsec:RA2_search_regions}
-The analysis presented in this Chapter is an extension of previous inclusive searches~\cite{springerlink:10.1007/JHEP08(2011)155, Chatrchyan:2012lia}. These have been based on the requirement of at least three jets in the final state. In this analysis, the data is further subdivided into three exclusive jet multiplicity categories: $\NJets = 3 - 5, 6 - 7, \ge 8$. This enhances the sensitivity of the search towards multijet final states. These are typically the manifestations of long cascade decays from squarks and gluinos. Furthermore, it enlarges the sensitivity of the analysis to models in which gluinos often decay into top quarks. By requiring a large number of jets this analysis utilizes a complementary approach to other analyses which often use the presence of bottom-quark jets in the final state to discriminate against background~\cite{Chatrchyan:2013lya, Chatrchyan:2013wxa, CMS-PAS-SUS-13-019, CMS-PAS-SUS-14-011}. This procedure allows to keep the signal efficiency for all-hadronic final states as high as possible. In order to gain sensitivity to a variety of models, the jet categories are further classified according to \HT and \MHT. With this approach various exclusive search regions are defined. An overview of the exact definition of all 36 exclusive regions in \NJets, \HT and \MHT is given in Tab.~\ref{tab:excl_search_bins}.
+As mentioned in the beginning, the analysis presented in this chapter is an extension of previous inclusive searches. These were based on the requirement of at least three jets in the final state. In this analysis, the data are further subdivided into three exclusive jet multiplicity categories: $3 \leq \NJets \leq 5, 3 \leq \NJets \leq 5, \NJets \ge 8$. This enhances the sensitivity of the search towards multijet final states. These are typically the manifestations of long cascade decays from squarks and gluinos. Furthermore, it improves the sensitivity of the analysis to models in which gluinos often decay into top quarks. By requiring a large number of jets, this analysis utilizes a complementary approach to other analyses which often use the presence of bottom-quark jets in the final state to discriminate against background~\cite{Chatrchyan:2013lya, Chatrchyan:2013wxa, CMS-PAS-SUS-13-019, CMS-PAS-SUS-14-011}. \\
+In order to gain sensitivity to a variety of models, the jet categories are further classified according to \HT and \MHT. With this approach, various exclusive search regions are defined. An overview of the exact definition of all 36 exclusive regions in \NJets, \HT and \MHT is given in Tab.~\ref{tab:excl_search_bins}.
 
 \begin{table}[!h]
 %\fontsize{10 pt}{1.2 em}
@@ -138,26 +173,26 @@ The analysis presented in this Chapter is an extension of previous inclusive sea
   \midrule
              & \MHT [\gev]  & \MHT[\gev]  & \MHT[\gev]       \\
   \midrule
-   500 $<$ \HT [\gev] $<$ 800   & 200-300 & 200-300 & $>$ 200 \\
-                     & 300-450 & 300-450 &        \\
-                     & 450-600 & $>$ 450  &        \\
+   500 $<$ \HT [\gev] $<$ 800   & 200--300 & 200--300 & $>$ 200 \\
+                     & 300--450 & 300--450 &        \\
+                     & 450--600 & $>$ 450  &        \\
                      & $>$ 600 &         &        \\
   \midrule
-   800 $<$ \HT [\gev] $<$ 1000  & 200-300 & 200-300 & $>$ 200 \\
-                     & 300-450 & 300-450 &        \\
-                     & 450-600 & $>$ 450  &        \\
+   800 $<$ \HT [\gev] $<$ 1000  & 200--300 & 200--300 & $>$ 200 \\
+                     & 300--450 & 300--450 &        \\
+                     & 450--600 & $>$ 450  &        \\
                      & $>$ 600 &         &        \\
   \midrule
-   1000 $<$ \HT [\gev] $<$ 1250 & 200-300 & 200-300 & $>$ 200 \\
-                     & 300-450 & 300-450 &        \\
-                     & 450-600 & $>$ 450  &        \\
+   1000 $<$ \HT [\gev] $<$ 1250 & 200--300 & 200--300 & $>$ 200 \\
+                     & 300--450 & 300--450 &        \\
+                     & 450--600 & $>$ 450  &        \\
                      & $>$ 600 &         &        \\
   \midrule
-   1250 $<$ \HT [\gev] $<$ 1500 & 200-300 & 200-300 & $>$ 200 \\
-                     & 300-450 & 300-450 &        \\
+   1250 $<$ \HT [\gev] $<$ 1500 & 200--300 & 200--300 & $>$ 200 \\
+                     & 300--450 & 300--450 &        \\
                      & $>$ 450 & $>$ 450 &        \\
   \midrule
-  \HT [\gev] $>$ 1500         & 200-300 & 200-300 & $>$ 200 \\
+  \HT [\gev] $>$ 1500         & 200--300 & 200--300 & $>$ 200 \\
                      & $>$ 300  & $>$ 300  &        \\
   \bottomrule
 \end{tabular}
@@ -166,7 +201,8 @@ The analysis presented in this Chapter is an extension of previous inclusive sea
 
 \section{Estimation of Non-QCD Backgrounds}
 \label{sec:RA2_Non-QCD}
-As discussed in Sec.~\ref{subsec:susy_collider}, events from the SM processes \ZInvJets, \WJets or semi-leptonic \ttbar (where either the lepton is lost or a hadronically decaying $\tau$ lepton) and mismeasured QCD multijet events constitute important background contributions to all-hadronic final states. Dedicated data-based methods are employed to estimate their size in the selected data. In this Section those methods are described starting with a short review of the estimation of non-QCD backgrounds (Sec.~\ref{subsec:RA2_Zinv}, Sec.~\ref{subsec:RA2_tauhad} and Sec.~\ref{subsec:RA2_lostlepton}) followed by a detailled discussion of the QCD background estimation (Sec.~\ref{subsec:RA2_QCD}). 
+As discussed in Sec.~\ref{subsec:susy_collider}, events from the SM processes \ZInvJets, \WJets or semi-leptonic \ttbar events (in which either the lepton is lost or a hadronically decaying $\tau$ lepton) and mismeasured QCD multijet events constitute important background contributions to all-hadronic final states. In this analysis, dedicated data-based methods are employed to estimate their size in the selected data. \\
+In this section, those data-based background estimation methods are described. First, the estimation of non-QCD backgrounds (Sec.~\ref{subsec:RA2_Zinv}, Sec.~\ref{subsec:RA2_tauhad} and Sec.~\ref{subsec:RA2_lostlepton}) is reviewed. This is followed by a detailled discussion of the QCD background estimation (Sec.~\ref{subsec:RA2_QCD}). 
 
 \subsection{Invisible Z Background}
 \label{subsec:RA2_Zinv}

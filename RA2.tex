@@ -110,8 +110,8 @@ The analysis presented in this chapter relies on a precise measurement of the mo
 \begin{description}
  \item{\textbf{Primary Vertex and Beam Halo:}} Only events with at least one high-quality primary vertex are considered in the analysis. A primary vertex is classified as good, if it has more than four associated tracks and is located within 24\,cm in $z$ and 2\,cm in $xy$ direction from the nominal interaction point (\textit{good-vertex filter}). In order to detect events in which protons from the beam interact with residual gas molecules in the beam pipe, the CSC subdetector is used to identify muons moving parallel to the beam (\textit{beam-halo filter}).
  \item{\textbf{Anomalous Calorimeter Signals:}} Some events are affected by particles hitting the readout electronics or other technical instrumentation and cause anomalous signals in the ECAL or HCAL. For instance, noise in the readout system can fake artifical energy deposits at random times. Such events are identified based on timing and pulse-shape information (\textit{HBHE noise filter}). Furthermore, two $5 \times 5 $ supercrystal regions in the EE have been observed to give anomalously high energies. They are removed by imposing selections on the deposited energy in the identified supercrystals (\textit{EE bad supercrystal filter}). In order to account for transparency losses in the ECAL crystals, the system is calibrated with a dedicated laser. However, in the data some crystals are observed which receive unphysically large corrections. Events affected by this unusually large ECAL laser correction factors are rejected (\textit{ECAL laser correction filter}). The HCAL is also monitored by a dedicated laser system. Sometimes the laser fires into the collision bunch-crossing resulting in unwanted signals. These events are removed according to an event list indicating the affected events (\textit{HCAL laser filter}). The jet reconstruction utilizes information from the HO. This is used as identifier of significant leakage beyong the HCAL barrel. However, events with anomalous energy deposits in the HO result in fake \MHT and have to be rejected. Thus, events in which the fraction of the momentum deposited in the HO is $> 40\%$ are removed (\textit{HO filter}).
- \item{\textbf{Dead ECAL Cells:}} Some single crystals in the ECAL are affected by malfunctioning. These single dead ECAL cells make up around $1\%$ in total and can be responsible for energy losses resulting in large values of fake-\MHT. Such events can be identified by using the trigger primitive information to determine how much energy was lost (\textit{TP filter}) or by using the surrounding energy of the masked cells (\textit{BE filter}).
- \item{\textbf{Tracking Failure:}} In some events, the track reconstruction is observed to fail which manifests in large calorimeter energy deposits with lack of associated tracks. This can be caused, \eg by too many seed clusters or by collisions not taking place in the actual centre of the detector. Thus, the scalar sum of track momenta associated to the good vertices divided by \HT in the event has to be larger than 10\% (\textit{tracking failure filter}) and if at least ten tracks are present in the event, good-quality tracks have to be more than 25\% (\textit{beam-scraping filter}). In addition, events with misreconstructed muon momenta in the PF algorithm (\textit{inconsistent muon filter}) or events in which soft muons wrongly absorb energy from energetic HCAL towers they traverse (\textit{greedy muon filter}) are rejected. Furthermore, events with coherent noise in the strip tracker can occur. These cause several clusters distributed across the whole detector and lead to the identification of fake tracks. Such events, in which the track reconstruction aborted, can be identified by comparing the number of pixel clusters to the number of strip clusters (\textit{many strip clusters filter}, \textit{too many strip clusters filter}, \textit{log error too many strip clusters filter}). Another failure of track reconstruction occurs sometimes when track seeds from the TOB and TEC are used. Thus, events are rejected, if a jet with number of charged hadrons above 200 is reconstructed within $0.9 < |\eta| < 1.9$ (\textit{TOB/TEC tracking filter}).
+ \item{\textbf{Dead ECAL Cells:}} Some single crystals in the ECAL are malfunctioning. These dead ECAL cells make up around $1\%$ in total and can be responsible for energy losses resulting in large values of fake-\MHT. Such events can be identified by using the separate trigger primitive information of the L1 trigger to determine how much energy was lost (\textit{TP filter}) or by using the energy of the cells surrounding the masked cells (\textit{BE filter}).
+ \item{\textbf{Tracking Failure:}} In some events, the track reconstruction is observed to fail which manifests in large calorimeter energy deposits with lack of associated tracks. This can be caused, \eg by too many seed clusters or by collisions not taking place in the actual centre of the detector. Thus, the scalar sum of track momenta associated to the good vertices divided by \HT in the event has to be larger than 10\% (\textit{tracking failure filter}) and if at least ten tracks are present in the event, good-quality tracks have to be more than 25\% (\textit{beam-scraping filter}). In addition, events with misreconstructed muon momenta in the PF algorithm (\textit{inconsistent muon filter}) or events in which energy from energetic HCAL towers traversed by soft muons is wrongly associated to the muon momentum (\textit{greedy muon filter}) are rejected. Furthermore, events with coherent noise in the strip tracker can occur. These cause several clusters distributed across the whole detector and lead to the identification of fake tracks. Such events, in which the track reconstruction aborted, can be identified by comparing the number of pixel clusters to the number of strip clusters (\textit{many strip clusters filter}, \textit{too many strip clusters filter}, \textit{log error too many strip clusters filter}). Another failure of track reconstruction occurs sometimes when track seeds from the TOB and TEC are used. Thus, events are rejected, if a jet with number of charged hadrons above 200 is reconstructed within $0.9 < |\eta| < 1.9$ (\textit{TOB/TEC tracking filter}).
  \item{\textbf{Noise Induced Jets:}} In order to reject events with fake jets from detector noise, events are discarded, if the energy of a jet with \pt$ > 30$\gev is composed of more than 95\% from PF photon candidates or more than 90\% from PF neutral hadron energy (\textit{PBNR filter}).
 \end{description}
 
@@ -160,8 +160,7 @@ A comparison of the events selected by the baseline criteria, including cleaning
 \label{subsec:RA2_search_regions}
 As mentioned in the beginning, the analysis presented in this chapter is an extension of previous inclusive searches. These were based on the requirement of at least three jets in the final state. In this analysis, the data are further subdivided into three exclusive jet multiplicity categories: $3 \leq \NJets \leq 5, 3 \leq \NJets \leq 5, \NJets \ge 8$. This enhances the sensitivity of the search towards multijet final states. These are typically the manifestations of long cascade decays from squarks and gluinos. Furthermore, it improves the sensitivity of the analysis to models in which gluinos often decay into top quarks. By requiring a large number of jets, this analysis utilizes a complementary approach to other analyses which often use the presence of bottom-quark jets in the final state to discriminate against background~\cite{Chatrchyan:2013lya, Chatrchyan:2013wxa, CMS-PAS-SUS-13-019, CMS-PAS-SUS-14-011}. \\
 In order to gain sensitivity to a variety of models, the jet categories are further classified according to \HT and \MHT. With this approach, various exclusive search regions are defined. An overview of the exact definition of all 36 exclusive regions in \NJets, \HT and \MHT is given in Tab.~\ref{tab:excl_search_bins}.
-
-\begin{table}[!h]
+\begin{table}[!t]
 %\fontsize{10 pt}{1.2 em}
 %\selectfont
 \centering
@@ -171,28 +170,28 @@ In order to gain sensitivity to a variety of models, the jet categories are furt
   \toprule
    \NJets & [3-5] & [6-7] & [$\geq$8]  \\
   \midrule
-             & \MHT [\gev]  & \MHT[\gev]  & \MHT[\gev]       \\
+             & \MHT [GeV]  & \MHT[GeV]  & \MHT[GeV]       \\
   \midrule
-   500 $<$ \HT [\gev] $<$ 800   & 200--300 & 200--300 & $>$ 200 \\
+   500 $<$ \HT [GeV] $<$ 800   & 200--300 & 200--300 & $>$ 200 \\
                      & 300--450 & 300--450 &        \\
                      & 450--600 & $>$ 450  &        \\
                      & $>$ 600 &         &        \\
   \midrule
-   800 $<$ \HT [\gev] $<$ 1000  & 200--300 & 200--300 & $>$ 200 \\
+   800 $<$ \HT [GeV] $<$ 1000  & 200--300 & 200--300 & $>$ 200 \\
                      & 300--450 & 300--450 &        \\
                      & 450--600 & $>$ 450  &        \\
                      & $>$ 600 &         &        \\
   \midrule
-   1000 $<$ \HT [\gev] $<$ 1250 & 200--300 & 200--300 & $>$ 200 \\
+   1000 $<$ \HT [GeV] $<$ 1250 & 200--300 & 200--300 & $>$ 200 \\
                      & 300--450 & 300--450 &        \\
                      & 450--600 & $>$ 450  &        \\
                      & $>$ 600 &         &        \\
   \midrule
-   1250 $<$ \HT [\gev] $<$ 1500 & 200--300 & 200--300 & $>$ 200 \\
+   1250 $<$ \HT [GeV] $<$ 1500 & 200--300 & 200--300 & $>$ 200 \\
                      & 300--450 & 300--450 &        \\
                      & $>$ 450 & $>$ 450 &        \\
   \midrule
-  \HT [\gev] $>$ 1500         & 200--300 & 200--300 & $>$ 200 \\
+  \HT [GeV] $>$ 1500         & 200--300 & 200--300 & $>$ 200 \\
                      & $>$ 300  & $>$ 300  &        \\
   \bottomrule
 \end{tabular}
@@ -215,23 +214,23 @@ In this section, those data-based background estimation methods are described. F
                 \includegraphics[width=0.49\textwidth]{figures/RA2_Zinv3.pdf} &
                 \includegraphics[width=0.49\textwidth]{figures/RA2_Zinv4.pdf}
   \end{tabular}}
-  \caption{The simulated ratio $R_{Z/\gamma}$ as a function of (a) \MHT, (b) \HT, (c) \NJets, where the values for three \MHT selections are shown with linear fits, and (d) the double ratio of $R_{Z(\mu+\mu-)/\gamma}$, using events from data to those from simulation; the linear fit and its uncertainty band are overlaid. Taken from~\cite{Chatrchyan:2014lfa}.}
+  \caption{The simulated ratio $R_{Z/\gamma}$ as a function of (a) \MHT, (b) \HT, (c) \NJets, where the values for three \MHT selections are shown with linear fits, and (d) the double ratio of $R_{Z(\mu\mu)/\gamma}$, using events from data to those from simulation; the linear fit and its uncertainty band are overlaid~\cite{Chatrchyan:2014lfa}.}
   \label{fig:ra2_zinv}
 \end{figure}
 The irreducible background contributions arising from \ZInvJets events are estimated using \photonJets events. This is a well suited method as for high transverse momenta of the vector boson the event kinematics are basically the same and the cross sections differ only according to the different couplings~\cite{Ask:2011xf, Bern:2012vx}. \\
-The \photonJets sample is collected by triggering on a $\photon$ candidate and large values of \HT. Photon candidates are selected if they satisfy \pt$ > 100$\gev and $|\eta| < 1.44$ or $1.566 < |\eta| < 2.5$. Furthermore, they have to have a shower profile consistent with that of a prompt photon produced directly in the hard interaction. In order to distinguish photons from misidentified electrons they must not have an associated track in the pixel detector. In addition, photon candidates are required to be isolated meaning that in a cone of $\Delta R = 0.3$ the summed transverse momenta of PF candidates around the momentum direction of the photon candidate are not allowed to exceed a certain value. The number of selected \photonJets events is corrected for photon acceptance, reconstruction and isolation efficiency. Furthermore, the purity of the \photonJets sample which is the fraction of selected photon candidates emerging from direct production has to be taken into account. The number of background photons caused \eg by misidentified jet fragments, is estimated by exploiting the difference between the shower profile of prompt and background photons. The average purity of the \photonJets sample is measured to be 93\%.\\
+The \photonJets sample is collected by triggering on a $\photon$ candidate and large values of \HT. Photon candidates are selected, if they satisfy \pt$ > 100$\gev and $|\eta| < 1.44$ or $1.566 < |\eta| < 2.5$. Furthermore, they have to have a shower profile consistent with that of a prompt photon produced directly in the hard interaction. In order to distinguish photons from misidentified electrons they must not have an associated track in the pixel detector. In addition, photon candidates are required to be isolated meaning that in a cone of radius $\Delta R = 0.3$ the summed transverse momenta of PF candidates around the momentum direction of the photon candidate are not allowed to exceed a certain value. The number of selected \photonJets events is corrected for photon acceptance, reconstruction and isolation efficiency. Furthermore, the purity of the \photonJets sample, which is the fraction of selected photon candidates emerging from direct production, has to be taken into account. The number of background photons caused \eg by misidentified jet fragments, is estimated by exploiting the difference between the shower profile of prompt and background photons. The average purity of the \photonJets sample is measured to be 93\%.\\
 Subsequently, the number of \ZInvJets events in data $N_{\ZInvJets}^{\text{data}} (\HT, \MHT, \NJets)$ using the number of selected \photonJets events $N_{\photonJets}^{\text{data}} (\HT,\MHT,\NJets)$ is obtained according to
 \begin{equation*}
 N_{\ZInvJets}^{\text{data}} (\HT, \MHT, \NJets) = R^{\text{MC}}_{Z(\nu\bar{\nu})/\gamma} (\HT,\MHT,\NJets)
                                                         \times 
-                                                       \frac{R_{Z(\mu\mu)/\gamma}^{\text{data}}}{R_{Z(\mu\mu)/\gamma}^{\text{MC}}}
-                                                        \times 
                                                        N_{\photonJets}^{\text{data}} (\HT,\MHT,\NJets)
+                                                       \times 
+                                                       \frac{R_{Z(\mu\mu)/\gamma}^{\text{data}}}{R_{Z(\mu\mu)/\gamma}^{\text{MC}}}
 \label{eqn:photoncorr}
 \end{equation*}
 with the ratio relating the production cross section of \ZInvJets and \photonJets events $R^{\text{MC}}_{Z(\nu\bar{\nu})/\gamma} (\HT,\MHT,\NJets)$ determined in simulation and the double ratio $\frac{R_{Z(\mu\mu)/\gamma}^{\text{data}}}{R_{Z(\mu\mu)/\gamma}^{\text{MC}}}$ selected in data and MC to consider the theoretical uncertainty and correct $R_{Z/\gamma}$ for a given jet multiplicity. The missing momentum in the event is emulated by ignoring the momentum of the photon candidate in the calculation of \MHT. \\
-The behaviour of $R_{Z/\gamma}$ is examined in simulated events as function of \MHT, \HT and \NJets. The obtained distributions are shown in Fig.~\ref{fig:ra2_zinv}\,(a) -- (c). While a strong dependence on \MHT for small values ($\lesssim 500$\gev) is observed, the variation as function of \HT amounts to only $(12 \pm 5)\%$ in the relevant range for this analysis of $\HT = 500 - 1500$\gev. The ratio as function of the jet multiplicity is determined for different \MHT ranges of $\MHT = 200 - 300$\gev, $\MHT = 300 - 450$\gev and $\MHT > 450$\gev. The behaviour in each of these \MHT ranges is described by a linear function also displayed in Fig.~\ref{eqn:photoncorr}\,(c). It is found that the ratio decreases slightly with increasing jet multiplicity which is consistent with findings from theory~\cite{Bern:2012vx, Bern:2011pa}. \\
-In order to take the theoretical uncertainty on $R_{Z/\gamma}$ into account this phenomenological ratio is also determined for $Z_{\mu^+\mu^-}$ events in data and simulation, respectively. The double ratio of $R_{Z(\mu\mu)/\gamma}^{\text{data}}$ to $R_{Z(\mu\mu)/\gamma}^{\text{MC}}$ is derived as function of the jet multiplicity and shown in Fig.~\ref{eqn:photoncorr}\,(d). It is fitted with a linear function and the deviation from unity is considered as correction for the $R_{Z/\gamma}$ ratio in each jet multiplicity selection. \\
+The behaviour of $R_{Z/\gamma}$ is examined in simulated events as function of \MHT, \HT and \NJets. The obtained distributions are shown in Fig.~\ref{fig:ra2_zinv}\,(a) -- (c). While a strong dependence on \MHT for small values ($\lesssim 500$\gev) is observed, the variation as function of \HT amounts to only $(12 \pm 5)\%$ in the relevant range for this analysis of $500 < \HT < 1500$\gev. The ratio as function of the jet multiplicity is determined for different \MHT ranges of $200 < \MHT < 300$\gev, $300 < \MHT < 450$\gev and $\MHT > 450$\gev. The behaviour in each of these \MHT ranges is described by a linear function also displayed in Fig.~\ref{fig:ra2_zinv}\,(c). It is found that the ratio decreases slightly with increasing jet multiplicity which is consistent with findings from theory~\cite{Bern:2012vx, Bern:2011pa}. \\
+In order to take the theoretical uncertainty on $R_{Z/\gamma}$ into account this phenomenological ratio is also determined for $Z(\mu\mu)$ events in data and simulation, respectively. The double ratio of $R_{Z(\mu\mu)/\gamma}^{\text{data}}$ to $R_{Z(\mu\mu)/\gamma}^{\text{MC}}$ is derived as function of the jet multiplicity and shown in Fig.~\ref{eqn:photoncorr}\,(d). It is fitted with a linear function, and the deviation from unity is considered as correction for the $R_{Z/\gamma}$ ratio in each jet multiplicity selection. \\
 The main sources of uncertainty for the prediction of \ZInvJets events arise from the fit uncertainty to the double ratio which is at the order of 20\%, 25\% and 45\% for the different jet multiplicity intervals, the differences between data and simulation regarding the photon identification and isolation as well as the subtraction of background photons from QCD multijet events.
 
 \subsection{Hadronic-tau Background}
@@ -247,27 +246,15 @@ The main sources of uncertainty for the prediction of \ZInvJets events arise fro
     \end{center}
   \end{minipage}
 
-  \caption{Predicted (a) \HT, (b) \MHT, and (c) \NJets distributions found from applying the hadronic-tau background evaluation method to simulated \ttbar and \WJets events (solid points) in comparison to the genuine \ttbar and \WJets background from simulation (shaded curve). Only statistical uncertainties are shown. Taken from~\cite{Chatrchyan:2014lfa}.}
+  \caption{Predicted (a) \HT, (b) \MHT, and (c) \NJets distributions found from applying the hadronic-tau background evaluation method to simulated \ttbar and \WJets events (solid points) in comparison to the genuine \ttbar and \WJets background from simulation (shaded curve). Only statistical uncertainties are shown~\cite{Chatrchyan:2014lfa}.}
   \label{fig:ra2_tauhad}
 \end{figure}
 Background contributions arising from \WJets and \ttbar events with a hadronically decaying $\tau$ lepton are estimated using a $\mu + \mathrm{jets}$ control sample. Since $\mu + \mathrm{jets}$ and $\tau_h + \mathrm{jets}$ events arise from the same physics process, they feature the same kinematics except for the different response of the detector to a $\mu$ and a $\tau_h$.  \\
-The $\mu + \mathrm{jets}$ sample is selected by triggering on a single muon or a muon accompanied by at least two jets. Furthermore, instead of applying a lepton veto, exactly one $\mu$ with \pt$ > 20$\gev and $|\eta| < 2.1$ is required. In order to prevent the control sample from signal contamination a selection on the transverse mass $m_T = \sqrt{2\pt^{\mu}\met[1-\mathrm{cos(\Delta \phi)}]}$ of $m_T \le 100$\gev is imposed with the azimuthal angle $\Delta \phi$ between the direction of the muon four-momentum and the \met vector. \\
-The difference between the $\mu$ and the $\tau_h$ is taken into account by replacing the muon by a simulated $\tau_h$ jet. This is done by randomly sampling the transverse momentum of the $\tau_h$ jet from the response $\pt^\mathrm{jet}/\pt^{\tau}$ obtained from simulation a reconstructed jet with $\pt^\mathrm{jet}$ to a generated hadronically decaying $\tau$ lepton with $\pt^{\tau}$ in the $(\eta, \phi)$-space. The generated $\tau$ lepton has to fulfill $\pt > 20$\gev and $|\eta| < 2.1$ and the distance for the matching is chosen to be $\Delta R < 0.2$ for tau-\pt$ < 50$\gev and $\Delta R < 0.1$ otherwise. The response is obtained from simulated \ttbar and \WJets events and subsequently mixed according to the cross sections of these processes in order to emulate what happens in data where both \ttbar and \WJets events occur. The random sampling of the response is repeated one hundred times for each event to sample the complete response function. If an event in the control sample is obtained from a prescaled trigger, the repetition of the sampling is increased according to the prescale factor. Technically, sampling means that the four-momentum of the muon is sclaed with the proper value from the $\tau_h$ response.  \\
-In the following, \HT, \MHT and \NJets are recalculated for each event including the transverse momentum of the $\tau_h$ jet and all selection criteria as described in Sec.~\ref{subsec:RA2_baseline} are applied to the sample. The background contribution due to hadronic-$\tau$ events is obtained for all search regions by further correcting the event yields for the trigger efficiency, muon reconstruction and isolation efficiency, kinematic and detector acceptance as well as the ratio of branching fractions of $W \rightarrow \tau_h \nu$ to $W \rightarrow \mu \nu$ events. The statistical uncertainty of the background prediction is estimated with pseudo-experiments using a bootstrap method~\cite{GVK017474957}. \\
-The validity of this background estimation procedure is tested by comparing the event yields obtained from applying the prediction method to simulated events from \ttbar and \WJets events to the respective genuine background. This comparison is shown as function of \HT, \MHT and \NJets in Fig.~\ref{fig:ra2_tauhad} after the baseline selection. Although the agreement is quite reasonable and hence the method is supposed to work reliable, uncertainties of 10\% are considered for $\NJets = 3 - 5$ and 20\% for jet multiplicities $\NJets = 6 - 7$ and $\NJets \ge 8$. These uncertainties mainly reflect the statistical precision of the validation test. \\
-Further systematic uncertainties taken into account for the hadronic $\tau$ background prediction are covering differences in data and MC for the muon isolation and reconstruction efficiencies as well as uncertainties on the kinematic and geometric acceptance, the $\tau_h$ jet response and the acceptance of the transverse mass cut. 
-
-%\begin{figure}[!t]
-%  \centering
-%\makebox[\linewidth]{
-%  \begin{tabular}{ccc}
-%                \includegraphics[width=0.4\textwidth]{figures/RA2_TauHad1.pdf} & 
-%                \includegraphics[width=0.4\textwidth]{figures/RA2_TauHad2.pdf} &
-%                \includegraphics[width=0.4\textwidth]{figures/RA2_TauHad3.pdf}
-%  \end{tabular}}
-%  \caption{Predicted (a) \HT, (b) \MHT, and (c) \NJets distributions found from applying the hadronic-tau background evaluation method to simulated \ttbar and \WJets events (solid points) in comparison to the genuine \ttbar and \WJets background from simulation (shaded curve). Only statistical uncertainties are shown. Taken from~\cite{Chatrchyan:2014lfa}.}
-%  \label{fig:ra2_tauhad}
-%\end{figure}
+The $\mu + \mathrm{jets}$ sample is selected by triggering on a single isolated muon or a muon accompanied by at least two jets. Furthermore, instead of applying a lepton veto, exactly one $\mu$ with \pt$ > 20$\gev and $|\eta| < 2.1$ is required. In order to prevent the control sample from signal contamination, a selection on the transverse mass $m_\mathrm{T} = \sqrt{2\pt^{\mu}\met[1-\mathrm{cos(\Delta \phi)}]}$ of $m_\mathrm{T} \le 100$\gev is imposed with the azimuthal angle $\Delta \phi$ between the direction of the muon four-momentum and the \met vector. \\
+The difference between the $\mu$ and the $\tau_h$ is taken into account by replacing the muon by a simulated $\tau_h$ jet. This is done by randomly sampling the transverse momentum of the $\tau_h$ jet from the response $\pt^\mathrm{jet}/\pt^{\tau}$, obtained from simulation, of a reconstructed jet with $\pt^\mathrm{jet}$ matched to a generated hadronically decaying $\tau$ lepton with $\pt^{\tau}$. Technically, sampling means that the four-momentum of the muon is scaled with the proper value from the $\tau_h$ response. The generated $\tau$ lepton has to fulfill $\pt > 20$\gev and $|\eta| < 2.1$ and the distance for the matching is chosen to be $\Delta R < 0.2$ for tau-\pt$ < 50$\gev and $\Delta R < 0.1$ otherwise. The response is obtained from simulated \ttbar and \WJets events and subsequently mixed according to the cross sections of these processes. This is done in order to emulate what happens in data where both \ttbar and \WJets events occur. The random sampling of the response is repeated one hundred times for each event to sample the complete response function. If an event in the control sample is obtained from a prescaled trigger, the repetition of the sampling is increased according to the prescale factor.   \\
+In the following, \HT, \MHT and \NJets are recalculated for each event, including the transverse momentum of the $\tau_h$ jet, and all selection criteria, as described in Sec.~\ref{subsec:RA2_baseline}, are applied to the sample. The background contribution due to hadronic-tau events is obtained for all search regions by further correcting the event yields for the trigger efficiency, muon reconstruction and isolation efficiency, kinematic and detector acceptance as well as the ratio of branching fractions of $W \rightarrow \tau_h \nu$ to $W \rightarrow \mu \nu$ events. The statistical uncertainty of the background prediction is estimated with pseudo-experiments using a bootstrap method~\cite{GVK017474957}. \\
+The validity of this background estimation procedure is tested by comparing the event yields obtained from applying the prediction method to simulated events from \ttbar and \WJets events to the respective genuine background obtained from simulation. This comparison is shown as a function of \HT, \MHT and \NJets in Fig.~\ref{fig:ra2_tauhad} after the baseline selection. Although the agreement is quite reasonable and hence the method is observed to work reliable, uncertainties of 10\% are considered for $3 \leq \NJets \leq 5$ and 20\% for jet multiplicities $6 \leq \NJets \leq 7$ and $\NJets \ge 8$. These uncertainties mainly reflect the statistical precision of the validation test. \\
+Further systematic uncertainties taken into account for the hadronic-tau background prediction cover differences between data and MC for the muon isolation and reconstruction efficiencies as well as uncertainties on the kinematic and geometric acceptance, the $\tau_h$ jet response and the acceptance of the transverse mass cut. 
 
 \subsection{Lost-Lepton Background}
 \label{subsec:RA2_lostlepton}
@@ -282,34 +269,22 @@ Further systematic uncertainties taken into account for the hadronic $\tau$ back
     \end{center}
   \end{minipage}
 
-  \caption{Predicted (a) \HT, (b) \MHT, and (c) \NJets distributions found from applying the lost lepton background evaluation method to simulated \ttbar and \WJets events (solid points) in comparison to the genuine \ttbar and \WJets background from simulation (shaded curves). Only statistical uncertainties are shown. Taken from~\cite{Chatrchyan:2014lfa}.}
+  \caption{Predicted (a) \HT, (b) \MHT, and (c) \NJets distributions found from applying the lost lepton background evaluation method to simulated \ttbar and \WJets events (solid points) in comparison to the genuine \ttbar and \WJets background from simulation (shaded curves). Only statistical uncertainties are shown~\cite{Chatrchyan:2014lfa}.}
   \label{fig:ra2_ll}
 \end{figure}
-Similar to background events from hadronic tau decays, the background contribution due to a failed veto of a light lepton is estimated from a $\mu + \mathrm{jets}$ control sample. This is selected with the same trigger as used for the search. The sample is selected by requiring exactly one well-reconstructed and isolated muon with $\pt > 10$\gev. Furthermore, the same transverse mass requirement of $m_T < 100$\gev as for the hadronic tau background is applied. \\ 
-The number of events in the zero-lepton search regions can be estimated from the single-muon sample by weighting the events according to the lepton reconstruction and isolation efficiencies as well as the detector and kinematic acceptance of the muons. The respective efficiencies and acceptances are obtained from simulated \ttbar and \WJets events and determined in intervals of \HT, \MHT and \NJets. \\
+Similarly to background events from hadronic-tau decays, the background contribution due to a failed veto of a light lepton is estimated from a $\mu + \mathrm{jets}$ control sample. This is selected with the same trigger as used as signal trigger for the search. The sample is selected by requiring exactly one well-reconstructed and isolated muon with $\pt > 10$\gev. Furthermore, the same transverse mass requirement of $m_\mathrm{T} < 100$\gev, as for the hadronic tau background, is applied.\\ 
+The number of events in the zero-lepton search regions can be estimated from the single-muon sample by weighting the events according to the lepton reconstruction and isolation efficiencies as well as the detector and kinematic acceptance of the muons. The respective efficiencies and acceptances are obtained from simulated \ttbar and \WJets events and determined in intervals of \HT, \MHT and \NJets.\\
 In order to determine the number of events due to unidentified leptons the events in the control sample are weighted according to
 \begin{equation*}
-\frac{1}{\epsilon_\mathrm{iso}^\mathrm{\mu}} \times \frac{1-\epsilon_\mathrm{reco}^{e, \mu}}{\epsilon_\mathrm{reco}^{\mu}}
+\frac{1}{\epsilon_\mathrm{iso}^\mathrm{\mu}} \times \frac{1-\epsilon_\mathrm{reco}^{e, \mu}}{\epsilon_\mathrm{reco}^{\mu}} \; .
 \end{equation*}
-and with
+To account for non-isolated leptons, events are weighted with
 \begin{equation*}
-\frac{\epsilon_\mathrm{reco}^{e, \mu}}{\epsilon_\mathrm{reco}^{\mu}} \times \frac{1-\epsilon_\mathrm{iso}^{e, \mu}}{\epsilon_\mathrm{iso}^{\mu}}
+\frac{\epsilon_\mathrm{reco}^{e, \mu}}{\epsilon_\mathrm{reco}^{\mu}} \times \frac{1-\epsilon_\mathrm{iso}^{e, \mu}}{\epsilon_\mathrm{iso}^{\mu}} \; .
 \end{equation*}
-to account for non-isolated leptons. Both equations are based on the reconstruction $\epsilon_\mathrm{reco}^{e, \mu}$ and isolation $\epsilon_\mathrm{iso}^{e, \mu}$ efficiencies of the electron and muon, respectively. 
-The method is validated in simulation by comparing the predicted event yields for lost-lepton events in \ttbar and \WJets from a signle-muon control sample after the baseline selection to the genuine background. This comparison is illustrated in Fig.~\ref{fig:ra2_ll} as function of \HT, \MHT and \NJets and shows a good overall agreement. An uncertainty of 15\% is assigned to jet multiplicities 3--5 and 40\% to the others in order to account for the statistical precision of this validation test.\\
-Main other uncertainties of the lost-lepton background prediction arise from the lack of sufficient events in the control sample in each defined search region, differences in lepton reconstruction and isolation efficiency between data and simulation, impact on the acceptance when varying the used PDFs and the acceptance of the transverse mass cut.
-
-%\begin{figure}[!t]
-%  \centering
-%\makebox[\linewidth]{
-%  \begin{tabular}{ccc}
-%                \includegraphics[width=0.4\textwidth]{figures/RA2_LL1.pdf} & 
-%                \includegraphics[width=0.4\textwidth]{figures/RA2_LL2.pdf} &
-%                \includegraphics[width=0.4\textwidth]{figures/RA2_LL3.pdf}
-%  \end{tabular}}
-%  \caption{Predicted (a) \HT, (b) \MHT, and (c) \NJets distributions found from applying the lost lepton background evaluation method to simulated \ttbar and \WJets events (solid points) in comparison to the genuine \ttbar and \WJets background from simulation (shaded curves). Only statistical uncertainties are shown. Taken from~\cite{Chatrchyan:2014lfa}.}
-%  \label{fig:ra2_ll}
-%\end{figure}
+Both equations are based on the respective reconstruction $\epsilon_\mathrm{reco}^{e, \mu}$ and isolation $\epsilon_\mathrm{iso}^{e, \mu}$ efficiencies of the electron and muon. 
+The method is validated in simulation by comparing the predicted event yields for lost-lepton events in \ttbar and \WJets from a single-muon control sample after the baseline selection to the simulated genuine background. This comparison is illustrated in Fig.~\ref{fig:ra2_ll} as a function of \HT, \MHT and \NJets and shows a good overall agreement. An uncertainty of 15\% is assigned to jet multiplicities 3--5 and 40\% to other jet multiplicity selections, in order to account for the statistical precision of this validation test.\\
+Other uncertainties of the lost-lepton background prediction arise from a lack of events in the control sample in some search regions, differences in lepton reconstruction and isolation efficiency between data and simulation, impact on the acceptance when varying the used PDFs and the acceptance of the transverse mass cut.
 
 \section{QCD Background Estimation with the Rebalance-And-Smear Method}
 \label{subsec:RA2_QCD}
@@ -573,8 +548,8 @@ The calculated ratio of this pileup dependent fraction of the prediction to the 
 \subsection{QCD Background Prediction}
 \label{subsec:RA2_qcd_pred}
 The final prediction for QCD background contributions derived with the R+S method from a multijet control sample in data is summarized in Tab.~\ref{tab:QCDPred} for jet multiplicity bins 3--5, 6--7 and $\ge 8$. The quoted total systematic uncertainty is obtained by adding the single contributions in quadrature. \\
-Some search bins show very large statistical uncertainties of $\geq 100 \%$ which then also affects the evaluation of systematic effects, \eg the core and tail scaling uncertainties. However, since this happens only in bins where QCD background is almost negligible, it does not impact the final result of the analysis significantly. For the affected systematic variations, the largest observed variation is considered as systematic uncertainty as a conservative estimate. Search bins that are affected by that are mainly the high \MHT and the highest jet multiplicity search bins. \\
-However, search regions with non-negligible contributions from QCD background, like high \HT ($\ge 1000$\gev) and low \MHT bins, in general show quite moderate total uncertainties around only 50\% which is a remarkable result for a prediction of a background that is that difficult to model, as discussed in the beginning of this section. The main contributions to the systematic uncertainty arise from the propagated uncertainties of the core and tail scaling factors. The resulting variations in the prediction from the variation of the core scaling factors are typically between 10--30 $\%$ in the search bins with non-negligible QCD contributions while it is between 20--35 $\%$ from the tail scaling factors. This emphasizes the importance to precisely measure the resolution data-to-simulation scale factors, as described in Chap.~\ref{chap:Resolution} for the scaling factors of the response core. 
+Some search bins show very large statistical uncertainties of $\geq 100 \%$. This then also affects the evaluation of systematic effects, \eg the core and tail scaling uncertainties. However, since this happens only in bins in which QCD background is almost negligible, it does not impact the final result of the analysis significantly. For the affected systematic variations, the largest observed variation is considered as systematic uncertainty, as a conservative estimate. Affected search bins are mainly the high \MHT and the highest jet multiplicity search bins. \\
+However, search regions with non-negligible contributions from QCD background, like high \HT ($\ge 1000$\gev) and low \MHT bins, show in general quite moderate total uncertainties. Typical values lie around 50\% which is a remarkable precision for a prediction of a background that is so difficult to model, as discussed in the beginning of this section. The main contributions to the systematic uncertainty arise from the propagated uncertainties of the core and tail scaling factors. The resulting variations in the prediction from the variation of the core scaling factors are typically between 10--30 $\%$ in the search bins with non-negligible QCD contributions while it is between 20--35 $\%$ from the tail scaling factors. This emphasizes the importance to precisely measure the resolution data-to-simulation scale factors, as described in Chap.~\ref{chap:Resolution} for the scaling factors of the response core. 
 \begin{table}[!hp]
   \centering
   \caption{Predicted event yields for the QCD background in the search regions defined by \HT, \MHT and \NJets shown together with statistical and systematic uncertainties. The uncertainties of the different systematic uncertainty sources are added in quadrature to obtain the total systematic uncertainties.}
@@ -589,53 +564,53 @@ However, search regions with non-negligible contributions from QCD background, l
   %    \NJets{} & \HT{} [GeV] &\MHT{} [GeV]
       \NJets{} & \HT{} [GeV]& \MHT{} [GeV] & Pred. & stat. unc. & Core [\%] & Tail [\%] & Bias [\%] & PU [\%] & syst. unc. \\
       \midrule
-      3-5     & 500-800  & 200-300 & 307.4 & $\pm$  18.5  & $^{+13.0}_{-12.2}$ & $^{36.0}_{-34.4} $ & $\pm$ 60.4 & $\pm$ 2.9 & $^{+220}_{-217}$  \\
-      3-5     & 500-800  & 300-450 & 34.5  & $\pm$  5.8   & $^{+7.3}_{-10.5}$ & $^{22.9}_{-31.6} $  & $\pm$ 60.4 & $\pm$ 2.9 & $^{+22.4}_{-23.8}$ \\
-      3-5     & 500-800  & 450-600 & 1.3   & $\pm$  1.2   & $^{+24.2}_{-16.7}$ & $^{+37.9}_{-26.5}$ &  $\pm$ 60.4 & $\pm$ 2.9 & $^{+1.0}_{-0.9}$  \\
-      3-5     & 500-800  & $>600$  & 0.1   & $\pm$  0.3   & $^{+55.6}_{-55.6}$ & $^{+55.6}_{-55.6}$ & $\pm$  60.4 & $\pm$ 2.9 & $^{+0.09}_{-0.09}$\\ 
+      3--5     & 500--800  & 200--300 & 307.4 & $\pm$  18.5  & $^{+13.0}_{-12.2}$ & $^{36.0}_{-34.4} $ & $\pm$ 60.4 & $\pm$ 2.9 & $^{+220}_{-217}$  \\
+      3--5     & 500--800  & 300--450 & 34.5  & $\pm$  5.8   & $^{+7.3}_{-10.5}$ & $^{22.9}_{-31.6} $  & $\pm$ 60.4 & $\pm$ 2.9 & $^{+22.4}_{-23.8}$ \\
+      3--5     & 500--800  & 450--600 & 1.3   & $\pm$  1.2   & $^{+24.2}_{-16.7}$ & $^{+37.9}_{-26.5}$ &  $\pm$ 60.4 & $\pm$ 2.9 & $^{+1.0}_{-0.9}$  \\
+      3--5     & 500--800  & $>600$  & 0.1   & $\pm$  0.3   & $^{+55.6}_{-55.6}$ & $^{+55.6}_{-55.6}$ & $\pm$  60.4 & $\pm$ 2.9 & $^{+0.09}_{-0.09}$\\ 
       \midrule
-      3-5    & 800-1000  & 200-300 & 91.7  & $\pm$  10.2  & $^{+14.7}_{-13.8}$  & $^{+33.2}_{-33.5}$ & $\pm$  60.4 & $\pm$ 2.9 & $^{+64.7}_{-64.7}$\\
-      3-5    & 800-1000  & 300-450 & 9.9   & $\pm$  3.2   & $^{+5.2}_{-5.1}$ & $^{+29.8}_{-27.1}$  & $\pm$  60.4  & $\pm$ 2.9 & $^{+6.7}_{-6.6}$ \\
-      3-5    & 800-1000  & 450-600 & 0.8   & $\pm$  0.9  & $^{+65.5}_{-65.5}$ &  $^{+65.5}_{-65.5}$ & $\pm$  60.4 & $\pm$ 2.9 & $^{+0.9}_{-0.8}$  \\
-      3-5    & 800-1000  & $>600$  & 0.1   & $\pm$  0.4  & $^{+75.0}_{-41.7}$ &  $^{+8.3}_{-41.7}$  & $\pm$  60.4 & $\pm$ 2.9 & $^{+0.1}_{-0.1}$  \\
+      3--5    & 800--1000  & 200--300 & 91.7  & $\pm$  10.2  & $^{+14.7}_{-13.8}$  & $^{+33.2}_{-33.5}$ & $\pm$  60.4 & $\pm$ 2.9 & $^{+64.7}_{-64.7}$\\
+      3--5    & 800--1000  & 300--450 & 9.9   & $\pm$  3.2   & $^{+5.2}_{-5.1}$ & $^{+29.8}_{-27.1}$  & $\pm$  60.4  & $\pm$ 2.9 & $^{+6.7}_{-6.6}$ \\
+      3--5    & 800--1000  & 450--600 & 0.8   & $\pm$  0.9  & $^{+65.5}_{-65.5}$ &  $^{+65.5}_{-65.5}$ & $\pm$  60.4 & $\pm$ 2.9 & $^{+0.9}_{-0.8}$  \\
+      3--5    & 800--1000  & $>600$  & 0.1   & $\pm$  0.4  & $^{+75.0}_{-41.7}$ &  $^{+8.3}_{-41.7}$  & $\pm$  60.4 & $\pm$ 2.9 & $^{+0.1}_{-0.1}$  \\
       \midrule
-      3-5   & 1000-1250  & 200-300 & 59.0  & $\pm$  7.2  & $^{+19.0}_{-14.6}$ & $^{+34.7}_{-31.7}$ & $\pm$  14.5   & $\pm$ 2.9 & $^{+24.9}_{-22.4}$\\
-      3-5   & 1000-1250  & 300-450 & 5.1   & $\pm$  2.2  & $^{+12.2}_{-8.8}$ & $^{+32.0}_{-16.9}$ & $\pm$  14.5   & $\pm$ 2.9 & $^{+1.9}_{-1.2}$ \\
-      3-5   & 1000-1250  & 450-600 & 0.5   & $\pm$  0.7  & $^{+35.3}_{-3.9}$ & $^{+23.5}_{-5.9}$ &  $\pm$  14.5   & $\pm$ 2.9 & $^{+0.2}_{-0.1}$ \\
-      3-5   & 1000-1250  & $>600$  & 0.1   & $\pm$  0.3  & $^{+41.7}_{-41.7}$ & $^{+41.7}_{-41.7}$ & $\pm$ 14.5   &  $\pm$ 2.9 & $^{+0.1}_{-0.1}$ \\
+      3--5   & 1000--1250  & 200--300 & 59.0  & $\pm$  7.2  & $^{+19.0}_{-14.6}$ & $^{+34.7}_{-31.7}$ & $\pm$  14.5   & $\pm$ 2.9 & $^{+24.9}_{-22.4}$\\
+      3--5   & 1000--1250  & 300--450 & 5.1   & $\pm$  2.2  & $^{+12.2}_{-8.8}$ & $^{+32.0}_{-16.9}$ & $\pm$  14.5   & $\pm$ 2.9 & $^{+1.9}_{-1.2}$ \\
+      3--5   & 1000--1250  & 450--600 & 0.5   & $\pm$  0.7  & $^{+35.3}_{-3.9}$ & $^{+23.5}_{-5.9}$ &  $\pm$  14.5   & $\pm$ 2.9 & $^{+0.2}_{-0.1}$ \\
+      3--5   & 1000--1250  & $>600$  & 0.1   & $\pm$  0.3  & $^{+41.7}_{-41.7}$ & $^{+41.7}_{-41.7}$ & $\pm$ 14.5   &  $\pm$ 2.9 & $^{+0.1}_{-0.1}$ \\
       \midrule
-      3-5   & 1250-1500  & 200-300 & 31.2  & $\pm$  5.3  & $^{+18.3}_{-19.1}$ & $^{+30.3}_{-29.7}$ & $\pm$  14.5  & $\pm$ 2.9 & $^{+12.0}_{-11.9}$\\
-      3-5   & 1250-1500  & 300-450 & 2.3   & $\pm$  1.3  & $^{+16.3}_{-5.3}$ & $^{+38.3}_{-30.4}$ & $\pm$  14.5  & $\pm$ 2.9 & $^{+1.0}_{-0.8}$ \\
-      3-5   & 1250-1500  & $>450$  & 0.2   & $\pm$  0.5  & $^{+0.0}_{-8.3}$ & $^{+54.2}_{-8.3}$  & $\pm$   14.5 & $\pm$ 2.9 & $^{+0.1}_{-0.1}$  \\
+      3--5   & 1250--1500  & 200--300 & 31.2  & $\pm$  5.3  & $^{+18.3}_{-19.1}$ & $^{+30.3}_{-29.7}$ & $\pm$  14.5  & $\pm$ 2.9 & $^{+12.0}_{-11.9}$\\
+      3--5   & 1250--1500  & 300--450 & 2.3   & $\pm$  1.3  & $^{+16.3}_{-5.3}$ & $^{+38.3}_{-30.4}$ & $\pm$  14.5  & $\pm$ 2.9 & $^{+1.0}_{-0.8}$ \\
+      3--5   & 1250--1500  & $>450$  & 0.2   & $\pm$  0.5  & $^{+0.0}_{-8.3}$ & $^{+54.2}_{-8.3}$  & $\pm$   14.5 & $\pm$ 2.9 & $^{+0.1}_{-0.1}$  \\
       \midrule
-      3-5   & $>$1500    & 200-300 & 35.1  & $\pm$  6.1  & $^{+19.6}_{-20.0}$ & $^{+23.3}_{-29.4}$ & $\pm$   14.5 & $\pm$ 2.9 & $^{+11.9}_{-13.5}$ \\
-      3-5   & $>$1500    & $>300$  & 2.4   & $\pm$  1.4  & $^{+39.9}_{-39.9}$ & $^{+39.9}_{-39.9}$ & $\pm$   14.5 & $\pm$ 2.9 & $^{+1.4}_{-1.4}$ \\
+      3--5   & $>$1500    & 200--300 & 35.1  & $\pm$  6.1  & $^{+19.6}_{-20.0}$ & $^{+23.3}_{-29.4}$ & $\pm$   14.5 & $\pm$ 2.9 & $^{+11.9}_{-13.5}$ \\
+      3--5   & $>$1500    & $>300$  & 2.4   & $\pm$  1.4  & $^{+39.9}_{-39.9}$ & $^{+39.9}_{-39.9}$ & $\pm$   14.5 & $\pm$ 2.9 & $^{+1.4}_{-1.4}$ \\
       \midrule 
       \midrule
-      6-7   & 500-800   & 200-300  &  18.2 & $\pm$  3.9  & $^{+8.9}_{-12.5}$ & $^{+37.4}_{-33.5}$ & $\pm$  25.4  & $\pm$ 8.0 & $^{+8.5}_{-8.1}$  \\
-      6-7   & 500-800   & 300-450  &  1.9  & $\pm$  1.4  & $^{+31.9}_{-31.9}$ & $^{+31.9}_{-31.9}$ & $\pm$  25.4 & $\pm$ 8.0 & $^{+1.0}_{-1.0}$  \\
-      6-7   & 500-800   & $>450$   &  0.01 & $\pm$  0.1  & $^{+400.0}_{-100.0}$ & $^{+400.0}_{-100.0}$ & $\pm$  25.4 & $\pm$ 8.0 & $^{+0.1}_{-0.01}$\\
+      6--7   & 500--800   & 200--300  &  18.2 & $\pm$  3.9  & $^{+8.9}_{-12.5}$ & $^{+37.4}_{-33.5}$ & $\pm$  25.4  & $\pm$ 8.0 & $^{+8.5}_{-8.1}$  \\
+      6--7   & 500--800   & 300--450  &  1.9  & $\pm$  1.4  & $^{+31.9}_{-31.9}$ & $^{+31.9}_{-31.9}$ & $\pm$  25.4 & $\pm$ 8.0 & $^{+1.0}_{-1.0}$  \\
+      6--7   & 500--800   & $>450$   &  0.01 & $\pm$  0.1  & $^{+400.0}_{-100.0}$ & $^{+400.0}_{-100.0}$ & $\pm$  25.4 & $\pm$ 8.0 & $^{+0.1}_{-0.01}$\\
       \midrule
-      6-7   & 800-1000  & 200-300  &  13.13& $\pm$  3.4  & $^{+15.0}_{-8.2}$ & $^{+33.7}_{-30.0}$ & $\pm$  25.4  & $\pm$ 8.0 & $^{+6.0}_{-5.3}$  \\
-      6-7   & 800-1000  & 300-450  &  2.0  & $\pm$  1.1  & $^{+5.1}_{-20.0}$ & $^{+30.8}_{-28.2}$ & $\pm$  25.4  & $\pm$ 8.0 & $^{+0.8}_{-0.9}$  \\
-      6-7   & 800-1000  & $>450$   &  0.2  & $\pm$  0.4  & $^{+46.7}_{-46.7}$ & $^{+46.7}_{-46.7}$ & $\pm$  25.4 & $\pm$ 8.0 & $^{+0.1}_{-0.1}$  \\ 
+      6--7   & 800--1000  & 200--300  &  13.13& $\pm$  3.4  & $^{+15.0}_{-8.2}$ & $^{+33.7}_{-30.0}$ & $\pm$  25.4  & $\pm$ 8.0 & $^{+6.0}_{-5.3}$  \\
+      6--7   & 800--1000  & 300--450  &  2.0  & $\pm$  1.1  & $^{+5.1}_{-20.0}$ & $^{+30.8}_{-28.2}$ & $\pm$  25.4  & $\pm$ 8.0 & $^{+0.8}_{-0.9}$  \\
+      6--7   & 800--1000  & $>450$   &  0.2  & $\pm$  0.4  & $^{+46.7}_{-46.7}$ & $^{+46.7}_{-46.7}$ & $\pm$  25.4 & $\pm$ 8.0 & $^{+0.1}_{-0.1}$  \\ 
       \midrule
-      6-7   & 1000-1250 & 200-300  &  11.9 & $\pm$  3.8  & $^{+5.9}_{-12.7}$ & $^{+33.5}_{-35.8}$  & $\pm$  10.9 & $\pm$ 8.0 & $^{+4.4}_{-4.8}$ \\
-      6-7   & 1000-1250 & 300-450  &  1.5  & $\pm$  1.3  & $^{+31.8}_{-31.8}$ & $^{+31.8}_{-31.8}$  & $\pm$  10.9 &  $\pm$ 8.0 & $^{+0.7}_{-0.7}$ \\
-      6-7   & 1000-1250 & $>450$   &  0.1  & $\pm$  0.3  & $^{+100.0}_{-100.0}$ & $^{+100.0}_{-100.0}$ & $\pm$  10.9 & $\pm$ 8.0 & $^{+0.2}_{-0.1}$ \\
+      6--7   & 1000--1250 & 200--300  &  11.9 & $\pm$  3.8  & $^{+5.9}_{-12.7}$ & $^{+33.5}_{-35.8}$  & $\pm$  10.9 & $\pm$ 8.0 & $^{+4.4}_{-4.8}$ \\
+      6--7   & 1000--1250 & 300--450  &  1.5  & $\pm$  1.3  & $^{+31.8}_{-31.8}$ & $^{+31.8}_{-31.8}$  & $\pm$  10.9 &  $\pm$ 8.0 & $^{+0.7}_{-0.7}$ \\
+      6--7   & 1000--1250 & $>450$   &  0.1  & $\pm$  0.3  & $^{+100.0}_{-100.0}$ & $^{+100.0}_{-100.0}$ & $\pm$  10.9 & $\pm$ 8.0 & $^{+0.2}_{-0.1}$ \\
       \midrule
-      6-7   & 1250-1500 & 200-300  &  6.8  & $\pm$  3.0  & $^{+12.0}_{-11.9}$ & $^{+32.6}_{-32.4}$ & $\pm$   10.9   & $\pm$ 8.0 & $^{+2.5}_{-2.5}$ \\
-      6-7   & 1250-1500 & 300-450  &  0.9  & $\pm$  1.0  & $^{+54.4}_{-54.4}$ & $^{+54.4}_{-54.4}$ & $\pm$   10.9   & $\pm$ 8.0 & $^{+0.7}_{-0.7}$ \\
-      6-7   & 1250-1500 & $>450$   &  0.09 & $\pm$  0.3  & $^{+44.4}_{-44.4}$ & $^{+44.4}_{-44.4}$ & $\pm$   10.9  & $\pm$ 8.0 & $^{+0.06}_{-0.06}$\\
+      6--7   & 1250--1500 & 200--300  &  6.8  & $\pm$  3.0  & $^{+12.0}_{-11.9}$ & $^{+32.6}_{-32.4}$ & $\pm$   10.9   & $\pm$ 8.0 & $^{+2.5}_{-2.5}$ \\
+      6--7   & 1250--1500 & 300--450  &  0.9  & $\pm$  1.0  & $^{+54.4}_{-54.4}$ & $^{+54.4}_{-54.4}$ & $\pm$   10.9   & $\pm$ 8.0 & $^{+0.7}_{-0.7}$ \\
+      6--7   & 1250--1500 & $>450$   &  0.09 & $\pm$  0.3  & $^{+44.4}_{-44.4}$ & $^{+44.4}_{-44.4}$ & $\pm$   10.9  & $\pm$ 8.0 & $^{+0.06}_{-0.06}$\\
       \midrule
-      6-7   & $>$1500   & 200-300  &  8.0  & $\pm$  2.8  & $^{+20.9}_{-15.4}$ & $^{+31.5}_{-25.8}$ & $\pm$   10.9  & $\pm$ 8.0 & $^{+3.1}_{-2.6}$\\
-      6-7   & $>$1500   & $>300$   &  0.8  & $\pm$  0.9  & $^{+47.0}_{-47.0}$ & $^{+47.0}_{-47.0}$ & $\pm$   10.9  & $\pm$ 8.0 & $^{+0.6}_{-0.6}$ \\
+      6--7   & $>$1500   & 200--300  &  8.0  & $\pm$  2.8  & $^{+20.9}_{-15.4}$ & $^{+31.5}_{-25.8}$ & $\pm$   10.9  & $\pm$ 8.0 & $^{+3.1}_{-2.6}$\\
+      6--7   & $>$1500   & $>300$   &  0.8  & $\pm$  0.9  & $^{+47.0}_{-47.0}$ & $^{+47.0}_{-47.0}$ & $\pm$   10.9  & $\pm$ 8.0 & $^{+0.6}_{-0.6}$ \\
       \midrule 
       \midrule 
-      $\geq$8 & 500-800 & $>200$   &  0.14 & $\pm$  0.38 & $^{+71.4}_{-71.4}$ & $^{+71.4}_{-71.4}$ & $\pm$ 86.0  & $\pm$ 33.4 & $^{+0.19}_{-0.14}$ \\
-      $\geq$8 & 800-1000 & $>200$  &  0.54 & $\pm$  0.69 & $^{+33.3}_{-33.3}$ & $^{+33.3}_{-33.3}$ & $\pm$ 86.0  & $\pm$ 33.4 & $^{+0.56}_{-0.54}$ \\
-      $\geq$8 & 1000-1250 & $>200$ &  0.73 & $\pm$  0.78 & $^{+19.2}_{-1.4}$ & $^{+56.2}_{-27.4}$  & $\pm$ 86.0 & $\pm$ 33.4 & $^{+0.59}_{-0.44}$ \\
-      $\geq$8 & 1250-1500 & $>200$ &  0.54 & $\pm$  0.75 & $^{+55.6}_{-55.6}$ & $^{+55.6}_{-55.6}$ & $\pm$ 86.0 & $\pm$ 33.4 & $^{+0.52}_{-0.52}$ \\
+      $\geq$8 & 500--800 & $>200$   &  0.14 & $\pm$  0.38 & $^{+71.4}_{-71.4}$ & $^{+71.4}_{-71.4}$ & $\pm$ 86.0  & $\pm$ 33.4 & $^{+0.19}_{-0.14}$ \\
+      $\geq$8 & 800--1000 & $>200$  &  0.54 & $\pm$  0.69 & $^{+33.3}_{-33.3}$ & $^{+33.3}_{-33.3}$ & $\pm$ 86.0  & $\pm$ 33.4 & $^{+0.56}_{-0.54}$ \\
+      $\geq$8 & 1000--1250 & $>200$ &  0.73 & $\pm$  0.78 & $^{+19.2}_{-1.4}$ & $^{+56.2}_{-27.4}$  & $\pm$ 86.0 & $\pm$ 33.4 & $^{+0.59}_{-0.44}$ \\
+      $\geq$8 & 1250--1500 & $>200$ &  0.54 & $\pm$  0.75 & $^{+55.6}_{-55.6}$ & $^{+55.6}_{-55.6}$ & $\pm$ 86.0 & $\pm$ 33.4 & $^{+0.52}_{-0.52}$ \\
       $\geq$8 & $>$1500   & $>200$ &  0.89 & $\pm$  0.94 & $^{+65.2}_{-65.2}$ & $^{+65.2}_{-65.2}$ & $\pm$ 86.0 & $\pm$ 33.4 & $^{+0.95}_{-0.89}$ \\
       \bottomrule
     \end{tabular}}
@@ -673,41 +648,41 @@ However, search regions with non-negligible contributions from QCD background, l
       & \multicolumn{1}{c}{}  \\ 
       % \hspace*{-2ex}
       \hline
-      3-5     & 500-800    & 200-300  & 1821   $\pm$  387         & 2211   $\pm$  448        &1749   $\pm$  210        & 307  $\pm$  219         & 6088   $\pm$  665      &  6159  \\
-      3-5     & 500-800    & 300-450  &  994   $\pm$  218         &  660   $\pm$  133        & 590   $\pm$   69        & 35   $\pm$   24         & 2278   $\pm$  266      &  2305  \\
-      3-5     & 500-800    & 450-600  &  273   $\pm$   63         &   77   $\pm$   17        &  66.3 $\pm$   9.5       &  1.3 $^{+1.5}_{-1.3}$       & 418    $\pm$   66      &   454  \\
-      3-5     & 500-800    & $>600$   &   42   $\pm$   10         &   9.5 $\pm$    4.0       &   5.7 $\pm$   1.3       &  0.1 $^{+0.3}_{-0.1}$       & 57.4   $\pm$   11.2    &    62  \\ \hline
-      3-5     & 800-1000   & 200-300  &  216   $\pm$   46         &  278   $\pm$   62        & 192   $\pm$   33        & 92   $\pm$   66         & 777    $\pm$  107      &   808  \\
-      3-5     & 800-1000   & 300-450  &  124   $\pm$   26         &  113   $\pm$   27        &  84   $\pm$   12        &  9.9 $\pm$    7.4       & 330    $\pm$   40      &   305  \\
-      3-5     & 800-1000   & 450-600  &   47   $\pm$   11         &   36.1 $\pm$    9.9      &  24.1 $\pm$    3.6      &  0.8 $^{+1.3}_{-0.8}$       & 108    $\pm$   15      &   124  \\
-      3-5     & 800-1000   & $>600$   &   35.3 $\pm$    8.8       &    9.0 $\pm$    3.7      &  10.3 $\pm$    2.0      &  0.1 $^{+0.4}_{-0.1}$       & 54.8   $\pm$   9.7     &    52  \\ \hline
-      3-5     & 1000-1250  & 200-300  &   76   $\pm$   17         &  104   $\pm$   26        &  66.5 $\pm$    9.9      & 59   $\pm$   25         & 305    $\pm$   41      &   335  \\
-      3-5     & 1000-1250  & 300-450  &   39.3 $\pm$    8.9       &   52   $\pm$   14        &  41   $\pm$   11        &  5.1 $\pm$    2.7       & 137    $\pm$   20      &   129  \\
-      3-5     & 1000-1250  & 450-600  &   18.1 $\pm$    4.7       &    6.9 $\pm$    3.2      &   6.8 $\pm$    2.0      &  0.5 $^{+0.7}_{-0.5}$       & 32.3   $\pm$    6.1    &    34  \\
-      3-5     & 1000-1250  & $>600$   &   17.8 $\pm$    4.8       &    2.4 $\pm$    1.8      &   2.5 $\pm$    0.8      &  0.1 $^{+0.3}_{-0.1}$       & 22.8   $\pm$    5.2    &    32  \\ \hline
-      3-5     & 1250-1500  & 200-300  &   25.3 $\pm$    6.0       &   31.0 $\pm$    9.5      &  21.3 $\pm$    4.1      & 31   $\pm$   13         & 109    $\pm$   18      &    98  \\
-      3-5     & 1250-1500  & 300-450  &   16.7 $\pm$    4.3       &   10.1 $\pm$    4.4      &  13.7 $\pm$    7.1      &  2.3 $\pm$    1.6       & 42.8   $\pm$    9.5    &    38  \\
-      3-5     & 1250-1500  & $>450$   &   12.3 $\pm$    3.5       &    2.3 $\pm$    1.7      &   2.7 $\pm$    1.2      &  0.2 $^{+0.5}_{-0.2}$       & 17.6   $\pm$    4.1    &    23  \\ \hline
-      3-5     & $>$1500    & 200-300  &   10.5 $\pm$    2.9       &   16.7 $\pm$    6.2      &  23.5 $\pm$    5.6      & 35   $\pm$   14         & 86     $\pm$   17      &    94  \\
-      3-5     & $>$1500    & $>300$   &   10.9 $\pm$    3.1       &    9.7 $\pm$    4.3      &   6.6 $\pm$    1.4      &  2.4 $\pm$    2.0       & 29.7   $\pm$    5.8    &    39  \\ \hline \hline
-      6-7     & 500-800    & 200-300  &   22.7 $\pm$    6.4       &  133   $\pm$   59        & 117   $\pm$   25        & 18.2 $\pm$    9.2       & 290    $\pm$   65      &   266  \\
-      6-7     & 500-800    & 300-450  &    9.9 $\pm$    3.2       &   22   $\pm$   11        &  18.0 $\pm$    5.1      &  1.9 $\pm$    1.7       & 52     $\pm$   12      &    62  \\
-      6-7     & 500-800    & $>450$   &    0.7 $\pm$    0.6       &    0.0 $^{+3.2}_{-0.0}$      &   0.1 $^{+0.5}_{-0.1}$      &  0.0 $^{+0.1}_{-0.0}$       & 0.8    $^{+3.3}_{-0.6}$    &     9  \\ \hline
-      6-7     & 800-1000   & 200-300  &    9.1 $\pm$    3.0       &   56   $\pm$   25        &  46   $\pm$   11        & 13.1 $\pm$    6.6       & 124    $\pm$   29      &   111  \\
-      6-7     & 800-1000   & 300-450  &    4.2 $\pm$    1.7       &   10.4 $\pm$    5.5      &  12.0 $\pm$    3.6      &  1.9 $\pm$    1.4       & 28.6   $\pm$    6.9    &    35  \\
-      6-7     & 800-1000   & $>450$   &    1.8 $\pm$    1.0       &    2.9 $\pm$    2.5      &   1.2 $\pm$    0.8      &  0.1 $^{+0.4}_{-0.1}$       & 6.0    $\pm$    2.8    &     4  \\ \hline
-      6-7     & 1000-1250  & 200-300  &    4.4 $\pm$    1.7       &   24   $\pm$   12        &  29.5 $\pm$    7.8      & 11.9 $\pm$    6.0       &  70    $\pm$   16      &    67  \\
-      6-7     & 1000-1250  & 300-450  &    3.5 $\pm$    1.5       &    8.0 $\pm$    4.7      &   8.6 $\pm$    2.7      &  1.5 $\pm$    1.5       & 21.6   $\pm$    5.8    &    20  \\
-      6-7     & 1000-1250  & $>450$   &    1.4 $\pm$    0.8       &    0.0 $^{+3.6}_{-0.0}$      &   0.6 $^{+0.8}_{-0.6}$      &  0.1 $^{+0.4}_{-0.1}$       & 2.2    $^{+3.8}_{-1.1}$    &     4  \\ \hline
-      6-7     & 1250-1500  & 200-300  &    3.3 $\pm$    1.4       &   11.5 $\pm$    6.5      &   6.4 $\pm$    2.7      &  6.8 $\pm$    3.9       & 28.0   $\pm$    8.2    &    24  \\
-      6-7     & 1250-1500  & 300-450  &    1.4 $\pm$    0.8       &    3.5 $\pm$    2.6      &   3.5 $\pm$    1.9      &  0.9 $^{+1.3}_{-0.9}$       & 9.4    $\pm$    3.6    &     5  \\
-      6-7     & 1250-1500  & $>450$   &    0.4 $\pm$    0.4       &    0.0 $^{+2.5}_{-0.0}$      &   0.1 $^{+0.5}_{-0.1}$      &  0.1 $^{+0.3}_{-0.1}$       & 0.5    $^{+2.6}_{-0.4}$    &     2  \\ \hline
-      6-7     & $>$1500    & 200-300  &    1.3 $\pm$    0.8       &   10.0 $\pm$    6.9      &   2.0 $\pm$    1.2      &  7.8 $\pm$    4.0       & 21.1   $\pm$    8.1    &    18  \\
-      6-7     & $>$1500    & $>300$   &    1.1 $\pm$    0.7       &    3.2 $\pm$    2.8      &   2.8 $\pm$    1.9      &  0.8 $^{+1.1}_{-0.8}$       & 7.9    $\pm$    3.6    &     3  \\ \hline \hline 
-      $\geq$8 & 500-800    & $>200$   &    0.0 $^{+0.8}_{-0.0}$       &    1.9 $\pm$    1.5      &   2.8 $\pm$    1.4      &  0.1 $^{+0.4}_{-0.1}$       & 4.8    $^{+2.3}_{-2.1}$    &     8  \\
-      $\geq$8 & 800-1000   & $>200$   &    0.6 $\pm$    0.6       &    4.8 $\pm$    2.9      &   2.3 $\pm$    1.2      &  0.5 $^{+0.9}_{-0.5}$       & 8.3    $^{+3.4}_{-3.3}$    &     9  \\
-      $\geq$8 & 1000-1250  & $>200$   &    0.6 $\pm$    0.5       &    1.4 $^{+1.5}_{-1.4}$      &   2.9 $\pm$    1.3      &  0.7 $^{+1.0}_{-0.7}$       & 5.6    $^{+2.3}_{-2.1}$    &     8  \\
-      $\geq$8 & 1250-1500  & $>200$   &    0.0 $^{+0.9}_{-0.0}$       &    5.1 $\pm$    3.5      &   1.4 $\pm$    0.9      &  0.5 $^{+0.9}_{-0.5}$       & 7.1    $^{+3.8}_{-3.6}$    &     5  \\
+      3--5     & 500--800    & 200--300  & 1821   $\pm$  387         & 2211   $\pm$  448        &1749   $\pm$  210        & 307  $\pm$  219         & 6088   $\pm$  665      &  6159  \\
+      3--5     & 500--800    & 300--450  &  994   $\pm$  218         &  660   $\pm$  133        & 590   $\pm$   69        & 35   $\pm$   24         & 2278   $\pm$  266      &  2305  \\
+      3--5     & 500--800    & 450--600  &  273   $\pm$   63         &   77   $\pm$   17        &  66.3 $\pm$   9.5       &  1.3 $^{+1.5}_{-1.3}$       & 418    $\pm$   66      &   454  \\
+      3--5     & 500--800    & $>600$   &   42   $\pm$   10         &   9.5 $\pm$    4.0       &   5.7 $\pm$   1.3       &  0.1 $^{+0.3}_{-0.1}$       & 57.4   $\pm$   11.2    &    62  \\ \hline
+      3--5     & 800--1000   & 200--300  &  216   $\pm$   46         &  278   $\pm$   62        & 192   $\pm$   33        & 92   $\pm$   66         & 777    $\pm$  107      &   808  \\
+      3--5     & 800--1000   & 300--450  &  124   $\pm$   26         &  113   $\pm$   27        &  84   $\pm$   12        &  9.9 $\pm$    7.4       & 330    $\pm$   40      &   305  \\
+      3--5     & 800--1000   & 450--600  &   47   $\pm$   11         &   36.1 $\pm$    9.9      &  24.1 $\pm$    3.6      &  0.8 $^{+1.3}_{-0.8}$       & 108    $\pm$   15      &   124  \\
+      3--5     & 800--1000   & $>600$   &   35.3 $\pm$    8.8       &    9.0 $\pm$    3.7      &  10.3 $\pm$    2.0      &  0.1 $^{+0.4}_{-0.1}$       & 54.8   $\pm$   9.7     &    52  \\ \hline
+      3--5     & 1000--1250  & 200--300  &   76   $\pm$   17         &  104   $\pm$   26        &  66.5 $\pm$    9.9      & 59   $\pm$   25         & 305    $\pm$   41      &   335  \\
+      3--5     & 1000--1250  & 300--450  &   39.3 $\pm$    8.9       &   52   $\pm$   14        &  41   $\pm$   11        &  5.1 $\pm$    2.7       & 137    $\pm$   20      &   129  \\
+      3--5     & 1000--1250  & 450--600  &   18.1 $\pm$    4.7       &    6.9 $\pm$    3.2      &   6.8 $\pm$    2.0      &  0.5 $^{+0.7}_{-0.5}$       & 32.3   $\pm$    6.1    &    34  \\
+      3--5     & 1000--1250  & $>600$   &   17.8 $\pm$    4.8       &    2.4 $\pm$    1.8      &   2.5 $\pm$    0.8      &  0.1 $^{+0.3}_{-0.1}$       & 22.8   $\pm$    5.2    &    32  \\ \hline
+      3--5     & 1250--1500  & 200--300  &   25.3 $\pm$    6.0       &   31.0 $\pm$    9.5      &  21.3 $\pm$    4.1      & 31   $\pm$   13         & 109    $\pm$   18      &    98  \\
+      3--5     & 1250--1500  & 300--450  &   16.7 $\pm$    4.3       &   10.1 $\pm$    4.4      &  13.7 $\pm$    7.1      &  2.3 $\pm$    1.6       & 42.8   $\pm$    9.5    &    38  \\
+      3--5     & 1250--1500  & $>450$   &   12.3 $\pm$    3.5       &    2.3 $\pm$    1.7      &   2.7 $\pm$    1.2      &  0.2 $^{+0.5}_{-0.2}$       & 17.6   $\pm$    4.1    &    23  \\ \hline
+      3--5     & $>$1500    & 200--300  &   10.5 $\pm$    2.9       &   16.7 $\pm$    6.2      &  23.5 $\pm$    5.6      & 35   $\pm$   14         & 86     $\pm$   17      &    94  \\
+      3--5     & $>$1500    & $>300$   &   10.9 $\pm$    3.1       &    9.7 $\pm$    4.3      &   6.6 $\pm$    1.4      &  2.4 $\pm$    2.0       & 29.7   $\pm$    5.8    &    39  \\ \hline \hline
+      6--7     & 500--800    & 200--300  &   22.7 $\pm$    6.4       &  133   $\pm$   59        & 117   $\pm$   25        & 18.2 $\pm$    9.2       & 290    $\pm$   65      &   266  \\
+      6--7     & 500--800    & 300--450  &    9.9 $\pm$    3.2       &   22   $\pm$   11        &  18.0 $\pm$    5.1      &  1.9 $\pm$    1.7       & 52     $\pm$   12      &    62  \\
+      6--7     & 500--800    & $>450$   &    0.7 $\pm$    0.6       &    0.0 $^{+3.2}_{-0.0}$      &   0.1 $^{+0.5}_{-0.1}$      &  0.0 $^{+0.1}_{-0.0}$       & 0.8    $^{+3.3}_{-0.6}$    &     9  \\ \hline
+      6--7     & 800--1000   & 200--300  &    9.1 $\pm$    3.0       &   56   $\pm$   25        &  46   $\pm$   11        & 13.1 $\pm$    6.6       & 124    $\pm$   29      &   111  \\
+      6--7     & 800--1000   & 300--450  &    4.2 $\pm$    1.7       &   10.4 $\pm$    5.5      &  12.0 $\pm$    3.6      &  1.9 $\pm$    1.4       & 28.6   $\pm$    6.9    &    35  \\
+      6--7     & 800--1000   & $>450$   &    1.8 $\pm$    1.0       &    2.9 $\pm$    2.5      &   1.2 $\pm$    0.8      &  0.1 $^{+0.4}_{-0.1}$       & 6.0    $\pm$    2.8    &     4  \\ \hline
+      6--7     & 1000--1250  & 200--300  &    4.4 $\pm$    1.7       &   24   $\pm$   12        &  29.5 $\pm$    7.8      & 11.9 $\pm$    6.0       &  70    $\pm$   16      &    67  \\
+      6--7     & 1000--1250  & 300--450  &    3.5 $\pm$    1.5       &    8.0 $\pm$    4.7      &   8.6 $\pm$    2.7      &  1.5 $\pm$    1.5       & 21.6   $\pm$    5.8    &    20  \\
+      6--7     & 1000--1250  & $>450$   &    1.4 $\pm$    0.8       &    0.0 $^{+3.6}_{-0.0}$      &   0.6 $^{+0.8}_{-0.6}$      &  0.1 $^{+0.4}_{-0.1}$       & 2.2    $^{+3.8}_{-1.1}$    &     4  \\ \hline
+      6--7     & 1250--1500  & 200--300  &    3.3 $\pm$    1.4       &   11.5 $\pm$    6.5      &   6.4 $\pm$    2.7      &  6.8 $\pm$    3.9       & 28.0   $\pm$    8.2    &    24  \\
+      6--7     & 1250--1500  & 300--450  &    1.4 $\pm$    0.8       &    3.5 $\pm$    2.6      &   3.5 $\pm$    1.9      &  0.9 $^{+1.3}_{-0.9}$       & 9.4    $\pm$    3.6    &     5  \\
+      6--7     & 1250--1500  & $>450$   &    0.4 $\pm$    0.4       &    0.0 $^{+2.5}_{-0.0}$      &   0.1 $^{+0.5}_{-0.1}$      &  0.1 $^{+0.3}_{-0.1}$       & 0.5    $^{+2.6}_{-0.4}$    &     2  \\ \hline
+      6--7     & $>$1500    & 200--300  &    1.3 $\pm$    0.8       &   10.0 $\pm$    6.9      &   2.0 $\pm$    1.2      &  7.8 $\pm$    4.0       & 21.1   $\pm$    8.1    &    18  \\
+      6--7     & $>$1500    & $>300$   &    1.1 $\pm$    0.7       &    3.2 $\pm$    2.8      &   2.8 $\pm$    1.9      &  0.8 $^{+1.1}_{-0.8}$       & 7.9    $\pm$    3.6    &     3  \\ \hline \hline 
+      $\geq$8 & 500--800    & $>200$   &    0.0 $^{+0.8}_{-0.0}$       &    1.9 $\pm$    1.5      &   2.8 $\pm$    1.4      &  0.1 $^{+0.4}_{-0.1}$       & 4.8    $^{+2.3}_{-2.1}$    &     8  \\
+      $\geq$8 & 800--1000   & $>200$   &    0.6 $\pm$    0.6       &    4.8 $\pm$    2.9      &   2.3 $\pm$    1.2      &  0.5 $^{+0.9}_{-0.5}$       & 8.3    $^{+3.4}_{-3.3}$    &     9  \\
+      $\geq$8 & 1000--1250  & $>200$   &    0.6 $\pm$    0.5       &    1.4 $^{+1.5}_{-1.4}$      &   2.9 $\pm$    1.3      &  0.7 $^{+1.0}_{-0.7}$       & 5.6    $^{+2.3}_{-2.1}$    &     8  \\
+      $\geq$8 & 1250--1500  & $>200$   &    0.0 $^{+0.9}_{-0.0}$       &    5.1 $\pm$    3.5      &   1.4 $\pm$    0.9      &  0.5 $^{+0.9}_{-0.5}$       & 7.1    $^{+3.8}_{-3.6}$    &     5  \\
       $\geq$8 & $>$1500    & $>200$   &    0.0 $^{+0.7}_{-0.0}$       &    0.0 $^{+4.2}_{-0.0}$      &   2.4 $\pm$    1.4      &  0.9 $^{+1.3}_{-0.9}$       & 3.3    $^{+4.7}_{-1.7}$    &     2  \\ \hline \hline
 
 
@@ -717,10 +692,9 @@ However, search regions with non-negligible contributions from QCD background, l
   % }
   % \end{center}
 \end{table}
-
-The selected number of events in 19.5\fbinv of data together with the predicted event yields for the various SM background contributions estimated as discussed in Sec.~\ref{sec:RA2_Non-QCD} and Sec.~\ref{subsec:RA2_QCD} are listed in Tab.~\ref{tab:FinalEventYields} for all 36 exclusive search regions. The displayed uncertainties for the background predictions are the total uncertainties. These have been obtained by adding statistical and systematic uncertainties in quadrature. Furthermore, the obtained yields in data and the predicted background are visualized in Fig.~\ref{fig:ra2_summary}. The ratio in the bottom displayes the difference between observed data events and predicted background normalized to the background prediction. In general, the data are consistent with the SM expectation. The largest deviation occurs in the search region for $\NJets = 6-7$, $\HT = 500-800$\gev and $\MHT \ge 450$\gev. However, this is insignificant when including the probability to observe a statistical fluctuation as large or larger in any of the search regions. \\
+The selected number of events in 19.5\fbinv of data together with the predicted event yields for the various SM background contributions estimated as discussed in Sec.~\ref{sec:RA2_Non-QCD} and Sec.~\ref{subsec:RA2_QCD}, are listed in Tab.~\ref{tab:FinalEventYields} for all 36 exclusive search regions. The displayed uncertainties for the background predictions are the total uncertainties. These have been obtained by adding statistical and systematic uncertainties in quadrature. Furthermore, the obtained yields in data and the predicted background are visualized in Fig.~\ref{fig:ra2_summary}. The ratio in the bottom shows the difference between observed data events and predicted background normalized to the background prediction. In general, the data are consistent with the SM expectation. The largest deviation occurs in the search region for $6 \leq \NJets \leq 7$, $500 < \HT < 800$\gev and $\MHT \ge 450$\gev with a local p-value of 0.05. However, this is insignificant when including the probability to observe a statistical fluctuation as large or larger in any of the search regions corresponding to a global p-value of 0.78. \\
 \\
-Since no significant excess over the SM prediction is observed, the results are interpreted in several simplified supersymmetric models of pair production of light-flavour squarks or gluinos. The LSP is denoted as $\tilde{\chi}_1^0$. Several different decay modes are studied in the parameter space of the LSP and the squark or gluino which are
+Furthermore, the results are interpreted in several simplified supersymmetric models of pair production of light-flavour squarks or gluinos. The LSP is denoted as $\tilde{\chi}_1^0$. Several different decay modes are studied in the parameter space of the LSP and the squark or gluino which are
 \begin{description}
 \item (a) $\tilde{q} \rightarrow q + \tilde{\chi}_1^0$
 \end{description} 
@@ -728,19 +702,20 @@ in case of light-flavour squarks and
 \begin{description}
 \item (b) $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^0$
 \item (c) $\tilde{g} \rightarrow t\bar{t} + \tilde{\chi}_1^0$
-\item (d) $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^{\pm}/\tilde{\chi}_2^0 \;\; \mathrm{where} \;\; \tilde{\chi}_1^{\pm} \rightarrow W + \tilde{\chi}_1^0 \;\; \mathrm{and} \;\; \tilde{\chi}_2^0 \rightarrow Z + \tilde{\chi}_1^0$
+\item (d) $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^{\pm}/\tilde{\chi}_2^0 \;\; \mathrm{where} \;\; \tilde{\chi}_1^{\pm} \rightarrow W + \tilde{\chi}_1^0, \; \tilde{\chi}_2^0 \rightarrow Z + \tilde{\chi}_1^0 \;\; \mathrm{and} \;\; m_{\tilde{\chi}_1^{\pm}/\tilde{\chi}_2^0} = 0.5(m_{{\tilde{\chi}^0_1}} + m_{\tilde{g}})$ 
 \end{description}  
 for decays of the gluino. The branching ratios are assumed to be 100\% for the different decay modes, except for case (d) where the decay via $\tilde{\chi}_1^{+}$, $\tilde{\chi}_1^{-}$ and $\tilde{\chi}_2^0$ is considered with equal probabilities. \\
-Exclusion limits are derived with the modified $\mathrm{CL_s}$~\cite{0954-3899-28-10-313, Thomas1999435, bib:Higgs:CLS} approach and denote the 95\% confidence level (CL) upper limit on the production cross section of the signal. The profile likelihood ratio is used as test statistics which is derived from the combined likelihood of the acceptance, efficiencies and uncertainties for the signal as well as the background predictions for all search regions. The uncertainties considered for the signal acceptance and efficiency in the limit setting procedure are 
+Exclusion limits are derived with the modified $\mathrm{CL_s}$~\cite{0954-3899-28-10-313, Thomas1999435, bib:Higgs:CLS} approach and denote the 95\% confidence level (CL) upper limit on the production cross section of the signal. The profile likelihood ratio is used as test statistics which is derived from the combined likelihood calculated for all 36 search regions considering the uncertainties of the acceptance, efficiencies and uncertainties for the signal as well as the background predictions. The uncertainties considered for the signal acceptance and efficiency in the limit setting procedure are: 
 \begin{itemize} 
-\item The uncertainty on the integrated luminosity amounts to 2.6\%~\cite{CMS-PAS-LUM-13-001}.
-\item An uncertainty of 2\% is considered for a possible trigger inefficiency (cf. Sec.~\ref{subsec:RA2_samples_trigger}).
-\item Due to the event cleaning criteria an uncertainty of 3\% is considered.
-\item The propagation of the uncertainties on the jet energy calibration and resolution amount to uncertainties of $2-8$\% and $1-2\%$ in the signal acceptance, respectively. 
-\item The systematic variation of PDFs~\cite{Botje:2011sn} leads to uncertainties of $1-8$\% in the signal acceptance. 
-\item In order to match the maesured rate of initial-state radiation in data the simulation of the signal events is corrected accordingly~\cite{isrfsr}. For model parameter points with small differences between the LSP and the gluino or squark mass this results in an uncertainty of 22\% whereas it is usually less than a few percent for others.  
+\item 2.6\% uncertainty on the integrated luminosity~\cite{CMS-PAS-LUM-13-001}
+\item 2\% uncertainty for a possible trigger inefficiency (cf. Sec.~\ref{subsec:RA2_samples_trigger})
+\item 3\% uncertainty due to a possible mismodelling of the event cleaning efficiency
+\item 2--8\% and 1--2\% in the signal acceptance from the propagation of the respective uncertainties on the jet energy calibration and resolution 
+\item 1--8\% in the signal acceptance from the systematic variation of PDFs~\cite{Botje:2011sn} 
+\item an uncertainty considering the adjustment of the rate of initial-state radiation in simulation to match the measured rate in data~\cite{isrfsr} resulting for model parameter points with small differences between the LSP and the gluino or squark mass in an uncertainty of 22\% and typically less than a few percent for others  
 \end{itemize}
-Finally, the resulting exclusion limits for the above described processes (a)-(d) are shown in Fig.~\ref{fig:ra2_limits}(a)-(d), respectively. The expected (\textit{dashed}) and observed (\textit{solid}) 95\% CL upper limits are shown accordingly in the gluino-LSP and squark-LSP mass plane for the signal production cross sections. The one-standard-deviation uncertainty for the theory prediction is obtained by varying the renormalization and factorization scale by a factor of two and incorporating CTEQ6.6~\cite{Nadolsky:2008zw} and MSTW2008~\cite{Martin:2009iq} as alternative PDF sets. By considering conservatively the observed limit minus the one sigma theory uncertainty, pair production of squarks of the first two generations is excluded below 780\gev for a LSP mass less than 200\gev. However, if only one light squark is accessible the limit decreases to 400\gev for LSP masses below 80\gev. Similarly, the pair production of gluinos could be excluded for the three different decay modes (b)-(d) in case of a LSP mass less than 100\gev for gluino masses up to 1.16\tev, 1.13\tev and 1.21\tev, respectively. 
+Finally, the resulting exclusion limits for the above described processes (a)--(d) are shown in Fig.~\ref{fig:ra2_limits}(a)--(d), respectively. The expected (\textit{dashed}) and observed (\textit{solid}) 95\% CL upper limits are shown in the gluino-LSP and squark-LSP mass plane for the signal production cross sections, respectively. The one-standard-deviation uncertainty for the theory prediction is obtained by varying the renormalization and factorization scale by a factor of two and incorporating CTEQ6.6~\cite{Nadolsky:2008zw} and MSTW2008~\cite{Martin:2009iq} as alternative PDF sets. By considering conservatively the observed limit minus the one sigma theory uncertainty, pair production of squarks of the first two generations is excluded below 780\gev for a LSP mass less than 200\gev. However, if only one light squark is accessible, the limit decreases to 400\gev for LSP masses below 80\gev. Similarly, the pair production of gluinos could be excluded for the three different decay modes (b)--(d) in case of a LSP mass less than 100\gev for gluino masses up to 1.16\tev, 1.13\tev and 1.21\tev, respectively. \\
+In general, the analysis provides good sensitivity to signal points with large mass differences between squark/gluino and LSP mass, nearly independent of the LSP mass. This is due to the fact that for such mass scenarios the selection based on large values of \HT and \MHT is most efficient. For signal scenarios in which the mass difference between squark/gluino and LSP is small, softer jets and smaller values of \MHT are expected and consequently the analysis sensitivity drops resulting in the weaker cross section limits.
 
 \begin{figure}[!h]
   \centering
@@ -759,48 +734,49 @@ Finally, the resulting exclusion limits for the above described processes (a)-(d
                 \includegraphics[width=0.49\textwidth]{figures/RA2_Limit3.pdf} &
                 \includegraphics[width=0.49\textwidth]{figures/RA2_Limit4.pdf} \\
   \end{tabular}
-\caption{The observed and expected 95\% CL upper limits on the (a) squark-squark and (b-d) gluino-gluino production cross sections in either the m(squark)-m(LSP) or the m(gluino)-m(LSP) plane obtained with the simplified models. For the squark-squark production the upper set of curves corresponds to the scenario when the first two generations of squarks are degenerate and light, while the lower set corresponds to only one light accessible squark. Taken from~\cite{Chatrchyan:2014lfa}.} 
+\caption{The observed and expected 95\% CL upper limits on the (a) squark-squark and (b--d) gluino-gluino production cross sections in either the m(squark)-m(LSP) or the m(gluino)-m(LSP) plane obtained with the simplified models. For the squark-squark production the upper set of curves corresponds to the scenario when the first two generations of squarks are degenerate and light, while the lower set corresponds to only one light accessible squark~\cite{Chatrchyan:2014lfa}.} 
   \label{fig:ra2_limits}
 \end{figure}
 
 \subsection{Comparison to Other Measurements}
 \label{subsec:RA2_comp}
 The exclusion limits obtained with the analysis presented in this thesis exceed the exclusion limits derived from the 7\tev analysis (cf. Fig.~\ref{fig:SMS_7TeV}). Especially, the limit on the gluino mass is improved by around 200\gev for light LSPs. Furthermore, the extension of the analysis into the \NJets plane provides a good sensitivity towards the gluino-mediated production of third generation squarks and to decays involving $W$ and $Z$ bosons which could not be explored before. \\
-Similar studies targeting the same simplified models have been performed within CMS, also with different analysis techniques or final states. A comparison of the analysis presented here, to the respective other CMS analyses is illustrated in Fig.~\ref{fig:result_comp} for models (a)--(c) introduced in Sec.~\ref{sec:RA2_results}. It turns out that the analyses shown there, all have similar expected sensitivity to the respective models for $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^0$ and $\tilde{q} \rightarrow q + \tilde{\chi}_1^0$ decays. This is somewhat expected as the compared analyses all make use of the all-hadronic final state. However, the analysis ~\cite{CMS-PAS-SUS-13-019} performs better especially in case of squark production, as here also search regions based on dijet events are employed. It is interesting to note that the analysis presented in this thesis is also similarly sensitive to gluino-mediated stop production as other all-hadronic searches. Here, other hadronic analyses typically employ b-tagging information  while the analysis presented here followed a complementary approach by employing high jet multiplicity search regions. However, the best sensitivity to this respective model is achieved by an analysis which is based on a single lepton, multiple jets and b-tags. 
-\begin{figure}[!h]
+Furthermore, studies using the $\sqrt{s} = 8$\tev data targeting the same simplified models, but based on different analysis techniques or final states, have been performed within CMS as well. A comparison of the analysis presented here (SUS-13-012) to other CMS analyses is illustrated in Fig.~\ref{fig:result_comp} for models (a)--(c) introduced in Sec.~\ref{sec:RA2_results}. 
+\begin{figure}[!t]
   \centering
 \makebox[\linewidth]{
   \begin{minipage}[c]{1.\linewidth}
     \begin{center}
-      \includegraphics[width=0.5\textwidth]{figures/T1_ICHEP2014_All.png}% \hspace {1.5 pt} 
-      \includegraphics[width=0.5\textwidth]{figures/T2_ICHEP2014.png}\\ 
-      \includegraphics[width=0.5\textwidth]{figures/T1tttt_ICHEP2014_All.png}
+      \includegraphics[width=0.49\textwidth]{figures/T1_ICHEP2014_All.png}% \hspace {1.5 pt} 
+      \includegraphics[width=0.49\textwidth]{figures/T2_ICHEP2014.png}\\ 
+      \includegraphics[width=0.49\textwidth]{figures/T1tttt_ICHEP2014_All.png}
     \end{center}
   \end{minipage}}
 
   \caption{Comparison of various exclusion limits derived by different CMS analyses for the process $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^0$ (\textit{top left}), $\tilde{q} \rightarrow q + \tilde{\chi}_1^0$ (\textit{top right}) and $\tilde{g} \rightarrow t\bar{t} + \tilde{\chi}_1^0$ (\textit{bottom}). Taken from~\cite{bib:CMS:PhysicsResultsSUS}.}
-  \label{fig:result_comp}
+  \label{fig:result_comp} 
 \end{figure}
+\\
+This comparison exhibits that the expected sensitivity to the models $\tilde{g} \rightarrow q\bar{q} + \tilde{\chi}_1^0$ and $\tilde{q} \rightarrow q + \tilde{\chi}_1^0$ is similar for the different analyses. This is not unexpected as the compared analyses all make use of the all-hadronic final state. However, the analysis published in~\cite{CMS-PAS-SUS-13-019} performs better especially in case of squark production, as here also search regions based on dijet events are employed. \\
+Concerning gluino-mediated stop production it is interesting to note that the analysis presented in this thesis is also similarly sensitive to this model as other all-hadronic searches (\cf SUS-12-028, SUS-12-024 or SUS-13-019). These other hadronic analyses typically employ b-tagging information while the analysis presented in this thesis followed a complementary approach by employing high jet multiplicity search regions. However, the best sensitivity to this respective model is achieved by an analysis which is based on a single lepton, multiple jets and b-tags (SUS-13-007). 
 \\
 Comparable analyses have also been performed by the ATLAS experiment~\cite{Aad:2014wea, Aad:2013wta, Aad:2014lra} and the obtained exclusion limits on sparticle masses lie in a very similar mass region.
 
 \section{Status of natural supersymmetry after LHC Run I}
 \label{sec:susy_status}
-In general, the SUSY search presented in this thesis as well as other measurements, as discussed in Sec.~\ref{subsec:RA2_comp}, pushed the mass limits of supersymmetric particles even closer to the TeV range than the 7\tev analyses or even beyond. However, most of the interpretations are in fact presented in simplified models assuming 100\% branching fraction of that specific decay. This is something which most probably is not realised in nature. Scaling the respective branching ratios down, typically results in much weaker mass limits. \\
-Nonetheless, it is also interesting to look at more realistic SUSY models, like \eg the CMSSM again. In addition, to direct interpretations of searches in the CMSSM which, \eg in case of the ATLAS experiment, result in exclusions of $m_{1/2} \lesssim 800$\gev for $m_{0} \lesssim 1$\tev and $m_{1/2} \lesssim 600$\gev for $m_{0} \lesssim 6$\tev ($\mathrm{tan} \, \beta = 30$, $A_0 = -2m_0$, $\mu >0$)~\cite{bib:ATLAS:PhysicsResultsSUS}, also global fits to constrain SUSY parameters are performed (\cf for instance~\cite{Bechtle:2012zk, Buchmueller:2013rsa}). Typically, these take not only direct searches from the LHC, but also constraints from low-energy precision observables, flavour measurements or the cosmological cold dark matter density into account to constrain for instance the CMSSM. In general it turns out, that there is a growing tension between low-energy observables, the non-observation of SUSY at the LHC and the CMSSM, such best fit values are pushed up to larger and larger values of $m_0/m_{1/2}$. \\
-Thus, also models beyond the CMSSM catch growing attention. One of these is the pMSSM, as introduced in Sec.~\ref{subsec:susy_collider}. An interpretation of SUSY searches comprising also the analysis presented in this thesis in the context of the pMSSM, has been performed by the CMS experiment~\cite{CMS-PAS-SUS-13-020}. In order to investigate the impact of direct searches at CMS a global Bayesian analysis~\cite{robert2001bayesian, o2004bayesian} is performed that furthermore also includes pre-CMS data and indirect measurements. Here, probability distributions prior and posterior to the CMS dearches are investigated. In Fig.~\ref{fig:pMSSM}, example distributions of such prior and posterior probability distributions for gluino and squark masses are illustrated.
-\begin{figure}[!h]
+\begin{figure}[!t]
   \centering
   \begin{tabular}{cc}
                 \includegraphics[width=0.49\textwidth]{figures/pMSSM_gluino.pdf} &
                 \includegraphics[width=0.49\textwidth]{figures/pMSSM_squark.pdf} 
   \end{tabular}
-\caption{Marginalized distributions of gluino masses (\textit{left}) and $\tilde{u}_L,\tilde{c}_L$ masses (\textit{right}). Filled histograms show prior distributions while line histograms illustrate posterior dostributions including the results of the analysis presented in this chapter and~\cite{Chatrchyan:2012lia}. Solid curves denote the nominal curves while dashed lines represent systematic variations. Taken from~\cite{CMS-PAS-SUS-13-020}.} 
+\caption{Marginalized distributions of gluino masses (\textit{left}) and $\tilde{u}_L,\tilde{c}_L$ masses (\textit{right}). Filled histograms show prior distributions while line histograms illustrate posterior distributions based on the results of the analysis presented in this chapter and~\cite{Chatrchyan:2012lia}. Solid curves denote the nominal curves while dashed lines represent systematic variations. Taken from~\cite{CMS-PAS-SUS-13-020}.} 
   \label{fig:pMSSM}
 \end{figure}
-\\
-It turns out that the data disfavours pMSSM scenarios with $\tilde{g}$ masses below 1200\gev and scenarios with $\tilde{u}_L,\tilde{c}_L$ masses below 1000\gev. Consequently, also in this analysis excluded mass ranges reach or exceed already the 1\tev mark, such that the impression arises that natural SUSY is under increasing threat. \\
-However, as discussed in Sec.~\ref{sec:susy}, if SUSY is supposed to provide a solution to the hierarchy problem, especially the supersymmetric partner of the top quark should not be too heavy. A summary of searches performed within the CMS experiment at a centre of mass energy of $\sqrt{s} = 8$\tev for direct production of top squark pairs, is illustrated in Fig.~\ref{fig:8TeV_stop_limits}.
+In general, the SUSY search presented in this thesis as well as other measurements, as discussed in Sec.~\ref{subsec:RA2_comp}, pushed the mass limits of supersymmetric particles closer to the TeV range than the 7\tev analyses or even beyond. However, most of the interpretations are in fact presented in simplified models assuming 100\% branching fraction of that specific decay which is most probably is not realised in nature. Scaling the respective branching ratios down, typically results in much weaker mass limits. \\
+Therefore, it is also interesting to look at more realistic SUSY models, \eg the CMSSM again. In addition to direct interpretations of searches in the CMSSM, which for instance in case of the ATLAS experiment, result in exclusions of $m_{1/2} \lesssim 800$\gev for $m_{0} \lesssim 1$\tev and $m_{1/2} \lesssim 600$\gev for $m_{0} \lesssim 6$\tev ($\mathrm{tan} \, \beta = 30$, $A_0 = -2m_0$, $\mu >0$)~\cite{bib:ATLAS:PhysicsResultsSUS}, also global fits to constrain the respective CMSSM parameters are performed (\cf for instance~\cite{Bechtle:2012zk, Buchmueller:2013rsa}). Typically, these fits do not only consider direct searches from the LHC, but also use constraints from low-energy precision observables, flavour measurements or the cosmological cold dark matter density. In general, in these fits a growing tension between low-energy observables, the non-observation of SUSY at the LHC and the CMSSM is observed and consequently best fit values are pushed up to larger and larger values of $m_0/m_{1/2}$ which is in contradiction to expectations for natural SUSY. \\
+However, as discussed in Sec.~\ref{subsec:susy_collider} the interpretation of search results only within the CMSSM and simplified models is not considered as sufficient anyway. Thus, also models beyond the CMSSM catch growing attention. One of these is the pMSSM which has been introduced in Sec.~\ref{subsec:susy_collider}, too. An interpretation of SUSY searches comprising especially the analysis presented in this thesis in the context of the pMSSM, has been performed by the CMS experiment~\cite{CMS-PAS-SUS-13-020}. In order to investigate the impact of direct searches at CMS, a global Bayesian analysis~\cite{robert2001bayesian, o2004bayesian} is performed that furthermore also includes pre-CMS data and indirect measurements. Here, probability distributions prior and posterior to the CMS searches are investigated. In Fig.~\ref{fig:pMSSM}, example distributions of such prior and posterior probability distributions for gluino and squark masses are illustrated. The distributions exhibit that the data disfavours pMSSM scenarios with $\tilde{g}$ masses below 1200\gev and scenarios with $\tilde{u}_L,\tilde{c}_L$ masses below 1000\gev. Consequently, also in this interpretation of the analysis presented here, excluded mass ranges reach or exceed already the 1\tev mark, such that the impression arises that natural SUSY is under increasing pressure. \\
+However, as discussed in Sec.~\ref{sec:susy}, especially the supersymmetric partner of the top quark should not be too heavy, if SUSY is supposed to provide a solution to the hierarchy problem. This is still feasible, since mass limits for third generation squarks are typically weaker than for light-flavour squarks. A summary of searches performed with the CMS experiment at a centre of mass energy of $\sqrt{s} = 8$\tev for direct production of top squark pairs, is illustrated in Fig.~\ref{fig:8TeV_stop_limits}.
 \begin{figure}[!h]
   \centering
   \begin{tabular}{c}
@@ -810,5 +786,5 @@ However, as discussed in Sec.~\ref{sec:susy}, if SUSY is supposed to provide a s
   \label{fig:8TeV_stop_limits}
 \end{figure}
 \\
-Here, top squarks with masses between 200--750\gev have been excluded for LSP masses below around 200\gev. This corresponds to a generic tuning (as introduced in Sec.~\ref{subsec:natural_susy}) of $\Delta \lesssim 20$. Although this exceeds the traditional value of $\Delta \lesssim 10$ already, values up to $\Delta \lesssim 100$ are considered acceptable to date~\cite{Craig:2013cxa}. Consequently, a stop mass up to around 1\tev is considered eligible and lots of the parameter space is still not investigated. Since the LHC starts a second run period in 2015 with an increased centre of mass energy of $\sqrt{s} = 13$\tev, this mass region up to 1\tev can be further studied.\\
-A feasability study based on simulated events to explore direct stop quark pair-production at $\sqrt{s} = 13$\tev is presented in the next chapter. Here, also techniques introduced in Chap.~\ref{chap:Objects}, to identify boosted hadronically-decaying top quarks emerging from the stop quark decays, are employed.
+Here, top squarks with masses between 200--750\gev have been excluded for LSP masses below around 200\gev. This corresponds to a generic tuning (as introduced in Sec.~\ref{subsec:natural_susy}) of $\Delta \lesssim 20$. Although this exceeds the traditional value of $\Delta \lesssim 10$ already, values up to $\Delta \lesssim 100$ are considered acceptable to date~\cite{Craig:2013cxa}. Consequently, a stop mass up to around 1\tev is considered eligible and a wide range of the parameter space is still not investigated. Since the LHC starts a second run period in 2015 with an increased centre of mass energy of $\sqrt{s} = 13$\tev, this mass region up to 1\tev can be further studied.\\
+A feasibility study to search for direct stop quark pair-production at $\sqrt{s} = 13$\tev is presented in the next chapter based on simulated events,. Here, also techniques to identify boosted hadronically-decaying top quarks, as introduced in Chap.~\ref{chap:Objects}, emerging from the stop quark decays, are employed.

@@ -5,17 +5,17 @@
 twoside,
 headsepline,     % Line under page header
 headings=normal,
-open=right,
+openright,
 numbers=noenddot, % Otherwise there will be a dot after the chapter numbering in case letters are used somewhere e.g. in the appendix
 a4paper
 ]{scrreprt} %report scrreprt
 \addtolength{\topmargin}{-0.2cm}
 \setlength{\textwidth}{15cm}
 \setlength{\textheight}{22.4cm}
-\setlength{\oddsidemargin}{0cm}
-\setlength{\evensidemargin}{0.85cm} 
-%\setlength{\oddsidemargin}{0.85cm}
-%\setlength{\evensidemargin}{0cm} 
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\evensidemargin}{0.85cm} 
+\setlength{\oddsidemargin}{0.85cm}
+\setlength{\evensidemargin}{0cm} 
 
 \usepackage[automark,headsepline]{scrpage2}
 \pagestyle{scrheadings}
@@ -103,7 +103,7 @@ a4paper
     \thispagestyle{empty}
     \vspace*{1cm}
     \begin{doublespace} 
-       \textbf{\Huge Probing natural supersymmetry} \\
+       \textbf{\Huge Probing supersymmetry} \\
        \vskip0.4cm
       % \textbf{\LARGE based on}
       % \vskip0.4cm

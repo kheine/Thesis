@@ -89,7 +89,8 @@ The actual procedure how to determine and apply the required corrections is disc
 \end{tabular}}
 \end{table}  
 In this analysis, multijet events from \pp collisions are considered which have been recorded in 2012 with the CMS detector at $\sqrt{s}=8$\tev. From these data, only those are considered in which all subdetectors have been reliably operating. The collected data sample used in this analysis corresponds to an integrated luminosity of $19.7$~\fbinv with an uncertainty of $2.5\%$ (syst.)  $\pm \; 0.5\%$ (stat.)~\cite{CMS-PAS-LUM-13-001}. \\
-Multijet events are pre-selected by a set of triggers based on the average transverse momentum of the two leading jets in the event. In order to obtain a good coverage of the \ptave spectrum, different trigger paths are combined. Since they have different minimum $\pt^\mathrm{ave}$ thresholds, a broad range in \ptave is considered. In Tab.~\ref{tab:trigger} the different trigger paths used for this analysis are listed and the particular offline $\pt^\mathrm{ave}$ value for which the respective trigger reaches $99\%$ of the efficiency plateau is given (taken from~\cite{website:HamburgCalib}). However, the low \ptave triggers have been operated with prescale factors applied in order to keep the data rate sufficiently low. In fact, only the trigger with the highest \ptave threshold has been employed without the usage of prescale factors. \\
+Multijet events are pre-selected by a set of triggers based on the average transverse momentum of the two leading jets in the event. In order to obtain a good coverage of the \ptave spectrum, different trigger paths are combined. Since they have different minimum $\pt^\mathrm{ave}$ thresholds, a broad range in \ptave is considered. In Tab.~\ref{tab:trigger} the different trigger paths used for this analysis are listed and the particular offline $\pt^\mathrm{ave}$ value for which the respective trigger reaches $99\%$ of the efficiency plateau is given~\cite{DRathjens}.%website:HamburgCalib}).
+However, the low \ptave triggers have been operated with prescale factors applied in order to keep the data rate sufficiently low. In fact, only the trigger with the highest \ptave threshold has been employed without the usage of prescale factors. \\
 The simulated QCD sample that is used in the analysis is generated with \pythia, as discussed in Section~\ref{sec:jer_response}. Since the cross-section of the process has been scaled by $\hat{p}_\mathrm{T}^{\,4.5}$, with the scale parameter $\hat{p}_\mathrm{T}$ describing the momentum transfer in the hard process, the sample is reweighted with the inverse in order to regain the physical spectrum.  
 
 \subsection{Selection Criteria}
@@ -224,7 +225,7 @@ with $dy = y_{\mathrm{measured}} - y_{\mathrm{predicted}}$ and the covariance ma
 C_{i,j}(\sigma_{A_i},\sigma_{A_j}) = (\Delta \sigma_{A_i})^2 \cdot \frac{\sigma_{A_i}}{\sigma_{A_j}} \cdot \frac{n_i}{n_j} 
 \label{eq:jer_corr}
 \end{equation}
-where $n$ is the number of events in that particular $\alpha$ interval. A discussion regarding the derivation of that expression is summarized in Appendix~\ref{app:extrapol_corr}~\cite{JOtt}. The function minimization itself is performed with the Minuit package~\cite{Minuit}.   
+where $n$ is the number of events in that particular $\alpha$ interval. A discussion regarding the derivation of that expression is summarized in App.~\ref{app:extrapol_corr}. The function minimization itself is performed with the Minuit package~\cite{Minuit}.   
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{cc}

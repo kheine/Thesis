@@ -2,8 +2,7 @@ Particles produced in \pp collisions traverse the detector and interact with the
 The approach for the event reconstruction and identification of specific particles used in CMS is discussed in this chapter. First, the \textit{Particle-Flow (PF) algorithm}, used for a global description of the collision event, is introduced. Next, the reconstruction of jets is discussed in Sec.~\ref{sec:jets_reco}. In Sec.~\ref{sec:btagging} and~\ref{sec:boosted_tops}, the identification of decays from b hadrons and boosted top quarks is reviewed.
 \section{Global Event Description with the Particle-Flow Algorithm at CMS}
 \label{sec:pf_algo}
-The CMS experiment introduced the Particle-Flow algorithm for the reconstruction of collision events and is designed to identify stable particles in an event. Types of particles which are identified by the PF algorithm are electrons and photons, charged and neutral hadrons as well as muons. In order to reconstruct the four-momenta of these particles all sub-components of the detector are utilized. \\
-The CMS detector is very well suited for this task. The silicon tracker enclosed by the uniform magnetic field enables a very efficient track reconstruction yielding only a small track fake rate even down to small transverse momenta of $150$\mev, as discussed in Sec.~\ref{subsec:cms_tracker}. Furthermore, the strength of the magnetic field together with a high ECAL granularity allows photons to be separated from charged-particle energy deposits. A detailed introduction to the PF algorithm can be found in~\cite{CMS-PAS-PFT-09-001}. \\ 
+The CMS experiment introduced the Particle-Flow algorithm~\cite{CMS-PAS-PFT-09-001} for the reconstruction of collision events and is designed to identify stable particles in an event. Types of particles which are identified by the PF algorithm are electrons and photons, charged and neutral hadrons as well as muons. In order to reconstruct the four-momenta of these particles all sub-components of the detector are utilized. The CMS detector is very well suited for this task. The silicon tracker enclosed by the uniform magnetic field enables a very efficient track reconstruction yielding only a small track fake rate even down to small transverse momenta of $150$\mev, as discussed in Sec.~\ref{subsec:cms_tracker}. Furthermore, the strength of the magnetic field together with a high ECAL granularity allows photons to be separated from charged-particle energy deposits. \\ 
 The event reconstruction starts with the identification of fundamental objects in the sub-detectors which are charged-particle tracks in the inner tracker, calorimeter clusters and muon tracks in the outer muon system. Tracks emerging from charged particles are formed following an iterative tracking algorithm~\cite{Adam:934067}. Starting from an initial seed trajectory, \eg pixel hit doublets or triplets, tracks are extrapolated to further tracker layers by taking into account multiple scattering and energy loss in the material. Each iteration proceeds with a removal of unambiguously allocated hits from the previous iteration. \\
 Furthermore, calorimeter clusters are formed based on adjacent calorimeter cells in each sub-detector separately: ECAL barrel, ECAL endcap, HCAL barrel, HCAL endcap, PS first layer and PS second layer. First, seed clusters are defined as local calorimeter-cell energy maxima. Second, neighbouring cells are combined with seed clusters when their energy exceeds a pre-defined threshold representing two standard deviations of the electronics noise. In the HF however, no clustering is performed and each calorimeter cell gives rise to one cluster. \\
 A particle traversing the detector gives typically rise to several of such elementary objects: one charged-particle track, and/or several calorimeter clusters and/or one muon track. Consequently, a dedicated link algorithm is applied in order to connect these elements. Linked elements form blocks and remove a potential double-counting of the same object in different detector parts. First, charged-tracks are associated to calorimeter clusters, if the extrapolated trajectory matches the cluster within the cluster boundaries. This is done considering effects like gaps and cracks between detector components, uncertainty on the shower position or multiple scattering. To account for bremsstrahlung, also tangents of the tracks are extrapolated to the respective energy clusters. In addition, also ECAL and HCAL clusters can be connected to each other by linking clusters in the more granular calorimeter to clusters in the less granular one. Finally, global muons can be defined by associating charged-tracks from the tracker with muon tracks reconstructed in the muon system. \\
@@ -12,8 +11,9 @@ The complete set of particles can then be used to derive further objects and qua
 
 \section{Reconstruction of Jets}
 \label{sec:jets_reco}
-As stated earlier, jets are the experimental signatures of quarks and gluons and constitute of a collimated spray of hadrons. However, in order to identify a particular jet and relate its properties to the original parton, a proper jet definition is needed. Typically, a \textit{jet algorithm} determines how to cluster particles into a jet. Furthermore, it has to be defined how to assign a momentum to the jet. At CMS, the standard procedure is to assign the four-momentum sum of all jet constituents to the jet. \\
-Different jet algorithms are introduced in Sec.~\ref{subsec:jets_algos} followed by a discussion of different jet types used at CMS in Sec.~\ref{subsec:jets_types}. The jet transverse-momentum response is defined in Sec.~\ref{subsec:jets_response} and the calibration of jet energies is reviewed in Sec.~\ref{subsec:jets_calib}.
+As stated earlier, the searches for supersymmetry presented in this thesis are performed in final states containing missing transverse energy and several jets. % jets are the experimental signatures of quarks and gluons and constitute of a collimated spray of hadrons. 
+In order to identify a particular jet and relate its properties to the original parton, a proper jet definition is needed. Typically, a \textit{jet algorithm} determines how to cluster particles into a jet. Furthermore, it has to be defined how to assign a momentum to the jet. At CMS, the standard procedure is to assign the four-momentum sum of all jet constituents to the jet. \\
+%Different jet algorithms are introduced in Sec.~\ref{subsec:jets_algos} followed by a discussion of different jet types used at CMS in Sec.~\ref{subsec:jets_types}. The jet transverse-momentum response is defined in Sec.~\ref{subsec:jets_response} and the calibration of jet energies is reviewed in Sec.~\ref{subsec:jets_calib}.
 \subsection{Jet Algorithms}
 \label{subsec:jets_algos}
 \begin{figure}[!tp]
@@ -23,7 +23,7 @@ Different jet algorithms are introduced in Sec.~\ref{subsec:jets_algos} followed
   %  \includegraphics[width=0.49\textwidth]{figures/herwig-parton-level-ev-cam.png} \\
   %  \includegraphics[width=0.49\textwidth]{figures/herwig-parton-level-ev-antikt.png} &
   %  \includegraphics[width=0.49\textwidth]{figures/herwig-parton-level-ev-siscone.png}  
-    \includegraphics[width=0.95\textwidth]{figures/JetAlgos.pdf} 
+    \includegraphics[width=0.99\textwidth]{figures/JetAlgos.pdf} 
   \end{tabular}
   \caption{Sample parton-level event generated with \herwig, adding many random soft particles, that is clustered with the $k_\mathrm{T}$-algorithm (\textit{top left}), the C/A-algorithm (\textit{top right}), the SISCone-algorithm (\textit{bottom left}) and the anti-$k_\mathrm{T}$-algorithm (\textit{bottom right}). Colours illustrate all particles clustered to the resulting hard jets. Taken from~\cite{Salam:2009jx}.}
   \label{fig:jet_algos}
@@ -50,12 +50,12 @@ Depending on the choice of the parameter $p$, different types of algorithms are 
 
 \subsection{Jet Types at CMS}
 \label{subsec:jets_types}
-The default jets used at the CMS experiment are jets clustered by the anti-$k_\mathrm{T}$ algorithm using a distance parameter of $R = 0.5$ (AK5 jets). This can be applied to reconstructed detector signals resulting in \textit{detector-level} jets or to final-state particles after hadronisation and decay, in simulated events, giving rise to \textit{particle-level} jets.  \\
+The default jets used at the CMS experiment are jets clustered by the anti-$k_\mathrm{T}$ algorithm using a distance parameter of $R = 0.5$ (AK5 jets). This algorithm can be applied to reconstructed detector signals resulting in \textit{detector-level} jets or to final-state particles after hadronisation and decay, in simulated events, giving rise to \textit{particle-level} jets.  \\
 Based on the information used from the various CMS subdetectors for the jet clustering, different types of detector-level jets are distinguished~\cite{1748-0221-6-11-P11002}:
 \begin{figure}[!tp]
   \centering 
   \begin{tabular}{c}
-    \includegraphics[width=0.55\textwidth]{figures/calcFrac_Frac0_MC-1.pdf} 
+    \includegraphics[width=0.7\textwidth]{figures/calcFrac_Frac0_MC-1.pdf} 
   \end{tabular}
   \caption{Composition of the PF jet energy versus jet \pt in the barrel detector region $|\eta| < 1.3$ in simulated events (coloured histograms) and data (solid markers)~\cite{CMS-DP-2012-012}.}
   \label{fig:jets_pf_comp}
@@ -81,7 +81,7 @@ In this thesis, the average response $\langle \mathcal{R} \rangle$ is referred t
 \begin{figure}[!t]
   \centering 
   \begin{tabular}{c}
-    \includegraphics[width=0.91\textwidth]{figures/JEC.jpg} 
+    \includegraphics[width=0.95\textwidth]{figures/JEC.jpg} 
   \end{tabular}
   \caption{Sketch of the factorized approach used for jet energy corrections at the CMS experiment.}
   \label{fig:jec_sketch}
@@ -98,7 +98,7 @@ The jet area is determined by adding a large number of inifinitely soft four-mom
 \begin{figure}[!h]
   \centering 
   \begin{tabular}{c}
-    \includegraphics[width=0.49\textwidth]{figures/OffsetVsEta_NPV_PF5_data53_vs_mc53.pdf} 
+    \includegraphics[width=0.51\textwidth]{figures/OffsetVsEta_NPV_PF5_data53_vs_mc53.pdf} 
   \end{tabular}
   \caption{L1 offset transverse momentum correction for AK5 PF jets as a function of jet pseudorapidity in data (black) and simulation (green). Different intervals of reconstructed primary vertices ($\mathrm{N_{PV}}$) are shown with different markers~\cite{CMS-DP-2013-033}.}
   \label{fig:l1offset}
@@ -116,7 +116,7 @@ The jet area is determined by adding a large number of inifinitely soft four-mom
 \begin{figure}[!h]
   \centering 
   \begin{tabular}{c}
-    \includegraphics[width=0.49\textwidth]{figures/ResComp_FSRcorr_residuals_Abseta_PF_DiJetData.pdf} 
+    \includegraphics[width=0.51\textwidth]{figures/ResComp_FSRcorr_residuals_Abseta_PF_DiJetData.pdf} 
   \end{tabular}
   \caption{L2 residual corrections for AK5 PF jets as a function of jet pseudorapidity, obtained from dijet events, shown with JES uncertainty (yellow band) and the statistical uncertainty (blue band)~\cite{CMS-DP-2013-033}.}
   \label{fig:l2res}
@@ -128,8 +128,8 @@ The calibration factors are obtained with respect to the average flavour composi
 
 \section{Identification of b-Quark Jets}
 \label{sec:btagging}
-Jets arising from the hadronization of bottom quarks are usually referred to as \textit{b jets}. As these are present in many physics processes, \eg the decay of top quarks, it is crucial to identify b jets, \ie distinguish them from jets initiated by gluons or light-flavour quarks. Typically, the identification of b jets is denoted \textit{b tagging} which exploits the distinct properties of b quarks for the identification of the respective jets. In general, B hadrons have a lifetime of around $c\tau \approx 500$\,\textmu m, so that they travel in the detector before they actually decay. This results typically in a measurable secondary vertex that is displaced with respect to the primary interaction. Furthermore, b-quark jets feature a high number of charged particles per decay, resulting in jets with several tracks, and often exhibit soft leptons emerging from semi-leptonic decays of B mesons. The CMS experiment exploits these specific b-jet properties in dedicated b-tagging algorithms for an efficient b-jet identification~\cite{Chatrchyan:2012jua}. \\
-Each algorithm determines a discriminator value per jet indicating how b-jet-like a jet behaves. Based on that, working points are defined corresponding to a specific minimum threshold of the discriminator value. These working points are named \textit{loose}, \textit{medium} and \textit{tight} and correspond to a misidentification probability, \ie the probability to identify a non-b jet as b jet, of $10\%$, $1\%$ and $0.1\%$ for an average jet transverse momentum of $80$\gev, respectively. B-tagging algorithms comissioned within the CMS experiment are:
+Jets arising from the hadronization of bottom quarks are usually referred to as \textit{b jets}. As these are present in many physics processes, \eg the decay of top quarks, it is crucial to identify b jets, \ie distinguish them from jets initiated by gluons or light-flavour quarks. Typically, the identification of b jets is denoted \textit{b tagging} which exploits the distinct properties of b quarks for the identification of the respective jets. In general, B hadrons have a lifetime of around $c\tau \approx 500$\,\textmu m, so that they travel in the detector before they actually decay. This results typically in a measurable secondary vertex that is displaced with respect to the primary interaction. Furthermore, b-quark jets feature a high number of charged particles per decay, resulting in jets with several tracks, and often exhibit soft leptons emerging from semi-leptonic decays of B mesons. \\
+The CMS experiment exploits the specific b-jet properties in dedicated b-tagging algorithms for an efficient b-jet identification. Each algorithm determines a discriminator value per jet indicating how b-jet-like a jet behaves. Based on that, working points are defined corresponding to a specific minimum threshold of the discriminator value. These working points are named \textit{loose}, \textit{medium} and \textit{tight} and correspond to a misidentification probability, \ie the probability to identify a non-b jet as b jet, of $10\%$, $1\%$ and $0.1\%$ for an average jet transverse momentum of $80$\gev, respectively. B-tagging algorithms comissioned within the CMS experiment are~\cite{Chatrchyan:2012jua}:
 \begin{description}
  \item \textbf{Track Counting (TC) algorithm:} A powerful discriminator for the decay products of a b hadron from prompt tracks is the \textit{impact parameter} (IP) of a track with respect to the primary vertex. Its significance can be computed by taking the ratio of the IP to its respective uncertainty. Tracks in a jet are sorted by decreasing values of the IP significance by the TC algorithm. Depending on whether the IP significance of the second or the third ranked track is chosen as discriminator the algorithm is denoted \textit{Track Counting High Efficiency} (TCHE) or \textit{Track Counting High Purity} (TCHP) algorithm. 
  \item \textbf{Jet Probability (JP) algorithm:} The JP algorithm extends the simple TC algorithm by connecting the information about the IP from a couple of tracks in the jet. A likelihood is calculated that all tracks of the jet stem actually from the primary vertex. This appraoch can be varied by giving more weight to tracks with the highest IP significance. The maximum of such tracks is four and matches the average number of reconstructed charged particles from the decay of b hadrons. This version is called \textit{Jet B Probability} (JBP) algorithm.
@@ -166,55 +166,58 @@ As discussed in Sec.~\ref{subsec:susy_collider}, the decay of the top-quark is e
  \label{eq:rule-of-thumb}
 \end{equation}  
 where $m_t$ and \pt are the mass and the transverse momentum of the decaying particle, respectively. Schematic diagrams of resolved and boosted top quark decays are illustrated in Fig.~\ref{fig:boosted_top}. \\
-The identification of boosted top-quark decays -- here restricted to hadronic tops -- is typically known as \textit{top tagging} and aims at the identification of the decay
-\begin{equation}
- t \rightarrow W + b \rightarrow qq' + b 
-\end{equation} 
-by analysing the substructure of fat jets. Typically, fat jets are clustered by the Cambrigde-Aachen algorithm with distance parameters of $R = 0.8$ (CA8 jet) or $R = 1.5$ (CA15 jets). Such large jets are often more prone to radiation in the event that is wrongly associated to the hard jet than jets with smaller radii. Such unwanted contributions often result in a degraded resolution. In order to mitigate such effects, \textit{jet grooming} techniques can be employed:
+%The identification of boosted top-quark decays -- here restricted to hadronic tops -- is typically known as \textit{top tagging} and aims at the identification of the decay
+%\begin{equation}
+% t \rightarrow W + b \rightarrow qq' + b 
+%\end{equation} 
+%by analysing the substructure of fat jets. Typically, fat jets are clustered by the Cambrigde-Aachen algorithm with distance parameters of $R = 0.8$ (CA8 jet) or $R = 1.5$ (CA15 jets). Such large jets are often more prone to radiation in the event that is wrongly associated to the hard jet than jets with smaller radii. Such unwanted contributions often result in a degraded resolution. In order to mitigate such effects, \textit{jet grooming} techniques can be employed:
+%\begin{description}
+% \item \textbf{Filtering~\cite{Butterworth:2008tr}:} Jet constituents are recombined by rerunning the Cambridge-Aachen algorithm with a smaller distance parameter, \eg $R = 0.3$. With this procedure, subjets within the fat jet are identified: The filtering is performed by keeping only $n$ of the identified subjets. Thus, the dominant contribution from the hard process is captured while contamination from the underlying event or pileup is removed.
+ %\item \textbf{Pruning~\cite{Ellis:2009su}:} In contrast to filtering, pruning does not attempt to find a particular number of subjets. Rather, the idea is to systematically remove soft and large angle recombinations in the jet clustering process. For the recombination of objects $i$ and $j$, two conditions are defined:
+%\begin{equation*}
+%z = \frac{\mathrm{min}(p_{\mathrm{T},i}, p_{\mathrm{T},j})}{|\vec{p}_{\mathrm{T},i} + \vec{p}_{\mathrm{T},j}|} < z_\mathrm{cut}
+%\end{equation*}
+%\begin{equation*}
+%\Delta R_{i,j} > D_\mathrm{cut} = \frac{m_\mathrm{J}}{p_{\mathrm{T}, \mathrm{J}}}
+%\end{equation*}
+%where $m_\mathrm{J}$ and $p_{\mathrm{T}, \mathrm{J}}$ are the mass and the transverse momentum of the original fat jet, respectively. Whenever these two conditions are satistified, the recombination of objects $i$ and $j$ is not performed. Thus, the jet clustering is rerun using the initial jet constituents, but in addition employing a veto rule. For the Cambridge-Aachen algorithm $z_\mathrm{cut}$ is typically chosen to be 0.1.
+% \item \textbf{Trimming~\cite{Krohn:2009th}:} Similarly to the filtering procedure, the jet trimming is based on the concept of identifying subjets within an initially clustered large jet, here called \textit{seed jet}. The constituents of this seed jet are reclustered using a jet clustering algorithm with a smaller distance parameter than for the seed jet. If 
+%\begin{equation*}
+%p_{\mathrm{T},i} < f_{\mathrm{cut}} \cdot \Lambda_{\mathrm{hard}} \; ,
+%\end{equation*}
+%the contributions from subjet $i$ to the seed jet are removed. Here, $f_{\mathrm{cut}}$ is a fixed dimensionless parameter and $\Lambda_{\mathrm{hard}}$ a scale chosen with respect to the specific kinematics of the event. While $f_{\mathrm{cut}}$ quantifies the expected hierarchy between FSR and ISR or pileup, the hard scale $\Lambda_{\mathrm{hard}}$ usually represents the transverse momentum of the seed jet or the effective mass of the event.% which is the scalar sum of the transverse momenta.
+%\end{description} 
+In order to identify decays of boosted hadronic top quarks, several \textit{top tagging} algorithms (or short \textit{taggers}) are commissioned within the CMS experiment~\cite{CMS-PAS-JME-13-007, CMS-DP-2014-036}. Two of them are used within this thesis:
 \begin{description}
- \item \textbf{Filtering~\cite{Butterworth:2008tr}:} Jet constituents are recombined by rerunning the Cambridge-Aachen algorithm with a smaller distance parameter, \eg $R = 0.3$. With this procedure, subjets within the fat jet are identified: The filtering is performed by keeping only $n$ of the identified subjets. Thus, the dominant contribution from the hard process is captured while contamination from the underlying event or pileup is removed.
- \item \textbf{Pruning~\cite{Ellis:2009su}:} In contrast to filtering, pruning does not attempt to find a particular number of subjets. Rather, the idea is to systematically remove soft and large angle recombinations in the jet clustering process. For the recombination of objects $i$ and $j$, two conditions are defined:
-\begin{equation*}
-z = \frac{\mathrm{min}(p_{\mathrm{T},i}, p_{\mathrm{T},j})}{|\vec{p}_{\mathrm{T},i} + \vec{p}_{\mathrm{T},j}|} < z_\mathrm{cut}
-\end{equation*}
-\begin{equation*}
-\Delta R_{i,j} > D_\mathrm{cut} = \frac{m_\mathrm{J}}{p_{\mathrm{T}, \mathrm{J}}}
-\end{equation*}
-where $m_\mathrm{J}$ and $p_{\mathrm{T}, \mathrm{J}}$ are the mass and the transverse momentum of the original fat jet, respectively. Whenever these two conditions are satistified, the recombination of objects $i$ and $j$ is not performed. Thus, the jet clustering is rerun using the initial jet constituents, but in addition employing a veto rule. For the Cambridge-Aachen algorithm $z_\mathrm{cut}$ is typically chosen to be 0.1.
- \item \textbf{Trimming~\cite{Krohn:2009th}:} Similarly to the filtering procedure, the jet trimming is based on the concept of identifying subjets within an initially clustered large jet, here called \textit{seed jet}. The constituents of this seed jet are reclustered using a jet clustering algorithm with a smaller distance parameter than for the seed jet. If 
-\begin{equation*}
-p_{\mathrm{T},i} < f_{\mathrm{cut}} \cdot \Lambda_{\mathrm{hard}} \; ,
-\end{equation*}
-the contributions from subjet $i$ to the seed jet are removed. Here, $f_{\mathrm{cut}}$ is a fixed dimensionless parameter and $\Lambda_{\mathrm{hard}}$ a scale chosen with respect to the specific kinematics of the event. While $f_{\mathrm{cut}}$ quantifies the expected hierarchy between FSR and ISR or pileup, the hard scale $\Lambda_{\mathrm{hard}}$ usually represents the transverse momentum of the seed jet or the effective mass of the event.% which is the scalar sum of the transverse momenta.
-\end{description} 
-In order to identify decays of boosted hadronic top quarks, as discussed above, several top tagging algorithms (or short \textit{taggers}) are commissioned within the CMS experiment~\cite{CMS-PAS-JME-13-007, CMS-DP-2014-036}. Two of them are used within this thesis:
-\begin{description}
-\begin{figure}[!tp]
-  \centering 
-  \begin{tabular}{cc}
-    \includegraphics[width=0.49\textwidth]{figures/Draw2HistogramsFrom1File_QQ_MASS_CUT_PT_TT_MASS_CUT_PT_JetPt500.pdf} & 
-    \includegraphics[width=0.49\textwidth]{figures/Draw2HistogramsFrom1File_QQ_MINM_CUT_PT_MASS_NSUB_TT_MINM_CUT_PT_MASS_NSUB_JetPt500.pdf}
-  \end{tabular}
-  \caption{Jet mass (\textit{left}) and minimum pairwise subjet mass (\textit{right}) for CA8 jets with $\pt > 500$\gev from a simulated $t\bar{t}$ \powheg sample (red) and from a simulated QCD \pythia sample (black). Taken from~\cite{CMS-PAS-JME-13-007}.}
-  \label{fig:boosted_top_cms_variables}
-\end{figure}
- \item \textbf{CMS Top Tagger:} The CMS Top Tagger~\cite{CMS-PAS-JME-09-001} is based on the top tagger developed by Kaplan et al.~\cite{Kaplan:2008ie} and acts on jets clustered by the Cambrigde-Aachen algorithm with distance parameter $R = 0.8$. These jets, used as input for the algorithm, are denoted as \textit{hard jets}. Since the decay products of the hadronic top are not expected to be all contained within one jet with $R = 0.8$ for low transverse momenta of the top quark, only jets with $\pt^\mathrm{jet} > 350$\gev are considered. In order to identify subjets within the hard jets, a two-stage decomposition procedure is applied which performs the pairwise clustering sequence used to form the hard jet in reverse order. First, the algorithm aims at splitting the hard jet into two subclusters (\textit{primary decomposition}). Second, it is attempted to further split the clusters emerging from the first step (\textit{secondary decomposition}). Typically, subjets are found when they are spatially well separated and carry a significant fraction of the momentum of the hard jet. Details on the actual splitting criteria can be found in~\cite{CMS-PAS-JME-13-007}. With this approach, up to four subjets are identified within the hard jet. After a successful decomposition procedure, kinematic criteria can be applied to the identified subjets in order to tag top jets. In the CMS top-tagging algorithm, as employed in this thesis, the following criteria are used:
+%\begin{figure}[!tp]
+%  \centering 
+%  \begin{tabular}{cc}
+%    \includegraphics[width=0.49\textwidth]{figures/Draw2HistogramsFrom1File_QQ_MASS_CUT_PT_TT_MASS_CUT_PT_JetPt500.pdf} & 
+%    \includegraphics[width=0.49\textwidth]{figures/Draw2HistogramsFrom1File_QQ_MINM_CUT_PT_MASS_NSUB_TT_MINM_CUT_PT_MASS_NSUB_JetPt500.pdf}
+%  \end{tabular}
+%  \caption{Jet mass (\textit{left}) and minimum pairwise subjet mass (\textit{right}) for CA8 jets with $\pt > 500$\gev from a simulated $t\bar{t}$ \powheg sample (red) and from a simulated QCD \pythia sample (black). Taken from~\cite{CMS-PAS-JME-13-007}.}
+%  \label{fig:boosted_top_cms_variables}
+%\end{figure}
+ \item \textbf{CMS Top Tagger:} The CMS Top Tagger~\cite{CMS-PAS-JME-09-001} is based on the top tagger developed by Kaplan et al.~\cite{Kaplan:2008ie} and acts on jets clustered by the Cambrigde-Aachen algorithm with distance parameter $R = 0.8$ (CA8 jet). These jets, used as input for the algorithm, are denoted as \textit{hard jets}. Since the decay products of the hadronic top are not expected to be all contained within one jet with $R = 0.8$ for low transverse momenta of the top quark, only jets with $\pt^\mathrm{jet} > 350$\gev are considered. In order to identify subjets within the hard jets, a two-stage decomposition procedure is applied which performs the pairwise clustering sequence used to form the hard jet in reverse order. % First, the algorithm aims at splitting the hard jet into two subclusters (\textit{primary decomposition}). Second, it is attempted to further split the clusters emerging from the first step (\textit{secondary decomposition}). 
+Typically, subjets are found when they are spatially well separated and carry a significant fraction of the momentum of the hard jet. Details on the actual splitting criteria can be found in~\cite{CMS-PAS-JME-13-007}. With this approach, up to four subjets are identified within the hard jet. After a successful decomposition procedure, kinematic criteria can be applied to the identified subjets in order to tag top jets. \\
+In the CMS top-tagging algorithm, as employed in this thesis, the following criteria are used:
 \begin{description}
  \item -- Number of subjets $\ge$ 3
  \item -- The jet mass $m_{\mathrm{jet}}$, \ie the mass of the four-vector sum of the constituents of the hard jet, has to be close to the top-mass with $140 < m_{\mathrm{jet}} < 250$\gev.
  \item -- The invariant mass of each pair of the three subjets highest in \pt is calculated. The minimum of the pairwise masses $m_{\mathrm{min}}$ has to be $ > 50$\gev.
 \end{description}
-In Fig.~\ref{fig:boosted_top_cms_variables}, the distributions for jet mass and minimum pairwise mass are illustrated for a simulated $t\bar{t}$ (red) and a QCD multijet (black) sample at $\sqrt{s} = 8$\tev. 
- \item \textbf{HEP Top Tagger:} The HEP Top Tagger~\cite{Plehn:2010st} uses jets with a larger distance parameter than the CMS Top Tagger of $R = 1.5$. This makes the HEP top-tagging algorithm especially suited for top quark decays with moderate boost and thus, uses fat jets with a transverse momentum greater than 200\gev as input. Since a larger jet size is in principle more prone to disturbing effects from the underlying event or pile-up, a sophisticated decomposition procedure is applied to distinguish hard subjets from soft components. Similar to the decomposition done for the CMS tagger, the identification of subjets is based on going through the cluster history of the jet in reversed order. First, the jet is decomposed into subclusters applying a \textit{mass drop condition} discarding too soft components. Afterwards, subclusters resulting from the mass drop decomposition are reclustered into subjets and filtering criteria are applied. Details on the mass drop decomposition and reclustering criteria can be found in~\cite{CMS-PAS-JME-13-007}. Finally, the combination with the mass determined from the filtered subjets closest to the top mass is kept and reclustered to force three subjets. Kinematic selections are applied to these three final subjets in order to identify top quark decays. The following quantities are used based on the invariant mass of combinations of subjets:
-\begin{figure}[!tp]
-  \centering 
-  \begin{tabular}{cc}
-    \includegraphics[width=0.49\textwidth]{figures/Pheno2DPlot_HTT2D_NOheptoptag_NOmasscut_hists_Signal_Add.pdf} & 
-    \includegraphics[width=0.49\textwidth]{figures/Pheno2DPlot_HTT2D_NOheptoptag_NOmasscut_hists_Background_Add.pdf}
-  \end{tabular}
-  \caption{Two-dimensional distributons of $m_{\mathrm{23}}/m_{\mathrm{123}}$ versus $\mathrm{atan}(m_{\mathrm{13}}/m_{\mathrm{12}})$ for HEP Top Tagger subjets from CA15 jets with $\pt > 200$\gev for a simulated $t\bar{t}$ MADGRAPH sample (\textit{left}) and for a simulated background sample composed of cross-section weighted boson + jets, diboson, single-top, $t\bar{t}$ all-hadronic and $t\bar{t}$ leptonic events (\textit{right}). The A-shaped region indicates the selected region by the HEP Top Tagger. Taken from~\cite{CMS-PAS-JME-13-007}.}
-  \label{fig:boosted_top_hep_variables}
-\end{figure}
+%In Fig.~\ref{fig:boosted_top_cms_variables}, the distributions for jet mass and minimum pairwise mass are illustrated for a simulated $t\bar{t}$ (red) and a QCD multijet (black) sample at $\sqrt{s} = 8$\tev. 
+ \item \textbf{HEP Top Tagger:} The HEP Top Tagger~\cite{Plehn:2010st} is also based on jets clustered with the Cambrigde-Aachen algorithm but with a larger distance parameter than the CMS Top Tagger of $R = 1.5$ (CA15 jets). This makes the HEP top-tagging algorithm especially suited for top quark decays with moderate boost and thus, uses fat jets with a transverse momentum greater than 200\gev as input. %Since a larger jet size is in principle more prone to disturbing effects from the underlying event or pile-up, a sophisticated decomposition procedure is applied to distinguish hard subjets from soft components. 
+Similar to the decomposition done for the CMS tagger, the identification of subjets is based on going through the cluster history of the jet in reversed order. First, the jet is decomposed into subclusters applying a \textit{mass drop condition} discarding too soft components. Afterwards, subclusters resulting from the mass drop decomposition are reclustered into subjets and filtering criteria are applied. Details on the applied decomposition and reclustering criteria can be found in~\cite{CMS-PAS-JME-13-007}. Finally, the combination with the mass determined from the filtered subjets closest to the top mass is kept and reclustered to force three subjets. Kinematic selections are applied to these three final subjets in order to identify top quark decays. The following quantities are used based on the invariant mass of combinations of subjets:
+%\begin{figure}[!tp]
+%  \centering 
+%  \begin{tabular}{cc}
+%    \includegraphics[width=0.49\textwidth]{figures/Pheno2DPlot_HTT2D_NOheptoptag_NOmasscut_hists_Signal_Add.pdf} & 
+%    \includegraphics[width=0.49\textwidth]{figures/Pheno2DPlot_HTT2D_NOheptoptag_NOmasscut_hists_Background_Add.pdf}
+%  \end{tabular}
+%  \caption{Two-dimensional distributons of $m_{\mathrm{23}}/m_{\mathrm{123}}$ versus $\mathrm{atan}(m_{\mathrm{13}}/m_{\mathrm{12}})$ for HEP Top Tagger subjets from CA15 jets with $\pt > 200$\gev for a simulated $t\bar{t}$ MADGRAPH sample (\textit{left}) and for a simulated background sample composed of cross-section weighted boson + jets, diboson, single-top, $t\bar{t}$ all-hadronic and $t\bar{t}$ leptonic events (\textit{right}). The A-shaped region indicates the selected region by the HEP Top Tagger. Taken from~\cite{CMS-PAS-JME-13-007}.}
+%  \label{fig:boosted_top_hep_variables}
+%\end{figure}
 \begin{description}
  \item -- The invariant mass of the sum of the four-vectors of the three subjets is required to be in the top mass window of $140 < m_{\mathrm{123}} < 250$\gev.
  \item -- In order to select the W mass, the jet has to satisfy at least one of the following conditions based on the subjet pairwise masses
@@ -233,19 +236,20 @@ In Fig.~\ref{fig:boosted_top_cms_variables}, the distributions for jet mass and 
 \end{equation}
 where the indices of $m$ indicate the rank of the considered subjets with respect to the transverse momentum, $R_{\mathrm{min}} = (1 - f_{W}) \times m_W/m_t$ and $R_{\mathrm{max}} = (1 + f_{W}) \times m_W/m_t$ for the W mass width chosen to be $f_W = 0.495$.  
 \end{description}
-The criteria related to the selection of the W mass are illustrated in Fig.~\ref{fig:boosted_top_hep_variables} for signal events as well as background events and indicated by the black solid lines resulting in an A-shaped region.
+%The criteria related to the selection of the W mass are illustrated in Fig.~\ref{fig:boosted_top_hep_variables} for signal events as well as background events and indicated by the black solid lines resulting in an A-shaped region.
 \end{description}
-In analogy to the b-tagging algorithms, different working points for each top tagger can be defined characterized by a specific top-tag efficiency and misidentification rate. Typically, the working points are chosen such that they have a minimum mistag rate for a given signal efficiency. In addition, further selection criteria can be added to the taggers as described above to achieve a potential performance improvement. These criteria are subjet b-tagging, as introduced in~\cite{CMS-PAS-BTV-13-001}, and selections on the \textit{n-subjettiness}~\cite{Thaler:2010tr, Thaler:2011gf} ratio $\tau_3/\tau_2$ that denotes how likely a fat jet is composed of three subjets rather than two. \\
-The performance of various taggers is compared by determining the top-tag efficiency versus the misidentification rate. Commonly, the top-tag efficiency for simulated events is defined as the number of jets passing the top-tagging selection divided by the number of jets associated to a simulated hadronic top or anti-top passing a certain \pt selection. Similarly, the mistag rate is defined as the number of jets passing the top-tagging selection divided by the number of jets associated to a simulated quark or gluon from the hard process passing the \pt selection. In Fig.~\ref{fig:boosted_top_roc} the mistag rate versus the top-tagging efficiency is illustrated for various taggers and parton momenta.
+In addition, further selection criteria can be added to these taggers to achieve a potential performance improvement. These criteria are subjet b-tagging, as introduced in~\cite{CMS-PAS-BTV-13-001}, and selections on the \textit{n-subjettiness}~\cite{Thaler:2010tr, Thaler:2011gf} ratio $\tau_3/\tau_2$ that denotes how likely a fat jet is composed of three subjets rather than two. \\
+In analogy to the b-tagging algorithms, different working points for each top tagger can be defined characterized by a specific top-tagging efficiency and misidentification rate. Typically, the working points are chosen such that they have a minimum mistag rate for a given signal efficiency. The performance of various taggers is compared by determining the top-tagging efficiency versus the misidentification rate. Commonly, the top-tagging efficiency for simulated events is defined as the number of jets passing the top-tagging selection divided by the number of jets associated to a simulated hadronic top or anti-top passing a certain \pt selection. Similarly, the mistag rate is defined as the number of jets passing the top-tagging selection divided by the number of jets associated to a simulated quark or gluon from the hard process passing the \pt selection. In Fig.~\ref{fig:boosted_top_roc}, the mistag rate versus the top-tagging efficiency is illustrated for various taggers and parton momenta.
 \begin{figure}[!t] 
   \centering 
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/TopTag_ROC_Curves.pdf}  
+    \includegraphics[width=0.8\textwidth]{figures/TopTag_ROC_Curves.pdf}  
   \end{tabular}
   \caption{Mistag rate versus top-tagging efficiency as measured from QCD \textsc{Pythia6} and \powheg \ttbar simulated events, respectively. In the cases where a jet mass cut is applied, the cut is not varied but fixed at $140 < m_\mathrm{jet} < 250$\gev. N-subjettiness is calculated using $R = 0.8$ jets except when used in combination with the HEP Top Tagger in which case $R = 1.5$ jets are used. Signal jets are matched to simulated all-hadronic generated top quarks, while background jets are matched to simulated partons from the hard scatter. Distributions are shown for three \pt selections, where the \pt cut is applied to the matched generated parton~\cite{CMS-PAS-JME-13-007}.}
   \label{fig:boosted_top_roc}
 \end{figure}
-The top-tag efficiency determined from simulated $t\bar{t}$ events for the selection criteria described above amounts to 35.3\% for a matched parton-\pt of $> 200$\gev for the HEP Top Tagger (HEP WP0) and 38.3\% for a matched parton-\pt of $> 400$\gev for the CMS Top Tagger (CMS WP0) while the mistag rates as determined from simulated QCD multijet events are 2.6\% and 2.5\%, respectively. However, the tagging performance shows a moderate dependence on pile-up such that in high pile-up environments a performance degradation is expected. For instance, in the case of the CMS Top Tagger the efficiency stays rather stable as a function of the number of primary vertices with a slope of $0.031\% \pm 0.034\%$ while the mistag rate increases with a slope of $0.095\% \pm 0.006\%$ as a function of the number of primary vertices.       
+The top-tagging efficiency determined from simulated $t\bar{t}$ events for the selection criteria described above amounts to 35.3\% for a matched parton-\pt of $> 200$\gev for the HEP Top Tagger (HEP WP0) and 38.3\% for a matched parton-\pt of $> 400$\gev for the CMS Top Tagger (CMS WP0) while the mistag rates as determined from simulated QCD multijet events are 2.6\% and 2.5\%, respectively. However, the tagging performance shows a moderate dependence on pileup such that in high pileup environments a performance degradation is expected. For instance, in the case of the CMS Top Tagger %the efficiency stays rather stable as a function of the number of primary vertices with a slope of $0.031\% \pm 0.034\%$ while 
+the mistag rate increases with a slope of $0.095\% \pm 0.006\%$ as a function of the number of primary vertices.       
 
 %\subsection{Subjet B-Tagging}
 %\label{sec:boosted_tops_subjet_b}

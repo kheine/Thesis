@@ -1,14 +1,14 @@
-In order to probe the standard model or search for hints of new physics beyond the SM, experiments in particle physics often make use of powerful particle accelerators. In these machines, particles are collided to examine the constituents of matter and interactions between them. The analyses presented in this thesis are performed in the context of the CMS experiment located at the Large Hadron Collider at CERN near Geneva, which is the most powerful accelerator to date. \\ 
+In order to probe the standard model or search for hints of new physics beyond the SM, experiments in particle physics often make use of powerful particle accelerators. In these machines, particles are collided to examine the constituents of matter and interactions between them. The analyses presented in this thesis are performed with data obtained from the CMS experiment located at the Large Hadron Collider at CERN near Geneva, which is the most powerful accelerator to date. \\ 
 The first section of this chapter provides an introduction to the LHC, which is followed by an overview of the detector system of the CMS experiment. Afterwards, the different periods of collision data taking at the LHC are discussed. This chapter concludes with an introduction to the generation of simulated events which are needed for the analysis of real data events.  
 \section{The Large Hadron Collider}
 \label{sec:lhc}
-The LHC~\cite{Bruning:782076, 1748-0221-3-08-S08001} is a ring accelerator designed to provide particle collisions of hadrons. It is built in the tunnel of the former LEP~\cite{LEPdesign} collider 45--170\,m below the surface and has a circumference of 26.7\,km. The LHC is a particle-particle collider and composed of two rings with counter-rotating beams. It can be operated in different modes with either proton or heavy ion (\eg lead) beams.~\footnote{All studies presented in this thesis are based on proton-proton collisions. Thus, the operation with heavy ions is not discussed.} \\
+The LHC~\cite{Bruning:782076, 1748-0221-3-08-S08001} is a ring accelerator designed to provide particle collisions of hadrons. It is built in the tunnel of the former LEP~\cite{LEPdesign} collider 45--170\,m below the surface and has a circumference of 26.7\,km. The LHC is a particle-particle collider and composed of two rings with counter-rotating beams. It can be operated in different modes with either proton or heavy ion (\eg lead) beams.\footnote{All studies presented in this thesis are based on proton-proton collisions. Thus, the operation with heavy ions is not discussed.} \\
 In each beam, protons are grouped together in bunches and accelerated in two evacuated beam pipes using superconducting radio-frequency cavities. With a nominal bunch spacing of 25\,ns, the collision frequency is 40\,MHz. Each of the 2808 individual bunches per beam contains $1.15 \times 10^{11}$ protons, at design conditions. In order to bend the beams around the LHC ring, superconducting dipole magnets are used at a temperature of 1.9\,K. They provide a magnetic field of up to 8.33\,T while additional quadrupole and sextupole magnets are utilized to squeeze and focus the beams.\\  
 Before the protons are injected into the LHC, they are pre-accelerated in various smaller accelerators, which are: Linac2, the Proton Synchrotron Booster (PSB), the Proton Synchrotron (PS) and the Super Proton Synchrotron (SPS). With this injector chain, a beam energy of 450\gev is achieved. An overview of the accelerator complex at CERN is given in Fig.~\ref{fig:AccComplex}. 
-\begin{figure}[!tp]
+\begin{figure}[!t]
   \centering 
   \begin{tabular}{c}
-    \includegraphics[width=0.9\textwidth]{figures/lhc.pdf}
+    \includegraphics[width=0.99\textwidth]{figures/lhc.pdf}
   \end{tabular}
   \caption{Illustration of the CERN accelerator complex including the injector chain of the LHC ring~\cite{CERNaccelerators}.}
   \label{fig:AccComplex}
@@ -25,10 +25,10 @@ The luminosity is a machine parameter and can be expressed for beams with Gaussi
   \label{eq:lumi}
 \end{equation}
 with the collision frequency $f$, the number of particles $n_1$ and $n_2$ contained in the two colliding bunches and the transverse beam sizes $\sigma_{x}$ ($\sigma_{y}$) in the horizontal (vertical) direction. In order to take the inclination of the two beams into account, the geometrical correction factor $F$ is introduced. With design conditions, the nominal peak luminosity of the LHC is $10^{34} \, \mathrm{cm}^{-2} \, \mathrm{s}^{-1}$. Since the total inelastic proton-proton cross-section at a centre of mass energy of 14\tev is around 100\,mb, as indicated in Fig.~\ref{fig:CrossSections}, the expected event rate is approximately $10^9$ events per second. \\
-\begin{figure}[!tp]
+\begin{figure}[!t]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.60\textwidth]{figures/crosssections2012_v5-1.pdf}
+    \includegraphics[width=0.65\textwidth]{figures/crosssections2012_v5-1.pdf}
   \end{tabular}
   \caption{Summary of cross sections for various standard model processes in proton-antiproton ($\sqrt{s} < 4$\tev) and proton-proton ($\sqrt{s} > 4$\tev) collisions as a function of the centre of mass energy. The right axis displays the correponding event rate at a luminosity of $\mathrm{10^{33}\,cm^{-2} s^{-1}}$~\cite{bib:stirling:pcom}.}
   \label{fig:CrossSections}
@@ -40,27 +40,17 @@ The four main experiments are located at four of eight locations along the LHC r
 \label{sec:cms}
 The CMS detector is one of the two general-purpose experiments at the LHC. In addition to tests of the SM at the TeV scale, studies of the nature of elektroweak symmetry breaking and searches for so far unknown effects are the primary targets of these experiments. These ambitious goals can only be achieved by fully exploiting the provided collision energy and luminosity with a suitable detector concept.\\
 The CMS detector with its typical cylindrical design of different sub-detector components around the beam line is designed to meet these requirements. A sketch of the CMS detector and the different sub-detectors is shown in Fig.~\ref{fig:CMS}.
-\begin{figure}[!tp]
+\begin{figure}[!t]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.99\textwidth]{figures/Figures_Experimental_Apparatus_CMS_perspective.png}
+    %\includegraphics[width=0.99\textwidth]{figures/Figures_Experimental_Apparatus_CMS_perspective.png}
+    \includegraphics[width=0.99\textwidth]{figures/cms_complete_labelled.pdf}
   \end{tabular}
   \caption{A perspective view of the CMS detector~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS}
 \end{figure}
 Such as other high-energy particle experiments, the CMS detector makes use of tracking detectors and calorimeters to measure momenta of particles, energy depositions and flight directions in order to identify the objects emerging from the particle collisions. \\
-A typical characteristic of calorimeters is given by the ratio $e/h$. This quantifies the relation between the detection efficiencies of electromagnetic ($e$) and hadronic ($h$) energy deposits in a particle shower. Often it is determined from the ratio of the calorimeter response to pions and electrons $\pi/e$ of the same energy
-\begin{equation}
-\frac{\pi}{e} = \frac{f_\mathrm{em}\, e + (1 - f_\mathrm{em}) h}{e} = \frac{1+(e/h - 1) f_\mathrm{em}}{e/h}
-\end{equation}
-with the \textit{electromagnetic fraction} $f_\mathrm{em}$, \ie the fraction of the hadronic shower transferred into an electromagnetic component via the decay of neutral pions into two photons initiating an electromagnetic shower. Since $f_\mathrm{em}$ depends on the energy, the same holds for $\pi/e$ and the calorimeter response is said to be \textit{non-linear}. \\
-Furthermore, the calorimeter performance can be characterized by the relative calorimeter energy-resolution
-\begin{equation}
-\frac{\sigma(E)}{E}= \frac{N}{E} \oplus \frac{S}{\sqrt{E}} \oplus C 
-\end{equation}
-which improves with increasing energy $E$ of the measured particle. At low momenta, the resolution is mainly dominated by electronic noise, described by the \textit{noise term} $N$. For increasing energies, the resolution is driven by fluctuations of the shower development described by the \textit{stochastic term} $S$ and at high energies, the resolution is eventually limited by calorimeter miscalibration and non-uniformities described by the \textit{constant term} $C$.\\ 
-\\ 
-The following sections comprise a description of the CMS detector which exhibits a total weight of 12\,500\,t and has a length of 21.6\,m and a diameter of 14.6\,m. A detailed discussion of the detector design can be found in~\cite{Chatrchyan:2008zzk, bib:cmsptdr1}. After the introduction of the CMS coordinate conventions in Sec.~\ref{subsec:cms_coordinates}, the superconducting magnet is discussed (Sec.~\ref{subsec:cms_magnet}). Afterwards, the tracking system (Sec.~\ref{subsec:cms_tracker}), the calorimeters (Sec.~\ref{subsec:cms_ecal} and~\ref{subsec:cms_hcal}) and the muon system (Sec.~\ref{subsec:cms_muon}) are described moving from the inside of the detector outwards. The detector description ends with a short review of the trigger system in Sec.~\ref{subsec:cms_trigger}.  
+The following sections comprise a description of the CMS detector which exhibits a total weight of 12\,500\,t and has a length of 21.6\,m and a diameter of 14.6\,m. A detailed discussion of the detector design can be found in~\cite{Chatrchyan:2008zzk, bib:cmsptdr1}. %After the introduction of the CMS coordinate conventions in Sec.~\ref{subsec:cms_coordinates}, the superconducting magnet is discussed (Sec.~\ref{subsec:cms_magnet}). Afterwards, the tracking system (Sec.~\ref{subsec:cms_tracker}), the calorimeters (Sec.~\ref{subsec:calorimeters}) and the muon system (Sec.~\ref{subsec:cms_muon}) are described moving from the inside of the detector outwards. The detector description ends with a short review of the trigger system in Sec.~\ref{subsec:cms_trigger}.  
 
 \subsection{Coordinate Conventions and Kinematic Variables}
 \label{subsec:cms_coordinates}
@@ -95,7 +85,7 @@ In order to fulfill these tasks, the CMS experiment makes use of a tracker desig
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.95\textwidth]{figures/Figures_Experimental_Apparatus_Tracker.png}
+    \includegraphics[width=0.85\textwidth]{figures/Figures_Experimental_Apparatus_Tracker.png}
   \end{tabular}
   \caption{Sketch of the CMS tracking system in a $rz$-view. Each tracker module is represented by one line~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS_tracker}
@@ -106,14 +96,28 @@ In order to fulfill these tasks, the CMS experiment makes use of a tracker desig
 \end{description}
 The tracking system with the design described above provides a precise impact parameter resolution and high tracking efficiency~\cite{bib:cmstdr:tracker}. The impact parameter resolution is of the order of $\lesssim$ 35\,\textmu m in the plane perpendicular to the beam (for particles with \pt$> 10$\gev) and reaches 75\,\textmu m in the longitudinal direction. Furthermore, the track reconstruction efficiency of high energetic electrons is above 90\%, that of charged hadrons up to 95\% (for \pt$> 10$\gev) and that for muons even better than 98\% in the whole covered region up to $|\eta| = 2.5$. This is achieved already for muons with very low transverse momenta around 1\,GeV. Altogether, the relative transverse momentum resolution reaches a level of 1--2\% for high momentum tracks ($\approx$ 100\gev) in the barrel for $|\eta| < 1.6$.
  
-\subsection{Electromagnetic Calorimeter}
+\subsection{Calorimeter System}
+\label{subsec:calorimeters}
+The calorimetry of the CMS experiment is composed of the electromagnetic and the hadron calorimeter and measures the deposited energy as well as the position of incoming particles. \\
+A typical characteristic of calorimeters is given by the ratio $e/h$. This quantifies the relation between the detection efficiencies of electromagnetic ($e$) and hadronic ($h$) energy deposits in a particle shower. Often it is determined from the ratio of the calorimeter response to pions and electrons $\pi/e$ of the same energy
+\begin{equation}
+\frac{\pi}{e} = \frac{f_\mathrm{em}\, e + (1 - f_\mathrm{em}) h}{e} = \frac{1+(e/h - 1) f_\mathrm{em}}{e/h}
+\end{equation}
+with the \textit{electromagnetic fraction} $f_\mathrm{em}$, \ie the fraction of the hadronic shower transferred into an electromagnetic component via the decay of neutral pions into two photons. Since $f_\mathrm{em}$ depends on the energy, the same holds for $\pi/e$ and the calorimeter response is said to be \textit{non-linear}. \\
+Furthermore, the calorimeter performance can be characterized by the relative calorimeter energy-resolution
+\begin{equation}
+\frac{\sigma(E)}{E}= \frac{N}{E} \oplus \frac{S}{\sqrt{E}} \oplus C 
+\end{equation}
+which improves with increasing energy $E$ of the measured particle. At low momenta, the resolution is mainly dominated by electronic noise, described by the \textit{noise term} $N$. For increasing energies, the resolution is driven by fluctuations of the shower development described by the \textit{stochastic term} $S$ and at high energies, the resolution is eventually limited by calorimeter miscalibration and non-uniformities described by the \textit{constant term} $C$.
+
+\subsubsection*{Electromagnetic Calorimeter}
 \label{subsec:cms_ecal}
 The CMS experiment makes use of a homogeneous electromagnetic calorimeter (ECAL), in order to precisely measure the energy deposits of electrons and photons. It is installed around the inner tracking system covering a range up to $|\eta| = 3.0$ and consists of lead tungstate (PbW$\mathrm{O}_4$) crystals. These have been chosen as they provide a high density, short radiation length\footnote{The radiation length corresponds to the mean distance after which an electron traversing a material has lost all but $1/e$ of its energy.} $X_0$ and a small Moli\`{e}re radius\footnote{The Moli\`{e}re radius corresponds to the radius of a cylinder containing on average 90\% of the energy deposition of an electromagnetic shower.} $R_m$ and hence allow to build a compact calorimeter with a fine granularity. As 80\% of the scintillation light is emitted within 25\,ns, this allows ECAL operation at the bunch crossing rate of the LHC machine. In order to collect the radiated light, photodiodes are glued to the back of each crystal.\\
 An overview of the ECAL layout is shown in Fig.~\ref{fig:CMS_ecal}. The individual sub-components are as follows:
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.95\textwidth]{figures/Figures_Experimental_Apparatus_ECALRapidity.png}
+    \includegraphics[width=0.85\textwidth]{figures/Figures_Experimental_Apparatus_ECALRapidity.png}
   \end{tabular}
   \caption{View of one quarter section of the CMS electromagnetic calorimeter in a $yz$-view~\cite{bib:cmsptdr1}.}
   \label{fig:CMS_ecal}
@@ -128,9 +132,9 @@ The performance of the ECAL has already been evaluated based on test-beam result
 \frac{\sigma(E)}{E}= \frac{0.124}{E/\mathrm{GeV}} \oplus \frac{0.036}{\sqrt{E/\mathrm{GeV}}} \oplus 0.0026 \; .
 \end{equation}
 Thus, the typical relative energy resolution for electrons with a transverse momentum of 120\gev with this calorimeter configuration is of the order of 0.5\%. \\
-In addition to the calibration of the absolute energy scale, especially channel-to-channel effects referred to as \textit{intercalibration} have to be accounted for. This intercalibration is performed based on $\pi^0 \rightarrow \gamma \gamma, W \rightarrow e\nu$ and $Z \rightarrow ee$ events and results in a crystal-intercalibration accuracy of 0.6\% ~\cite{Chatrchyan:2013dga}. Changes in the transparency of the ECAL crystals during operation caused by irradiation are monitored by a dedicated laser system based on the injection of reference laser pulses into the crystals. \\
+In addition to the calibration of the absolute energy scale, especially channel-to-channel effects referred to as \textit{intercalibration} have to be accounted for. This intercalibration is performed based on $\pi^0 \rightarrow \gamma \gamma, W \rightarrow e\nu$ and $Z \rightarrow ee$ events and results in a crystal-intercalibration accuracy of 0.6\% ~\cite{Chatrchyan:2013dga}. Changes in the transparency of the ECAL crystals during operation caused by irradiation are monitored by a dedicated laser system based on the injection of reference laser pulses into the crystals. 
 
-\subsection{Hadron Calorimeter}
+\subsubsection*{Hadron Calorimeter}
 \label{subsec:cms_hcal}
 The calorimetry of the CMS experiment is completed by the hadron calorimeter (HCAL). It is designed to provide an accurate energy measurement of hadron jets and indirectly also of invisible particles, \eg neutrinos, by the determination of missing transverse energy. In order to measure the missing transverse energy, it is important that the calorimeter is hermetic, meaning that it provides a large geometric coverage to measure all particles emerging from an interaction. Thus, the HCAL is build such that a pseudorapidity range up to $|\eta| = 5.2$ is enclosed. \\ 
 The hadron calorimeter completely surrounds the inner tracking system and the electromagnetic barrel calorimeter while it is mainly contained within the magnet system. Hence, its radial dimensions are limited on the one hand by the outer circumference of the barrel ECAL and on the other hand by the inner border of the magnet coil. Thus, an additional calorimeter component is installed outside the solenoid in the barrel part to reduce effects from shower leakage, \ie compensate for hadronic showers that are not fully contained in the HCAL. \\
@@ -138,7 +142,7 @@ An overview of the layout of the CMS hadron calorimeter is shown in Fig.~\ref{fi
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.95\textwidth]{figures/Figures_Experimental_Apparatus_HCAL.png}
+    \includegraphics[width=0.75\textwidth]{figures/Figures_Experimental_Apparatus_HCAL.png}
   \end{tabular}
   \caption{Longitudinal view of one quarter of the CMS detector showing the location of the individual HCAL sub-detector parts~\cite{Chatrchyan:2008zzk}.}
   \label{fig:CMS_hcal}
@@ -164,7 +168,7 @@ Three different types of gaseous detectors are used to achieve a good muon momen
 \begin{figure}[!tp]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.95\textwidth]{figures/Figures_Experimental_Apparatus_MuonDetector.png}
+    \includegraphics[width=0.725\textwidth]{figures/Figures_Experimental_Apparatus_MuonDetector.png}
   \end{tabular}
   \caption{View of one quarter section of the muon system in the $rz$-plane~\cite{bib:cmsptdr1}.}
   \label{fig:CMS_muon}
@@ -179,36 +183,35 @@ The global muon reconstruction efficiency is in general about 95--99\% and only 
 
 \subsection{Trigger System}
 \label{subsec:cms_trigger}
-The LHC operating at design conditions provides particle collisions with a bunch crossing rate of 40\,MHz. This results in an enormous amount of event data which have to be processed and stored for later analyses. With an approximate event size of 1\,MB, it is technically impossible to record all events. However, as illustrated in Fig.~\ref{fig:CrossSections}, the event rate of interesting events is orders of magnitudes smaller than the total inelastic proton-proton cross section. Thus, already in the trigger system a fast event preselection is performed that allows to reduce the amount of data to a storable size while still retaining the information of interest. Hence, the trigger system makes up the first step in the physics analysis process.\\
-In order to achieve the necessary rate reduction, the CMS experiment uses a two-stage trigger system:
+The LHC operating at design conditions provides particle collisions with a bunch crossing rate of 40\,MHz. This results in an enormous amount of event data which have to be processed and stored for later analyses. With an approximate event size of 1\,MB, it is technically impossible to record all events. However, as illustrated in Fig.~\ref{fig:CrossSections}, the event rate of interesting events is orders of magnitudes smaller than the total inelastic proton-proton cross section. Thus, already in the trigger system a fast event preselection is performed that allows to reduce the amount of data to a storable size while still retaining the information of interest. Hence, the trigger system makes up the first step in the physics analysis process. In order to achieve the necessary rate reduction, the CMS experiment uses a two-stage trigger system:
 \begin{description}
-\item \textbf{Level-1 (L1) trigger:} The L1 trigger consists of custom-made fast programmable hardware. It makes use of data received from fast detector components which are the calorimeters and the muon system at reduced granularity. For that purpose, the calorimeter is divided into so-called \textit{trigger towers} which cover an area in $(\eta, \phi)$ of $(0.087, 0.087)$ up to $|\eta| = 1.74$ getting even coarser for higher $|\eta|$. At L1, the trigger decision is based on energy deposits in those trigger towers or certain hit patterns in the muon chambers forming trigger primitive objects which are electrons/photons, muons or jets and global quantities like sums of \et or \met. Events are accepted, if thosee trigger objects pass some predefined criteria like for instance certain \pt thresholds. The L1 trigger latency, \ie the time between the actual bunch crossing and the delivery of a positive L1 trigger decision to the front-end electronics, is 3.2\,\textmu s. During this period, the high resolution data is pipelined in readout buffers for further processing. The L1 trigger reduces the event rate to a maximum of 100\,kHz.
+\item \textbf{Level-1 (L1) trigger:} The L1 trigger consists of custom-made fast programmable hardware. It makes use of data received from fast detector components which are the calorimeters and the muon system at reduced granularity. For that purpose, the calorimeter is divided into so-called \textit{trigger towers} which cover an area in $(\eta, \phi)$ of $(0.087, 0.087)$ up to $|\eta| = 1.74$ getting even coarser for higher $|\eta|$. At L1, the trigger decision is based on energy deposits in those trigger towers or certain hit patterns in the muon chambers forming trigger primitive objects which are electrons/photons, muons or jets and global quantities like sums of \et or \met. Events are accepted if those trigger objects pass some predefined criteria like for instance certain \pt thresholds. The L1 trigger latency, \ie the time between the actual bunch crossing and the delivery of a positive L1 trigger decision to the front-end electronics, is 3.2\,\textmu s. During this period, the high resolution data is pipelined in readout buffers for further processing. The L1 trigger reduces the event rate to a maximum of 100\,kHz.
 \item \textbf{High-Level trigger (HLT):} Events that are accepted by the L1 trigger stage are transferred to the High-Level trigger for further processing. The HLT is a software system running on several thousand commercial processors. It has access to the full information from all sub-detectors and performs an event reconstruction similar to the later event reconstruction performed for recorded data. Thus, it allows a further rate reduction to the final output rate of a few hundred Hz of events that are finally stored for analyses. Since the HLT is software based, it allows to continously adjust the used algorithms in order to adapt to changing conditions during operation.
 \end{description}
 In the two trigger stages, various different conditions can be tested in parallel which define the so-called \textit{trigger paths}. For instance, there exist dedicated trigger paths to select events with single electrons or muons above a certain \pt threshold or paths to collect events with a specific amount of missing transverse energy. All of these individual trigger paths form together the \textit{trigger menu} and are operated with a dedicated rate such that the total manageable output rate of a few hundred Hz is not exceeded. Typically, the instantaneous luminosity changes gradually during operation which can result in changing output rates for individual trigger paths. In order to not exceed the allowed total trigger rate, the number of recorded events per trigger path can be adjusted accordingly by requiring that only each $n^\mathrm{th}$ triggered event is kept. The respective value of $n$ is denoted \textit{prescale factor}. 
 
 \section{LHC Operation and Data Taking}
 \label{sec:data}
-The first operation of the LHC took place in September 2008. After a major cooling incident only a few days later requiring a longer technical stop, beams were circulated again in November 2009. The first collisions at a center of mass energy of 7\tev finally happened end of March 2010. 
 \begin{figure}[!t]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.95\textwidth]{figures/int_lumi_cumulative_pp_2.pdf}
+    \includegraphics[width=0.65\textwidth]{figures/int_lumi_cumulative_pp_2.pdf}
   \end{tabular}
   \caption{Cumulative integrated luminosity versus day delivered to CMS during stable beams for pp collisions. Different data-taking periods are indicated as follows: green for 2010, red for 2011 and blue for 2012~\cite{bib:lhc:lumi12}.}
   \label{fig:lhc_data}
 \end{figure}
-In the following running period in 2010, data corresponding to an integrated luminosity of 44.2\pbinv were delivered to the experiments with a maximum peak instantaneous luminosity of $2.05 \times 10^{32} \cm^{-2} \second^{-1}$. These data allowed studies of the detector performance and made first searches for new physics possible. The next data taking period performed during 2011 at the same centre of mass energy even delivered a total amount of 6.1\fbinv \pp collision data reaching a peak instantaneous luminosity of $3.5 \times 10^{33} \cm^{-2} \second^{-1}$. Following another technical shutdown during winter, the centre of mass energy was finally increased to 8\tev for the running period during 2012 and the peak luminosity reached values of up to $7.7 \times 10^{33} \cm^{-2} \second^{-1}$, which is already almost design conditions. In total, 23.3\fbinv of integrated luminosity \pp collisions were produced by the LHC operating at stable beam conditions. The evolution of the integrated luminosity versus days is illustrated in Fig.~\ref{fig:lhc_data} for data-taking periods in 2010, 2011 and 2012. Typically, these periods are referred to as \textit{LHC Run I}. \\
-During most of the operation in 2012, the LHC was circulating 1380 bunches per beam with a spacing of 50\,ns. The average bunch intensity, \ie the number of protons per bunch, was varying from $1.6$ to $1.7 \times 10^{11}$ exceeding even the design value~\cite{bib:lhc:lumi12, Lamont:2013cma}. \\
-In general, such conditions result in multiple interactions per bunch crossing known as \textit{pileup} (PU). Typically, two sources of pileup are distinguished: \textit{in-time} pileup (IT PU) and \textit{out-of-time} pileup (OOT PU). While IT PU is caused by additional \pp collisions occuring within the same bunch-crossing as the primary hard collision and leads to additional tracks in the tracking system and energy deposits in the calorimeters, OOT PU arises from \pp collisions in previous and following bunch crossings and contributes further energy deposits in the calorimeters to the hard interaction due to the finite signal decay time in the calorimeters. An overview of the pileup profile in collision data taken in 2012 is given in Fig.~\ref{fig:lhc_pileup}. Here, the mean number of interactions per bunch crossing is illustrated with the mean of this distribution located at 21. The maximum number of mean pileup events even reached a value of $\approx 40$. Dedicated techniques in order to mitigate effects from pileup have been developed of which some are discussed in Chap.~\ref{chap:Objects}.
+The first operation of the LHC took place in September 2008. After a major cooling incident only a few days later requiring a longer technical stop, beams were circulated again in November 2009. The first collisions at a center of mass energy of 7\tev finally happened end of March 2010. 
+In the following running period in 2010, data corresponding to an integrated luminosity of 44.2\pbinv were delivered to the experiments with a maximum peak instantaneous luminosity of $2.05 \times 10^{32} \cm^{-2} \second^{-1}$. These data allowed studies of the detector performance and made first searches for new physics possible. The next data taking period performed during 2011 at the same centre of mass energy even delivered a total amount of 6.1\fbinv \pp collision data reaching a peak instantaneous luminosity of $3.5 \times 10^{33} \cm^{-2} \second^{-1}$. Following another technical shutdown during winter, the centre of mass energy was finally increased to 8\tev for the running period during 2012 and the peak luminosity reached values of up to $7.7 \times 10^{33} \cm^{-2} \second^{-1}$, which is already almost design conditions. In total, 23.3\fbinv of integrated luminosity \pp collisions were produced by the LHC operating at stable beam conditions. The evolution of the integrated luminosity versus days is illustrated in Fig.~\ref{fig:lhc_data} for data-taking periods in 2010, 2011 and 2012. Typically, these periods are referred to as \textit{LHC Run I}. During most of the operation in 2012, the LHC was circulating 1380 bunches per beam with a spacing of 50\,ns. The average bunch intensity, \ie the number of protons per bunch, was varying from $1.6$ to $1.7 \times 10^{11}$ exceeding even the design value~\cite{bib:lhc:lumi12, Lamont:2013cma}. 
 \begin{figure}[!t]
   \centering
   \begin{tabular}{c}
-    \includegraphics[width=0.95\textwidth]{figures/pileup_pp_2012.pdf} 
+    \includegraphics[width=0.65\textwidth]{figures/pileup_pp_2012.pdf} 
   \end{tabular}
   \caption{Mean number of interactions per bunch crossing in \pp collisions at a centre of mass energy of $\sqrt{s} = 8$\tev~\cite{bib:lhc:lumi12}.}
   \label{fig:lhc_pileup}
 \end{figure}
+In general, such conditions result in multiple interactions per bunch crossing known as \textit{pileup} (PU). Typically, two sources of pileup are distinguished: \textit{in-time} pileup (IT PU) and \textit{out-of-time} pileup (OOT PU). While IT PU is caused by additional \pp collisions occuring within the same bunch-crossing as the primary hard collision and leads to additional tracks in the tracking system and energy deposits in the calorimeters, OOT PU arises from \pp collisions in previous and following bunch crossings and contributes further energy deposits in the calorimeters to the hard interaction due to the finite signal decay time in the calorimeters. An overview of the pileup profile in collision data taken in 2012 is given in Fig.~\ref{fig:lhc_pileup}. Here, the mean number of interactions per bunch crossing is illustrated with the mean of this distribution located at 21. Dedicated techniques in order to mitigate effects from pileup have been developed of which some are discussed in Chap.~\ref{chap:Objects}.
+
 
 
 

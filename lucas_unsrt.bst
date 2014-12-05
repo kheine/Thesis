@@ -173,6 +173,10 @@ FUNCTION {blank.sep}
 { after.quote 'output.state :=
 }
 
+FUNCTION {comma.sep}
+{ mid.sentence 'output.state :=
+}
+
 FUNCTION {fin.entry}
 { output.state after.quoted.block =
     'skip$
@@ -829,9 +833,10 @@ FUNCTION {article}
       format.eprint output
     }
   if$
-  new.sentence
+%  new.sentence
+  comma.sep
   note output
-  new.sentence
+%  new.sentence
   format.doi output
   new.sentence
   format.SLACcitation output
@@ -1064,7 +1069,7 @@ FUNCTION {misc}
   if$
   howpublished output
   format.date output
-  new.block
+ % new.block
   note output
   new.sentence
   format.doi output

@@ -75,19 +75,19 @@ The actual procedure how to determine and apply the required corrections is disc
 \toprule
  Trigger & & \ptave threshold [GeV] \\
 \midrule
- HltDiPFJetAve40 & & 62 \\
+ HLT\_DiPFJetAve40 & & 62 \\
  & & & \\
- HltDiPFJetAve80 & & 107 \\
+ HLT\_DiPFJetAve80 & & 107 \\
  & & & \\
- HltDiPFJetAve140 & & 175 \\
+ HLT\_DiPFJetAve140 & & 175 \\
  & & & \\
- HltDiPFJetAve200 & & 242 \\
+ HLT\_DiPFJetAve200 & & 242 \\
  & & & \\
- HltDiPFJetAve260 & & 310 \\
+ HLT\_DiPFJetAve260 & & 310 \\
  & & & \\
- HltDiPFJetAve320 & & 379 \\
+ HLT\_DiPFJetAve320 & & 379 \\
  & & & \\
- HltDiPFJetAve400 & & 467 \\
+ HLT\_DiPFJetAve400 & & 467 \\
 \bottomrule
 \end{tabular}}
 \end{table}  
@@ -113,7 +113,7 @@ The selection criteria described above are applied to data and simulation in an 
                 \includegraphics[width=0.49\textwidth]{figures/NVtx_HltDiPFJetAve400_AfterTriggerSelection.pdf} &
                 \includegraphics[width=0.49\textwidth]{figures/NVtx_HltDiPFJetAve400_AfterPUReweighting.pdf}
   \end{tabular}
-  \caption{Distribution of number of primary vertices in data (black dots) and simulation (blue histogram) before (\textit{left}) and after (\textit{right}) reweighting of the pileup scenario in simulation for trigger path HltDiPFJetAve400.}
+  \caption{Distribution of number of primary vertices in data (black dots) and simulation (blue histogram) before (\textit{left}) and after (\textit{right}) reweighting of the pileup scenario in simulation for trigger path HLT\_DiPFJetAve400.}
   \label{fig:pu_reweight}
 \end{figure}
 Thus, each trigger path collected different amounts of data and consequently also the pileup distribution differs per trigger such that the reweighting of the pileup scheme has to be done for each trigger path individually. Depending on the offline \ptave, a simulated event can be unambigously assigned to the corresponding trigger path, which is fully efficient for that particular \pt range, and reweighted to that particular pileup scenario. The number of primary vertices in the event is a measure for the pileup activity so that the success of the reweighting procedure can be checked by comparing the distribution of the number of primary vertices in data and simulation before and after reweighting, respectively. Such a comparison is shown in Fig.~\ref{fig:pu_reweight} for the trigger path with the highest \ptave threshold. The primary vertex distributions show a good agreement after the application of the reweighting procedure, especially in the bulk of the distribution. Corresponding distributions of other trigger paths used in the analysis are shown in App.~\ref{app:jer_pu_reweight}. The pileup weight is considered as a multiplicative factor for each simulated event. \\

@@ -429,31 +429,8 @@ The only difference between these selection criteria employed here and SUS-13-01
   \caption{Comparison of \met, $M_\mathrm{T2}$, $M_\mathrm{T}^\mathrm{3-jet}$ and $M_\mathrm{T}^\mathrm{Rsys}$ distributions for signal and background events after applying preselection criteria and $\met > 200$\gev. The signal points are labelled as (X, Y) where X is the top squark mass and Y is the LSP mass in GeV.}
   \label{fig:stop_ref_plots}
 \end{figure} 
-These sets are used to reconstruct the two expected top quarks in the event: one is based on one of the trijet combinations and denoted \textit{fully-reconstructed} top (denoted \textit{3-jet}) while the other is based on the remnant system and referred to as \textit{partially-reconstructed} top (denoted \textit{Rsys}). Details on the reconstruction process of the two top quark systems can be found in~\cite{CMS-PAS-SUS-13-015}. In particular, this process involves that the fully-reconstructed top quark has to satisfy the criteria described in Eq.~\ref{eq:hep_1},~\ref{eq:hep_2} and~\ref{eq:hep_3} using $R_\mathrm{min} = 0.85 \cdot (m_W/m_\mathrm{top})$, $R_\mathrm{max} = 1.25 \cdot (m_W/m_\mathrm{top})$, $m_W = 80.4$\gev and $m_\mathrm{top} = 173.1$\gev. If there is more than one trijet system satisfying these criteria, the combination with $m^{3-\mathrm{jet}}$ closest to $m_\mathrm{top}$ is selected. \\
-After the successful identification of the two top quark systems according to the above mentioned criteria, further topological requirements are used:
-\begin{itemize}
- \item \met $> 200$\gev
- \item The variable $M_\mathrm{T2}$, as introduced in Sec.~\ref{sec:stop_cuts}, is required to be $\ge 300$\gev. It is calculated from the four momenta of the fully- and the partially-reconstructed top quark as well as \met assuming the invisible particles to be massless. 
- \item $(0.5 \cdot M_\mathrm{T}^\mathrm{3-jet} + M_\mathrm{T}^\mathrm{Rsys}) \ge 500$\gev. $ M_\mathrm{T}^\mathrm{3-jet}$ and $M_\mathrm{T}^\mathrm{Rsys}$ denote the transverse mass of the fully-reconstructed and the remnant system which are calculated with the angle $\Delta \phi$ between the missing energy and the momentum vector of the three-jet or remnant system, respectively, according to
-\begin{equation*}
-( M_\mathrm{T}^\mathrm{3-jet})^2 = (m^{3-\mathrm{jet}})^2 + 2 \cdot (E_\mathrm{T}^\mathrm{3-jet} \, \met - p_\mathrm{T}^\mathrm{3-jet} \, \met \, \mathrm{cos} \Delta \phi)
-\end{equation*} 
-and 
-\begin{equation*}
-( M_\mathrm{T}^\mathrm{Rsys})^2 = (m^\mathrm{Rsys})^2 + 2 \cdot (E_\mathrm{T}^\mathrm{Rsys} \, \met - p_\mathrm{T}^\mathrm{Rsys} \, \met \, \mathrm{cos} \Delta \phi) \; .
-\end{equation*} 
-\end{itemize}
-A comparison of the \met, $M_\mathrm{T2}$, $M_\mathrm{T}^\mathrm{3-jet}$ and $M_\mathrm{T}^\mathrm{Rsys}$ distributions for signal and background events after the preselection and a requirement of $\met > 200$\gev is shown in Fig.~\ref{fig:stop_ref_plots}. These distributions illustrate that those topological variables are able to reject several background events while keeping good acceptance for signal events. \\ %However, the transverse mass variables $M_\mathrm{T}^\mathrm{3-jet}$ reveals that the distribution for the higher stop mass does not peak around the top squark mass, as expected, but at values below. This shows that the assignment of indiviudal jets to the three jet system does not work properly for high top squark masses where decay products start to merge and are not reconstructed as individual objects. Consequently, this selection might not be well suited to search for top squarks with masses entering the TeV range.  
-\\
-In order to probe different points of the parameter space, events are further categorized into four overlapping search regions:
-\begin{itemize}
- \item $\mathrm{SR1_{ref}}$: \met $>$ 200\gev, $N_\mathrm{b-jets} \ge 1$ 
- \item $\mathrm{SR2_{ref}}$: \met $>$ 350\gev, $N_\mathrm{b-jets} \ge 1$ 
- \item $\mathrm{SR3_{ref}}$: \met $>$ 200\gev, $N_\mathrm{b-jets} \ge 2$ 
- \item $\mathrm{SR4_{ref}}$: \met $>$ 350\gev, $N_\mathrm{b-jets} \ge 2$ 
-\end{itemize}  
-The respective signal over background ratios for these regions are summarized in Tab.~\ref{tab:stop_ref_sel_soverb} for two signal points. The best sensitivity is provided by the signal region defined by \met $>$ 350\gev and $N_\mathrm{b-jets} \ge 2$ for these signal mass scenarios. 
-\begin{table}[!h]
+These sets are used to reconstruct the two expected top quarks in the event: one is based on one of the trijet combinations and denoted \textit{fully-reconstructed} top (denoted \textit{3-jet}) while the other is based on the remnant system and referred to as \textit{partially-reconstructed} top (denoted \textit{Rsys}). Details on the reconstruction process of the two top quark systems can be found in~\cite{CMS-PAS-SUS-13-015}. In particular, this process involves that the fully-reconstructed top quark has to satisfy the criteria described in Eq.~\ref{eq:hep_1},~\ref{eq:hep_2} and~\ref{eq:hep_3} using $R_\mathrm{min} = 0.85 \cdot (m_W/m_\mathrm{top})$, $R_\mathrm{max} = 1.25 \cdot (m_W/m_\mathrm{top})$, $m_W = 80.4$\gev and $m_\mathrm{top} = 173.1$\gev. If there is more than one trijet system satisfying these criteria, the combination with $m^{3-\mathrm{jet}}$ closest to $m_\mathrm{top}$ is selected. 
+\begin{table}[!t]
 %\fontsize{10 pt}{1.2 em}
 %$\selectfont
 \centering
@@ -481,9 +458,32 @@ The respective signal over background ratios for these regions are summarized in
 \label{tab:stop_ref_sel_soverb}
 \end{table}  
 \\
+After the successful identification of the two top quark systems according to the above mentioned criteria, further topological requirements are used:
+\begin{itemize}
+ \item \met $> 200$\gev
+ \item The variable $M_\mathrm{T2}$, as introduced in Sec.~\ref{sec:stop_cuts}, is required to be $\ge 300$\gev. It is calculated from the four momenta of the fully- and the partially-reconstructed top quark as well as \met assuming the invisible particles to be massless. 
+ \item $(0.5 \cdot M_\mathrm{T}^\mathrm{3-jet} + M_\mathrm{T}^\mathrm{Rsys}) \ge 500$\gev. $ M_\mathrm{T}^\mathrm{3-jet}$ and $M_\mathrm{T}^\mathrm{Rsys}$ denote the transverse mass of the fully-reconstructed and the remnant system which are calculated with the angle $\Delta \phi$ between the missing energy and the momentum vector of the three-jet or remnant system, respectively, according to
+\begin{equation*}
+( M_\mathrm{T}^\mathrm{3-jet})^2 = (m^{3-\mathrm{jet}})^2 + 2 \cdot (E_\mathrm{T}^\mathrm{3-jet} \, \met - p_\mathrm{T}^\mathrm{3-jet} \, \met \, \mathrm{cos} \Delta \phi)
+\end{equation*} 
+and 
+\begin{equation*}
+( M_\mathrm{T}^\mathrm{Rsys})^2 = (m^\mathrm{Rsys})^2 + 2 \cdot (E_\mathrm{T}^\mathrm{Rsys} \, \met - p_\mathrm{T}^\mathrm{Rsys} \, \met \, \mathrm{cos} \Delta \phi) \; .
+\end{equation*} 
+\end{itemize}
+A comparison of the \met, $M_\mathrm{T2}$, $M_\mathrm{T}^\mathrm{3-jet}$ and $M_\mathrm{T}^\mathrm{Rsys}$ distributions for signal and background events after the preselection and a requirement of $\met > 200$\gev is shown in Fig.~\ref{fig:stop_ref_plots}. These distributions illustrate that those topological variables are able to reject several background events while keeping good acceptance for signal events. \\ %However, the transverse mass variables $M_\mathrm{T}^\mathrm{3-jet}$ reveals that the distribution for the higher stop mass does not peak around the top squark mass, as expected, but at values below. This shows that the assignment of indiviudal jets to the three jet system does not work properly for high top squark masses where decay products start to merge and are not reconstructed as individual objects. Consequently, this selection might not be well suited to search for top squarks with masses entering the TeV range.  
+In order to probe different points of the parameter space, events are further categorized into four overlapping search regions:
+\begin{itemize}
+ \item $\mathrm{SR1_{ref}}$: \met $>$ 200\gev, $N_\mathrm{b-jets} \ge 1$ 
+ \item $\mathrm{SR2_{ref}}$: \met $>$ 350\gev, $N_\mathrm{b-jets} \ge 1$ 
+ \item $\mathrm{SR3_{ref}}$: \met $>$ 200\gev, $N_\mathrm{b-jets} \ge 2$ 
+ \item $\mathrm{SR4_{ref}}$: \met $>$ 350\gev, $N_\mathrm{b-jets} \ge 2$ 
+\end{itemize}  
+The respective signal over background ratios for these regions are summarized in Tab.~\ref{tab:stop_ref_sel_soverb} for two signal points. The best sensitivity is provided by the signal region defined by \met $>$ 350\gev and $N_\mathrm{b-jets} \ge 2$ for these signal mass scenarios. 
+\\
 In order to compare the sensitivity of this selection to the selection with best sensitivity studied in this chapter, expected exclusion limits are calculated. Background uncertainties assumed here are considered to be the same as those assumed in Sec.~\ref{sec:stop_baseline}. This allows an easier comparison of the performance of the different selections. From each of the four search regions, the expected limit giving the best sensitivity to a specific mass point is considered in the comparison. This is for the scenarios tested here, with top squark masses ranging from 600--1100\gev and a LSP mass of 50\gev, the selection requiring \met $>$ 350\gev and $N_\mathrm{b-jets} \ge 2$ as seen already from the signal over background ratios. \\
-The comparison of the expected limits is illustrated in Fig~\ref{fig:stop_baselinetoptagref_limit}. The limit curves exhibit that the selection based on the requirements used in SUS-13-015 shows a quite good sensitivity for low top squark masses while the sensitivity drops rapidly towards higher top squark masses. However, the selection proposed in Sec.~\ref{sec:stop_cuts} performs better for all mass scenarios. 
-\begin{figure}[!h]
+The comparison of the expected limits is illustrated in Fig~\ref{fig:stop_baselinetoptagref_limit}. The limit curves exhibit that the selection based on the requirements used in SUS-13-015 (black curve) shows a quite good sensitivity for low top squark masses, while the sensitivity drops rapidly towards higher top squark masses. However, the selection proposed in Sec.~\ref{sec:stop_cuts} (blue curve) performs better for all mass scenarios. 
+\begin{figure}[!t]
   \centering
   \begin{tabular}{c}
                 \includegraphics[width=0.49\textwidth]{figures/limitplot4BinSel_BaselineTopTagTransverseMassRef_LSP50.pdf} 

@@ -8,7 +8,7 @@ The second run period of the LHC, starting in 2015 at a centre-of-mass energy of
 %  \caption{Schematic diagram of the direct pair production of top squarks in \pp collisions with subsequent decay into a top quark and the LSP. Taken from~\cite{bib:CMS:PhysicsResultsSUS}. }
 %  \label{fig:T2tt}
 %\end{figure}  
-The targeted process of this analysis has been introduced in Fig.~\ref{fig:susy_decay} where the pair production of top squarks is shown with subsequent decay into a top quark and a neutralino LSP. Since each of the top quarks decays into a $b$ quark and a $W$ boson, the final state signature further depends on the decay modes of the $W$ bosons. In this analysis, only final states with fully hadronic top quark decays are considered. Consequently, this analysis targets a jet final state accompanied by missing transverse energy caused by the LSPs. As discussed in Sec.~\ref{subsubsec:susy_backgrounds}, background contributions from the SM to such signatures arise mainly from QCD multijet events, \WJets, \ZJets and \ttbar events. \\
+The targeted process of this analysis has been introduced in Fig.~\ref{fig:susy_decay} where the pair production of top squarks is shown with subsequent decay into a top quark and a neutralino LSP. Since each of the top quarks decays into a $b$ quark and a $W$ boson, the final state signature further depends on the decay modes of the $W$ bosons. In this analysis, only final states with fully hadronic top quark decays are considered. Consequently, this analysis targets a jet final state accompanied by missing transverse energy caused by the LSPs and no isolated leptons. As discussed in Sec.~\ref{subsubsec:susy_backgrounds}, background contributions from the SM to such signatures arise mainly from QCD multijet events, \WJets, \ZJets and \ttbar events. \\
 In this chapter, various analysis strategies for a search for top squarks at $\sqrt{s} = 13$\tev are discussed and compared in order to address mass scenarios with large mass differences between the top squark mass and the LSP. Furthermore, the performance of new selections is compared to the existing hadronic top squark search performed by the CMS experiment at $\sqrt{s} = 8$\tev which is published in~\cite{CMS-PAS-SUS-13-015} and denoted \textit{SUS-13-015} in the following. In addition, it is interesting to study if selections that are developed for a search for direct top squark production are also sensitive to gluino-mediated production of third generation quarks.   
 
 \section{Samples of Simulated Events}
@@ -290,10 +290,12 @@ Several kinematic variables exist that have been successfully used already in va
 \begin{description}
  \item $\mathbf{M_\mathrm{T2}:}$ The $M_\mathrm{T2}$ variable represents a generalized version of the transverse mass~\cite{Lester:1999tx, Barr:2003rg, Chatrchyan:2012jx, CMS-PAS-SUS-13-019}. In events with pair-produced particles which decay further and eventually contain undetectable particles in the decay products, \eg LSPs, the event kinematics are underconstrained and thus a classical transverse mass can not be determined. The $M_\mathrm{T2}$ variable is defined for two identical decay chains as
 \begin{equation}
+ \label{eq:mt2_1}
  M_\mathrm{T2}(m_{\tilde{\chi}}) = \min_{\vec{p}_\mathrm{T}^{\;\tilde{\chi}(1)} + \vec{p}_\mathrm{T}^{\;\tilde{\chi}(2)} = \vec{p}_\mathrm{T}^{\; \mathrm{miss}}} \left[ \mathrm{max} \left(M_\mathrm{T}^{(1)}, M_\mathrm{T}^{(2)} \right) \right] 
 \end{equation} 
 with the two transverse masses ($i = 1, 2$)
 \begin{equation}
+\label{eq:mt2_2}
  (M_\mathrm{T}^{(i)})^2 = (m^{\mathrm{vis}(i)})^2 + m_{\tilde{\chi}}^2 + 2 \left( E_\mathrm{T}^{\mathrm{vis}(i)} E_\mathrm{T}^{\tilde{\chi}(i)} - \vec{p}_\mathrm{T}^{\; \mathrm{vis}(i)} \cdot \vec{p}_\mathrm{T}^{\; \tilde{\chi}(i)}   \right) 
 \end{equation}
 described by the transverse momenta $\vec{p}_\mathrm{T}^{\, \mathrm{vis}(i)}$, transverse energies $E_\mathrm{T}^{\mathrm{vis}(i)}$ and masses $m^{\mathrm{vis}(i)}$ for the visible systems and the unknown transverse momenta of the LSPs $\vec{p}_\mathrm{T}^{\tilde{\chi}(i)}$ with mass $m_{\tilde{\chi}}$. Experimentally, the momenta $\vec{p}_\mathrm{T}^{\tilde{\chi}(i)}$ are not accessible separately. Thus, a minimization on trial LSP masses fulfilling the constraint given by $\vec{p}_\mathrm{T}^{\; \mathrm{miss}}$, the missing transverse momentum,\footnote{More commonly denoted by \metvec in this thesis.} is performed. This minimization is carried out to make sure that $M_\mathrm{T2}$ does not exceed the mass of the parent particle. For the correct value of $m_{\tilde{\chi}}$, the distribution of $M_\mathrm{T2}$ is expected to have an endpoint at the mass of the parent particle. \\
@@ -461,7 +463,7 @@ These sets are used to reconstruct the two expected top quarks in the event: one
 After the successful identification of the two top quark systems according to the above mentioned criteria, further topological requirements are used:
 \begin{itemize}
  \item \met $> 200$\gev
- \item The variable $M_\mathrm{T2}$, as introduced in Sec.~\ref{sec:stop_cuts}, is required to be $\ge 300$\gev. It is calculated from the four momenta of the fully- and the partially-reconstructed top quark as well as \met assuming the invisible particles to be massless. 
+ \item The variable $M_\mathrm{T2}$, as defined in Eq.~\ref{eq:mt2_1}, is required to be $\ge 300$\gev. It is calculated from the four momenta of the fully- and the partially-reconstructed top quark as well as \met assuming the invisible particles to be massless. 
  \item $(0.5 \cdot M_\mathrm{T}^\mathrm{3-jet} + M_\mathrm{T}^\mathrm{Rsys}) \ge 500$\gev. $ M_\mathrm{T}^\mathrm{3-jet}$ and $M_\mathrm{T}^\mathrm{Rsys}$ denote the transverse mass of the fully-reconstructed and the remnant system which are calculated with the angle $\Delta \phi$ between the missing energy and the momentum vector of the three-jet or remnant system, respectively, according to
 \begin{equation*}
 ( M_\mathrm{T}^\mathrm{3-jet})^2 = (m^{3-\mathrm{jet}})^2 + 2 \cdot (E_\mathrm{T}^\mathrm{3-jet} \, \met - p_\mathrm{T}^\mathrm{3-jet} \, \met \, \mathrm{cos} \Delta \phi)
